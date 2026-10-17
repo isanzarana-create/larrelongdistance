@@ -71,24 +71,41 @@ function shortcodeFrom(permalink, id) {
    separado por línea en blanco. Si llegan tres bloques, se reparten.
    Si no, todo va al idioma principal y el inglés se deja vacío
    para escribirlo a mano. */
+function arreglarCodificacion(s) {
+  // Las exportaciones de Meta escriben los acentos como bytes UTF-8
+  // interpretados en latin-1: "AquÃ­" en vez de "Aquí". Se deshace así.
+  if (!/[ÃÂ]/.test(s)) return s;
+  try {
+    const bytes = Uint8Array.from([...s].map((c) => c.charCodeAt(0) & 0xff));
+    const vuelta = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+    return vuelta;
+  } catch { return s; }
+}
+
+/* Un pie de Instagram trae, además del texto, las menciones, la web y las
+   etiquetas. Aquí se queda solo el texto. Si el pie lleva varios idiomas
+   separados por líneas en blanco, se reparten; si no, todo al principal. */
 function parseCaption(raw) {
-  const clean = String(raw || '')
+  const limpio = arreglarCodificacion(String(raw || ''))
     .replace(/\r/g, '')
     .split('\n')
-    .filter((l) => !/^\s*(#|@)/.test(l))          // fuera líneas de etiquetas y menciones
+    .map((l) => l.trim())
+    .filter((l) => !/^[@#]/.test(l))                       // menciones y etiquetas
+    .filter((l) => !/^(https?:\/\/)?[\w.-]+\.(org|com|eus|net)\/?$/i.test(l))  // webs sueltas
     .join('\n')
-    .replace(/#[\p{L}\p{N}_]+/gu, '')             // fuera etiquetas sueltas
+    .replace(/#[\p{L}\p{N}_]+/gu, '')
+    .replace(/[ \t]+/g, ' ')
     .trim();
 
-  const blocks = clean.split(/\n\s*\n/).map((b) => b.replace(/\s+/g, ' ').trim()).filter(Boolean);
-  const cut = (s) => {
-    if (!s) return '';
-    if (s.length <= 180) return s;
-    const t = s.slice(0, 180);
+  const bloques = limpio.split(/\n\s*\n/).map((b) => b.replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const cut = (x) => {
+    if (!x) return '';
+    if (x.length <= 180) return x;
+    const t = x.slice(0, 180);
     return t.slice(0, t.lastIndexOf(' ')).replace(/[,;:·—-]$/, '') + '…';
   };
-  if (blocks.length >= 3) return { es: cut(blocks[0]), eu: cut(blocks[1]), en: cut(blocks[2]) };
-  return { es: cut(blocks[0] || ''), eu: '', en: '' };
+  if (bloques.length >= 3) return { es: cut(bloques[0]), eu: cut(bloques[1]), en: cut(bloques[2]) };
+  return { es: cut(bloques[0] || ''), eu: '', en: '' };
 }
 
 /* ── 1. Clave de Meta ──────────────────────────────────────── */
@@ -314,12 +331,85 @@ async function touchSitemap(changed) {
   return false;
 }
 
+
+/* ── Modo importación ──────────────────────────────────────────
+   Con IG_IMPORT=<carpeta> el robot NO llama a Instagram: lee una
+   exportación oficial («Exportar tu información») ya descomprimida.
+   Sirve para arrancar la galería antes de tener la clave de Meta, y
+   deja los ficheros exactamente en el mismo formato, de modo que el
+   día que la clave exista el robot continúa sin rehacer nada.      */
+async function leerExportacion(dir) {
+  const candidatos = [];
+  async function buscar(d, prof = 0) {
+    if (prof > 4) return;
+    let entradas = [];
+    try { entradas = await fs.readdir(d, { withFileTypes: true }); } catch { return; }
+    for (const e of entradas) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) await buscar(p, prof + 1);
+      else if (/^posts.*\.json$/i.test(e.name) || /^posts_\d+\.json$/i.test(e.name)) candidatos.push(p);
+    }
+  }
+  await buscar(dir);
+  if (!candidatos.length) throw new Error(`No encuentro ningún posts_*.json dentro de ${dir}. ¿Es la carpeta de la exportación?`);
+  log(`Exportación: ${candidatos.length} fichero(s) de publicaciones`);
+
+  const items = [];
+  for (const f of candidatos) {
+    let datos;
+    try { datos = JSON.parse(await fs.readFile(f, 'utf8')); }
+    catch (e) { warn(`No pude leer ${path.basename(f)}: ${e.message}`); continue; }
+    const lista = Array.isArray(datos) ? datos : (datos.photos || datos.posts || []);
+    for (const post of lista) {
+      const medios = post.media || [];
+      const primero = medios.find((m) => /\.(jpe?g|png|webp|heic)$/i.test(m.uri || '')) || medios[0];
+      if (!primero || !primero.uri) continue;
+      // El pie puede estar en el post o en el primer medio
+      const pie = post.title || primero.title || '';
+      const ts = post.creation_timestamp || primero.creation_timestamp || 0;
+      items.push({
+        rutaRelativa: primero.uri,
+        caption: pie,
+        timestamp: ts ? new Date(ts * 1000).toISOString() : new Date().toISOString(),
+        raizExport: dir,
+      });
+    }
+  }
+  if (!items.length) throw new Error('La exportación no contiene publicaciones con imagen.');
+  items.sort((a, b) => (a.timestamp < b.timestamp ? 1 : -1));
+  log(`Publicaciones con imagen encontradas: ${items.length}`);
+  return items;
+}
+
+/* Localiza el fichero de imagen dentro de la exportación: las rutas del
+   JSON son relativas a la raíz del zip, pero no siempre coinciden. */
+async function localizarMedio(item) {
+  const directo = path.join(item.raizExport, item.rutaRelativa);
+  if (await exists(directo)) return directo;
+  const base = path.basename(item.rutaRelativa);
+  let encontrado = null;
+  async function buscar(d, prof = 0) {
+    if (encontrado || prof > 5) return;
+    let entradas = [];
+    try { entradas = await fs.readdir(d, { withFileTypes: true }); } catch { return; }
+    for (const e of entradas) {
+      if (encontrado) return;
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) await buscar(p, prof + 1);
+      else if (e.name === base) encontrado = p;
+    }
+  }
+  await buscar(item.raizExport);
+  return encontrado;
+}
+
 /* ── Principal ─────────────────────────────────────────────── */
 async function main() {
-  if (!TOKEN) throw new Error('Falta la clave: define el secret IG_TOKEN en el repositorio.');
+  const IMPORT = process.env.IG_IMPORT;
+  if (!IMPORT && !TOKEN) throw new Error('Falta la clave: define el secret IG_TOKEN en el repositorio.');
 
   const state = await readJSON(STATE_FILE, {});
-  const refreshed = await refreshToken();
+  const refreshed = IMPORT ? null : await refreshToken();
   if (refreshed) Object.assign(state, refreshed);
 
   // Aviso temprano: si la clave lleva demasiado sin renovarse, avisa antes de morir
@@ -328,10 +418,40 @@ async function main() {
     if (days > 45) warn(`La clave de Meta lleva ${Math.round(days)} días sin renovarse (caduca a los 60). Hay que regenerarla.`);
   }
 
-  const media = await fetchMedia();
   const manual = await readJSON(CAPTIONS_FILE, {});
   const photos = [];
 
+  if (IMPORT) {
+    const items = await leerExportacion(IMPORT);
+    let n = 0;
+    for (const item of items) {
+      const origen = await localizarMedio(item);
+      if (!origen) { warn(`No encuentro el fichero ${item.rutaRelativa}`); continue; }
+      const date = item.timestamp.slice(0, 10);
+      const code = 'IM' + String(++n).padStart(4, '0');
+      const file = `ig-${date}-${code.slice(-6)}`;
+      try {
+        const dir = path.join(CFG.root, CFG.fotosDir);
+        await fs.mkdir(dir, { recursive: true });
+        const buf = await fs.readFile(origen);
+        await sharp(buf).rotate().resize(900, 900, { fit: 'cover', position: 'centre' })
+          .webp({ quality: 82 }).toFile(path.join(dir, `${file}.webp`));
+        await sharp(buf).rotate().resize(400, 400, { fit: 'cover', position: 'centre' })
+          .webp({ quality: 80 }).toFile(path.join(dir, `${file}-400.webp`));
+        log(`Foto importada: ${file}  ←  ${path.basename(origen)}`);
+      } catch (e) { warn(`Fallo al convertir ${item.rutaRelativa}: ${e.message}`); continue; }
+      const auto = parseCaption(item.caption);
+      const over = manual[file] || {};
+      photos.push({
+        id: code, file, date,
+        place: over.place ?? '',
+        permalink: CFG.profileUrl,
+        es: over.es ?? auto.es, eu: over.eu ?? auto.eu, en: over.en ?? auto.en ?? '',
+      });
+    }
+  } else {
+
+  const media = await fetchMedia();
   for (const item of media) {
     const url = imageUrlOf(item);
     if (!url) { log(`(sin imagen utilizable: ${item.id})`); continue; }
@@ -354,6 +474,7 @@ async function main() {
       eu: over.eu ?? auto.eu,
       en: over.en ?? auto.en ?? '',
     });
+  }
   }
 
   if (!photos.length) throw new Error('Ninguna publicación utilizable. Nada se ha modificado.');

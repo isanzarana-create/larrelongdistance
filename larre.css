@@ -1522,6 +1522,12 @@ mark.todo { background: rgb(244, 215, 122); color: var(--ink); padding: 1px 5px;
 .imagenes .mg-foot a { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .18em;
   text-transform: uppercase; color: var(--terra); text-decoration: none;
   border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; }
+/* Las fotos de LARRE van a color desde el principio: tres de las piezas son
+   tipográficas y el rojo de marca es su acento — en gris se pierde. El
+   componente común no se toca; esto es decisión de esta web. */
+.imagenes .mg-item { outline: 1px solid var(--line); outline-offset: -1px; }
+.imagenes .mg-item img { filter: none; }
+.imagenes .mg-item:hover img, .imagenes .mg-item:focus-visible img { filter: none; transform: scale(1.04); }
 .imagenes .mg-item figcaption { font-size: 11px; letter-spacing: .02em; line-height: 1.6; padding: 10px 12px; }
 .mg-empty { font-family: "JetBrains Mono", monospace; font-size: 13px; line-height: 1.9;
   color: var(--grey); border-left: 1px solid var(--line-strong); padding-left: 16px; margin-top: 32px; }
