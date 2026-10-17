@@ -1,0 +1,9 @@
+{
+  "_como_funciona": "Textos escritos a mano para las fotos. Lo que escribas aquí manda siempre sobre el pie que venga de Instagram: el robot nunca lo pisa. La clave es el nombre del fichero de la foto, tal y como aparece en gallery-data.js (por ejemplo ig-2026-10-15-AAA111). Puedes poner solo los campos que quieras cambiar: es, eu, en, place.",
+  "_ejemplo": {
+    "es": "Checkpoint 4, en el corazón de la Sierra de Entzia.",
+    "eu": "4. kontrol-gunea, Entziako mendilerroaren bihotzean.",
+    "en": "Checkpoint 4, in the heart of the Entzia range.",
+    "place": "Sierra de Entzia"
+  }
+}
