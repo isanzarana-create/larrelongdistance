@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Disallow Netlify internal scripts
+# Ficheros internos de Netlify
 Disallow: /.netlify/
 
 Sitemap: https://larrelongdistance.org/sitemap.xml
