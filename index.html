@@ -69,9 +69,9 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Fraunces:opsz,wght@9..144,300..900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="/musubi-gallery.css">
 
 
@@ -940,6 +940,9 @@
     </div>
 
     <nav class="footer-legal" data-es-aria-label="Información legal" data-en-aria-label="Legal information" aria-label="Información legal">
+      <a class="larre-nav-extra" href="/ruta/"><span class="l-es">Ruta</span><span class="l-en">Route</span></a>
+      <a class="larre-nav-extra" href="/reglamento/"><span class="l-es">Reglamento</span><span class="l-en">Rules</span></a>
+      <a class="larre-nav-extra" href="/como-llegar/"><span class="l-es">Cómo llegar</span><span class="l-en">Getting there</span></a>
       <a href="#aviso-legal"><span class="l-es">Aviso legal</span><span class="l-en">Legal notice</span></a>
       <a href="#privacidad"><span class="l-es">Política de privacidad</span><span class="l-en">Privacy policy</span></a>
     </nav>

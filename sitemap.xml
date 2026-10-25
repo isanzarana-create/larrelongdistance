@@ -37,4 +37,58 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/gallery/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/galeria/"/>
   </url>
+  <url>
+    <loc>https://larrelongdistance.org/ruta/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/ruta/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/route/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/ruta/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/en/route/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/ruta/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/route/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/ruta/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/reglamento/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/reglamento/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/rules/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/reglamento/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/en/rules/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/reglamento/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/rules/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/reglamento/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/como-llegar/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/como-llegar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/como-llegar/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/en/getting-there/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/como-llegar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/como-llegar/"/>
+  </url>
 </urlset>
