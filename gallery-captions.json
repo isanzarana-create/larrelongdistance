@@ -1,24 +1,35 @@
 {
-  "_como_funciona": "Textos escritos a mano para las fotos. Lo que escribas aquí manda siempre sobre el pie que venga de Instagram: el robot nunca lo pisa. La clave es el nombre del fichero de la foto, tal y como aparece en gallery-data.js. Puedes poner solo los campos que quieras cambiar: es, eu, en, place.",
-
-  "ig-2026-10-09-IM0001": {
-    "es": "¿Es una carrera? No. Aquí no premiamos la velocidad, premiamos haber llegado.",
-    "en": "Is this a race? No. Here speed wins nothing — finishing does."
+  "_como_funciona": "Textos escritos a mano para las fotos. Lo que escribas aquí manda siempre sobre el pie que venga de Instagram: el robot nunca lo pisa. La clave es el nombre del fichero de la foto, tal y como aparece en gallery-data.js (ig-AÑO-MES-DÍA-XXXXXX, y ese nombre ya no cambia nunca). Puedes poner solo los campos que quieras cambiar: es, eu, en, place. Y si pones \"oculta\": true, esa foto no sale en la web (pero sigue en tu Instagram).",
+  "ig-2026-10-22-122422": {
+    "es": "Corredor en marcha al caer la tarde: LARRE Long Distance®, ultra de 214 km en autosuficiencia por las sierras de Álava.",
+    "en": "A runner on the move at dusk: LARRE Long Distance®, a 214 km self-supported ultra across the ranges of Álava."
   },
-  "ig-2026-10-06-IM0002": {
-    "es": "Lo que entra al monte contigo, sale del monte contigo.",
-    "en": "What goes into the mountain with you comes out with you."
+  "ig-2026-10-20-371749": {
+    "es": "Viñedos de la Rioja Alavesa al pie de la sierra: uno de los cuatro paisajes que enlaza el círculo de 214 km.",
+    "en": "Rioja Alavesa vineyards below the sierra: one of the four landscapes linked by the 214 km loop."
   },
-  "ig-2026-09-29-IM0003": {
-    "es": "La mayoría de carreras te dicen lo que tienen. Nosotros te decimos lo que no.",
-    "en": "Most races tell you what they have. We tell you what we don't."
+  "ig-2026-10-18-083279": {
+    "es": "Corredor en solitario con chaleco de autosuficiencia en la sierra de Álava: sin avituallamientos y sin público.",
+    "en": "A lone runner in a self-supported vest on the ranges of Álava: no aid stations and no spectators."
   },
-  "ig-2026-09-27-IM0004": {
-    "es": "214 km y 6.020 m D+ en autosuficiencia, por las cuatro Álavas.",
-    "en": "214 km and 6,020 m of climbing, fully self-supported, across the four Álavas."
+  "ig-2026-10-09-472998": {
+    "es": "Sendero entre hayas con la palabra RUN: 214 km en autosuficiencia donde la única victoria es haber llegado.",
+    "en": "A beech-forest trail reading RUN: 214 km self-supported, where finishing is the only victory."
   },
-  "ig-2026-09-25-IM0005": {
-    "es": "Larre: pastizal de montaña en euskera. El terreno que simplemente está.",
-    "en": "Larre: mountain pasture in Basque. Land that simply exists."
+  "ig-2026-10-06-020833": {
+    "es": "Dos corredores cruzan la niebla de la sierra: 50 horas de corte, 300 dorsales y un brevet sellado en seis controles.",
+    "en": "Two runners crossing the fog on the sierra: a 50-hour cut-off, 300 bibs and a brevet stamped at six checkpoints."
+  },
+  "ig-2026-09-29-447883": {
+    "es": "Lámina «Lo que no hacemos»: sin arco de salida, sin locutor y sin premio en metálico. Solo 300 plazas.",
+    "en": "Card reading “What we don’t do”: no start arch, no announcer and no cash prize. Only 300 places."
+  },
+  "ig-2026-09-27-611954": {
+    "es": "Lámina «¿Qué es LARRE Long Distance®?»: ultra-trail non-stop de 214 km y 6.020 m D+ por las cuatro Álavas.",
+    "en": "Card asking “What is LARRE Long Distance®?”: a 214 km non-stop ultra-trail with 6,020 m of climbing."
+  },
+  "ig-2026-09-25-416147": {
+    "es": "Lámina con la palabra LARRE: «pastizal de montaña» en euskera, el terreno que nadie construye y simplemente está.",
+    "en": "Card reading LARRE: Basque for “mountain pasture”, land no one builds and that simply exists."
   }
 }
