@@ -796,23 +796,17 @@ section { padding: 120px 0px; position: relative; z-index: 2; }
 
 .social-bar a:hover { background: var(--terra); color: var(--paper); border-color: var(--terra); }
 
-.contact-cta { margin: 0px 0px 60px; padding: 64px 48px; background: var(--paper-2); color: var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.contact-cta { margin: 0px 0px 60px; padding: 64px 48px; background: var(--paper-2); color: var(--ink); display: flex; align-items: center; justify-content: center; text-align: center; gap: 40px; flex-wrap: wrap; }
 
 .contact-cta-text .pre { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; }
 
 .contact-cta-text h3 { font-family: Anton, sans-serif; font-size: clamp(40px, 6vw, 72px); text-transform: uppercase; line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 18px; }
 
-.contact-cta-text p { font-family: Manrope, sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink-2); max-width: 440px; margin-bottom: 28px; }
+.contact-cta-text p { font-family: Manrope, sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink-2); max-width: 440px; margin: 0 auto 28px; }
 
 .cta-btn { display: inline-block; background: var(--terra); color: var(--paper); font-family: "JetBrains Mono", monospace; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 18px 36px; text-decoration: none; border: 1px solid var(--terra); transition: background 0.25s, color 0.25s; }
 
 .cta-btn:hover { background: transparent; color: var(--terra); }
-
-.contact-qr { display: flex; flex-direction: column; align-items: center; gap: 10px; flex-shrink: 0; }
-
-.contact-qr img { width: 132px; height: 132px; display: block; border: 1px solid var(--line-strong); }
-
-.contact-qr span { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
 
 @media (max-width: 980px) {
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
@@ -824,7 +818,6 @@ section { padding: 120px 0px; position: relative; z-index: 2; }
   .social-bar a svg { width: 14px; height: 14px; }
   .contact-cta { padding: 40px 24px; flex-direction: column; text-align: center; }
   .contact-cta-text p { max-width: none; }
-  .contact-qr img { width: 110px; height: 110px; }
   .liga-year, .liga-card { border-bottom: 1px solid rgba(237, 229, 210, 0.18); }
   .liga-year:last-child, .liga-card:last-child { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; }
   .liga-closing { padding: 32px; }
