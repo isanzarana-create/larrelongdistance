@@ -60,8 +60,8 @@ en/index.html           portada en inglés
 galeria/index.html      página de galería en castellano   (nueva)
 en/gallery/index.html   página de galería en inglés       (nueva)
 larre.css               TODO el CSS del sitio, ahora en un único fichero
-musubi-gallery.css      componente de galería · sistema Musubigara
-musubi-gallery.js       componente de galería · sistema Musubigara
+larre-gallery.css      componente de galería
+larre-gallery.js       componente de galería
 gallery-data.js         datos de las fotos (lo reescribe el robot)
 gallery-captions.json   tus textos a mano, si quieres cambiar algún pie
 og-larre.jpg            imagen para redes
@@ -148,7 +148,7 @@ que las imágenes llegarán en cuanto se publiquen.
 
 Dos enlaces externos no he podido comprobarlos desde aquí porque bloquean el acceso
 automático: tu perfil de **LinkedIn** y el de **Instagram**. Son los mismos que ya tenías
-y el formato es correcto. **musubigara.org** y **aepd.es** responden 200.
+y el formato es correcto. **aepd.es** responden 200.
 
 ---
 
@@ -156,7 +156,7 @@ y el formato es correcto. **musubigara.org** y **aepd.es** responden 200.
 
 **Las fotos se ven en blanco y negro y toman color al pasar el ratón.** Es como está
 hecho el componente, y en LARRE queda bien. Si las prefieres a color desde el principio,
-es quitar una línea de `musubi-gallery.css` — dilo y te la quito.
+es quitar una línea de `larre-gallery.css` — dilo y te la quito.
 
 **El titular es «Desde el terreno» / «From the ground».** Si prefieres otro, se cambia
 en un minuto.

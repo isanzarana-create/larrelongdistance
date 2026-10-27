@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
-   MUSUBI GALLERY · lógica mínima (sin librerías, ~6 KB)
+   LARRE GALLERY · lógica mínima (sin librerías, ~6 KB)
    - pinta la rejilla donde se le diga (panel lateral)
    - enciende el visor (lightbox) sobre cualquier .mg-item del DOM,
      esté pintado por JS o escrito ya en el HTML por el robot.
@@ -14,8 +14,8 @@
    recuadro con la interrogación.
    ───────────────────────────────────────────────────────────── */
 (function (w, d) {
-  var DATA = w.MUSUBI_GALLERY || { photos: [] };
-  var BASE = (w.MUSUBI_GALLERY_BASE || 'fotos/');
+  var DATA = w.LARRE_GALLERY || { photos: [] };
+  var BASE = (w.LARRE_GALLERY_BASE || 'fotos/');
   var PERFIL = DATA.profileUrl || 'https://www.instagram.com/';
 
   /* Tres idiomas: si falta el pie en el idioma de la página, cae al
@@ -25,7 +25,7 @@
   var VER_EN_IG = { es: 'Ver en Instagram', eu: 'Instagramen ikusi', en: 'View on Instagram' };
   /* Idioma de lo que se está viendo. Las webs que cambian de idioma sin
      recargar (LARRE, Mugarri) escriben data-lang en <html>; las que tienen
-     una página por idioma (Musubigara) usan lang. Se mira primero el que
+     una página por idioma usan lang. Se mira primero el que
      cambia. */
   function paginaLang() {
     var raiz = d.documentElement;
@@ -265,10 +265,10 @@
     abrirDesde(it);
   });
 
-  w.MusubiGallery = { render: render, data: DATA, itemHTML: itemHTML };
+  w.LarreGallery = { render: render, data: DATA, itemHTML: itemHTML };
 })(window, document);
 /* ─────────────────────────────────────────────────────────────
-   MUSUBI GALLERY · lógica mínima (sin librerías, ~6 KB)
+   LARRE GALLERY · lógica mínima (sin librerías, ~6 KB)
    - pinta la rejilla donde se le diga (panel lateral)
    - enciende el visor (lightbox) sobre cualquier .mg-item del DOM,
      esté pintado por JS o escrito ya en el HTML por el robot.
@@ -283,8 +283,8 @@
    recuadro con la interrogación.
    ───────────────────────────────────────────────────────────── */
 (function (w, d) {
-  var DATA = w.MUSUBI_GALLERY || { photos: [] };
-  var BASE = (w.MUSUBI_GALLERY_BASE || 'fotos/');
+  var DATA = w.LARRE_GALLERY || { photos: [] };
+  var BASE = (w.LARRE_GALLERY_BASE || 'fotos/');
   var PERFIL = DATA.profileUrl || 'https://www.instagram.com/';
 
   /* Tres idiomas: si falta el pie en el idioma de la página, cae al
@@ -526,5 +526,5 @@
     abrirDesde(it);
   });
 
-  w.MusubiGallery = { render: render, data: DATA, itemHTML: itemHTML };
+  w.LarreGallery = { render: render, data: DATA, itemHTML: itemHTML };
 })(window, document);

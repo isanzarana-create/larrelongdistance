@@ -1,6 +1,6 @@
 # ─────────────────────────────────────────────────────────────
 # Galería de Instagram · LARRE Long Distance ®
-# Sistema Musubigara® · se ejecuta solo, a diario
+# Galería de Instagram · se ejecuta solo, a diario
 # ─────────────────────────────────────────────────────────────
 name: Galería de Instagram (LARRE)
 
@@ -71,8 +71,8 @@ jobs:
 
       - name: Publicar los cambios
         run: |
-          git config user.name  "Robot Musubigara"
-          git config user.email "robot@musubigara.org"
+          git config user.name  "Robot Larre Long Distance"
+          git config user.email "actions@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
             echo "Nada que publicar: la web ya estaba al día."

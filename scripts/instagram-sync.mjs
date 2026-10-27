@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* ─────────────────────────────────────────────────────────────
-   MUSUBI GALLERY · robot de sincronización con Instagram
-   Sistema Musubigara® — mismo robot para todas las webs del grupo.
+   LARRE GALLERY · robot de sincronización con Instagram
+   Robot propio de Larre Long Distance.
 
    Qué hace, en orden:
      1. renueva la clave de Meta (caduca a 60 días) y deja constancia
@@ -318,8 +318,8 @@ async function writeBlock(target, photos) {
   const file = path.join(CFG.root, target.file);
   if (!await exists(file)) { log(`(no existe ${target.file}, se omite)`); return 'absent'; }
   const html = await fs.readFile(file, 'utf8');
-  const start = `<!-- MUSUBI-GALLERY:${target.marker}:START -->`;
-  const end   = `<!-- MUSUBI-GALLERY:${target.marker}:END -->`;
+  const start = `<!-- LARRE-GALLERY:${target.marker}:START -->`;
+  const end   = `<!-- LARRE-GALLERY:${target.marker}:END -->`;
   const i = html.indexOf(start), j = html.indexOf(end);
   if (i === -1 || j === -1 || j < i) {
     warn(`${target.file} no tiene las marcas ${target.marker}. No se ha tocado el fichero.`);
@@ -342,8 +342,8 @@ async function writeJsonLd(target, photos) {
   const file = path.join(CFG.root, target.file);
   if (!await exists(file)) return 'absent';
   const html = await fs.readFile(file, 'utf8');
-  const start = '<!-- MUSUBI-GALLERY:JSONLD:START -->';
-  const end = '<!-- MUSUBI-GALLERY:JSONLD:END -->';
+  const start = '<!-- LARRE-GALLERY:JSONLD:START -->';
+  const end = '<!-- LARRE-GALLERY:JSONLD:END -->';
   const i = html.indexOf(start), j = html.indexOf(end);
   if (i === -1 || j === -1 || j < i) {
     warn(`${target.file} no tiene las marcas JSONLD.`);
@@ -384,7 +384,7 @@ async function writeData(photos) {
   if (await exists(file)) {
     try {
       const raw = await fs.readFile(file, 'utf8');
-      prevData = JSON.parse(raw.replace(/^\s*window\.MUSUBI_GALLERY\s*=\s*/, '').replace(/;\s*$/, ''));
+      prevData = JSON.parse(raw.replace(/^\s*window\.LARRE_GALLERY\s*=\s*/, '').replace(/;\s*$/, ''));
     } catch { prevData = null; }
   }
   const same = prevData && JSON.stringify(prevData.photos) === JSON.stringify(photos);
@@ -397,7 +397,7 @@ async function writeData(photos) {
     photos,
   };
   if (same) { log('gallery-data.js sin cambios'); return false; }
-  await fs.writeFile(file, `window.MUSUBI_GALLERY=${JSON.stringify(data)};\n`, 'utf8');
+  await fs.writeFile(file, `window.LARRE_GALLERY=${JSON.stringify(data)};\n`, 'utf8');
   log(`gallery-data.js escrito con ${photos.length} fotos`);
   return true;
 }
@@ -637,8 +637,8 @@ async function main() {
   // Si ninguna página tiene las marcas, el robot no pinta en ningún sitio:
   // eso es un fallo de montaje y debe avisar a gritos, no callar.
   if (withMarkers === 0) {
-    throw new Error('Ninguna página tiene las marcas MUSUBI-GALLERY. '
-      + 'Revisa que index.html lleve <!-- MUSUBI-GALLERY:ES:START --> y su :END.');
+    throw new Error('Ninguna página tiene las marcas LARRE-GALLERY. '
+      + 'Revisa que index.html lleve <!-- LARRE-GALLERY:ES:START --> y su :END.');
   }
   await touchSitemap(tocadas);
   if (!changed) log('Nada que publicar: la web ya estaba al día');
