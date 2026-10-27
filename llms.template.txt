@@ -22,6 +22,10 @@ English: LARRE Long Distance® is a 214 km, 6,020 m D+ non-stop, self-supported,
 
 {{PAGES_EN}}
 
+## Información legal / Legal
+
+{{PAGES_LEGAL}}
+
 ## Organización y contacto
 
 - Organiza Ignacio Sanz Arana, Vitoria-Gasteiz. Contacto: ignacio@musubigara.org.

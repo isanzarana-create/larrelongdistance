@@ -30,6 +30,13 @@ English: LARRE Long Distance® is a 214 km, 6,020 m D+ non-stop, self-supported,
 - [Rules · LARRE Long Distance ® · Essential regulations](https://larrelongdistance.org/en/rules/): Essential rules of LARRE Long Distance: self-sufficiency, Zero Waste, mandatory GPS track, 6 checkpoints, a 50-hour limit and 300 places.
 - [Getting there · LARRE Long Distance ® · Vitoria-Gasteiz](https://larrelongdistance.org/en/getting-there/): LARRE Long Distance starts and finishes at Plaza de los Fueros, Vitoria-Gasteiz (Álava). Map location and how to arrive by train, bus, car or plane.
 
+## Información legal / Legal
+
+- [Aviso legal · LARRE Long Distance ®](https://larrelongdistance.org/aviso-legal/): Aviso legal de LARRE Long Distance ®: titular, datos identificativos, condiciones de uso, propiedad intelectual y legislación aplicable (LSSI-CE).
+- [Legal notice · LARRE Long Distance ®](https://larrelongdistance.org/en/legal-notice/): Legal notice for LARRE Long Distance ®: site owner, identification details, terms of use, intellectual property and governing law (LSSI-CE).
+- [Política de privacidad · LARRE Long Distance ®](https://larrelongdistance.org/politica-privacidad/): Cómo trata LARRE Long Distance ® tus datos personales: responsable, finalidades, base jurídica, conservación, derechos RGPD y cookies.
+- [Privacy policy · LARRE Long Distance ®](https://larrelongdistance.org/en/privacy-policy/): How LARRE Long Distance ® handles your personal data: controller, purposes, legal basis, retention, your GDPR rights and cookies.
+
 ## Organización y contacto
 
 - Organiza Ignacio Sanz Arana, Vitoria-Gasteiz. Contacto: ignacio@musubigara.org.
