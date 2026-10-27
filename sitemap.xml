@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://larrelongdistance.org/galeria/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/galeria/"/>
@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://larrelongdistance.org/en/route/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/ruta/"/>
@@ -75,7 +75,7 @@
   </url>
   <url>
     <loc>https://larrelongdistance.org/como-llegar/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/como-llegar/"/>
@@ -84,11 +84,47 @@
   </url>
   <url>
     <loc>https://larrelongdistance.org/en/getting-there/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/como-llegar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/getting-there/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/como-llegar/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/aviso-legal/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/aviso-legal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/aviso-legal/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/en/legal-notice/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/aviso-legal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/aviso-legal/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/politica-privacidad/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/politica-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/politica-privacidad/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/en/privacy-policy/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/politica-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/politica-privacidad/"/>
   </url>
 </urlset>

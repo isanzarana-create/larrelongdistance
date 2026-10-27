@@ -1,8 +1,8 @@
 # LARRE Long Distance®
 
-> LARRE Long Distance® es un ultra-trail non-stop de 214 km y 6.020 m de desnivel positivo que se corre en una sola etapa, en autosuficiencia y con cero residuos, por las cuatro Álavas (Euskadi). Máximo 300 corredores. 1ª edición en otoño de 2027, con salida a las 16:00 desde la Plaza de los Fueros de Vitoria-Gasteiz.
+> LARRE Long Distance® es un ultra-trail non-stop de 214 km y 6.020 m de desnivel positivo que se corre en una sola etapa, en autosuficiencia y con cero residuos, por las cuatro Álavas (Euskadi). Máximo 300 corredores. 1ª edición el 9 de octubre de 2027, con salida a las 16:00 desde la Plaza de los Fueros de Vitoria-Gasteiz.
 
-English: LARRE Long Distance® is a 214 km, 6,020 m D+ non-stop, self-supported, zero-waste ultra-trail across the Basque province of Álava, limited to 300 runners. First edition: autumn 2027, starting at 16:00 in Vitoria-Gasteiz.
+English: LARRE Long Distance® is a 214 km, 6,020 m D+ non-stop, self-supported, zero-waste ultra-trail across the Basque province of Álava, limited to 300 runners. First edition: 9 October 2027, starting at 16:00 in Vitoria-Gasteiz.
 
 ## Datos clave
 
@@ -21,6 +21,10 @@ English: LARRE Long Distance® is a 214 km, 6,020 m D+ non-stop, self-supported,
 ## English
 
 {{PAGES_EN}}
+
+## Información legal / Legal
+
+{{PAGES_LEGAL}}
 
 ## Organización y contacto
 
