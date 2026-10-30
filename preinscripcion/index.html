@@ -85,7 +85,7 @@
     <h2>Apúntate al aviso</h2>
     <p>Rellena esto una vez. Te escribimos el día que se abre la preinscripción y nada más: no hay newsletter ni envíos comerciales.</p>
 
-    <form name="larre-preinscripcion" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="lf" id="preForm">
+    <form name="larre-preinscripcion" method="POST" action="/gracias/" data-netlify="true" data-netlify-honeypot="bot-field" class="lf" id="preForm">
       <input type="hidden" name="form-name" value="larre-preinscripcion">
       <input type="hidden" name="idioma" value="es">
       <p class="lf-hp"><label>No rellenar: <input name="bot-field"></label></p>
@@ -117,7 +117,6 @@
       </div>
       <button class="cta-btn lf-send" type="submit">Enviar →</button>
       <p class="lf-note">Responsable: Larre Long Distance ® (Musubigara ®). Finalidad: avisarte de la apertura de la preinscripción de la I Edición. Puedes pedir la baja o el borrado escribiendo a <a href="mailto:ignacio@musubigara.org">ignacio@musubigara.org</a>.</p>
-      <p class="lf-msg" id="lfMsg" role="status" hidden></p>
     </form>
 
     <h2>Mientras esperas</h2>
@@ -183,40 +182,6 @@
     document.querySelectorAll('.tn-links a').forEach(function(a){
       a.addEventListener('click', function(){ nav.classList.remove('open');
         burger.setAttribute('aria-expanded','false'); });
-    });
-  })();
-</script>
-<script>
-  /* Envío del formulario a Netlify Forms sin salir de la página. */
-  (function(){
-    var f = document.getElementById('preForm'), msg = document.getElementById('lfMsg');
-    if (!f || !msg) return;
-    var es = document.documentElement.lang !== 'en';
-    f.addEventListener('submit', function(ev){
-      if (!f.checkValidity()) return;
-      ev.preventDefault();
-      var btn = f.querySelector('button[type=submit]');
-      btn.disabled = true;
-      msg.hidden = false; msg.className = 'lf-msg';
-      msg.textContent = es ? 'Enviando…' : 'Sending…';
-      fetch(location.pathname, {
-        method: 'POST',
-        headers: {'Content-Type':'application/x-www-form-urlencoded'},
-        body: new URLSearchParams(new FormData(f)).toString()
-      }).then(function(r){
-        if (!r.ok) throw new Error(r.status);
-        f.querySelectorAll('.lf-row,.lf-check,.lf-send,.lf-note').forEach(function(el){ el.hidden = true; });
-        msg.className = 'lf-msg lf-ok';
-        msg.textContent = es
-          ? 'Apuntado. Te escribiremos a tu correo el día que se abra la preinscripción, en enero de 2027.'
-          : 'You are on the list. We will email you on the day pre-registration opens, in January 2027.';
-      }).catch(function(){
-        btn.disabled = false;
-        msg.className = 'lf-msg lf-err';
-        msg.textContent = es
-          ? 'No se ha podido enviar. Prueba otra vez o escríbenos a ignacio@musubigara.org.'
-          : 'It could not be sent. Try again or write to us at ignacio@musubigara.org.';
-      });
     });
   })();
 </script>
