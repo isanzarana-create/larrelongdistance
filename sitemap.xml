@@ -92,6 +92,42 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/como-llegar/"/>
   </url>
   <url>
+    <loc>https://larrelongdistance.org/preinscripcion/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/preinscripcion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/pre-registration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/preinscripcion/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/en/pre-registration/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/preinscripcion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/pre-registration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/preinscripcion/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/guia-autosuficiencia/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/guia-autosuficiencia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/self-supported-ultra-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/guia-autosuficiencia/"/>
+  </url>
+  <url>
+    <loc>https://larrelongdistance.org/en/self-supported-ultra-guide/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://larrelongdistance.org/guia-autosuficiencia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://larrelongdistance.org/en/self-supported-ultra-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://larrelongdistance.org/guia-autosuficiencia/"/>
+  </url>
+  <url>
     <loc>https://larrelongdistance.org/aviso-legal/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
