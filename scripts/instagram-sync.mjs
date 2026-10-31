@@ -366,8 +366,10 @@ async function writeJsonLd(target, photos) {
       caption: (target.lang === 'en' ? (p.en || p.es) : p.es) || '',
       ...(p.place ? { contentLocation: { '@type': 'Place', name: p.place } } : {}),
       creditText: 'LARRE Long Distance ®',
-      license: site + '/',
-      acquireLicensePage: site + '/#contacto',
+      creator: { '@type': 'Organization', name: 'LARRE Long Distance ®', url: site + '/' },
+      copyrightNotice: '© LARRE Long Distance ®',
+      license: site + (target.lang === 'en' ? '/en/legal-notice/' : '/aviso-legal/'),
+      acquireLicensePage: site + (target.lang === 'en' ? '/en/#contacto' : '/#contacto'),
     })),
   };
   const tag = `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
