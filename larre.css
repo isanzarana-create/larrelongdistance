@@ -1530,3 +1530,8 @@ mark.todo { background: rgb(244, 215, 122); color: var(--ink); padding: 1px 5px;
 
 /* Hide Netlify badge injected by CDN */
 #netlify-badge,#nl-badge-frame,[data-netlify-badge],iframe[src*="netlify.com/badge"]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;width:0!important;height:0!important;}
+
+/* Enlace de salto al contenido (WCAG 2.4.1 Evitar bloques) */
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 10000; background: var(--terra); color: var(--paper); padding: .6rem 1rem; font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; border-radius: 0 0 4px 0; }
+.skip-link:focus { left: 0; }
+#contenido:focus { outline: none; }
