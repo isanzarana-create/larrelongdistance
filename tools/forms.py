@@ -165,6 +165,16 @@ def simple_page(lang, key, h1, lead, para, with_mail=True):
     body = sec(f'<p>{H(para)} {MAIL if with_mail else ""}</p><p style="margin-top:var(--s4)"><a class="cta" href="{URLS["home"][IDX[lang]]}">{H(c["back"])}</a></p>')
     write(URLS[key][IDX[lang]], page(key, h1.replace("<br>", " ") + " · Ultra Trail Larre®", lead, c["kicker"], h1, lead, body, noindex=True))
 
+
+def page_404():
+    import re
+    P.LANG = "es"
+    rows = [("es", "/", "Esta página no existe", "Volver al inicio"), ("eu", "/eu/", "Orri hau ez dago", "Itzuli hasierara"), ("en", "/en/", "This page does not exist", "Back to home")]
+    body = sec("".join(f'<p lang="{l}"><strong>{H(t)}.</strong> <a href="{u}">{H(b)}</a></p>' for l, u, t, b in rows))
+    s = page("home", "404 · Ultra Trail Larre®", "Página no encontrada · Orri hau ez dago · Page not found", "404", "404", "Página no encontrada · Orri hau ez dago · Page not found", body, noindex=True)
+    s = re.sub(r'<link rel="canonical"[^>]*>\n', "", s); s = re.sub(r'<link rel="alternate" hreflang[^>]*>\n?', "", s)
+    import os; open(os.path.join(P.ROOT, "404.html"), "w", encoding="utf8").write(s)
+
 if __name__ == "__main__":
     for lang in ("es", "en", "eu"):
         P.LANG = lang; c = F[lang]
@@ -172,4 +182,5 @@ if __name__ == "__main__":
         simple_page(lang, "gracias", c["thanks_h1"], c["thanks_lead"], c["thanks_p"])
         simple_page(lang, "confirmado", c["conf_h1"], c["conf_lead"], c["conf_p"])
         legal_page(lang, "aviso", "aviso"); legal_page(lang, "priv", "privacidad")
+    page_404()
     print("formularios y textos legales generados")
