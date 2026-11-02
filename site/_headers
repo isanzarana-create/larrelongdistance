@@ -1,0 +1,37 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0='; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests
+
+/fotos/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/datos/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/og-larre.jpg
+  Cache-Control: public, max-age=604800
+/favicon.svg
+  Cache-Control: public, max-age=604800
+/*.pdf
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/api/*
+  Cache-Control: no-store
+  X-Robots-Tag: noindex
+/gracias/
+  X-Robots-Tag: noindex
+/eu/eskerrik-asko/
+  X-Robots-Tag: noindex
+/en/thanks/
+  X-Robots-Tag: noindex
+/confirmado/
+  X-Robots-Tag: noindex
+/eu/baieztatuta/
+  X-Robots-Tag: noindex
+/en/confirmed/
+  X-Robots-Tag: noindex

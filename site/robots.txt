@@ -1,0 +1,76 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+Sitemap: https://ultratraillarre.org/sitemap.xml

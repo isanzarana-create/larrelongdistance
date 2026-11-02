@@ -1,0 +1,7 @@
+# Dominio antiguo y www -> dominio canónico (301, conserva la ruta)
+http://larrelongdistance.org/*  https://ultratraillarre.org/:splat  301!
+https://larrelongdistance.org/*  https://ultratraillarre.org/:splat  301!
+http://www.larrelongdistance.org/*  https://ultratraillarre.org/:splat  301!
+https://www.larrelongdistance.org/*  https://ultratraillarre.org/:splat  301!
+http://www.ultratraillarre.org/*  https://ultratraillarre.org/:splat  301!
+https://www.ultratraillarre.org/*  https://ultratraillarre.org/:splat  301!
