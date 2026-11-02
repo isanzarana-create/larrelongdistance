@@ -1,0 +1,58 @@
+# Galería de Instagram · Ultra Trail Larre® · se ejecuta sola, a diario
+name: Galería de Instagram (Ultra Trail Larre)
+
+on:
+  schedule:
+    # 06:17 UTC = 08:17 en Vitoria-Gasteiz (minuto raro a propósito: a las horas en punto GitHub va saturado)
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: instagram-ultratraillarre
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar conversor de imágenes y Pillow
+        run: |
+          npm install --no-save --no-audit --no-fund sharp@0.33.5
+          pip install --quiet pillow
+      - name: Sincronizar con Instagram
+        env:
+          IG_TOKEN:   ${{ secrets.IG_TOKEN }}
+          IG_ACCOUNT: ultratraillarre
+          IG_PROFILE: https://www.instagram.com/ultratraillarre/
+        run: if [ -z "$IG_TOKEN" ]; then echo "Sin clave de Instagram - la galería se queda como está."; else node scripts/instagram-sync.mjs; fi
+      - name: Regenerar las páginas con la galería nueva
+        run: tools/build_all.sh
+      - name: Guardar la clave renovada por Meta
+        run: |
+          if [ -z "$GH_PAT" ]; then echo "Sin GH_PAT: la clave no se renueva sola. Regenerarla antes de 60 días."; exit 0; fi
+          if [ ! -f "$RUNNER_TEMP/ig_token_new.txt" ]; then echo "Meta no devolvió clave nueva."; exit 0; fi
+          GH_TOKEN="$GH_PAT" gh secret set IG_TOKEN --body "$(cat "$RUNNER_TEMP/ig_token_new.txt")" --repo "$GITHUB_REPOSITORY"
+      - name: Comprobar que no se cuela ninguna clave
+        run: |
+          rm -rf node_modules
+          if grep -rIlE 'IG[A-Za-z0-9]{3}[A-Za-z0-9_-]{30,}' . --exclude-dir=.git --exclude='*.md'; then echo "ALTO: hay algo con pinta de clave en el repositorio."; exit 1; fi
+      - name: Publicar los cambios
+        run: |
+          git config user.name  "Robot Ultra Trail Larre"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "Nada que publicar."; exit 0; fi
+          git commit -m "Galería: sincronizada con Instagram"
+          git push
