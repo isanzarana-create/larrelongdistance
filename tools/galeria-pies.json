@@ -1,24 +1,44 @@
 {
- "_como_funciona": "Textos escritos a mano para las fotos (es, eu, en, place). Mandan siempre sobre el pie de Instagram. La clave es el nombre de fichero de la foto. \"oculta\": true la deja fuera de la web sin tocar Instagram.",
+ "_como_funciona": "Textos escritos a mano para las fotos (es, eu, en, place). Mandan siempre sobre el pie de Instagram. La clave es el nombre de fichero de la foto. \"oculta\": true la deja fuera de la web sin tocar Instagram. \"titulo\": {es,eu,en} es el título propio de cada foto; si falta, se usa el principio del pie.",
  "ig-2026-10-20-371749": {
   "es": "Viñedos de la Rioja Alavesa al pie de la sierra: uno de los cuatro paisajes del circuito.",
   "eu": "Arabako Errioxako mahastiak mendilerroaren oinean: zirkuituaren lau paisaietako bat.",
-  "en": "Rioja Alavesa vineyards at the foot of the mountains: one of the four landscapes of the loop."
+  "en": "Rioja Alavesa vineyards at the foot of the mountains: one of the four landscapes of the loop.",
+  "titulo": {
+   "es": "Viñedos de la Rioja Alavesa",
+   "eu": "Arabako Errioxako mahastiak",
+   "en": "Rioja Alavesa vineyards"
+  }
  },
  "ig-2026-10-18-083279": {
   "es": "Corredor en solitario con chaleco de autosuficiencia en la sierra: sin avituallamientos y sin público.",
   "eu": "Korrikalari bakartia autosufizientziako txalekoarekin mendilerroan: janari-posturik gabe eta publikorik gabe.",
-  "en": "A lone runner in a self-sufficiency vest in the mountains: no aid stations and no crowds."
+  "en": "A lone runner in a self-sufficiency vest in the mountains: no aid stations and no crowds.",
+  "titulo": {
+   "es": "Sin avituallamientos, sin público",
+   "eu": "Janari-posturik gabe, publikorik gabe",
+   "en": "No aid stations, no crowds"
+  }
  },
  "ig-2026-10-09-472998": {
   "es": "Sendero entre hayas con la palabra RUN escrita en el suelo.",
   "eu": "Pagoen arteko bidea, lurrean RUN hitza idatzita.",
-  "en": "Beech-lined trail with the word RUN written on the ground."
+  "en": "Beech-lined trail with the word RUN written on the ground.",
+  "titulo": {
+   "es": "Sendero entre hayas",
+   "eu": "Pagoen arteko bidea",
+   "en": "Beech-lined trail"
+  }
  },
  "ig-2026-10-06-020833": {
   "es": "Dos corredores cruzan la niebla de la sierra.",
   "eu": "Bi korrikalari mendilerroko lainoa zeharkatzen.",
-  "en": "Two runners cross the mountain fog."
+  "en": "Two runners cross the mountain fog.",
+  "titulo": {
+   "es": "Niebla en la sierra",
+   "eu": "Lainoa mendilerroan",
+   "en": "Fog in the mountains"
+  }
  },
  "ig-2026-10-22-122422": {
   "oculta": true

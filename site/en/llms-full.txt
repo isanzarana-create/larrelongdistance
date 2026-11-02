@@ -27,7 +27,7 @@
 
 ## Contact
 
-- Organised by Ignacio Sanz Arana (Musubigara®).
+- Organised by Musubigara®.
 - Email: ignacio@musubigara.org
 - WhatsApp: +34 620 46 35 58
 - Instagram: https://www.instagram.com/ultratraillarre/
@@ -35,7 +35,7 @@
 ---
 
 <!-- https://ultratraillarre.org/en/ -->
-43°N · 2°W  ·  Araba · Euskadi  ·  Est. 2026
+43°N · 2°W  ·  Araba · Euskadi
 
 # Ultra Trail Larre ®
 
@@ -51,14 +51,13 @@ Pre-registration · 1 Dec 2026
 
 Ultra Trail Larre® · Non-stop  ·  1st Edition · Autumn 2027
 
-DOC · 01 — THE CHALLENGE
-
 ## One start.
 One finish.
 Nobody in between.
 
-You set off at 16:00 from Parque de la Florida in Vitoria-Gasteiz and have 50 hours to come back to the same spot. What happens in between is yours to solve: food, water, sleep, the night and the way.
+### The challenge
 
+You set off at 16:00 from Parque de la Florida in Vitoria-Gasteiz and have 50 hours to come back to the same spot. What happens in between is yours to solve: food, water, sleep, the night and the way.
 01
 ### Real self-sufficiency
 No aid stations from the organisation and no outside assistance. You plan the race like an expedition, not like a circuit with a table every 15 km.
@@ -73,25 +72,13 @@ Official GPS track required, six checkpoints with a brevet card and a tracker wi
 
 Forest Vineyard Mountains Plain
 
-DOC · 02 — THE ROUTE
-
 ## 226.9 km in a loop
+
+### The route
 
 A loop that starts and finishes at Parque de la Florida and stitches the Llanada Alavesa to the Rioja Alavesa, crossing the Entzia, Toloño, Cantabria and Izki ranges.
 
 Highest point: 1,383 m · km 152.5
-
-- Agurain km to be confirmed
-
-- Santa Cruz de Campezo km to be confirmed
-
-- Laguardia km to be confirmed
-
-- Peñacerrada km to be confirmed
-
-- To be confirmed
-
-- To be confirmed
 
 Official track · larre-2027.gpx · published 30 days before the start
 
@@ -107,24 +94,24 @@ From the ground · See all →
 
 See the full route →
 
-DOC · 03 — ZERO CODE
 The only trace we leave in the mountains is our footprints.
+
+### Zero Code
+
 No wrappers, no stickers, no gels, no strips of tape. What goes into the mountains with the runner leaves the mountains with the runner.
 It is not a slogan: it is a condition of entry. Dropping a single piece of litter on the course means immediate disqualification and a ban from future editions. No nuances, no prior warning, no second chance.
-
 Rules → · Philosophy →
-
-DOC · 04 — PRE-REGISTRATION
 
 ## 300 places, in order of arrival
 
-The pre-registration list opens on 1 December 2026 and asks for a short personal description: without it the entry is not validated, but it does not decide your place. Order of arrival does. Registrations open in January 2027.
+### Pre-registration
 
+The pre-registration list opens on 1 December 2026 and asks for a short personal description: without it the entry is not validated, but it does not decide your place. Order of arrival does. Registrations open in January 2027.
 ● Opens on 1 December 2026 Write to ignacio@musubigara.org if you have questions before the list opens.
 
-DOC · 05 — FAQ
-
 ## Frequently asked questions
+
+### FAQ
 
 ### When is it and where does it start?
 The 1st edition of Ultra Trail Larre takes place in autumn 2027, with a single start at 16:00 from Parque de la Florida in Vitoria-Gasteiz, and finishes at the same spot. The exact date will be announced on this website and on @ultratraillarre.
@@ -143,7 +130,6 @@ The Zero Code is the only rule with no exceptions: dropping a single piece of li
 
 ### Is it a race?
 There is a final ranking by order of arrival, but Ultra Trail Larre is conceived as a personal challenge, in the spirit of ultra-cycling and long self-supported routes, with no prizes for speed. For many, the challenge will simply be to finish.
-
 Full rules →
 
 ---
@@ -194,16 +180,7 @@ Highest point: 1,383 m · km 152.5
 Official track · larre-2027.gpx · published 30 days before the start
 
 ## Stamping checkpoints
-The route includes 6 stamping checkpoints. They are not aid stations: Ultra Trail Larre is run self-supported. The passage controls will be in Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada; the other two points and the exact kilometres will be confirmed before registrations open.
-Point Place Kilometre
-Start Vitoria-Gasteiz · Parque de la Florida 0
-Passage control Agurain To be confirmed
-Passage control Santa Cruz de Campezo To be confirmed
-Passage control Laguardia To be confirmed
-Passage control Peñacerrada To be confirmed
-Passage control To be confirmed To be confirmed
-Passage control To be confirmed To be confirmed
-Finish Vitoria-Gasteiz · Parque de la Florida 226.9
+The route includes 6 stamping checkpoints. They are not aid stations: Ultra Trail Larre is run self-supported. Their locations will be confirmed before registrations open.
 
 ## Navigation
 The official GPS track is mandatory. Every runner carries a GPS tracker with an SOS button, and the organisation runs a control centre in Vitoria-Gasteiz.
@@ -481,13 +458,13 @@ the ground
 
 The latest from @ultratraillarre: reconnaissance trips, stretches of the route and the mountains as they are.
 
-- Rioja Alavesa vineyards at the foot of the mountains: one of the four landscapes of the loop.
+- Rioja Alavesa vineyards Rioja Alavesa vineyards at the foot of the mountains: one of the four landscapes of the loop.
 
-- A lone runner in a self-sufficiency vest in the mountains: no aid stations and no crowds.
+- No aid stations, no crowds A lone runner in a self-sufficiency vest in the mountains: no aid stations and no crowds.
 
-- Beech-lined trail with the word RUN written on the ground.
+- Beech-lined trail Beech-lined trail with the word RUN written on the ground.
 
-- Two runners cross the mountain fog.
+- Fog in the mountains Two runners cross the mountain fog.
 More on @ultratraillarre on Instagram.
 
 ---
@@ -619,7 +596,7 @@ Start time
 16:00
 
 Stamping checkpoints
-6, with brevet (Agurain, Santa Cruz de Campezo, Laguardia, Peñacerrada and two to be confirmed)
+6, with brevet
 
 Official GPS track
 Provided 30 days before the start

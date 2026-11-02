@@ -12,7 +12,7 @@ HOME = {
  title="Ultra Trail Larre® · Ultra-trail de 226,9 km en Álava · Otoño de 2027",
  desc="Ultra-trail non-stop de 226,9 km y 4.644 m D+ en una sola etapa, en autosuficiencia y con cero residuos, por las cuatro Álavas. 300 plazas. I Edición, otoño de 2027.",
  sections=[("reto","El reto"),("ruta","La ruta"),("codigo-cero","Código Cero"),("preinscripcion","Preinscripción"),("faq","FAQ")],
- strip1="43°N · 2°W &nbsp;·&nbsp; Araba · Euskadi &nbsp;·&nbsp; Est. 2026", strip2="Ultra Trail Larre® · Non-stop &nbsp;·&nbsp; I Edición · Otoño de 2027",
+ strip1="43°N · 2°W &nbsp;·&nbsp; Araba · Euskadi ", strip2="Ultra Trail Larre® · Non-stop &nbsp;·&nbsp; I Edición · Otoño de 2027",
  lead="Un <em>ultra-trail non-stop</em> que se corre en una sola etapa, en <em>autosuficiencia</em>, sin asistencia y sin avituallamientos clásicos, por las cuatro Álavas: <em>el bosque, la viña, la sierra y la llanura.</em>",
  facts=[("226,9","KM","Distancia"),("4.644","D+","Desnivel"),("300","PAX","Plazas"),("50","H","Tiempo de corte"),("16:00","","Salida · Parque de la Florida")],
  reto_h2="Una salida.<br>Una meta.<br>Nadie en medio.",
@@ -46,7 +46,7 @@ HOME = {
  title="Ultra Trail Larre® · 226.9 km ultra-trail in Álava · Autumn 2027",
  desc="Non-stop 226.9 km ultra-trail with 4,644 m of climbing in a single stage, fully self-supported and zero waste, across the four Álavas. 300 places. First edition, autumn 2027.",
  sections=[("reto","The challenge"),("ruta","The route"),("codigo-cero","Zero Code"),("preinscripcion","Pre-registration"),("faq","FAQ")],
- strip1="43°N · 2°W &nbsp;·&nbsp; Araba · Euskadi &nbsp;·&nbsp; Est. 2026", strip2="Ultra Trail Larre® · Non-stop &nbsp;·&nbsp; 1st Edition · Autumn 2027",
+ strip1="43°N · 2°W &nbsp;·&nbsp; Araba · Euskadi ", strip2="Ultra Trail Larre® · Non-stop &nbsp;·&nbsp; 1st Edition · Autumn 2027",
  lead="A <em>non-stop ultra-trail</em> run in a single stage, <em>fully self-supported</em>, with no assistance and no classic aid stations, across the four Álavas: <em>forest, vineyard, mountain range and plain.</em>",
  facts=[("226.9","KM","Distance"),("4,644","D+","Elevation gain"),("300","PAX","Places"),("50","H","Cut-off time"),("16:00","","Start · Parque de la Florida")],
  reto_h2="One start.<br>One finish.<br>Nobody in between.",
@@ -80,7 +80,7 @@ HOME = {
  title="Ultra Trail Larre® · 226,9 km-ko ultra-trail Araban · 2027ko udazkena",
  desc="226,9 km eta 4.644 m-ko igoera positiboa dituen non-stop ultra-traila, etapa bakarrean, autosufizientzian eta hondakinik gabe, Arabako lau aurpegietan zehar. 300 plaza. I. edizioa, 2027ko udazkena.",
  sections=[("reto","Erronka"),("ruta","Ibilbidea"),("codigo-cero","Zero Kodea"),("preinscripcion","Aurrez-izena"),("faq","Ohiko galderak")],
- strip1="43°N · 2°W &nbsp;·&nbsp; Araba · Euskadi &nbsp;·&nbsp; Est. 2026", strip2="Ultra Trail Larre® · Non-stop &nbsp;·&nbsp; I. edizioa · 2027ko udazkena",
+ strip1="43°N · 2°W &nbsp;·&nbsp; Araba · Euskadi ", strip2="Ultra Trail Larre® · Non-stop &nbsp;·&nbsp; I. edizioa · 2027ko udazkena",
  lead="<em>Non-stop ultra-trail</em> bat, etapa bakarrean korritzen dena, <em>autosufizientzian</em>, laguntzarik eta ohiko janari-postuen gabe, Arabako lau aurpegietan zehar: <em>basoa, mahastia, mendilerroa eta lautada.</em>",
  facts=[("226,9","KM","Distantzia"),("4.644","D+","Igoera positiboa"),("300","PAX","Plazak"),("50","H","Mozte-denbora"),("16:00","","Irteera · Florida parkea")],
  reto_h2="Irteera bat.<br>Helmuga bat.<br>Tartean, inor ez.",
@@ -111,6 +111,9 @@ HOME = {
  ("Zer da Zero Kodea?","Zero Kodea salbuespenik gabeko arau bakarra da: ibilbidean ontzi bakar bat botatzeak berehalako deskalifikazioa dakar eta hurrengo edizioetan debekua, aurretik ohartarazi gabe eta bigarren aukerarik gabe.","Korrikalariarekin mendira sartzen dena, korrikalariarekin ateratzen da."),
  ("Lasterketa al da?","Iristeko ordenaren araberako azken sailkapena dago, baina Ultra Trail Larre erronka pertsonal gisa planteatzen da, ultraziklismoaren eta autosufizientziako ibilbide handien erara, abiaduragatiko sarik gabe.","Askorentzat, erronka amaitzea besterik ez da izango.")]),
 }
+
+def acc(label, body):
+    return f'<details class="sec-acc"><summary class="mono"><span class="pm" aria-hidden="true"></span>{H(label)}</summary>\n<div class="acc-b">\n{body}\n</div></details>'
 
 def build_home(lang):
     P.LANG = lang; u = P.U(); C = HOME[lang]; sec = C["sections"]
@@ -151,53 +154,41 @@ def build_home(lang):
 <div class="strip mono">{C["strip2"]}</div>
 
 <section id="reto"><div class="wrap">
-{doc(n["reto"], lab["reto"])}
 <h2>{C["reto_h2"]}</h2>
-<p>{H(C["reto_p"])}</p>
-<div class="cards">{cards}</div>
-<div class="land" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-<div class="land-l mono" aria-label="{H(C["land_aria"])}">{land}</div>
+{acc(lab["reto"], f'<p>{H(C["reto_p"])}</p><div class="cards">{cards}</div><div class="land" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="land-l mono" aria-label="{H(C["land_aria"])}">{land}</div>')}
 </div></section>
 
 <section id="ruta"><div class="wrap">
-{doc(n["ruta"], lab["ruta"])}
 <h2>{H(C["ruta_h2"])}</h2>
-<p>{H(C["ruta_p"])}</p>
+{acc(lab["ruta"], f'''<p>{H(C["ruta_p"])}</p>
 <div class="rmod" id="rmod" data-src="/datos/larre-2027.json" {rdata}>
 <figure class="rprof">{prof_svg}<input id="rscrub" class="scrub" type="range" min="0" max="{rmax}" step="1" value="0" aria-label="{H(C["scrub_aria"])}" aria-controls="rread" hidden></figure>
 <p class="rread mono" id="rread" data-default="{H(C["default"])}">{H(C["default"])}</p>
 <p class="visually-hidden" id="rlive" aria-live="polite"></p>
 <figure class="rmap">{map_svg}</figure>
 </div>
-<ol class="cps" aria-label="{H(C["cps_aria"])}">{cps}</ol>
 <p class="mono" style="margin-top:var(--s3)">{H(C["track"])} · <span>larre-2027.gpx</span> · {H(C["gpx_note"])}</p>
 <div class="photos"><p class="mono">{H(C["photos_lead"])} · <a href="{L("galeria")}">{H(C["photos_all"])}</a></p><ul>{photos}</ul></div>
-<p style="margin-top:var(--s4)"><a href="{L("ruta")}">{H(C["ruta_more"])}</a></p>
+<p style="margin-top:var(--s4)"><a href="{L("ruta")}">{H(C["ruta_more"])}</a></p>''')}
 </div></section>
 
 <section id="codigo-cero" class="zero"><div class="wrap">
-{doc(n["codigo-cero"], lab["codigo-cero"])}
 <blockquote>{C["zero_q"]}</blockquote>
-{zp}
-<p style="margin-top:var(--s4)"><a href="{L("reglamento")}">{H(C["zero_links"][0])}</a> · <a href="{L("filosofia")}">{H(C["zero_links"][1])}</a></p>
+{acc(lab["codigo-cero"], zp + f'<p style="margin-top:var(--s4)"><a href="{L("reglamento")}">{H(C["zero_links"][0])}</a> · <a href="{L("filosofia")}">{H(C["zero_links"][1])}</a></p>')}
 </div></section>
 
 <section id="preinscripcion"><div class="wrap">
-{doc(n["preinscripcion"], lab["preinscripcion"])}
 <h2>{H(C["pre_h2"])}</h2>
-<p>{H(C["pre_p"])}</p>
-<div class="pre-box"><span class="state">{H(C["pre_state"])}</span><p>{C["pre_box"]}</p></div>
+{acc(lab["preinscripcion"], f'<p>{H(C["pre_p"])}</p><div class="pre-box"><span class="state">{H(C["pre_state"])}</span><p>{C["pre_box"]}</p></div>')}
 </div></section>
 
 <section id="faq"><div class="wrap">
-{doc(n["faq"], lab["faq"])}
 <h2>{H(C["faq_h2"])}</h2>
-{faq}
-<p style="margin-top:var(--s4)"><a href="{L("reglamento")}">{H(C["faq_more"])}</a></p>
+{acc(lab["faq"], faq + f'<p style="margin-top:var(--s4)"><a href="{L("reglamento")}">{H(C["faq_more"])}</a></p>')}
 </div></section>
 </main>
 '''
-    return head + "\n" + hdr + main + P.FOOT() + '\n<script src="/assets/route.v1.js" defer></script>\n</body>\n</html>\n'
+    return head + "\n" + hdr + main + P.FOOT() + '\n<script src="/assets/route.v2.js" defer></script>\n</body>\n</html>\n'
 
 if __name__ == "__main__":
     for lang in [l for l in ("es", "en", "eu") if l in HOME]:

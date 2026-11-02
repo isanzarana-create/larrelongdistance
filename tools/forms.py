@@ -20,7 +20,7 @@ F = {
  closed="La lista de preinscripción abre el 1 de diciembre de 2026. Hasta entonces el formulario permanece cerrado.",
  steps="<strong>Cómo funciona:</strong> rellenas el formulario, te llega un correo y confirmas tu dirección con un enlace (doble confirmación). El orden de llegada se fija al enviar el formulario; solo cuentan las preinscripciones confirmadas en un plazo de 7 días. Las inscripciones se abren en enero de 2027.",
  f=dict(name="Nombre y apellidos", email="Correo electrónico", country="País de residencia", desc="Descripción personal", desc_hint="Entre 300 y 600 caracteres: quién eres, de dónde vienes como corredor y por qué quieres estar en esta salida.", exp="Experiencia en ultra-trail y autosuficiencia", opt="(opcional)", exp_hint="Pruebas, rutas o travesías que quieras mencionar.", send="Enviar preinscripción"),
- c1='He leído la <a href="/politica-privacidad/">política de privacidad</a> y consiento que Ignacio Sanz Arana trate mis datos para gestionar mi preinscripción y comunicarme lo relativo a la apertura de inscripciones de Ultra Trail Larre®. <strong>(obligatorio)</strong>',
+ c1='He leído la <a href="/politica-privacidad/">política de privacidad</a> y consiento que el organizador, responsable del tratamiento que se identifica en la política de privacidad, trate mis datos para gestionar mi preinscripción y comunicarme lo relativo a la apertura de inscripciones de Ultra Trail Larre®. <strong>(obligatorio)</strong>',
  c2="Quiero recibir novedades de Ultra Trail Larre® por correo electrónico. Puedo darme de baja cuando quiera. (opcional)",
  js=dict(min="faltan {n} caracteres como mínimo", max="has superado el máximo", okc="longitud correcta", errDesc="La descripción debe tener entre 300 y 600 caracteres.", errGen="Hay campos por corregir. Revisa los marcados."),
  hp="No rellenes este campo", l1="Información básica sobre protección de datos",
@@ -35,7 +35,7 @@ F = {
  closed="The pre-registration list opens on 1 December 2026. Until then the form stays closed.",
  steps="<strong>How it works:</strong> you fill in the form, you receive an email and confirm your address with a link (double confirmation). Order of arrival is set when you submit the form; only pre-registrations confirmed within 7 days count. Registrations open in January 2027.",
  f=dict(name="Full name", email="Email", country="Country of residence", desc="Personal description", desc_hint="Between 300 and 600 characters: who you are, where you come from as a runner and why you want to be on this start line.", exp="Ultra-trail and self-sufficiency experience", opt="(optional)", exp_hint="Events, routes or crossings you would like to mention.", send="Submit pre-registration"),
- c1='I have read the <a href="/en/privacy-policy/">privacy policy</a> and consent to Ignacio Sanz Arana processing my data to manage my pre-registration and to contact me about the opening of Ultra Trail Larre® registrations. <strong>(required)</strong>',
+ c1='I have read the <a href="/en/privacy-policy/">privacy policy</a> and consent to the organiser, the data controller identified in the privacy policy, processing my data to manage my pre-registration and to contact me about the opening of Ultra Trail Larre® registrations. <strong>(required)</strong>',
  c2="I would like to receive Ultra Trail Larre® news by email. I can unsubscribe at any time. (optional)",
  js=dict(min="at least {n} more characters needed", max="maximum exceeded", okc="length is fine", errDesc="The description must be between 300 and 600 characters.", errGen="Some fields need correcting. Check the ones marked."),
  hp="Do not fill in this field", l1="Basic data protection information",
@@ -50,7 +50,7 @@ F = {
  closed="Aurrez-izenen zerrenda 2026ko abenduaren 1ean irekiko da.ordura arte, formularioa itxita dago.".replace("ordura", "Ordura"),
  steps="<strong>Nola funtzionatzen du:</strong> formularioa betetzen duzu, mezu elektroniko bat jasotzen duzu eta esteka baten bidez zure helbidea berresten duzu (berrespen bikoitza). Iristeko ordena formularioa bidaltzean finkatzen da; 7 eguneko epean berretsitako aurrez-izenak soilik kontatzen dira. Izen-emateak 2027ko urtarrilean irekiko dira.",
  f=dict(name="Izen-abizenak", email="Posta elektronikoa", country="Bizilekuko herrialdea", desc="Deskribapen pertsonala", desc_hint="300 eta 600 karaktere artean: nor zaren, korrikalari gisa nondik zatozen eta zergatik nahi duzun irteera honetan egon.", exp="Ultra-trail eta autosufizientzia esperientzia", opt="(aukerakoa)", exp_hint="Aipatu nahi dituzun probak, ibilbideak edo zeharkaldiak.", send="Bidali aurrez-izena"),
- c1='<a href="/eu/pribatutasun-politika/">Pribatutasun-politika</a> irakurri dut eta Ignacio Sanz Aranak nire datuak trata ditzan baimentzen dut, nire aurrez-izena kudeatzeko eta Ultra Trail Larre®-ren izen-emateen irekierari buruz jarri nadin harremanetan. <strong>(nahitaezkoa)</strong>',
+ c1='<a href="/eu/pribatutasun-politika/">Pribatutasun-politika</a> irakurri dut eta antolatzaileak, pribatutasun-politikan identifikatzen den tratamenduaren arduradunak, nire datuak trata ditzan baimentzen dut, nire aurrez-izena kudeatzeko eta Ultra Trail Larre®-ren izen-emateen irekierari buruz jarri nadin harremanetan. <strong>(nahitaezkoa)</strong>',
  c2="Ultra Trail Larre®-ren berriak posta elektronikoz jaso nahi ditut. Nahi dudanean eman dezaket baja. (aukerakoa)",
  js=dict(min="gutxienez {n} karaktere falta dira", max="gehienezkoa gainditu duzu", okc="luzera zuzena", errDesc="Deskribapenak 300 eta 600 karaktere artean izan behar ditu.", errGen="Zuzentzeko eremuak daude. Berrikusi markatutakoak."),
  hp="Ez bete eremu hau", l1="Datuen babesari buruzko oinarrizko informazioa",
@@ -158,7 +158,7 @@ def legal_page(lang, which, key):
     body = '<section><div class="wrap prose legal-doc">' + "".join(f"<h2>{H(h)}</h2>" + "".join(p if p.startswith("<ul") else f"<p>{p}</p>" for p in ps) for h, ps in d["s"]) + "</div></section>"
     write(URLS[key][IDX[lang]], page(key, d["title"], d["desc"], d["kicker"], d["h1"], d["lead"], body))
 
-def with_js(s): return s.replace("</body>", '<script src="/assets/form.v1.js" defer></script>\n</body>')
+def with_js(s): return s.replace("</body>", '<script src="/assets/form.v2.js" defer></script>\n</body>')
 
 def simple_page(lang, key, h1, lead, para, with_mail=True):
     c = F[lang]

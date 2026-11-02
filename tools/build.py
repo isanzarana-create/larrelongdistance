@@ -99,7 +99,7 @@ def build():
 <meta name="description" content="Ultra-trail non-stop de 226,9 km y 4.644 m D+ en una sola etapa, en autosuficiencia y con cero residuos, por las cuatro Álavas. 300 plazas. I Edición, otoño de 2027.">
 <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.className+=" js"</script>
-<link rel="stylesheet" href="/assets/ultratraillarre.v1.css">
+<link rel="stylesheet" href="/assets/ultratraillarre.v2.css">
 </head>
 <body>
 <a class="skip" href="#reto">Saltar al contenido</a>
@@ -186,7 +186,7 @@ def build():
 </ul></nav>
 <p class="legal mono">Organiza Ignacio Sanz Arana · Musubigara® · Vitoria-Gasteiz · <a href="https://www.instagram.com/ultratraillarre/" rel="noopener">@ultratraillarre</a> · <a href="mailto:ignacio@musubigara.org">ignacio@musubigara.org</a></p>
 </div></footer>
-<script src="/assets/route.v1.js" defer></script>
+<script src="/assets/route.v2.js" defer></script>
 </body>
 </html>
 '''

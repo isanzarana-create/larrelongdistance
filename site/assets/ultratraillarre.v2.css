@@ -268,3 +268,24 @@ table{min-width:0;font-size:.8125rem}
 .layer1 h2{margin-bottom:var(--s2)}
 .legal-doc h2{margin-top:var(--s5)}
 .legal-doc ul{margin:var(--s2) 0 var(--s2) var(--s4)}
+
+/* Títulos centrados */
+h1,h2,h3,.ph1,.crumbs,.plead,.lead{text-align:center}
+.plead,.lead{margin-inline:auto}
+.zero blockquote{margin-inline:auto;text-align:center}
+.cards>div,.nolist li>div{text-align:center}
+.grid4 figcaption{text-align:center}
+.grid4 figcaption .ft{display:block;font-family:var(--font-display);font-weight:400;font-size:1.05rem;text-transform:uppercase;letter-spacing:.02em;line-height:1.1;color:var(--text);margin-bottom:var(--s1)}
+/* Secciones desplegables (botón +) */
+details.sec-acc{border:0;margin-top:var(--s4);text-align:center}
+details.sec-acc:last-of-type{border:0}
+details.sec-acc>summary{display:inline-flex;justify-content:center;align-items:center;gap:var(--s2);min-height:48px;padding:var(--s2) var(--s4);border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-family:var(--font-text);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background-color .2s,color .2s}
+details.sec-acc>summary::after{content:none}
+details.sec-acc>summary:hover,details.sec-acc>summary:focus-visible{background:var(--accent);color:var(--bg)}
+details.sec-acc .pm{display:inline-block;width:1em;text-align:center;font-size:1.15rem;line-height:1}
+details.sec-acc .pm::before{content:"+"}
+details.sec-acc[open]>summary .pm::before{content:"−"}
+.acc-b{text-align:left;margin-top:var(--s5)}
+.acc-b details{text-align:left}
+@media (prefers-reduced-motion:reduce){details.sec-acc>summary{transition:none}}
+p.crumbs{max-width:none}

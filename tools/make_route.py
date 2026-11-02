@@ -42,7 +42,6 @@ out = {
   "km_total": round(total, 1), "d_pos_m": 4644, "alt_min_m": round(min(p[2] for p in P)), "alt_max_m": round(P[imax][2]),
   "punto_mas_alto": {"km": round(km[imax]/1000, 1), "lat": round(P[imax][0], 6), "lon": round(P[imax][1], 6)},
   "puntos": pts,
-  "checkpoints": [{"nombre": n, "km": None, "lat": None, "lon": None} for n in ["Agurain", "Santa Cruz de Campezo", "Laguardia", "Peñacerrada", None, None]],  # km y coordenadas: pendientes de confirmar por la organización
   "municipios": None, "paisajes": None,
 }
 json.dump(out, open("datos/larre-2027.json", "w"), separators=(",", ":"), ensure_ascii=False)

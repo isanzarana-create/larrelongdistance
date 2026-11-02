@@ -22,17 +22,17 @@ UI = {
  "es": dict(htmlang="es", idx=0, skip="Saltar al contenido", home="Inicio", brand_aria="Ultra Trail Larre, inicio", lang_aria="Idioma", nav_aria="Secciones", foot_aria="Pie de página",
    nav=[("ruta","Ruta"),("reglamento","Reglamento"),("filosofia","Filosofía"),("preinscripcion","Preinscripción")],
    foot=[("ruta","Ruta"),("reglamento","Reglamento"),("guia","Guía de autosuficiencia"),("preinscripcion","Preinscripción"),("como-llegar","Cómo llegar"),("filosofia","Filosofía"),("galeria","Imágenes"),("aviso","Aviso legal"),("privacidad","Política de privacidad")],
-   org="Organiza Ignacio Sanz Arana · Musubigara® · Vitoria-Gasteiz", cta_pre="Preinscripción · 1 dic 2026",
+   org="Organiza Musubigara® · Vitoria-Gasteiz", cta_pre="Preinscripción · 1 dic 2026",
    icons=["Correo: ignacio@musubigara.org","Mapa: salida en el Parque de la Florida","Instagram: @ultratraillarre","WhatsApp: +34 620 46 35 58"], wa="Hola%20Ignacio%2C%20quiero%20hablar%20sobre%20Ultra%20Trail%20Larre"),
  "en": dict(htmlang="en", idx=2, skip="Skip to content", home="Home", brand_aria="Ultra Trail Larre, home", lang_aria="Language", nav_aria="Sections", foot_aria="Footer",
    nav=[("ruta","Route"),("reglamento","Rules"),("filosofia","Philosophy"),("preinscripcion","Pre-registration")],
    foot=[("ruta","Route"),("reglamento","Rules"),("guia","Self-supported guide"),("preinscripcion","Pre-registration"),("como-llegar","Getting there"),("filosofia","Philosophy"),("galeria","Images"),("aviso","Legal notice"),("privacidad","Privacy policy")],
-   org="Organised by Ignacio Sanz Arana · Musubigara® · Vitoria-Gasteiz", cta_pre="Pre-registration · 1 Dec 2026",
+   org="Organised by Musubigara® · Vitoria-Gasteiz", cta_pre="Pre-registration · 1 Dec 2026",
    icons=["Email: ignacio@musubigara.org","Map: start at Parque de la Florida","Instagram: @ultratraillarre","WhatsApp: +34 620 46 35 58"], wa="Hi%20Ignacio%2C%20I%27d%20like%20to%20talk%20about%20Ultra%20Trail%20Larre"),
  "eu": dict(htmlang="eu", idx=1, skip="Joan edukira", home="Hasiera", brand_aria="Ultra Trail Larre, hasiera", lang_aria="Hizkuntza", nav_aria="Atalak", foot_aria="Orri-oina",
    nav=[("ruta","Ibilbidea"),("reglamento","Araudia"),("filosofia","Filosofia"),("preinscripcion","Aurrez-izena")],
    foot=[("ruta","Ibilbidea"),("reglamento","Araudia"),("guia","Autosufizientzia gida"),("preinscripcion","Aurrez-izena eman"),("como-llegar","Nola iritsi"),("filosofia","Filosofia"),("galeria","Argazkiak"),("aviso","Lege-oharra"),("privacidad","Pribatutasun-politika")],
-   org="Antolatzailea: Ignacio Sanz Arana · Musubigara® · Gasteiz", cta_pre="Aurrez-izena · 2026ko abenduaren 1a",
+   org="Antolatzailea: Musubigara® · Gasteiz", cta_pre="Aurrez-izena · 2026ko abenduaren 1a",
    icons=["Posta: ignacio@musubigara.org","Mapa: irteera Florida parkean","Instagram: @ultratraillarre","WhatsApp: +34 620 46 35 58"], wa="Kaixo%20Ignacio%2C%20Ultra%20Trail%20Larreri%20buruz%20hitz%20egin%20nahi%20dut"),
 }
 URLS["aviso"] = ("/aviso-legal/", "/eu/lege-oharra/", "/en/legal-notice/")
@@ -69,7 +69,7 @@ def head(key, title, desc, noindex=False):
 {alts}
 <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.className+=" js"</script>
-<link rel="stylesheet" href="/assets/ultratraillarre.v1.css">
+<link rel="stylesheet" href="/assets/ultratraillarre.v2.css">
 </head>'''
 
 def header(key):
@@ -104,7 +104,7 @@ def page(key, title, desc, kicker, h1, lead, body, extra_js=False, noindex=False
 </div></section>
 {body}
 </main>
-''' + FOOT() + ("\n<script src=\"/assets/route.v1.js\" defer></script>" if extra_js else "") + "\n</body>\n</html>\n")
+''' + FOOT() + ("\n<script src=\"/assets/route.v2.js\" defer></script>" if extra_js else "") + "\n</body>\n</html>\n")
 
 def dl(rows, ident=None):
     r = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in rows)
@@ -117,7 +117,6 @@ def write(path, s):
     p = os.path.join(ROOT, path.strip("/"), "index.html") if path != "/" else os.path.join(ROOT, "index.html")
     os.makedirs(os.path.dirname(p), exist_ok=True); open(p, "w", encoding="utf8").write(s)
 
-CP_ROWS = "".join(f'<tr><td>Control de paso</td><td>{n}</td><td class="tbd">Por confirmar</td></tr>' for n in ["Agurain", "Santa Cruz de Campezo", "Laguardia", "Peñacerrada"]) + '<tr><td>Control de paso</td><td class="tbd">Por confirmar</td><td class="tbd">Por confirmar</td></tr>' * 2
 LAYOUT = {}
 
 # ---------- RUTA ----------
@@ -133,7 +132,7 @@ def p_ruta():
                 ("Tiempo límite", "50 horas (cierre de control a las 18:00 h)"), ("Zonas", "Sierras de Entzia, Toloño, Cantabria e Izki, y Rioja Alavesa"), ("Plazas", "300 corredores")], "ficha")
     b = sec('<h2 class="h2s">Datos del recorrido</h2>' + ficha + '<p class="note">Distancia medida sobre el track oficial. El desnivel positivo se calcula con la altitud suavizada del GPS; sin suavizar, el ruido del GPS lo inflaría hasta cerca de 5.000 m.</p>')
     b += sec('<h2 class="h2s">Mapa y perfil</h2><p>Mueve el deslizador sobre el perfil para recorrer la ruta kilómetro a kilómetro.</p>' + mod + '<p class="mono" style="margin-top:var(--s3)">Track oficial · <span>larre-2027.gpx</span> · se publica 30 días antes de la salida</p>', "alt")
-    b += sec('<h2 class="h2s">Checkpoints de sellado</h2><p>El recorrido incluye 6 checkpoints de sellado, que no son avituallamientos: Ultra Trail Larre se corre en autosuficiencia. Los controles de paso estarán en Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada; los otros dos puntos y los kilómetros exactos se confirmarán antes de abrir las inscripciones.</p><div class="tablew"><table><thead><tr><th>Punto</th><th>Localidad</th><th>Kilómetro</th></tr></thead><tbody><tr><td>Salida</td><td>Vitoria-Gasteiz · Parque de la Florida</td><td>0</td></tr>' + CP_ROWS + '<tr><td>Meta</td><td>Vitoria-Gasteiz · Parque de la Florida</td><td>226,9</td></tr></tbody></table></div>')
+    b += sec('<h2 class="h2s">Checkpoints de sellado</h2><p>El recorrido incluye 6 checkpoints de sellado, que no son avituallamientos: Ultra Trail Larre se corre en autosuficiencia. Su ubicación se confirmará antes de abrir las inscripciones.</p>')
     b += sec('<h2 class="h2s">Navegación</h2><p>El track GPS oficial es obligatorio. Cada corredor lleva un tracker GPS con botón SOS, y la organización dispone de un centro de control en Vitoria-Gasteiz.</p><p>Cómo se planifican el agua, la comida, el sueño y el material en un recorrido así está explicado en la <a href="/guia-autosuficiencia/">guía de autosuficiencia</a>.</p><p style="margin-top:var(--s4)"><a class="cta" href="/preinscripcion/">Preinscripción · 1 dic 2026</a></p>', "alt")
     write("/ruta/", page("ruta", "Ruta · Ultra Trail Larre® · 226,9 km por las cuatro Álavas", "Ultra-trail circular de 226,9 km y 4.644 m D+ por las cuatro Álavas, en una sola etapa y en autosuficiencia. Mapa, perfil, datos y checkpoints.",
         "Ruta", "La ruta de<br>226,9 km", "Ultra Trail Larre® es un ultra-trail non-stop: una sola etapa, circular, que sale y llega al Parque de la Florida de Vitoria-Gasteiz y recorre las cuatro Álavas.", b, extra_js=True))
@@ -223,7 +222,7 @@ def p_guia():
         if "Lo que esto significa en LARRE" in x:
             out.append("<h2>Lo que esto significa en Ultra Trail Larre</h2>"); continue
         if x.startswith("<ul>") and "<b>Distancia y desnivel</b>" in x:
-            x = '<dl class="ficha">' + "".join(f"<div><dt>{a}</dt><dd>{c}</dd></div>" for a, c in [("Distancia y desnivel", "226,9 km · 4.644 m D+"), ("Formato", "Una sola etapa non-stop, circular, en autosuficiencia"), ("Tiempo límite", "50 horas"), ("Hora de salida", "16:00 h"), ("Checkpoints de sellado", "6, con brevet (Agurain, Santa Cruz de Campezo, Laguardia, Peñacerrada y dos por confirmar)"), ("Track GPS oficial", "Se entrega 30 días antes de la salida"), ("Seguridad", "Tracker GPS con botón SOS y centro de control en Vitoria-Gasteiz")]) + "</dl>"
+            x = '<dl class="ficha">' + "".join(f"<div><dt>{a}</dt><dd>{c}</dd></div>" for a, c in [("Distancia y desnivel", "226,9 km · 4.644 m D+"), ("Formato", "Una sola etapa non-stop, circular, en autosuficiencia"), ("Tiempo límite", "50 horas"), ("Hora de salida", "16:00 h"), ("Checkpoints de sellado", "6, con brevet"), ("Track GPS oficial", "Se entrega 30 días antes de la salida"), ("Seguridad", "Tracker GPS con botón SOS y centro de control en Vitoria-Gasteiz")]) + "</dl>"
         out.append(x)
     body = fix("\n".join(out))
     body = body.replace("LARRE", "Ultra Trail Larre").replace("Ultra Trail Larre es", "Ultra Trail Larre es")
@@ -237,7 +236,7 @@ def p_guia():
 
 # ---------- GALERÍA ----------
 def p_galeria():
-    li = "".join(f'<li><figure><a href="/fotos/{f}.webp"><img src="/fotos/{f}-400.webp" width="400" height="400" loading="lazy" decoding="async" alt="{H(c)}"></a><figcaption>{H(c)}</figcaption></figure></li>' for f, c in gallery.photos('es'))
+    li = "".join(f'<li><figure><a href="/fotos/{f}.webp"><img src="/fotos/{f}-400.webp" width="400" height="400" loading="lazy" decoding="async" alt="{H(c)}"></a><figcaption><strong class="ft">{H(t)}</strong>{H(c)}</figcaption></figure></li>' for f, t, c in gallery.titled('es'))
     b = f'<section><div class="wrap"><ul class="grid4">{li}</ul><p style="margin-top:var(--s4)">Más en <a href="https://www.instagram.com/ultratraillarre/" target="_blank" rel="noopener">@ultratraillarre</a> en Instagram.</p></div></section>'
     write("/galeria/", page("galeria", "Imágenes · Ultra Trail Larre® · Desde el terreno", "Fotografías de reconocimientos, tramos de la ruta y el monte tal y como está, publicadas en @ultratraillarre.",
         "Imágenes", "Desde<br>el terreno", "Lo último publicado en @ultratraillarre: reconocimientos, tramos de la ruta y el monte tal y como está.", b))

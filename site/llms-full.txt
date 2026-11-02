@@ -27,7 +27,7 @@
 
 ## Contacto
 
-- Organiza Ignacio Sanz Arana (Musubigara®).
+- Organiza Musubigara®.
 - Email: ignacio@musubigara.org
 - WhatsApp: +34 620 46 35 58
 - Instagram: https://www.instagram.com/ultratraillarre/
@@ -35,7 +35,7 @@
 ---
 
 <!-- https://ultratraillarre.org/ -->
-43°N · 2°W  ·  Araba · Euskadi  ·  Est. 2026
+43°N · 2°W  ·  Araba · Euskadi
 
 # Ultra Trail Larre ®
 
@@ -51,14 +51,13 @@ Preinscripción · 1 dic 2026
 
 Ultra Trail Larre® · Non-stop  ·  I Edición · Otoño de 2027
 
-DOC · 01 — EL RETO
-
 ## Una salida.
 Una meta.
 Nadie en medio.
 
-Sales a las 16:00 del Parque de la Florida de Vitoria-Gasteiz y tienes 50 horas para volver al mismo punto. Lo que ocurra entre medias lo resuelves tú: la comida, el agua, el sueño, la noche y el camino.
+### El reto
 
+Sales a las 16:00 del Parque de la Florida de Vitoria-Gasteiz y tienes 50 horas para volver al mismo punto. Lo que ocurra entre medias lo resuelves tú: la comida, el agua, el sueño, la noche y el camino.
 01
 ### Autosuficiencia real
 Sin avituallamientos de la organización ni asistencia externa. Planificas la carrera como una expedición, no como un circuito con mesas cada 15 km.
@@ -73,25 +72,13 @@ Track GPS oficial obligatorio, seis checkpoints con brevet y tracker con botón 
 
 Bosque Viña Sierra Llanura
 
-DOC · 02 — LA RUTA
-
 ## 226,9 km en círculo
+
+### La ruta
 
 Una circular que sale y llega al Parque de la Florida y cose la Llanada Alavesa con la Rioja Alavesa, atravesando las sierras de Entzia, Toloño, Cantabria e Izki.
 
 Punto más alto: 1.383 m · km 152,5
-
-- Agurain km por confirmar
-
-- Santa Cruz de Campezo km por confirmar
-
-- Laguardia km por confirmar
-
-- Peñacerrada km por confirmar
-
-- Por confirmar
-
-- Por confirmar
 
 Track oficial · larre-2027.gpx · se publica 30 días antes de la salida
 
@@ -107,24 +94,24 @@ Desde el terreno · Ver todas →
 
 Ver la ruta completa →
 
-DOC · 03 — CÓDIGO CERO
 La única huella que dejamos en monte es la pisada.
+
+### Código Cero
+
 Ningún envoltorio, ninguna pegatina, ningún gel, ninguna tira de tape. Lo que entra al monte con el corredor, sale del monte con el corredor.
 No es un eslogan: es la condición de inscripción. Tirar un solo envase en el recorrido supone descalificación inmediata y veto en futuras ediciones. Sin matices, sin advertencia previa, sin segunda oportunidad.
-
 Reglamento → · Filosofía →
-
-DOC · 04 — PREINSCRIPCIÓN
 
 ## 300 plazas, por orden de llegada
 
-La lista de preinscripción abre el 1 de diciembre de 2026 y pide una breve descripción personal: sin ella no se valida, pero no decide la plaza. El orden de llegada, sí. Las inscripciones se abren en enero de 2027.
+### Preinscripción
 
+La lista de preinscripción abre el 1 de diciembre de 2026 y pide una breve descripción personal: sin ella no se valida, pero no decide la plaza. El orden de llegada, sí. Las inscripciones se abren en enero de 2027.
 ● Abre el 1 de diciembre de 2026 Escribe a ignacio@musubigara.org si tienes dudas antes de que abra la lista.
 
-DOC · 05 — FAQ
-
 ## Preguntas frecuentes
+
+### FAQ
 
 ### ¿Cuándo es y dónde sale?
 La I Edición de Ultra Trail Larre se celebra en otoño de 2027, con salida única a las 16:00 horas desde el Parque de la Florida de Vitoria-Gasteiz, y termina en el mismo punto. La fecha exacta se anunciará en esta web y en @ultratraillarre.
@@ -143,7 +130,6 @@ El Código Cero es la única regla sin excepciones: tirar un solo envase en el r
 
 ### ¿Es una carrera?
 Hay clasificación final por orden de llegada, pero Ultra Trail Larre se plantea como un reto personal, al estilo del ultraciclismo y los grandes recorridos en autosuficiencia, sin premios por la velocidad. Para muchos, el reto será simplemente finalizar.
-
 Reglamento completo →
 
 ---
@@ -194,16 +180,7 @@ Punto más alto: 1.383 m · km 152,5
 Track oficial · larre-2027.gpx · se publica 30 días antes de la salida
 
 ## Checkpoints de sellado
-El recorrido incluye 6 checkpoints de sellado, que no son avituallamientos: Ultra Trail Larre se corre en autosuficiencia. Los controles de paso estarán en Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada; los otros dos puntos y los kilómetros exactos se confirmarán antes de abrir las inscripciones.
-Punto Localidad Kilómetro
-Salida Vitoria-Gasteiz · Parque de la Florida 0
-Control de paso Agurain Por confirmar
-Control de paso Santa Cruz de Campezo Por confirmar
-Control de paso Laguardia Por confirmar
-Control de paso Peñacerrada Por confirmar
-Control de paso Por confirmar Por confirmar
-Control de paso Por confirmar Por confirmar
-Meta Vitoria-Gasteiz · Parque de la Florida 226,9
+El recorrido incluye 6 checkpoints de sellado, que no son avituallamientos: Ultra Trail Larre se corre en autosuficiencia. Su ubicación se confirmará antes de abrir las inscripciones.
 
 ## Navegación
 El track GPS oficial es obligatorio. Cada corredor lleva un tracker GPS con botón SOS, y la organización dispone de un centro de control en Vitoria-Gasteiz.
@@ -481,13 +458,13 @@ el terreno
 
 Lo último publicado en @ultratraillarre: reconocimientos, tramos de la ruta y el monte tal y como está.
 
-- Viñedos de la Rioja Alavesa al pie de la sierra: uno de los cuatro paisajes del circuito.
+- Viñedos de la Rioja Alavesa Viñedos de la Rioja Alavesa al pie de la sierra: uno de los cuatro paisajes del circuito.
 
-- Corredor en solitario con chaleco de autosuficiencia en la sierra: sin avituallamientos y sin público.
+- Sin avituallamientos, sin público Corredor en solitario con chaleco de autosuficiencia en la sierra: sin avituallamientos y sin público.
 
-- Sendero entre hayas con la palabra RUN escrita en el suelo.
+- Sendero entre hayas Sendero entre hayas con la palabra RUN escrita en el suelo.
 
-- Dos corredores cruzan la niebla de la sierra.
+- Niebla en la sierra Dos corredores cruzan la niebla de la sierra.
 Más en @ultratraillarre en Instagram.
 
 ---
@@ -619,7 +596,7 @@ Hora de salida
 16:00 h
 
 Checkpoints de sellado
-6, con brevet (Agurain, Santa Cruz de Campezo, Laguardia, Peñacerrada y dos por confirmar)
+6, con brevet
 
 Track GPS oficial
 Se entrega 30 días antes de la salida

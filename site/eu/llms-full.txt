@@ -27,7 +27,7 @@
 
 ## Harremanetarako
 
-- Antolatzailea: Ignacio Sanz Arana (Musubigara®).
+- Antolatzailea: Musubigara®.
 - Email: ignacio@musubigara.org
 - WhatsApp: +34 620 46 35 58
 - Instagram: https://www.instagram.com/ultratraillarre/
@@ -35,7 +35,7 @@
 ---
 
 <!-- https://ultratraillarre.org/eu/ -->
-43°N · 2°W  ·  Araba · Euskadi  ·  Est. 2026
+43°N · 2°W  ·  Araba · Euskadi
 
 # Ultra Trail Larre ®
 
@@ -51,14 +51,13 @@ Aurrez-izena · 2026ko abenduaren 1a
 
 Ultra Trail Larre® · Non-stop  ·  I. edizioa · 2027ko udazkena
 
-DOC · 01 — ERRONKA
-
 ## Irteera bat.
 Helmuga bat.
 Tartean, inor ez.
 
-16:00etan irtengo zara Gasteizko Florida parketik, eta 50 ordu dituzu leku berera itzultzeko. Tartean gertatzen dena zuk konpontzen duzu: janaria, ura, lo egitea, gaua eta bidea.
+### Erronka
 
+16:00etan irtengo zara Gasteizko Florida parketik, eta 50 ordu dituzu leku berera itzultzeko. Tartean gertatzen dena zuk konpontzen duzu: janaria, ura, lo egitea, gaua eta bidea.
 01
 ### Benetako autosufizientzia
 Antolakuntzaren janari-posturik eta kanpoko laguntzarik ez. Lasterketa espedizio gisa planifikatzen duzu, ez 15 km-ro mahaiak dituen zirkuitu gisa.
@@ -73,25 +72,13 @@ GPS track ofiziala nahitaezkoa, brevet-a duten sei checkpoint eta SOS botoia due
 
 Basoa Mahastia Mendilerroa Lautada
 
-DOC · 02 — IBILBIDEA
-
 ## 226,9 km biribilean
+
+### Ibilbidea
 
 Florida parkean hasi eta amaitzen den ibilbide zirkularra, Arabako Lautada eta Arabako Errioxa lotzen dituena, Entzia, Toloño, Kantabria eta Izki mendilerroak zeharkatuz.
 
 Punturik garaiena: 1.383 m · 152,5. km
-
-- Agurain km zehazteko
-
-- Santikurutze Kanpezu km zehazteko
-
-- Biasteri km zehazteko
-
-- Urizaharra km zehazteko
-
-- Zehazteko
-
-- Zehazteko
 
 Track ofiziala · larre-2027.gpx · irteera baino 30 egun lehenago argitaratuko da
 
@@ -107,24 +94,24 @@ Lurretik · Guztiak ikusi →
 
 Ibilbide osoa ikusi →
 
-DOC · 03 — ZERO KODEA
 Mendian uzten dugun arrasto bakarra oinatza da.
+
+### Zero Kodea
+
 Inolako bilgarririk, inolako pegatinarik, inolako gelik, inolako zinta-zatirik ez. Korrikalariarekin mendira sartzen dena, korrikalariarekin ateratzen da mendi hartatik.
 Ez da leloa: izena emateko baldintza da. Ibilbidean ontzi bakar bat botatzeak berehalako deskalifikazioa dakar, eta hurrengo edizioetan debekua. Ñabardurarik gabe, aurretiko ohartarazpenik gabe, bigarren aukerarik gabe.
-
 Araudia → · Filosofia →
-
-DOC · 04 — AURREZ-IZENA
 
 ## 300 plaza, iristeko ordenan
 
-Aurrez-izenen zerrenda 2026ko abenduaren 1ean irekiko da, eta deskribapen pertsonal labur bat eskatzen du: hori gabe ez da baliozkotzen, baina ez du plaza erabakitzen. Iristeko ordenak, bai. Izen-emateak 2027ko urtarrilean irekiko dira.
+### Aurrez-izena
 
+Aurrez-izenen zerrenda 2026ko abenduaren 1ean irekiko da, eta deskribapen pertsonal labur bat eskatzen du: hori gabe ez da baliozkotzen, baina ez du plaza erabakitzen. Iristeko ordenak, bai. Izen-emateak 2027ko urtarrilean irekiko dira.
 ● 2026ko abenduaren 1ean irekiko da Idatzi ignacio@musubigara.org helbidera, zerrenda ireki aurretik zalantzarik baduzu.
 
-DOC · 05 — OHIKO GALDERAK
-
 ## Ohiko galderak
+
+### Ohiko galderak
 
 ### Noiz da eta nondik irteten da?
 Ultra Trail Larre-ren I. edizioa 2027ko udazkenean izango da, irteera bakarrarekin 16:00etan Gasteizko Florida parketik, eta leku berean amaituko da. Data zehatza web honetan eta @ultratraillarre kontuan iragarriko da.
@@ -143,7 +130,6 @@ Zero Kodea salbuespenik gabeko arau bakarra da: ibilbidean ontzi bakar bat botat
 
 ### Lasterketa al da?
 Iristeko ordenaren araberako azken sailkapena dago, baina Ultra Trail Larre erronka pertsonal gisa planteatzen da, ultraziklismoaren eta autosufizientziako ibilbide handien erara, abiaduragatiko sarik gabe. Askorentzat, erronka amaitzea besterik ez da izango.
-
 Araudi osoa →
 
 ---
@@ -194,16 +180,7 @@ Punturik garaiena: 1.383 m · 152,5. km
 Track ofiziala · larre-2027.gpx · irteera baino 30 egun lehenago argitaratuko da
 
 ## Zigilatze-checkpointak
-Ibilbideak 6 zigilatze-checkpoint ditu, eta ez dira janari-postuak: Ultra Trail Larre autosufizientzian korritzen da. Kontrol-puntuak Agurainen, Santikurutze Kanpezun, Biasterin eta Urizaharran egongo dira; beste bi puntuak eta kilometro zehatzak izen-emateak ireki aurretik berretsiko dira.
-Puntua Herria Kilometroa
-Irteera Gasteiz · Florida parkea 0
-Kontrol-puntua Agurain Zehazteko
-Kontrol-puntua Santikurutze Kanpezu Zehazteko
-Kontrol-puntua Biasteri Zehazteko
-Kontrol-puntua Urizaharra Zehazteko
-Kontrol-puntua Zehazteko Zehazteko
-Kontrol-puntua Zehazteko Zehazteko
-Helmuga Gasteiz · Florida parkea 226,9
+Ibilbideak 6 zigilatze-checkpoint ditu, eta ez dira janari-postuak: Ultra Trail Larre autosufizientzian korritzen da. Haien kokapena izen-emateak ireki aurretik berretsiko da.
 
 ## Nabigazioa
 GPS track ofiziala nahitaezkoa da. Korrikalari bakoitzak SOS botoia duen GPS tracker bat darama, eta antolakuntzak kontrol-zentro bat du Gasteizen.
@@ -480,13 +457,13 @@ Hasiera / Argazkiak
 
 @ultratraillarre kontuan argitaratutako azkena: ezagutza-irteerak, ibilbideko tarteak eta mendia den bezala.
 
-- Arabako Errioxako mahastiak mendilerroaren oinean: zirkuituaren lau paisaietako bat.
+- Arabako Errioxako mahastiak Arabako Errioxako mahastiak mendilerroaren oinean: zirkuituaren lau paisaietako bat.
 
-- Korrikalari bakartia autosufizientziako txalekoarekin mendilerroan: janari-posturik gabe eta publikorik gabe.
+- Janari-posturik gabe, publikorik gabe Korrikalari bakartia autosufizientziako txalekoarekin mendilerroan: janari-posturik gabe eta publikorik gabe.
 
-- Pagoen arteko bidea, lurrean RUN hitza idatzita.
+- Pagoen arteko bidea Pagoen arteko bidea, lurrean RUN hitza idatzita.
 
-- Bi korrikalari mendilerroko lainoa zeharkatzen.
+- Lainoa mendilerroan Bi korrikalari mendilerroko lainoa zeharkatzen.
 Gehiago Instagrameko @ultratraillarre kontuan.
 
 ---
@@ -618,7 +595,7 @@ Irteera-ordua
 16:00
 
 Zigilatze-checkpointak
-6, brevet-arekin (Agurain, Santikurutze Kanpezu, Biasteri, Urizaharra eta bi zehazteko)
+6, brevet-arekin
 
 GPS track ofiziala
 Irteera baino 30 egun lehenago ematen da

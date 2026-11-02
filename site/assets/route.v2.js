@@ -1,3 +1,10 @@
+/* Secciones desplegables de la portada: abrir la que se enlaza por ancla. */
+(function () {
+  function open(id) { var e = id && document.getElementById(id), d = e && e.querySelector('details.sec-acc'); if (d && !d.open) d.open = true; return e; }
+  function fromHash() { var e = open(location.hash.slice(1)); if (e && e.scrollIntoView) e.scrollIntoView(); }
+  addEventListener('hashchange', fromHash); fromHash();
+  document.addEventListener('click', function (ev) { var a = ev.target.closest && ev.target.closest('a[href^="#"]'); if (a) open(a.getAttribute('href').slice(1)); });
+})();
 /* Módulo de ruta: deslizador único sobre perfil y mapa. Mejora progresiva: sin JS, mapa y perfil ya están dibujados. */
 (function () {
   var m = document.getElementById('rmod'); if (!m) return;
