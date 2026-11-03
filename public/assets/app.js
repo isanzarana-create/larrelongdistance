@@ -8,33 +8,63 @@
   let I = {};
   try { I = JSON.parse(($('#i18n') || {}).textContent || '{}'); } catch (e) { I = {}; }
 
-  /* ── barra superior ── */
-  const bar = $('#top-bar');
-  const onScroll = () => bar && bar.classList.toggle('scrolled', window.scrollY > 8);
-  onScroll();
-  addEventListener('scroll', onScroll, { passive: true });
-
   /* ── menú ── */
   const btn = $('#menuBtn'), panel = $('#menuPanel');
+  const setMenu = (open) => {
+    if (!btn || !panel) return;
+    panel.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', btn.dataset[open ? 'close' : 'open']);
+  };
   if (btn && panel) {
-    const set = (open) => {
-      panel.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', btn.dataset[open ? 'close' : 'open']);
-    };
-    btn.addEventListener('click', () => set(!panel.classList.contains('open')));
-    panel.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
-    addEventListener('keydown', (e) => { if (e.key === 'Escape' && panel.classList.contains('open')) { set(false); btn.focus(); } });
-    document.addEventListener('click', (e) => { if (panel.classList.contains('open') && !panel.contains(e.target) && !btn.contains(e.target)) set(false); });
+    btn.addEventListener('click', () => setMenu(!panel.classList.contains('open')));
+    panel.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && panel.classList.contains('open')) { setMenu(false); btn.focus(); } });
+    document.addEventListener('click', (e) => { if (panel.classList.contains('open') && !panel.contains(e.target) && !btn.contains(e.target)) setMenu(false); });
   }
 
-  /* ── aparición suave de bloques ── */
-  const rv = $$('.sec-body, .hero-copy, .facts');
-  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion:reduce)').matches) {
-    rv.forEach((n) => n.classList.add('rv'));
-    const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' });
-    rv.forEach((n) => io.observe(n));
-    setTimeout(() => rv.forEach((n) => n.classList.add('in')), 2500);
+  /* ── navegación: la portada muestra solo el nombre y cada punto del menú abre su sección ── */
+  const sections = $$('main > .sec');
+  if (sections.length && $('.hero')) {
+    const goHome = () => {
+      document.body.classList.remove('section-view');
+      sections.forEach((s) => s.classList.remove('is-active'));
+      scrollTo(0, 0);
+    };
+    const openSection = (id) => {
+      const t = id && document.getElementById(id);
+      if (!t || !t.classList.contains('sec')) return false;
+      sections.forEach((s) => s.classList.toggle('is-active', s === t));
+      document.body.classList.add('section-view');
+      scrollTo(0, 0);
+      const h = $('h2', t);
+      if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+      return true;
+    };
+    const route = () => {
+      let id = '';
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { id = ''; }
+      if (!openSection(id)) goHome();
+    };
+    route();
+    addEventListener('hashchange', route);
+    addEventListener('popstate', route);
+    $$('[data-back]').forEach((b) => {
+      b.hidden = false;
+      b.addEventListener('click', () => {
+        try { history.pushState(null, '', location.pathname + location.search); } catch (e) { /* sin historial: se queda el hash */ }
+        goHome();
+        setMenu(true);
+        if (btn) btn.focus();
+      });
+    });
+    const logo = $('.logo');
+    if (logo) logo.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault();
+      try { history.pushState(null, '', location.pathname + location.search); } catch (x) { /* nada */ }
+      goHome(); setMenu(false);
+    });
   }
 
   /* ── galería: visor accesible sobre <dialog> ── */

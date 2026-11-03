@@ -121,8 +121,8 @@ function profileSvg(t, lang) {
 }
 
 // ───────────── piezas de página ─────────────
-const sectionHtml = (id, n, h2, inner, cls = '') =>
-  `<section class="sec ${cls}" id="${id}" aria-labelledby="${id}-t"><div class="wrap"><header class="sec-head"><span class="sec-num" aria-hidden="true">${String(n).padStart(2, '0')}</span><h2 id="${id}-t">${esc(h2)}</h2></header><div class="sec-body">${inner}</div></div></section>`;
+const sectionHtml = (id, n, h2, inner, cls = '', back = '') =>
+  `<section class="sec ${cls}" id="${id}" aria-labelledby="${id}-t"><div class="wrap"><header class="sec-head"><button class="back-to-menu" type="button" data-back hidden>${ICON.arrow}<span>${esc(back)}</span></button><h2 id="${id}-t"><span class="sec-num" aria-hidden="true">${String(n).padStart(2, '0')}</span>${esc(h2)}</h2></header><div class="sec-body">${inner}</div></div></section>`;
 
 function head(t, o) {
   const alt = o.alternates;
@@ -147,12 +147,17 @@ ${og}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 ${SITE.googleVerification ? `<meta name="google-site-verification" content="${esc(SITE.googleVerification)}">` : ''}${SITE.bingVerification ? `<meta name="msvalidate.01" content="${esc(SITE.bingVerification)}">` : ''}
 <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/larre.css?v=${assetV.css}">
 <script>document.documentElement.className='js'</script>
 ${o.jsonld ? `<script type="application/ld+json">${JSON.stringify(o.jsonld)}</script>` : ''}
 </head>`;
 }
+
+const socials = (t, cls) => `<ul class="icons ${cls}" aria-label="${esc(t.aria.social)}">
+<li><a href="${H.instagramUrl}" target="_blank" rel="noopener" aria-label="${esc(t.aria.ig)} (${esc(t.ui.new)})">${ICON.ig}</a></li>
+<li><a href="https://wa.me/${H.whatsapp}?text=${encodeURIComponent(t.contact.waMsg)}" target="_blank" rel="noopener" aria-label="${esc(t.aria.wa)} (${esc(t.ui.new)})">${ICON.wa}</a></li>
+<li><a href="${H.mapsSalida}" target="_blank" rel="noopener" aria-label="${esc(t.aria.map)} (${esc(t.ui.new)})">${ICON.map}</a></li>
+</ul>`;
 
 function header(t, o) {
   const langs = ORDER.map((l) => {
@@ -160,11 +165,14 @@ function header(t, o) {
     return `<a href="${o.alternates[l]}" hreflang="${l}" lang="${l}"${cur ? ' aria-current="true"' : ''}>${l.toUpperCase()}</a>`;
   }).join('<span aria-hidden="true">/</span>');
   const home = t.paths.home;
-  const items = t.nav.map(([id, label], i) => `<li><a href="${o.isHome ? '' : home}#${id}"><span class="n">${String(i + 1).padStart(2, '0')}</span><span>${esc(label)}</span></a></li>`).join('');
+  const items = t.nav.map(([id, label], i) => `<li><a href="${o.isHome ? '' : home}#${id}"><span class="n">${String(i + 1).padStart(2, '0')}</span><span class="t">${esc(label)}</span></a></li>`).join('');
+  const coords = `${H.salida.lat.toFixed(4)}° N · ${Math.abs(H.salida.lon).toFixed(4)}° ${t.lang === 'en' ? 'W' : t.lang === 'eu' ? 'M' : 'O'}`;
   return `<a class="skip" href="#main">${esc(t.ui.skip)}</a>
 <header class="top" id="top-bar"><div class="wrap top-in">
-<a class="logo" href="${home}" aria-label="${esc(t.ui.home)}">ULTRA TRAIL LARRE<span class="reg">®</span></a>
+<a class="logo" href="${home}" aria-label="${esc(t.ui.home)}">ULTRA<span class="knot" aria-hidden="true">·</span>TRAIL<span class="knot" aria-hidden="true">·</span>LARRE<span class="reg">®</span></a>
+<span class="coords" aria-hidden="true">${coords}</span>
 <div class="top-r">
+${socials(t, 'icons-top')}
 <nav class="lang" aria-label="${esc(t.ui.langNav)}">${langs}</nav>
 <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="${esc(t.ui.menuOpen)}" data-open="${esc(t.ui.menuOpen)}" data-close="${esc(t.ui.menuClose)}"><span class="bars" aria-hidden="true"><i></i><i></i></span><span class="menu-lbl">${esc(t.ui.menu)}</span></button>
 </div></div>
@@ -172,17 +180,16 @@ function header(t, o) {
 </header>`;
 }
 
-function footer(t) {
+function footer(t, isHome = false) {
   const c = H;
+  const home = isHome ? '' : t.paths.home;
   return `<footer class="foot"><div class="wrap foot-in">
-<div class="foot-l"><ul class="icons" aria-label="${esc(t.aria.social)}">
-<li><a href="${c.instagramUrl}" target="_blank" rel="noopener" aria-label="${esc(t.aria.ig)} (${esc(t.ui.new)})">${ICON.ig}</a></li>
-<li><a href="https://wa.me/${c.whatsapp}?text=${encodeURIComponent(t.contact.waMsg)}" target="_blank" rel="noopener" aria-label="${esc(t.aria.wa)} (${esc(t.ui.new)})">${ICON.wa}</a></li>
-<li><a href="${c.mapsSalida}" target="_blank" rel="noopener" aria-label="${esc(t.aria.map)} (${esc(t.ui.new)})">${ICON.map}</a></li>
-</ul>
-<p>© 2026 Ultra Trail Larre® · ${esc(t.ui.footerOrg)} <a href="${c.organizaUrl}/" rel="noopener">Musubigara®</a>. ${esc(t.ui.rights)}</p></div>
-<nav class="foot-r" aria-label="Legal"><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></nav>
-</div></footer>`;
+<div class="foot-l"><p>© 2026 Ultra Trail Larre® · ${esc(t.ui.footerOrg)} <a href="${c.organizaUrl}/" rel="noopener">Musubigara®</a></p>
+<nav class="foot-r" aria-label="Legal"><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></nav></div>
+${socials(t, 'icons-foot')}
+</div>
+<div class="float-cta"><a class="pill" href="${home}#preinscripcion">${esc(t.ui.ctaPre)}</a><a class="pill" href="https://wa.me/${c.whatsapp}?text=${encodeURIComponent(t.contact.waMsg)}" target="_blank" rel="noopener">${ICON.wa}<span>${esc(t.ui.ctaWa)}</span><span class="sr"> (${esc(t.ui.new)})</span></a></div>
+</footer>`;
 }
 
 // ───────────── galería ─────────────
@@ -261,6 +268,7 @@ const netlifyForms = () => `<div hidden aria-hidden="true">
 // ───────────── página principal ─────────────
 function homePage(t) {
   const lang = t.lang;
+  const sec = (id, n, h2, inner, cls = '') => sectionHtml(id, n, h2, inner, cls, t.ui.backMenu);
   const alternates = { es: '/', eu: '/eu/', en: '/en/' };
   const guia = pdfInfo('guia', lang);
   const reg = pdfInfo('reglamento', lang);
@@ -268,20 +276,15 @@ function homePage(t) {
   const ver = longDate(H.docsVersion, lang);
   const verGpx = longDate(H.gpxVersion, lang);
 
-  const hero = `<section class="hero" aria-labelledby="h1"><div class="wrap hero-in">
-<p class="eyebrow">${esc(t.hero.eyebrow)}</p>
-<h1 id="h1" class="hero-name">Ultra Trail Larre<span class="reg">®</span></h1>
-<div class="hero-copy"><p class="claim">${esc(t.hero.claim)}</p><p class="sub">${esc(t.hero.sub)}</p>
-<p class="hero-cta"><a class="btn btn-main" href="#preinscripcion">${esc(t.hero.cta)}</a><a class="link-arrow" href="#ruta">${esc(t.hero.cta2)} ${ICON.arrow}</a></p></div>
-<ul class="facts">${t.hero.facts.map(([v, l]) => `<li><strong>${esc(v)}</strong><span>${esc(l)}</span></li>`).join('')}</ul>
-</div></section>`;
+  const hero = `<section class="hero" aria-labelledby="h1"><div class="wrap hero-top"><div class="hero-claim"><p class="hero-tagline"><strong>${esc(t.hero.eyebrow)}</strong></p><p class="hero-tagline">${esc(t.hero.claim)}</p><a class="hero-arrow" href="#${t.nav[0][0]}" aria-label="${esc(t.nav[0][1])}">${ICON.arrow}</a></div></div>
+<h1 id="h1" class="hero-giant"><span>ULTRA TRAIL LARRE<span class="reg">®</span></span></h1></section>`;
 
-  const race = sectionHtml('la-carrera', 1, t.race.h2, `<p class="lead">${esc(t.race.lead)}</p>
+  const race = sec('la-carrera', 1, t.race.h2, `<p class="lead">${esc(t.race.lead)}</p>
 <div class="blocks">${t.race.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
 <aside class="callout"><h3>${esc(t.race.forYouH)}</h3><p>${esc(t.race.forYou)}</p></aside>`);
 
   const towns = Object.entries(RUTA.pasos).sort((a, b) => a[1].km - b[1].km);
-  const route = sectionHtml('ruta', 2, t.route.h2, `<p class="lead">${esc(t.route.lead)}</p>
+  const route = sec('ruta', 2, t.route.h2, `<p class="lead">${esc(t.route.lead)}</p>
 <dl class="figs">${t.route.figs.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
 <div class="route-grid">
 <figure class="map"><figcaption class="cap">${esc(t.route.mapTitle)}</figcaption>${mapSvg(t, lang)}</figure>
@@ -293,13 +296,13 @@ function homePage(t) {
 </div></div>
 <p class="sec-cta"><a class="btn btn-main" href="${GPX.href}" download>${ICON.dl}<span>${esc(t.route.gpx)}</span></a><a class="link-arrow" href="${H.mapsSalida}" target="_blank" rel="noopener">${esc(t.route.mapsStart)} ${ICON.arrow}<span class="sr"> (${esc(t.ui.new)})</span></a></p>`);
 
-  const zero = sectionHtml('codigo-cero', 3, t.zero.h2, `<p class="lead">${esc(t.zero.lead)}</p>
+  const zero = sec('codigo-cero', 3, t.zero.h2, `<p class="lead">${esc(t.zero.lead)}</p>
 <div class="blocks blocks-3">${t.zero.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
 <p class="hint">${fill(t.zero.note, links)}</p>`);
 
-  const ig = sectionHtml('instagram', 4, t.ig.h2, `<p class="lead">${esc(t.ig.lead)}</p>${gallery(t)}`);
+  const ig = sec('instagram', 4, t.ig.h2, `<p class="lead">${esc(t.ig.lead)}</p>${gallery(t)}`);
 
-  const pre = sectionHtml('preinscripcion', 5, t.pre.h2, `<p class="lead">${esc(t.pre.lead)}</p>
+  const pre = sec('preinscripcion', 5, t.pre.h2, `<p class="lead">${esc(t.pre.lead)}</p>
 <ul class="points">${t.pre.points.map((p) => `<li>${p}</li>`).join('')}</ul>
 <div class="pre-box" id="preBox">
 <div class="notice" id="preClosed" role="status" hidden><h3>${esc(t.pre.closedTitle)}</h3><p>${esc(t.pre.closedText)}</p></div>
@@ -309,19 +312,19 @@ ${preForm(t)}
 <div class="notice notice-ok" id="preOk" role="status" tabindex="-1" hidden></div>
 </div>`, 'sec-pre');
 
-  const dl = sectionHtml('descargas', 6, t.dl.h2, `<p class="lead">${esc(t.dl.lead)}</p>
+  const dl = sec('descargas', 6, t.dl.h2, `<p class="lead">${esc(t.dl.lead)}</p>
 <ul class="dl">
 ${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglamento, true], ['gpx', GPX, t.dl.items.gpx, false]].map(([k, f, [title, desc], isPdf]) => `<li class="card"><h3>${esc(title)}</h3><p>${esc(desc)}</p><p class="meta">${isPdf ? t.dl.pdf : 'GPX'} · ${f.size} · ${esc(t.dl.version)} ${esc(isPdf ? ver : verGpx)}</p><a class="btn btn-main" href="${f.href}" download>${ICON.dl}<span>${esc(t.ui.download)}</span><span class="sr"> ${esc(title)}</span></a></li>`).join('')}
 </ul>`);
 
-  const faq = sectionHtml('faq', 7, t.faq.h2, `<p class="lead">${esc(t.faq.lead)}</p>
+  const faq = sec('faq', 7, t.faq.h2, `<p class="lead">${esc(t.faq.lead)}</p>
 <div class="faq">${t.faq.items.map(([q, a]) => `<details><summary><span>${esc(q)}</span><i aria-hidden="true"></i></summary><div class="ans"><p>${fill(a, links)}</p></div></details>`).join('')}</div>`);
 
-  const partners = sectionHtml('colabora', 8, t.partners.h2, `<p class="lead">${esc(t.partners.lead)}</p>
+  const partners = sec('colabora', 8, t.partners.h2, `<p class="lead">${esc(t.partners.lead)}</p>
 <div class="blocks blocks-4">${t.partners.types.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
 <div class="col-form"><h3>${esc(t.partners.formTitle)}</h3>${partnerForm(t)}<div class="notice notice-ok" id="colOk" role="status" tabindex="-1" hidden></div></div>`);
 
-  const contact = sectionHtml('contacto', 9, t.contact.h2, `<p class="lead">${esc(t.contact.lead)}</p>
+  const contact = sec('contacto', 9, t.contact.h2, `<p class="lead">${esc(t.contact.lead)}</p>
 <ul class="contact">
 <li><span class="k">${ICON.mail}${esc(t.contact.labels.email)}</span><a href="mailto:${H.email}">${H.email}</a></li>
 <li><span class="k">${ICON.ig}${esc(t.contact.labels.ig)}</span><a href="${H.instagramUrl}" target="_blank" rel="noopener">@${H.instagram}<span class="sr"> (${esc(t.ui.new)})</span></a></li>
@@ -342,7 +345,7 @@ ${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglame
   const jsonld = homeJsonLd(t, alternates[lang]);
   return (
     head(t, { title: t.meta.title, description: t.meta.description, path: alternates[lang], alternates, og: `/assets/og-${lang}.png`, jsonld }) +
-    `\n<body data-page="home">\n${header(t, { alternates, isHome: true })}\n<main id="main" tabindex="-1">\n${hero}\n${race}\n${route}\n${zero}\n${ig}\n${pre}\n${dl}\n${faq}\n${partners}\n${contact}\n</main>\n${footer(t)}\n${netlifyForms()}\n<script type="application/json" id="i18n">${JSON.stringify(i18n).replace(/</g, '\\u003c')}</script>\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
+    `\n<body data-page="home">\n${header(t, { alternates, isHome: true })}\n<main id="main" tabindex="-1">\n${hero}\n${race}\n${route}\n${zero}\n${ig}\n${pre}\n${dl}\n${faq}\n${partners}\n${contact}\n</main>\n${footer(t, true)}\n${netlifyForms()}\n<script type="application/json" id="i18n">${JSON.stringify(i18n).replace(/</g, '\\u003c')}</script>\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
   );
 }
 

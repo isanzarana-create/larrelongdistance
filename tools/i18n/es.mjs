@@ -31,7 +31,10 @@ export default {
     legal: 'Aviso legal',
     privacy: 'Política de privacidad',
     rights: 'Todos los derechos reservados.',
-    back: 'Volver a la web'
+    back: 'Volver a la web',
+    backMenu: 'Volver al menú',
+    ctaPre: 'Preinscripción',
+    ctaWa: 'Hablemos'
   },
   nav: [
     ['la-carrera', 'La carrera'],

@@ -31,7 +31,10 @@ export default {
     legal: 'Legal notice',
     privacy: 'Privacy policy',
     rights: 'All rights reserved.',
-    back: 'Back to the site'
+    back: 'Back to the site',
+    backMenu: 'Back to menu',
+    ctaPre: 'Pre-registration',
+    ctaWa: "Let's talk"
   },
   nav: [
     ['la-carrera', 'The race'],

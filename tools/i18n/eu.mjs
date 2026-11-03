@@ -32,7 +32,10 @@ export default {
     legal: 'Lege-oharra',
     privacy: 'Pribatutasun-politika',
     rights: 'Eskubide guztiak erreserbatuta.',
-    back: 'Webgunera itzuli'
+    back: 'Webgunera itzuli',
+    backMenu: 'Menura itzuli',
+    ctaPre: 'Aurre-izena',
+    ctaWa: 'Hitz egin dezagun'
   },
   nav: [
     ['la-carrera', 'Lasterketa'],
