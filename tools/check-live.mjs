@@ -6,7 +6,8 @@
 const arg = process.argv[2];
 let ok = 0, ko = 0;
 const t = (name, cond, extra = '') => { cond ? ok++ : ko++; console.log(`${cond ? '  OK ' : ' FALLA'}  ${name}${extra ? ' · ' + extra : ''}`); };
-const get = (u, o = {}) => fetch(u, { redirect: 'manual', headers: { 'User-Agent': 'larre-check' }, ...o });
+const get = (u, o = {}) => fetch(u, { redirect: 'manual', headers: { 'User-Agent': 'larre-check' }, ...o })
+  .catch((e) => ({ status: 0, ok: false, headers: new Headers(), text: async () => '', error: String((e && e.cause && e.cause.code) || e.message || e) }));
 
 if (arg === '--redirects') {
   const N = 'https://ultratraillarre.org';
