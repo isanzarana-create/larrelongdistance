@@ -21,25 +21,30 @@ const date = (iso, l) => { const [y, m, d] = iso.split('-').map(Number); return 
 const LBL = { es: { ed: 'I Edición · otoño de 2027', ver: 'Versión', pg: 'Página' }, eu: { ed: 'I. Edizioa · 2027ko udazkena', ver: 'Bertsioa', pg: 'Orria' }, en: { ed: '1st Edition · autumn 2027', ver: 'Version', pg: 'Page' } };
 
 const CSS = `
-@font-face{font-family:F;src:url(file://${PUB}/fonts/fraunces-latin.woff2);font-weight:100 900}
-@font-face{font-family:M;src:url(file://${PUB}/fonts/manrope-latin.woff2);font-weight:200 800}
+@font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-800-normal.woff2);font-weight:700 900}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-700-normal.woff2);font-weight:700 800}
 @page{size:A4;margin:20mm 18mm 22mm}
 *{box-sizing:border-box}html{background:#EFE6D2;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-body{margin:0;font:400 10.6pt/1.55 M,Arial,sans-serif;color:#1F1915;background:#EFE6D2}
+body{margin:0;font:400 8.8pt/1.7 M,'Courier New',monospace;color:#1F1915;background:#EFE6D2}
 .cover{padding:6mm 0 8mm;border-bottom:1.5pt solid #7A1F2B;margin-bottom:8mm}
-.brand{font:800 8.5pt/1 M;letter-spacing:.18em;text-transform:uppercase;color:#7A1F2B}
-h1{font:400 34pt/1.02 F;letter-spacing:-.02em;margin:7mm 0 4mm}
-.sub{font:400 13pt/1.4 F;max-width:150mm;margin:0 0 6mm}
+.brand{font:700 8pt/1 M;letter-spacing:.18em;text-transform:uppercase;color:#7A1F2B}
+h1{font:800 30pt/1.02 F;letter-spacing:-.03em;text-transform:uppercase;margin:7mm 0 4mm}
+.sub{font:400 10.5pt/1.6 M;max-width:150mm;margin:0 0 6mm}
 .meta{font:600 8.5pt/1.4 M;color:#4B4036}
-h2{font:400 17pt/1.15 F;margin:9mm 0 3mm;color:#1F1915;break-after:avoid}
+h2{font:600 11pt/1.3 M;letter-spacing:.06em;text-transform:uppercase;margin:9mm 0 3mm;color:#1F1915;break-after:avoid}
 p{margin:0 0 3mm;orphans:3;widows:3}
 ul,ol{margin:0 0 3mm;padding-left:5mm}li{margin-bottom:1.6mm}
-table{width:100%;border-collapse:collapse;margin:3mm 0 4mm;font-size:9.8pt;break-inside:avoid}
+table{width:100%;border-collapse:collapse;margin:3mm 0 4mm;font-size:8.6pt;break-inside:avoid}
 th,td{text-align:left;vertical-align:top;padding:2.2mm 2mm;border-bottom:.6pt solid #CDBE9C}
 th{font:700 8pt/1.3 M;letter-spacing:.08em;text-transform:uppercase;color:#4B4036;border-bottom:1pt solid #7A6D57}
 td:first-child,tbody th{font-weight:700;width:34%}
 .step{border-left:2.5pt solid #7A1F2B;padding:1mm 0 1mm 4mm;margin:0 0 3.5mm;break-inside:avoid}
-.step b{display:block;font:600 11.5pt/1.3 F;margin-bottom:1mm}
+.step b{display:block;font:600 9.5pt/1.4 M;margin-bottom:1mm}
 .box{background:#F9F4E7;border:.6pt solid #CDBE9C;border-left:2.5pt solid #7A1F2B;border-radius:2mm;padding:4mm 5mm;margin:6mm 0;break-inside:avoid}
 .box h2{margin-top:0}
 .foot{margin-top:10mm;padding-top:4mm;border-top:.6pt solid #CDBE9C;font-size:9pt;color:#4B4036}

@@ -35,16 +35,21 @@ const p = await b.newPage({ viewport: { width: 1200, height: 630 } });
 for (const t of [es, eu, en]) {
   const facts = t.hero.facts.slice(0, 3).map(([v, l]) => `<li><b>${v}</b><span>${l}</span></li>`).join('');
   const html = `<!doctype html><meta charset=utf-8><style>
-@font-face{font-family:F;src:url(file://${PUB}/fonts/fraunces-latin.woff2);font-weight:100 900}
-@font-face{font-family:M;src:url(file://${PUB}/fonts/manrope-latin.woff2);font-weight:200 800}
+@font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-800-normal.woff2);font-weight:700 900}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(file://${PUB}/fonts/ibm-plex-mono-latin-700-normal.woff2);font-weight:700 800}
 *{box-sizing:border-box;margin:0}body{width:1200px;height:630px;background:${S};color:#1F1915;font-family:M;padding:64px 72px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
 .bar{position:absolute;left:0;top:0;bottom:0;width:18px;background:${G}}
 .ey{font-weight:700;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:${G}}
-h1{font-family:F;font-weight:400;font-size:132px;line-height:.95;letter-spacing:-.03em;margin:22px 0 26px}
+h1{font-family:F;font-weight:800;font-size:124px;line-height:.95;letter-spacing:-.035em;text-transform:uppercase;margin:22px 0 26px}
 h1 sup{font-size:.4em;vertical-align:super;line-height:0}
-p{font-family:F;font-size:38px;line-height:1.2;max-width:900px}
+p{font-family:M;font-size:28px;line-height:1.35;max-width:960px}
 ul{list-style:none;padding:0;display:flex;gap:64px;border-top:1px solid #CDBE9C;padding-top:26px}
-li{display:flex;flex-direction:column;gap:6px}b{font-family:F;font-weight:400;font-size:48px;line-height:1}span{font-size:20px;color:#4B4036}
+li{display:flex;flex-direction:column;gap:6px}b{font-family:M;font-weight:600;font-size:44px;line-height:1}span{font-size:20px;color:#4B4036}
 </style><div class=bar></div><div><div class=ey>${t.hero.eyebrow}</div><h1>Ultra Trail Larre<sup>®</sup></h1><p>${t.hero.claim}</p></div><ul>${facts}</ul>`;
   writeFileSync('/tmp/og.html', html); await p.goto('file:///tmp/og.html');
   await p.evaluate(() => document.fonts.ready);
