@@ -107,7 +107,7 @@ function mapSvg(t, lang) {
 
 function profileSvg(t, lang) {
   const bars = RUTA.perfilKm;
-  const W = 720, Hh = 300, pl = 64, pr = 12, pt = 16, pb = 44;
+  const W = 720, Hh = 310, pl = 64, pr = 12, pt = 34, pb = 44;
   const lo = 400, hi = 1400;
   const iw = W - pl - pr, ih = Hh - pt - pb;
   const bw = iw / bars.length;
@@ -115,7 +115,7 @@ function profileSvg(t, lang) {
   const grid = [600, 800, 1000, 1200, 1400].map((v) => `<line class="p-grid" x1="${pl}" x2="${W - pr}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text class="p-txt" x="${pl - 10}" y="${(Y(v) + 7).toFixed(1)}" text-anchor="end">${fmt(v, lang)}</text>`).join('');
   const rects = bars.map((v, i) => `<rect class="p-bar" x="${(pl + i * bw + 0.5).toFixed(2)}" y="${Y(v).toFixed(1)}" width="${Math.max(bw - 1, 0.8).toFixed(2)}" height="${(pt + ih - Y(v)).toFixed(1)}"/>`).join('');
   const ticks = [0, 50, 100, 150, 200].map((k) => `<text class="p-txt" x="${(pl + k * bw).toFixed(1)}" y="${Hh - 14}" text-anchor="middle">${k}</text>`).join('');
-  const unit = `<text class="p-txt" x="${W - pr}" y="${Hh - 14}" text-anchor="end">${esc(t.route.kmAxis)}</text><text class="p-txt" x="${pl - 10}" y="${pt - 2}" text-anchor="end">m</text>`;
+  const unit = `<text class="p-txt" x="${W - pr}" y="${Hh - 14}" text-anchor="end">${esc(t.route.kmAxis)}</text><text class="p-txt" x="${pl - 10}" y="14" text-anchor="end">m</text>`;
   const alt = fill(t.route.profileAlt, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) });
   return `<svg class="prof-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="profT" focusable="false"><title id="profT">${esc(alt)}</title>${grid}${rects}${ticks}${unit}</svg>`;
 }
@@ -146,7 +146,8 @@ ${links}
 ${og}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 ${SITE.googleVerification ? `<meta name="google-site-verification" content="${esc(SITE.googleVerification)}">` : ''}${SITE.bingVerification ? `<meta name="msvalidate.01" content="${esc(SITE.bingVerification)}">` : ''}
-<link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/larre.css?v=${assetV.css}">
 <script>document.documentElement.className='js'</script>
 ${o.jsonld ? `<script type="application/ld+json">${JSON.stringify(o.jsonld)}</script>` : ''}
@@ -314,7 +315,7 @@ ${preForm(t)}
 
   const dl = sec('descargas', 6, t.dl.h2, `<p class="lead">${esc(t.dl.lead)}</p>
 <ul class="dl">
-${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglamento, true], ['gpx', GPX, t.dl.items.gpx, false]].map(([k, f, [title, desc], isPdf]) => `<li class="card"><h3>${esc(title)}</h3><p>${esc(desc)}</p><p class="meta">${isPdf ? t.dl.pdf : 'GPX'} · ${f.size} · ${esc(t.dl.version)} ${esc(isPdf ? ver : verGpx)}</p><a class="btn btn-main" href="${f.href}" download>${ICON.dl}<span>${esc(t.ui.download)}</span><span class="sr"> ${esc(title)}</span></a></li>`).join('')}
+${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglamento, true], ['gpx', GPX, t.dl.items.gpx, false]].map(([k, f, [title, desc], isPdf]) => `<li><a class="btn btn-main" href="${f.href}" download>${ICON.dl}<span>${esc(title)}</span></a><p>${esc(desc)}</p><p class="meta">${isPdf ? t.dl.pdf : 'GPX'} · ${f.size} · ${esc(t.dl.version)} ${esc(isPdf ? ver : verGpx)}</p></li>`).join('')}
 </ul>`);
 
   const faq = sec('faq', 7, t.faq.h2, `<p class="lead">${esc(t.faq.lead)}</p>

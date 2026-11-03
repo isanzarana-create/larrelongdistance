@@ -40,7 +40,7 @@ export default {
     ['la-carrera', 'La carrera'],
     ['ruta', 'Ruta'],
     ['codigo-cero', 'Código Cero'],
-    ['instagram', 'Instagram'],
+    ['instagram', 'Fotos'],
     ['preinscripcion', 'Preinscripción'],
     ['descargas', 'Descargas'],
     ['faq', 'Preguntas frecuentes'],
@@ -106,7 +106,7 @@ export default {
     mapsStart: 'Cómo llegar a la salida'
   },
   ig: {
-    h2: 'Instagram',
+    h2: 'Fotos',
     lead: 'Desde el monte. Lo último de @ultratraillarre.',
     gallery: 'Galería de fotos de Instagram',
     open: 'Ampliar foto {n} de {total}',

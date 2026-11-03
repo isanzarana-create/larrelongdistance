@@ -40,7 +40,7 @@ export default {
     ['la-carrera', 'The race'],
     ['ruta', 'Route'],
     ['codigo-cero', 'Zero Waste Code'],
-    ['instagram', 'Instagram'],
+    ['instagram', 'Photos'],
     ['preinscripcion', 'Pre-registration'],
     ['descargas', 'Downloads'],
     ['faq', 'FAQ'],
@@ -106,7 +106,7 @@ export default {
     mapsStart: 'How to get to the start'
   },
   ig: {
-    h2: 'Instagram',
+    h2: 'Photos',
     lead: 'From the mountains. The latest from @ultratraillarre.',
     gallery: 'Instagram photo gallery',
     open: 'Enlarge photo {n} of {total}',

@@ -1,23 +1,29 @@
 /* Ultra Trail Larre® · hoja de estilos única. Arena y granate, sin modo oscuro. */
-@font-face{font-family:Manrope;font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-/* Tipos de reserva ajustados para que el cambio de fuente no mueva el diseño */
-@font-face{font-family:"Manrope Fallback";src:local("Arial");size-adjust:104%;ascent-override:100%;descent-override:28%;line-gap-override:0%}
-
+@font-face{font-family:Inter;font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:800;font-style:normal;font-display:swap;src:url(/fonts/inter-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-style:normal;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter Fallback";src:local("Arial");size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+@font-face{font-family:"Plex Fallback";src:local("Courier New");size-adjust:100%;ascent-override:102%;descent-override:27%;line-gap-override:0%}
 :root{
   --sand:#EFE6D2; --sand-2:#E7DBC2; --paper:#F9F4E7; --ink:#1F1915; --ink-2:#4B4036;
   --line:#CDBE9C; --edge:#7A6D57;
   --granate:#7A1F2B; --granate-d:#5C1520; --on-granate:#FBF6EA; --err:#9A1B1B; --ok:#2E5B38;
   --serif:var(--sans);
-  --sans:Manrope,"Manrope Fallback",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --sans:Inter,"Inter Fallback",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"IBM Plex Mono","Plex Fallback",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --gut:clamp(16px,4vw,48px); --max:1180px; --r:14px; --hdr:64px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:calc(var(--hdr) + 12px);color-scheme:light}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--sand);color:var(--ink);font:400 clamp(1rem,.96rem + .2vw,1.0625rem)/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-wrap:break-word}
+body{margin:0;background:var(--sand);color:var(--ink);font:400 .8125rem/1.85 var(--mono);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-wrap:break-word}
 [hidden]{display:none!important}
 img,svg{display:block;max-width:100%;height:auto}
-h1,h2,h3{font-family:var(--sans);font-weight:700;line-height:1.15;margin:0;text-wrap:balance}
+h1,h2,h3{font-family:var(--mono);font-weight:600;line-height:1.3;margin:0;text-wrap:balance}
 p{margin:0 0 1em}
 a{color:var(--granate);text-underline-offset:.18em;text-decoration-thickness:1px}
 a:hover{color:var(--granate-d);text-decoration-thickness:2px}
@@ -30,7 +36,6 @@ a:hover{color:var(--granate-d);text-decoration-thickness:2px}
 .skip:focus{top:10px}
 
 /* ───────── cabecera y menú ───────── */
-:root{--mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,Consolas,"Liberation Mono",monospace}
 body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
 main{flex:1 0 auto;display:flex;flex-direction:column}
 .top{position:sticky;top:0;z-index:50;background:var(--sand);border-bottom:1px solid var(--line)}
@@ -145,12 +150,12 @@ figure{margin:0}
 .m-dot{fill:var(--paper);stroke:var(--ink);stroke-width:4}
 .m-start{fill:var(--granate)}
 .m-start-ring{fill:none;stroke:var(--granate);stroke-width:3}
-.m-txt{font:700 26px Manrope,"Manrope Fallback",Arial,sans-serif;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:9px;stroke-linejoin:round}
+.m-txt{font:700 26px Inter,Arial,sans-serif;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:9px;stroke-linejoin:round}
 .m-txt-b{fill:var(--granate)}
 .prof-svg{width:100%;height:auto}
 .p-bar{fill:var(--granate)}
 .p-grid{stroke:var(--line);stroke-width:1}
-.p-txt{font:600 19px Manrope,"Manrope Fallback",Arial,sans-serif;fill:var(--ink-2)}
+.p-txt{font:600 19px Inter,Arial,sans-serif;fill:var(--ink-2)}
 .route-side{display:grid;gap:28px;min-width:0}
 .ctrl h3{font-size:1.35rem;margin-bottom:.7em}
 table{width:100%;border-collapse:collapse;font-size:1rem}
@@ -241,12 +246,6 @@ input[type=radio]:focus-visible,input[type=checkbox]:focus-visible{outline:3px s
 /* ───────── descargas, faq, contacto ───────── */
 .dl{list-style:none;margin:0;padding:0;display:grid;gap:18px;grid-template-columns:1fr}
 @media (min-width:760px){.dl{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:clamp(18px,2.6vw,26px);display:flex;flex-direction:column;gap:.5rem}
-.card h3{font-size:1.4rem}
-.card p{margin:0;color:var(--ink-2);font-size:.98rem}
-.card .meta{font:700 .76rem/1.4 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
-.card .btn{margin-top:auto;align-self:flex-start}
-.card p.meta{margin-top:.4rem;margin-bottom:.8rem}
 .faq{max-width:46rem;border-bottom:1px solid var(--edge)}
 details{border-top:1px solid var(--edge)}
 summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem 0;font:600 1.08rem/1.35 var(--sans)}
@@ -306,3 +305,43 @@ details[open] summary i::after{transform:rotate(0)}
   .top-r{gap:2px}.lang{gap:0}.lang a{min-width:28px;padding-inline:.2em}
 }
 .sec h2:focus{outline:none}
+
+/* ───────── formato de texto y estilo plano (como musubigara.org): sin cajas ───────── */
+.sec-body{max-width:62rem}
+.lead,.block p,.callout p,.points li,.ans p,.org,.notice p,.col-form p{max-width:68ch}
+.lead,.block p,.callout p,.points li,.ans p,.org{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+.lead{font:400 .8125rem/1.85 var(--mono);color:var(--ink);margin:0 0 1.4rem}
+.sec-body p+p{margin-top:1.4rem}
+.sec-body strong{font-weight:600;color:var(--granate)}
+.hint{font:400 .72rem/1.7 var(--mono);color:var(--ink-2)}
+h3,.block h3,.callout h3,.notice h3,.ctrl h3,.col-form h3{font:600 .8125rem/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:.5em}
+.block{border:0;padding:0}
+.blocks{gap:1.6rem 3rem;margin-bottom:1.8rem}
+.callout{background:none;border:0;border-radius:0;padding:0;margin-top:1.8rem}
+.map,.prof{background:none;border:0;border-radius:0;padding:0}
+.notice{background:none;border:0;border-radius:0;padding:0}
+.notice-warn h3{color:#8A5A00}
+.code output{border:0;border-bottom:2px solid var(--granate);border-radius:0;background:none;padding:.2em 0;color:var(--granate);font-family:var(--mono)}
+.f-err{background:none;border:0;border-radius:0;padding:0}
+.f-err p{font-weight:600}
+input[type=text],input[type=email],input[type=number],select,textarea{background:transparent;border:0;border-bottom:1.5px solid var(--edge);border-radius:0;padding:.55em 0;font:400 .8125rem/1.6 var(--mono)}
+textarea{min-height:6.5em}
+select{background-position:calc(100% - 8px) 55%,calc(100% - 2px) 55%;padding-right:1.6em}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--granate);outline-offset:3px;border-color:var(--granate)}
+[aria-invalid=true]{background:transparent!important}
+.f>label,.f>legend,.f legend{font:600 .75rem/1.5 var(--mono);letter-spacing:.04em}
+.figs dt,.cap,thead th{font:500 .68rem/1.4 var(--mono);letter-spacing:.12em}
+.figs dd{font:600 .95rem/1.4 var(--mono)}
+.figs div{border-top:0;padding-top:0}
+.btn{font:500 .72rem/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;min-height:44px;padding:.7em 1.5em}
+.link-arrow{font:500 .72rem/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+summary{font:600 .8125rem/1.5 var(--mono)}
+table{font-size:.8125rem}
+.contact .k{font:500 .68rem/1.4 var(--mono)}
+.dl{list-style:none;margin:0;padding:0;display:grid;gap:1.6rem}
+.dl li{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem}
+.dl .btn{text-align:left}
+.dl p{margin:0;max-width:68ch}
+.dl .meta{font:400 .72rem/1.6 var(--mono);color:var(--ink-2)}
+.block p,.dl p{color:var(--ink)}
+.dl p.meta{color:var(--ink-2)}

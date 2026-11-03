@@ -41,7 +41,7 @@ export default {
     ['la-carrera', 'Lasterketa'],
     ['ruta', 'Ibilbidea'],
     ['codigo-cero', 'Zero Kodea'],
-    ['instagram', 'Instagram'],
+    ['instagram', 'Argazkiak'],
     ['preinscripcion', 'Aurre-izen-ematea'],
     ['descargas', 'Deskargak'],
     ['faq', 'Maiz egindako galderak'],
@@ -107,7 +107,7 @@ export default {
     mapsStart: 'Irteerara nola iritsi'
   },
   ig: {
-    h2: 'Instagram',
+    h2: 'Argazkiak',
     lead: 'Mendi gainetik. @ultratraillarre-ren azken argitalpenak.',
     gallery: 'Instagrameko argazki-galeria',
     open: 'Handitu {n}. argazkia, {total} artean',
