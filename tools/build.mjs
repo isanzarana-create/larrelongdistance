@@ -17,6 +17,8 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const PUB = resolve(ROOT, 'public');
 const H = JSON.parse(readFileSync(resolve(ROOT, 'tools/data/hechos.json'), 'utf8'));
 const RUTA = JSON.parse(readFileSync(resolve(ROOT, 'tools/data/ruta.json'), 'utf8'));
+const FIRMES = JSON.parse(readFileSync(resolve(ROOT, 'tools/data/firmes.json'), 'utf8'));
+const DETALLE = JSON.parse(readFileSync(resolve(ROOT, 'public/assets/ruta.json'), 'utf8'));
 const GAL = JSON.parse(readFileSync(resolve(ROOT, 'tools/data/galeria.json'), 'utf8'));
 for (const ph of GAL.fotos.filter((x) => !x.oculta)) {
   for (const l of ['es', 'eu', 'en']) if (!ph.alt || !String(ph.alt[l] || '').trim()) throw new Error(`Galería: la foto ${ph.file} no tiene texto alternativo en «${l}». Complétalo en tools/data/galeria.json o márcala "oculta": true.`);
@@ -102,7 +104,10 @@ function mapSvg(t, lang) {
   });
   const sx = X(RUTA.start.lon), sy = Y(RUTA.start.lat);
   const start = `<g><circle class="m-start-ring" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="17"/><circle class="m-start" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="8"/><text class="m-txt m-txt-b" x="${(sx - 28).toFixed(1)}" y="${(sy + 8).toFixed(1)}" text-anchor="end">${esc(t.route.startLabel)}</text></g>`;
-  return `<svg class="map-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="mapT" focusable="false"><title id="mapT">${esc(t.route.mapAlt)}</title><path class="m-line" d="${d}"/>${marks.join('')}${start}</svg>`;
+  const anchors = [[X(RUTA.start.lon), Y(RUTA.start.lat)], ...Object.values(place).map((o) => [X(o.lon), Y(o.lat)])];
+  const kmMarks = DETALLE.p.filter((q) => q[0] > 0 && Math.abs(q[0] / 25 - Math.round(q[0] / 25)) < 1e-6 && q[0] < DETALLE.total - 5 && anchors.every((a) => Math.hypot(a[0] - X(q[2]), a[1] - Y(q[1])) > 60)).map((q) => `<g class="m-km"><circle cx="${X(q[2]).toFixed(1)}" cy="${Y(q[1]).toFixed(1)}" r="5"/><text x="${(X(q[2]) + 9).toFixed(1)}" y="${(Y(q[1]) - 8).toFixed(1)}">${Math.round(q[0])}</text></g>`).join('');
+  const proj = [minLon, maxLat, kx, scale, padL, padY].map((v) => +v.toFixed(6)).join(',');
+  return `<svg class="map-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="mapT" focusable="false" data-proj="${proj}"><title id="mapT">${esc(t.route.mapAlt)}</title><path class="m-line" d="${d}"/>${kmMarks}${marks.join('')}${start}<circle class="m-cur" r="12" cx="0" cy="0"/></svg>`;
 }
 
 function profileSvg(t, lang) {
@@ -117,7 +122,21 @@ function profileSvg(t, lang) {
   const ticks = [0, 50, 100, 150, 200].map((k) => `<text class="p-txt" x="${(pl + k * bw).toFixed(1)}" y="${Hh - 14}" text-anchor="middle">${k}</text>`).join('');
   const unit = `<text class="p-txt" x="${W - pr}" y="${Hh - 14}" text-anchor="end">${esc(t.route.kmAxis)}</text><text class="p-txt" x="${pl - 10}" y="14" text-anchor="end">m</text>`;
   const alt = fill(t.route.profileAlt, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) });
-  return `<svg class="prof-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="profT" focusable="false"><title id="profT">${esc(alt)}</title>${grid}${rects}${ticks}${unit}</svg>`;
+  const ctrlMarks = Object.entries(RUTA.pasos).map(([k, v]) => `<line class="p-ctrl" x1="${(pl + (v.km / 1) * bw).toFixed(1)}" x2="${(pl + v.km * bw).toFixed(1)}" y1="${pt}" y2="${pt + ih}"/>`).join('');
+  return `<svg class="prof-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="profT" focusable="false" data-prof="${pl},${pr},${pt},${pb},${W},${Hh},${bars.length},${lo},${hi}"><title id="profT">${esc(alt)}</title>${grid}${rects}${ctrlMarks}${ticks}${unit}<line class="p-cur" x1="0" x2="0" y1="${pt}" y2="${pt + ih}"/><circle class="p-cur-dot" r="6" cx="0" cy="0"/></svg>`;
+}
+
+
+function firmeBlock(t, lang, kind, title, sub) {
+  const rows = FIRMES[kind];
+  const names = kind === 'superficies' ? t.route.surfaces : t.route.ways;
+  const total = rows.reduce((a, r) => a + r[1], 0);
+  const num = (v) => (v >= 10 ? v.toFixed(1) : v >= 1 ? v.toFixed(2) : String(Math.round(v * 1000))).replace('.', lang === 'en' ? '.' : ',');
+  const label = (v) => (v < 1 ? `${num(v)} m` : `${num(v)} km`);
+  const pct = (v) => { const x = (v / total) * 100; return (x < 1 ? '<1' : String(Math.round(x))) + ' %'; };
+  const bar = rows.map((r, i) => `<span class="fb-seg c${i}" style="flex:${r[1]}" title="${esc(names[r[0]])}: ${label(r[1])}"></span>`).join('');
+  const list = rows.map((r, i) => `<li><i class="fb-sw c${i}" aria-hidden="true"></i><span class="fb-n">${esc(names[r[0]])}</span><span class="fb-v">${label(r[1])} · ${pct(r[1])}</span></li>`).join('');
+  return `<div class="firme"><h3>${esc(title)}</h3>${sub ? `<p class="hint">${esc(sub)}</p>` : ''}<div class="fb-bar" aria-hidden="true">${bar}</div><ul class="fb-list">${list}</ul></div>`;
 }
 
 // ───────────── piezas de página ─────────────
@@ -285,17 +304,19 @@ function homePage(t) {
 <aside class="callout"><h3>${esc(t.race.forYouH)}</h3><p>${esc(t.race.forYou)}</p></aside>`);
 
   const towns = Object.entries(RUTA.pasos).sort((a, b) => a[1].km - b[1].km);
-  const route = sec('ruta', 2, t.route.h2, `<p class="lead">${esc(t.route.lead)}</p>
-<dl class="figs">${t.route.figs.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
-<div class="route-grid">
-<figure class="map"><figcaption class="cap">${esc(t.route.mapTitle)}</figcaption>${mapSvg(t, lang)}</figure>
-<div class="route-side">
-<figure class="prof"><figcaption class="cap">${esc(t.route.profileTitle)}</figcaption>${profileSvg(t, lang)}<p class="hint">${esc(fill(t.route.profileSub, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) }))}</p></figure>
-<div class="ctrl"><h3>${esc(t.route.ctrlTitle)}</h3>
-<table><thead><tr><th scope="col">${esc(t.route.ctrlHead[0])}</th><th scope="col" class="num">${esc(t.route.ctrlHead[1])}</th></tr></thead><tbody>${towns.map(([k, v]) => `<tr><th scope="row">${esc(t.route.towns[k])}</th><td class="num">≈ ${Math.round(v.km)}</td></tr>`).join('')}</tbody></table>
-<p class="hint">${esc(t.route.ctrlNote)}</p></div>
-</div></div>
-<p class="sec-cta"><a class="btn btn-main" href="${GPX.href}" download>${ICON.dl}<span>${esc(t.route.gpx)}</span></a><a class="link-arrow" href="${H.mapsSalida}" target="_blank" rel="noopener">${esc(t.route.mapsStart)} ${ICON.arrow}<span class="sr"> (${esc(t.ui.new)})</span></a></p>`);
+  const R = t.route;
+  const route = sec('ruta', 2, R.h2, `<p class="lead">${esc(R.lead)}</p>
+<dl class="figs">${R.figs.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+<div class="route-live" data-route data-src="/assets/ruta.json" data-lang="${lang}">
+<figure class="map"><figcaption class="cap">${esc(R.mapTitle)}</figcaption>${mapSvg(t, lang)}</figure>
+<p class="readout" data-readout aria-live="off"><span><b>${esc(R.rKm)}</b> <i data-r="km">—</i></span><span><b>${esc(R.rEle)}</b> <i data-r="ele">—</i></span><span><b>${esc(R.rSlope)}</b> <i data-r="slope">—</i></span></p>
+<figure class="prof"><figcaption class="cap">${esc(R.profileTitle)}</figcaption><div class="prof-wrap" data-prof-wrap tabindex="0" role="slider" aria-label="${esc(R.sliderLabel)}" aria-valuemin="0" aria-valuemax="${Math.round(RUTA.medido.km)}" aria-valuenow="0">${profileSvg(t, lang)}</div><p class="hint">${esc(fill(R.profileSub, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) }))} ${esc(R.interactHint)}</p></figure>
+</div>
+<div class="ctrl"><h3>${esc(R.ctrlTitle)}</h3>
+<table><thead><tr><th scope="col">${esc(R.ctrlHead[0])}</th><th scope="col" class="num">${esc(R.ctrlHead[1])}</th></tr></thead><tbody>${towns.map(([k, v]) => `<tr><th scope="row" data-km="${v.km}">${esc(R.towns[k])}</th><td class="num">≈ ${Math.round(v.km)}</td></tr>`).join('')}</tbody></table>
+<p class="hint">${esc(R.ctrlNote)}</p></div>
+<div class="firmes">${firmeBlock(t, lang, 'superficies', R.surfTitle, R.surfSub)}${firmeBlock(t, lang, 'caminos', R.wayTitle, '')}</div>
+<p class="sec-cta"><a class="btn btn-main" href="${GPX.href}" download>${ICON.dl}<span>${esc(R.gpx)}</span></a><a class="link-arrow" href="${H.mapsSalida}" target="_blank" rel="noopener">${esc(R.mapsStart)} ${ICON.arrow}<span class="sr"> (${esc(t.ui.new)})</span></a></p>`, 'sec-wide');
 
   const zero = sec('codigo-cero', 3, t.zero.h2, `<p class="lead">${esc(t.zero.lead)}</p>
 <div class="blocks blocks-3">${t.zero.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>

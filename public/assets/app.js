@@ -8,6 +8,16 @@
   let I = {};
   try { I = JSON.parse(($('#i18n') || {}).textContent || '{}'); } catch (e) { I = {}; }
 
+  /* ── prueba de tema negro: solo con ?tema=negro (y ?tema=claro lo quita) ── */
+  try {
+    const q = new URLSearchParams(location.search).get('tema');
+    if (q === 'negro' || q === 'claro') sessionStorage.setItem('tema', q);
+    if (sessionStorage.getItem('tema') === 'negro') {
+      document.documentElement.dataset.theme = 'dark';
+      const m = $('meta[name=theme-color]'); if (m) m.content = '#0B0908';
+    }
+  } catch (e) { /* sin almacenamiento: no pasa nada */ }
+
   /* ── menú ── */
   const btn = $('#menuBtn'), panel = $('#menuPanel');
   const setMenu = (open) => {
@@ -219,5 +229,85 @@
       colOk.innerHTML = `<h3>${esc(O.title)}</h3><p>${j.mailSent === false ? esc(O.mailFailed) : fill(O.lead, { nombre: esc(d.persona), email: esc(d.email) })}</p>`;
       colForm.hidden = true; colOk.hidden = false; colOk.focus();
     });
+  }
+
+  /* ── recorrido interactivo: mapa y perfil enlazados ── */
+  const live = $('[data-route]');
+  if (live) {
+    const mapSvg = $('.map-svg', live), profSvg = $('.prof-svg', live), wrap = $('[data-prof-wrap]', live);
+    const out = { km: $('[data-r=km]', live), ele: $('[data-r=ele]', live), slope: $('[data-r=slope]', live) };
+    const en = live.dataset.lang === 'en';
+    const nf = (v, d) => v.toFixed(d).replace('.', en ? '.' : ',');
+    const pj = mapSvg.dataset.proj.split(',').map(Number); // minLon,maxLat,kx,scale,padL,padY
+    const pf = profSvg.dataset.prof.split(',').map(Number); // pl,pr,pt,pb,W,H,n,lo,hi
+    const cdot = $('.m-cur', mapSvg), pline = $('.p-cur', profSvg), pdot = $('.p-cur-dot', profSvg);
+    let P = null, MX = [], MY = [], cur = 0, loading = false;
+    const mx = (lon) => (lon - pj[0]) * pj[2] * pj[3] + pj[4];
+    const my = (lat) => (pj[1] - lat) * pj[3] + pj[5];
+    const iw = pf[4] - pf[0] - pf[1], ih = pf[5] - pf[2] - pf[3];
+    const set = (i) => {
+      if (!P) return;
+      cur = Math.max(0, Math.min(P.p.length - 1, i));
+      const q = P.p[cur];
+      const a = P.p[Math.max(0, cur - 2)], b = P.p[Math.min(P.p.length - 1, cur + 2)];
+      const slope = b[0] > a[0] ? ((b[3] - a[3]) / ((b[0] - a[0]) * 1000)) * 100 : 0;
+      live.classList.add('is-live');
+      cdot.setAttribute('cx', MX[cur].toFixed(1)); cdot.setAttribute('cy', MY[cur].toFixed(1));
+      const x = pf[0] + (q[0] / pf[6]) * iw, y = pf[2] + ih - ((Math.max(pf[7], Math.min(pf[8], q[3])) - pf[7]) / (pf[8] - pf[7])) * ih;
+      pline.setAttribute('x1', x.toFixed(1)); pline.setAttribute('x2', x.toFixed(1));
+      pdot.setAttribute('cx', x.toFixed(1)); pdot.setAttribute('cy', y.toFixed(1));
+      out.km.textContent = nf(q[0], 1) + ' km';
+      out.ele.textContent = q[3] + ' m';
+      out.slope.textContent = (slope > 0 ? '+' : '') + nf(slope, 1) + ' %';
+      wrap.setAttribute('aria-valuenow', Math.round(q[0]));
+      wrap.setAttribute('aria-valuetext', out.km.textContent + ', ' + out.ele.textContent + ', ' + out.slope.textContent);
+    };
+    const svgPt = (svg, e) => {
+      const m = svg.getScreenCTM();
+      if (!m) return null;
+      const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+      return pt.matrixTransform(m.inverse());
+    };
+    const byKm = (km) => Math.round((km * 1000) / P.step);
+    const onProf = (e) => {
+      if (!P) return;
+      const pt = svgPt(profSvg, e); if (!pt) return;
+      set(byKm(((pt.x - pf[0]) / iw) * pf[6]));
+    };
+    const onMap = (e) => {
+      if (!P) return;
+      const pt = svgPt(mapSvg, e); if (!pt) return;
+      let bi = 0, bd = 1e12;
+      for (let i = 0; i < MX.length; i++) { const d = (MX[i] - pt.x) ** 2 + (MY[i] - pt.y) ** 2; if (d < bd) { bd = d; bi = i; } }
+      if (bd < 90 * 90) set(bi);
+    };
+    const drag = (el, fn) => {
+      let down = false;
+      el.addEventListener('pointerdown', (e) => { down = true; fn(e); });
+      el.addEventListener('pointermove', (e) => { if (down || e.pointerType === 'mouse') fn(e); });
+      addEventListener('pointerup', () => { down = false; });
+      el.addEventListener('pointercancel', () => { down = false; });
+    };
+    const load = () => {
+      if (P || loading) return; loading = true;
+      fetch(live.dataset.src, { credentials: 'omit' }).then((r) => r.json()).then((j) => {
+        P = j; MX = j.p.map((q) => mx(q[2])); MY = j.p.map((q) => my(q[1]));
+        drag(profSvg, onProf); drag(mapSvg, onMap);
+        wrap.addEventListener('keydown', (e) => {
+          const k = { ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1, PageUp: 25, PageDown: -25 }[e.key];
+          if (k) { e.preventDefault(); set(cur + k); }
+          else if (e.key === 'Home') { e.preventDefault(); set(0); }
+          else if (e.key === 'End') { e.preventDefault(); set(P.p.length - 1); }
+        });
+        wrap.addEventListener('focus', () => { if (!live.classList.contains('is-live')) set(0); });
+        $$('.ctrl [data-km]').forEach((th) => {
+          const b = document.createElement('button');
+          b.type = 'button'; b.className = 'ctrl-go'; b.textContent = th.textContent;
+          b.addEventListener('click', () => { set(byKm(+th.dataset.km)); const r = live.getBoundingClientRect(); if (r.top < 0 || r.top > innerHeight * 0.5) live.scrollIntoView({ block: 'start' }); });
+          th.textContent = ''; th.appendChild(b);
+        });
+      }).catch(() => { loading = false; });
+    };
+    load();
   }
 })();
