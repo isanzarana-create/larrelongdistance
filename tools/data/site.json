@@ -1,0 +1,5 @@
+{
+  "_nota": "Códigos de verificación de Search Console y Bing Webmaster. Pégalos aquí y ejecuta node tools/build.mjs: la etiqueta meta se añade sola a las tres portadas.",
+  "googleVerification": "",
+  "bingVerification": ""
+}

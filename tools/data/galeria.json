@@ -1,0 +1,96 @@
+{
+  "_como_funciona": "Galería de Instagram. Orden: la más reciente primero. 'permalink' es la URL de la publicación en Instagram (si está vacío, la foto enlaza al perfil). 'oculta': true la retira de la web sin borrar nada. 'alt' lleva el texto alternativo en los tres idiomas. Para añadir fotos nuevas sigue los 5 pasos de tools/README.md.",
+  "cuenta": "ultratraillarre",
+  "fotos": [
+    {
+      "file": "ig-2026-10-22-122422",
+      "date": "2026-10-22",
+      "permalink": "",
+      "oculta": false,
+      "alt": {
+        "es": "Corredor con gorra de ala y chaleco de hidratación en pleno movimiento, con el fondo desenfocado por la velocidad. En la parte inferior, el subtítulo «Si buscas una ultra especial en autosuficiencia,».",
+        "eu": "Txanoa eta hidratazio-txalekoa daramatzan korrikalaria, mugimenduan; atzealdea lausotuta dago abiaduragatik. Behean, azpititulua: «Si buscas una ultra especial en autosuficiencia,».",
+        "en": "A runner in a brimmed cap and hydration vest in full motion, the background blurred by speed. At the bottom, the subtitle “Si buscas una ultra especial en autosuficiencia,” (If you are looking for a special self-supported ultra)."
+      }
+    },
+    {
+      "file": "ig-2026-10-20-371749",
+      "date": "2026-10-20",
+      "permalink": "",
+      "oculta": false,
+      "alt": {
+        "es": "Fotografía en blanco y negro de hileras de viñedo en primer plano y, al fondo, un cerro rocoso con un pueblo en su ladera.",
+        "eu": "Zuri-beltzeko argazkia: lehen planoan mahasti-errenkadak eta, atzean, aldapan herri bat duen muino harritsu bat.",
+        "en": "Black-and-white photograph of rows of vines in the foreground and, behind them, a rocky hill with a village on its slope."
+      }
+    },
+    {
+      "file": "ig-2026-10-18-083279",
+      "date": "2026-10-18",
+      "permalink": "",
+      "oculta": false,
+      "alt": {
+        "es": "Corredor en primer plano, con gorra, chaleco y botella blanda, subiendo por una ladera de hierba seca bajo un cielo claro.",
+        "eu": "Lehen planoan korrikalari bat, txanoarekin, txalekoarekin eta botila malguarekin, belar lehorreko aldapa batean gora, zeru garbipean.",
+        "en": "A runner in the foreground, wearing a cap, a vest and a soft flask, climbing a slope of dry grass under a clear sky."
+      }
+    },
+    {
+      "file": "ig-2026-10-09-472998",
+      "date": "2026-10-09",
+      "permalink": "",
+      "oculta": false,
+      "alt": {
+        "es": "Camino de tierra entre árboles altos en otoño, con la palabra «RUN.» en grandes letras blancas sobre la imagen.",
+        "eu": "Udazkeneko zuhaitz garaien arteko lurrezko bidea, irudiaren gainean «RUN.» hitza letra zuri handiekin.",
+        "en": "A dirt path between tall autumn trees, with the word “RUN.” in large white letters across the image."
+      }
+    },
+    {
+      "file": "ig-2026-10-06-020833",
+      "date": "2026-10-06",
+      "permalink": "",
+      "oculta": false,
+      "alt": {
+        "es": "Dos corredores suben por una ladera oscura envuelta en una niebla azulada.",
+        "eu": "Bi korrikalari aldapa ilun batean gora, lainoz inguratuta, urdinxka.",
+        "en": "Two runners climbing a dark slope wrapped in bluish mist."
+      }
+    },
+    {
+      "file": "ig-2026-09-29-447883",
+      "date": "2026-09-29",
+      "permalink": "",
+      "oculta": true,
+      "motivo": "La lámina lleva el nombre anterior (LARRE LONG DISTANCE®). Ocultada hasta que decidas si se rehace.",
+      "alt": {
+        "es": "Lámina sobre fondo arena con el texto «Lo que no hacemos» y «Un anti-manifiesto en 5 historias».",
+        "eu": "Harea-koloreko xafla, «Lo que no hacemos» eta «Un anti-manifiesto en 5 historias» testuekin.",
+        "en": "Card on a sand background reading “Lo que no hacemos” (What we don’t do) and “Un anti-manifiesto en 5 historias”."
+      }
+    },
+    {
+      "file": "ig-2026-09-27-611954",
+      "date": "2026-09-27",
+      "permalink": "",
+      "oculta": true,
+      "motivo": "La lámina lleva el nombre anterior (LARRE LONG DISTANCE®). Ocultada hasta que decidas si se rehace.",
+      "alt": {
+        "es": "Lámina sobre fondo arena con la pregunta «¿Qué es LARRE Long Distance®?».",
+        "eu": "Harea-koloreko xafla, «¿Qué es LARRE Long Distance®?» galderarekin.",
+        "en": "Card on a sand background asking “¿Qué es LARRE Long Distance®?” (What is LARRE Long Distance®?)."
+      }
+    },
+    {
+      "file": "ig-2026-09-25-416147",
+      "date": "2026-09-25",
+      "permalink": "",
+      "oculta": false,
+      "alt": {
+        "es": "Lámina sobre fondo arena con la palabra LARRE en letras grandes y oscuras.",
+        "eu": "Harea-koloreko xafla, LARRE hitza letra handi eta ilunekin.",
+        "en": "Card on a sand background with the word LARRE in large dark letters."
+      }
+    }
+  ]
+}
