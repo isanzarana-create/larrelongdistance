@@ -42,7 +42,7 @@ export default {
       { h: 'Diez errores que se repiten', list: [
         'Salir demasiado rápido las primeras horas porque la mochila aún no pesa.', 'Estrenar material, calzado o alimentación el día de la carrera.', 'Calcular el agua por kilómetros y no por el tiempo entre puntos fiables.', 'No tener plan de sueño y decidirlo de madrugada, ya sin criterio.', 'Llevar un solo frontal, o pilas de repuesto a medio gastar.', 'Dejar de comer en cuanto aparecen las náuseas, en lugar de cambiar de textura o de sabor.', 'No curar la primera molestia en un pie por no perder diez minutos.', 'Fiarse de una sola batería para el GPS.', 'Ir con lo mínimo de ropa de abrigo porque en la salida hacía bueno.', 'No haber leído el reglamento hasta la semana anterior.'], ordered: true },
       { h: 'Lo que esto significa en Ultra Trail Larre®', table: { head: ['Concepto', 'Dato'], rows: [
-        ['Distancia y desnivel', '227,5 km · +5.293 m'], ['Formato', 'Recorrido circular en autosuficiencia: solo tú, un tracker y tu brevet'], ['Salida y meta', 'Quiosco del Parque de La Florida, Vitoria-Gasteiz'],
+        ['Distancia y desnivel', '226,9 km · +4.825 m'], ['Formato', 'Recorrido circular en autosuficiencia: solo tú, un tracker y tu brevet'], ['Salida y meta', 'Quiosco del Parque de La Florida, Vitoria-Gasteiz'],
         ['Controles confirmados', 'Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada (faltan dos por definir)'], ['Plazas', '300, por orden de llegada de la preinscripción'], ['Edición', 'I Edición, otoño de 2027']] },
         after: ['Aún no están publicados: fecha y hora de salida, tiempo límite, material obligatorio, seguro y procedimiento de abandono. Aparecerán en el reglamento definitivo y en la web.'] }
     ]
@@ -87,7 +87,7 @@ export default {
       { h: 'Ten mistakes that keep repeating', list: [
         'Starting too fast in the first hours because the pack does not weigh anything yet.', 'Debuting kit, footwear or food on race day.', 'Calculating water by kilometres instead of by time between reliable points.', 'Having no sleep plan and deciding it in the small hours, with no judgement left.', 'Carrying a single headlamp, or half-used spare batteries.', 'Stopping eating as soon as nausea appears, instead of changing texture or flavour.', 'Not treating the first foot problem to avoid losing ten minutes.', 'Relying on a single battery for the GPS.', 'Going with the bare minimum of warm clothing because it was nice at the start.', 'Not having read the rules until the week before.'], ordered: true },
       { h: 'What this means at Ultra Trail Larre®', table: { head: ['Item', 'Detail'], rows: [
-        ['Distance and climbing', '227.5 km · +5,293 m'], ['Format', 'Self-supported loop: just you, a tracker and your brevet'], ['Start and finish', 'Kiosk in Parque de La Florida, Vitoria-Gasteiz'],
+        ['Distance and climbing', '226.9 km · +4,825 m'], ['Format', 'Self-supported loop: just you, a tracker and your brevet'], ['Start and finish', 'Kiosk in Parque de La Florida, Vitoria-Gasteiz'],
         ['Confirmed controls', 'Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada (two still to be defined)'], ['Places', '300, by order of arrival of the pre-registration'], ['Edition', '1st Edition, autumn 2027']] },
         after: ['Not yet published: start date and time, time limit, mandatory gear, insurance and withdrawal procedure. They will appear in the final rules and on the website.'] }
     ]
@@ -132,7 +132,7 @@ export default {
       { h: 'Errepikatzen diren hamar akats', list: [
         'Lehen orduetan azkarregi irtetea, motxilak oraindik ez duelako pisurik.', 'Materiala, oinetakoak edo elikadura lasterketa egunean estreinatzea.', 'Ura kilometroka kalkulatzea, eta ez puntu fidagarrien arteko denboraren arabera.', 'Lo egiteko planik ez edukitzea eta goizaldean erabakitzea, irizpiderik gabe.', 'Frontal bakarra eramatea, edo erdi-agortutako ordezko pilak.', 'Goragalea agertu bezain pronto jateari uztea, ehundura edo zaporea aldatu beharrean.', 'Oineko lehen eragozpena ez sendatzea, hamar minutu ez galtzeko.', 'GPSrako bateria bakar baten mende egotea.', 'Gutxieneko arropa beroarekin joatea, irteeran eguraldi ona zegoelako.', 'Araudia aurreko astera arte ez irakurtzea.'], ordered: true },
       { h: 'Zer esan nahi duen honek Ultra Trail Larre®-n', table: { head: ['Kontzeptua', 'Datua'], rows: [
-        ['Distantzia eta desnibela', '227,5 km · +5.293 m'], ['Formatua', 'Autohornikuntzako ibilbide zirkularra: zu bakarrik, tracker bat eta zure brevet-a'], ['Irteera eta helmuga', 'Florida Parkeko kioskoa, Gasteiz'],
+        ['Distantzia eta desnibela', '226,9 km · +4.825 m'], ['Formatua', 'Autohornikuntzako ibilbide zirkularra: zu bakarrik, tracker bat eta zure brevet-a'], ['Irteera eta helmuga', 'Florida Parkeko kioskoa, Gasteiz'],
         ['Baieztatutako kontrolak', 'Agurain, Santa Cruz de Campezo, Laguardia eta Peñacerrada (bi falta dira zehazteko)'], ['Plazak', '300, aurre-izenemateen iritsiera-ordenaren arabera'], ['Edizioa', 'I. Edizioa, 2027ko udazkena']] },
         after: ['Oraindik ez dira argitaratu: irteera-data eta -ordua, denbora-muga, nahitaezko materiala, asegurua eta abandonatzeko prozedura. Behin betiko araudian eta webgunean agertuko dira.'] }
     ]

@@ -37,3 +37,10 @@ Pulsa **Verify**; cuando los tres estén en verde, haz la prueba real (punto 3).
 - **Search Console**: añadir propiedad de dominio `ultratraillarre.org` (verificación por DNS TXT) o, alternativa, pegar el código de la etiqueta meta en `tools/data/site.json` (`googleVerification`) y regenerar. Enviar `https://ultratraillarre.org/sitemap.xml`. Usar *Cambio de dirección* desde `larrelongdistance.org`.
 - **Bing Webmaster**: importar desde Search Console o pegar el código en `bingVerification`.
 - **Analítica**: no hay ninguna activa (sin cookies). Si decides usar Plausible, hay que añadir el script y actualizar la política de privacidad.
+
+## 5. Cómo comprobar cabeceras, redirecciones y enlaces externos (desde tu ordenador)
+1. Sube la rama y abre el *Deploy Preview* / *Branch deploy* de `rediseno-ultratraillarre` en Netlify (Site → Deploys).
+2. `node tools/check-live.mjs https://<tu-preview>.netlify.app` comprueba CSP, HSTS, nosniff, X-Frame-Options, caché, 404 propio, la API y los enlaces externos (Instagram, WhatsApp, Maps, AEPD). Alternativa manual: DevTools → Network → clic en el documento → *Response headers*; y consola sin errores de CSP.
+3. Tras añadir los dominios antiguos como aliases y fusionar a `main`: `node tools/check-live.mjs --redirects` (cada URL antigua debe dar **un único 301** al destino final; sin cadenas). Alternativa: `curl -sI https://larrelongdistance.org/ruta` → `301` y `location: https://ultratraillarre.org/#ruta`.
+4. Si falta algún enlace externo por bloqueo del sitio (Instagram suele responder 200 con navegador y 429/403 con scripts), ábrelo a mano una vez.
+5. Si la CSP bloquea algo, el error aparece en la consola; ajusta `tools/make-netlify.mjs` y regenera `netlify.toml`.

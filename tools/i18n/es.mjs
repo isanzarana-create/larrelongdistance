@@ -6,7 +6,7 @@ export default {
   paths: { home: '/', aviso: '/aviso-legal/', priv: '/politica-privacidad/' },
   meta: {
     title: 'Ultra Trail Larre® · Ultra-trail en autosuficiencia, Álava 2027',
-    description: 'Ultra-trail en autosuficiencia por las sierras de Álava: 227,5 km y +5.293 m en lazo desde Vitoria-Gasteiz. 300 plazas. I Edición, otoño de 2027.',
+    description: 'Ultra-trail en autosuficiencia por las sierras de Álava: 226,9 km y +4.825 m en lazo desde Vitoria-Gasteiz. 300 plazas. I Edición, otoño de 2027.',
     ogLine: 'Ultra-trail en autosuficiencia · Álava · otoño de 2027',
     ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, otoño de 2027'
   },
@@ -36,6 +36,7 @@ export default {
   nav: [
     ['la-carrera', 'La carrera'],
     ['ruta', 'Ruta'],
+    ['codigo-cero', 'Código Cero'],
     ['instagram', 'Instagram'],
     ['preinscripcion', 'Preinscripción'],
     ['descargas', 'Descargas'],
@@ -46,12 +47,12 @@ export default {
   hero: {
     eyebrow: 'I Edición · otoño de 2027',
     claim: 'Solo tú, un tracker y tu brevet.',
-    sub: 'Ultra-trail en autosuficiencia por las sierras de Álava. Un lazo de 227,5 km que sale y llega a Vitoria-Gasteiz.',
+    sub: 'Ultra-trail en autosuficiencia por las sierras de Álava. Un lazo de 226,9 km que sale y llega a Vitoria-Gasteiz.',
     cta: 'Preinscribirme',
     cta2: 'Ver la ruta',
     facts: [
-      ['227,5', 'km en lazo'],
-      ['+5.293', 'm de desnivel positivo'],
+      ['226,9', 'km en lazo'],
+      ['+4.825', 'm de desnivel positivo'],
       ['300', 'plazas'],
       ['La Florida', 'salida y meta, Vitoria-Gasteiz']
     ]
@@ -63,23 +64,32 @@ export default {
       ['Autosuficiencia', 'Ultra Trail Larre® es un ultra-trail en autosuficiencia: sin asistencia externa y sin avituallamientos de organización. Decides qué llevas, cuándo comes, cuándo duermes y cómo gestionas el agua. Se prepara como una expedición, no como un circuito.'],
       ['Solo tú, un tracker y tu brevet', 'Un tracker te sigue durante toda la carrera y el brevet recoge tu paso por los controles. La navegación forma parte de la prueba.'],
       ['Filosofía', 'No es una carrera de masas ni pretende serlo. Son 300 plazas, y esa cifra es identidad, no un parámetro de mercado. Para muchas personas, el reto será simplemente llegar.'],
-      ['Cero residuos', 'Lo que entra contigo en el monte, sale contigo del monte. La única huella que dejamos es la pisada.'],
       ['El monte', 'Cruzamos sierras, pueblos y viñedos de Álava que viven ahí todo el año. Pasamos con respeto y sin dejar rastro: esa es la condición para volver.']
     ],
     forYouH: '¿Es para ti?',
-    forYou: 'Ultra Trail Larre® no es una carrera de iniciación. Pide experiencia previa en larga distancia, cabeza fría de madrugada y aceptar la regla de cero residuos. Si eso te suena menos a renuncia que a privilegio, esta es tu carrera.'
+    forYou: 'Ultra Trail Larre® no es una carrera de iniciación. Pide experiencia previa en larga distancia, cabeza fría de madrugada y aceptar el Código Cero. Si eso te suena menos a renuncia que a privilegio, esta es tu carrera.'
+  },
+  zero: {
+    h2: 'Código Cero',
+    lead: 'Lo que entra contigo en el monte, sale contigo del monte. La única huella que dejamos es la pisada.',
+    blocks: [
+      ['Tu bolsa', 'Una bolsa de basura propia en un bolsillo fijo, siempre el mismo.'],
+      ['Cada envoltorio', 'Geles y barritas con la lengüeta atada o guardada en el momento de abrir, nunca «luego».'],
+      ['Antes de salir', 'Trasvasa lo que puedas a bolsas reutilizables para llevar menos envoltorio desde el principio.']
+    ],
+    note: 'Las condiciones concretas del Código Cero se detallarán en el <a href="{reglamento}">reglamento</a> definitivo. Más ideas en la <a href="{guia}">guía de autosuficiencia</a>.'
   },
   route: {
     h2: 'La ruta',
-    lead: 'Un lazo de 227,5 km y +5.293 m con salida y meta en el quiosco del Parque de La Florida, en Vitoria-Gasteiz.',
+    lead: 'Un lazo de 226,9 km y +4.825 m con salida y meta en el quiosco del Parque de La Florida, en Vitoria-Gasteiz.',
     figs: [
-      ['Distancia', '227,5 km'],
-      ['Desnivel positivo', '+5.293 m'],
+      ['Distancia', '226,9 km'],
+      ['Desnivel positivo', '+4.825 m'],
       ['Salida y meta', 'Parque de La Florida'],
       ['Controles', '6 (4 confirmados)']
     ],
     mapTitle: 'Mapa del recorrido',
-    mapAlt: 'Mapa esquemático del lazo de 227,5 km con la salida y meta en el Parque de La Florida (Vitoria-Gasteiz) y los cuatro controles confirmados: Peñacerrada, Laguardia, Santa Cruz de Campezo y Agurain.',
+    mapAlt: 'Mapa esquemático del lazo de 226,9 km con la salida y meta en el Parque de La Florida (Vitoria-Gasteiz) y los cuatro controles confirmados: Peñacerrada, Laguardia, Santa Cruz de Campezo y Agurain.',
     startLabel: 'Salida y meta',
     profileTitle: 'Perfil de altitud',
     profileSub: 'Una columna por kilómetro, según el track. Del punto más bajo, {min} m, al más alto, {max} m.',
@@ -177,7 +187,7 @@ export default {
     items: [
       ['¿Cuándo es la carrera?', 'La I Edición se celebrará en <strong>otoño de 2027</strong>. Todavía no hemos publicado el día exacto.'],
       ['¿Dónde está la salida y dónde la meta?', 'En el quiosco del Parque de La Florida, en Vitoria-Gasteiz. La ruta es un lazo: sales y llegas al mismo sitio.'],
-      ['¿Qué distancia y desnivel tiene?', '<strong>227,5 km</strong> y <strong>+5.293 m</strong> de desnivel positivo, en autosuficiencia.'],
+      ['¿Qué distancia y desnivel tiene?', '<strong>226,9 km</strong> y <strong>+4.825 m</strong> de desnivel positivo, en autosuficiencia.'],
       ['¿Cuándo se abre la preinscripción?', 'La lista de preinscritos se abre el <strong>1 de diciembre de 2026</strong>.'],
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
       ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],
@@ -185,7 +195,7 @@ export default {
       ['¿Qué significa autosuficiencia?', 'Sin asistencia externa y sin avituallamientos de organización: llevas lo que necesitas y gestionas tú el agua, la comida y el sueño. La <a href="{guia}">guía de autosuficiencia</a> lo explica con detalle.'],
       ['¿Cómo funcionan los controles?', 'Hay seis controles. Cuatro están confirmados (Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada) y los otros dos están por definir. Un tracker te sigue durante toda la carrera y el brevet recoge tu paso.'],
       ['¿Es una buena primera carrera de este tipo?', 'Honestamente, no. Ultra Trail Larre® pide experiencia previa en larga distancia. Para dar los primeros pasos en autosuficiencia, la guía propone distancias menores.'],
-      ['¿Qué es el cero residuos?', 'Lo que entra contigo en el monte, sale contigo del monte. Lo recoge el <a href="{reglamento}">reglamento</a>.'],
+      ['¿Qué es el Código Cero?', 'Lo que entra contigo en el monte, sale contigo del monte. Lo recoge el <a href="{reglamento}">reglamento</a>.'],
       ['¿Dónde está el reglamento?', 'En <a href="{reglamento}">este PDF</a>, con las normas esenciales publicadas hasta ahora. El resto se publicará en la versión definitiva.']
     ]
   },

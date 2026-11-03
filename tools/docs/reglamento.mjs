@@ -5,7 +5,7 @@ export default {
   es: {
     title: 'Reglamento', sub: 'Normas esenciales de la I Edición publicadas hasta ahora. La versión definitiva se publicará antes de abrir la inscripción.',
     rows: [
-      ['Formato', 'Recorrido circular de 227,5 km y +5.293 m de desnivel positivo. Salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz.'],
+      ['Formato', 'Recorrido circular de 226,9 km y +4.825 m de desnivel positivo. Salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz.'],
       ['Edición', 'I Edición, otoño de 2027. La fecha concreta se anunciará en la web y en Instagram (@ultratraillarre).'],
       ['Autosuficiencia', 'Cada corredor lleva consigo lo que necesita: solo tú, un tracker y tu brevet. No hay avituallamientos clásicos ni asistencia externa.'],
       ['Seguimiento y control', 'Cada corredor lleva un tracker. El paso por los controles se acredita con el brevet.'],
@@ -21,12 +21,12 @@ export default {
   en: {
     title: 'Rules', sub: 'Essential rules of the 1st Edition published so far. The final version will be published before registration opens.',
     rows: [
-      ['Format', 'Loop route of 227.5 km with +5,293 m of positive elevation. Start and finish at the kiosk in Parque de La Florida, Vitoria-Gasteiz.'],
+      ['Format', 'Loop route of 226.9 km with +4,825 m of positive elevation. Start and finish at the kiosk in Parque de La Florida, Vitoria-Gasteiz.'],
       ['Edition', '1st Edition, autumn 2027. The exact date will be announced on the website and on Instagram (@ultratraillarre).'],
       ['Self-sufficiency', 'Each runner carries what they need: just you, a tracker and your brevet. There are no classic aid stations and no outside assistance.'],
       ['Tracking and control', 'Each runner carries a tracker. Passage through the controls is certified with the brevet.'],
       ['Confirmed controls', 'Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada. The remaining two are still to be defined.'],
-      ['Zero Waste', 'The route is run without leaving any waste. The specific conditions will be detailed in the final rules.'],
+      ['Zero Waste Code', 'The route is run without leaving any waste. The specific conditions will be detailed in the final rules.'],
       ['Participation', '300 places, assigned by order of arrival of the pre-registration. Pre-registration includes a mandatory short personal description, which is validated but does not filter. There is no bib reservation and no motivation letter.'],
       ['Pre-registration', 'The list opens on 1 December 2026. Pre-registration does not guarantee a place. The payment date is communicated by email in March.']
     ],
@@ -37,7 +37,7 @@ export default {
   eu: {
     title: 'Araudia', sub: 'I. Edizioko oinarrizko arauak, orain arte argitaratutakoak. Behin betiko bertsioa izen-ematea ireki aurretik argitaratuko da.',
     rows: [
-      ['Formatua', 'Ibilbide zirkularra, 227,5 km eta +5.293 m-ko desnibel positiboa. Irteera eta helmuga Florida Parkeko kioskoan, Gasteizen.'],
+      ['Formatua', 'Ibilbide zirkularra, 226,9 km eta +4.825 m-ko desnibel positiboa. Irteera eta helmuga Florida Parkeko kioskoan, Gasteizen.'],
       ['Edizioa', 'I. Edizioa, 2027ko udazkena. Data zehatza webgunean eta Instagramen (@ultratraillarre) iragarriko da.'],
       ['Autohornikuntza', 'Korrikalari bakoitzak behar duena berekin darama: zu bakarrik, tracker bat eta zure brevet-a. Ez dago hornitegi klasikorik ez kanpoko laguntzarik.'],
       ['Jarraipena eta kontrola', 'Korrikalari bakoitzak tracker bat darama. Kontroletatik igarotzea brevet-arekin egiaztatzen da.'],

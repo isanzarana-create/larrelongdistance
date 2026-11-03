@@ -25,11 +25,11 @@ Entorno: sitio construido (`public/`) servido en local + funciones ejecutadas co
 6. Euskera: primera pasada técnica; necesita tu revisión.
 
 ## Decisiones y datos a confirmar (lista corta)
-1. **Medidas**: el GPX mide 226,9 km y ≈4.825 m D+ (histéresis 3 m); la web usa las cifras oficiales 227,5 km y +5.293 m. Los km de los controles son aproximados («≈»).
-2. **Organización**: la web dice «lo organiza Musubigara®». Confirma la redacción (¿sigue siendo correcto con el cambio de Musubigara a gestión cultural?).
+1. **Medidas (resuelto)**: la web usa las cifras medidas en el GPX oficial: **226,9 km y +4.825 m** (desnivel con histéresis de 3 m), en web, PDF, JSON-LD, imágenes OG y GPX. Los km de los controles son aproximados («≈»).
+2. **Organizador (resuelto)**: Musubigara®.
 3. **Fecha**: «otoño de 2027»; JSON-LD con `startDate: 2027`. Dos controles aún por definir.
 4. **Enlaces a publicaciones de Instagram**: no se pueden obtener desde aquí; cada foto enlaza al perfil hasta que pegues el `permalink`. Dos láminas con el nombre antiguo («LARRE Long Distance®») están **ocultas** (reversible).
-5. **Reglamento y Guía**: solo lo confirmado + «pendiente de publicar» (tiempo límite, material, seguros, abandono, derechos de imagen, reposición, sanciones). «Código Cero» aparece como principio **sin sanción** (la descalificación inmediata de la web antigua no está confirmada). Los textos de «La carrera / ¿Es para ti?» y la Guía son tuyos, adaptados; revísalos.
+4. **Reglamento y Guía**: solo lo confirmado + «pendiente de publicar» (tiempo límite, material, seguros, abandono, derechos de imagen, reposición, sanciones). «Código Cero» es ahora la sección 03 del índice, como principio **sin sanción** (la descalificación inmediata de la web antigua no está confirmada). Los textos de «La carrera / ¿Es para ti?» y la Guía son tuyos, adaptados; revísalos.
 6. **Legal**: aviso y privacidad reutilizan titular, NIF y domicilio de la web antigua y mencionan Netlify, Resend, Google y Meta: revisar antes de publicar.
 7. **WhatsApp** 34 620 463 558 (heredado): confirmar. **DNI**: no se pide (se pedirá al confirmar plaza).
 8. **Search Console / Bing**: pega los códigos en `tools/data/site.json`. **Analítica**: ninguna activa.

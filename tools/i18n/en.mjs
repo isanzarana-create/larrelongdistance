@@ -6,7 +6,7 @@ export default {
   paths: { home: '/en/', aviso: '/en/legal-notice/', priv: '/en/privacy-policy/' },
   meta: {
     title: 'Ultra Trail Larre® · Self-supported ultra in Álava, autumn 2027',
-    description: 'A self-supported ultra across the mountains of Álava: a 227.5 km loop with 5,293 m of climbing from Vitoria-Gasteiz. 300 places. First edition, autumn 2027.',
+    description: 'A self-supported ultra across the mountains of Álava: a 226.9 km loop with 4,825 m of climbing from Vitoria-Gasteiz. 300 places. First edition, autumn 2027.',
     ogLine: 'Self-supported ultra · Álava · autumn 2027',
     ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, autumn 2027'
   },
@@ -36,6 +36,7 @@ export default {
   nav: [
     ['la-carrera', 'The race'],
     ['ruta', 'Route'],
+    ['codigo-cero', 'Zero Waste Code'],
     ['instagram', 'Instagram'],
     ['preinscripcion', 'Pre-registration'],
     ['descargas', 'Downloads'],
@@ -46,12 +47,12 @@ export default {
   hero: {
     eyebrow: 'First edition · autumn 2027',
     claim: 'Just you, a tracker and your brevet.',
-    sub: 'A self-supported ultra across the mountains of Álava. A 227.5 km loop that starts and finishes in Vitoria-Gasteiz.',
+    sub: 'A self-supported ultra across the mountains of Álava. A 226.9 km loop that starts and finishes in Vitoria-Gasteiz.',
     cta: 'Pre-register',
     cta2: 'See the route',
     facts: [
-      ['227.5', 'km loop'],
-      ['+5,293', 'm of climbing'],
+      ['226.9', 'km loop'],
+      ['+4,825', 'm of climbing'],
       ['300', 'places'],
       ['La Florida', 'start and finish, Vitoria-Gasteiz']
     ]
@@ -63,23 +64,32 @@ export default {
       ['Self-supported', 'Ultra Trail Larre® is a self-supported ultra: no outside assistance and no organiser aid stations. You decide what to carry, when to eat, when to sleep and how to manage your water. You prepare for it like an expedition, not like a circuit.'],
       ['Just you, a tracker and your brevet', 'A tracker follows you for the whole race, and your brevet records your passage through the controls. Navigation is part of the challenge.'],
       ['Philosophy', 'It is not a mass-participation race and does not want to be. There are 300 places, and that number is an identity, not a market parameter. For many people, the challenge will simply be to finish.'],
-      ['Zero waste', 'What goes into the mountains with you comes out of the mountains with you. The only trace we leave is our footprints.'],
       ['The mountains', 'We cross ranges, villages and vineyards of Álava where people live all year round. We pass through with respect and leave no trace: that is the condition for coming back.']
     ],
     forYouH: 'Is it for you?',
-    forYou: 'Ultra Trail Larre® is not a beginner’s race. It asks for previous long-distance experience, a cool head in the small hours and acceptance of the zero-waste rule. If that sounds more like a privilege than a sacrifice, this is your race.'
+    forYou: 'Ultra Trail Larre® is not a beginner’s race. It asks for previous long-distance experience, a cool head in the small hours and acceptance of the Zero Waste Code. If that sounds more like a privilege than a sacrifice, this is your race.'
+  },
+  zero: {
+    h2: 'Zero Waste Code',
+    lead: 'What goes into the mountains with you comes out of the mountains with you. The only trace we leave is our footprints.',
+    blocks: [
+      ['Your bag', 'Your own rubbish bag in a fixed pocket, always the same one.'],
+      ['Every wrapper', 'Gel and bar tabs tied or pocketed the moment you open them, never “later”.'],
+      ['Before the start', 'Decant what you can into reusable bags so you carry less packaging from the beginning.']
+    ],
+    note: 'The specific conditions of the Zero Waste Code will be detailed in the final <a href="{reglamento}">rules</a>. More ideas in the <a href="{guia}">self-sufficiency guide</a>.'
   },
   route: {
     h2: 'The route',
-    lead: 'A 227.5 km loop with 5,293 m of climbing, starting and finishing at the bandstand in La Florida Park, Vitoria-Gasteiz.',
+    lead: 'A 226.9 km loop with 4,825 m of climbing, starting and finishing at the bandstand in La Florida Park, Vitoria-Gasteiz.',
     figs: [
-      ['Distance', '227.5 km'],
-      ['Elevation gain', '+5,293 m'],
+      ['Distance', '226.9 km'],
+      ['Elevation gain', '+4,825 m'],
       ['Start and finish', 'La Florida Park'],
       ['Controls', '6 (4 confirmed)']
     ],
     mapTitle: 'Route map',
-    mapAlt: 'Schematic map of the 227.5 km loop, starting and finishing at La Florida Park in Vitoria-Gasteiz, with the four confirmed controls: Peñacerrada, Laguardia, Santa Cruz de Campezo and Agurain.',
+    mapAlt: 'Schematic map of the 226.9 km loop, starting and finishing at La Florida Park in Vitoria-Gasteiz, with the four confirmed controls: Peñacerrada, Laguardia, Santa Cruz de Campezo and Agurain.',
     startLabel: 'Start and finish',
     profileTitle: 'Elevation profile',
     profileSub: 'One column per kilometre, from the track. From the lowest point, {min} m, to the highest, {max} m.',
@@ -177,7 +187,7 @@ export default {
     items: [
       ['When is the race?', 'The first edition takes place in <strong>autumn 2027</strong>. We have not published the exact day yet.'],
       ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz. The route is a loop: you start and finish in the same place.'],
-      ['How long is it and how much climbing?', '<strong>227.5 km</strong> and <strong>+5,293 m</strong> of elevation gain, self-supported.'],
+      ['How long is it and how much climbing?', '<strong>226.9 km</strong> and <strong>+4,825 m</strong> of elevation gain, self-supported.'],
       ['When does pre-registration open?', 'The pre-registration list opens on <strong>1 December 2026</strong>.'],
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
       ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],
@@ -185,7 +195,7 @@ export default {
       ['What does self-supported mean?', 'No outside assistance and no organiser aid stations: you carry what you need and manage your own water, food and sleep. The <a href="{guia}">self-sufficiency guide</a> explains it in detail.'],
       ['How do the controls work?', 'There are six controls. Four are confirmed (Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada) and the other two are still to be defined. A tracker follows you throughout the race and your brevet records your passage.'],
       ['Is it a good first race of this kind?', 'Honestly, no. Ultra Trail Larre® asks for previous long-distance experience. For your first steps in self-supported racing, the guide suggests shorter distances.'],
-      ['What is zero waste?', 'What goes into the mountains with you comes out with you. It is set out in the <a href="{reglamento}">race rules</a>.'],
+      ['What is the Zero Waste Code?', 'What goes into the mountains with you comes out with you. It is set out in the <a href="{reglamento}">race rules</a>.'],
       ['Where can I read the rules?', 'In <a href="{reglamento}">this PDF</a>, with the essential rules published so far. The rest will be published in the final version.']
     ]
   },

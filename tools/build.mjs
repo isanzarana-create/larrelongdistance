@@ -293,9 +293,13 @@ function homePage(t) {
 </div></div>
 <p class="sec-cta"><a class="btn btn-main" href="${GPX.href}" download>${ICON.dl}<span>${esc(t.route.gpx)}</span></a><a class="link-arrow" href="${H.mapsSalida}" target="_blank" rel="noopener">${esc(t.route.mapsStart)} ${ICON.arrow}<span class="sr"> (${esc(t.ui.new)})</span></a></p>`);
 
-  const ig = sectionHtml('instagram', 3, t.ig.h2, `<p class="lead">${esc(t.ig.lead)}</p>${gallery(t)}`);
+  const zero = sectionHtml('codigo-cero', 3, t.zero.h2, `<p class="lead">${esc(t.zero.lead)}</p>
+<div class="blocks blocks-3">${t.zero.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
+<p class="hint">${fill(t.zero.note, links)}</p>`);
 
-  const pre = sectionHtml('preinscripcion', 4, t.pre.h2, `<p class="lead">${esc(t.pre.lead)}</p>
+  const ig = sectionHtml('instagram', 4, t.ig.h2, `<p class="lead">${esc(t.ig.lead)}</p>${gallery(t)}`);
+
+  const pre = sectionHtml('preinscripcion', 5, t.pre.h2, `<p class="lead">${esc(t.pre.lead)}</p>
 <ul class="points">${t.pre.points.map((p) => `<li>${p}</li>`).join('')}</ul>
 <div class="pre-box" id="preBox">
 <div class="notice" id="preClosed" role="status" hidden><h3>${esc(t.pre.closedTitle)}</h3><p>${esc(t.pre.closedText)}</p></div>
@@ -305,19 +309,19 @@ ${preForm(t)}
 <div class="notice notice-ok" id="preOk" role="status" tabindex="-1" hidden></div>
 </div>`, 'sec-pre');
 
-  const dl = sectionHtml('descargas', 5, t.dl.h2, `<p class="lead">${esc(t.dl.lead)}</p>
+  const dl = sectionHtml('descargas', 6, t.dl.h2, `<p class="lead">${esc(t.dl.lead)}</p>
 <ul class="dl">
 ${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglamento, true], ['gpx', GPX, t.dl.items.gpx, false]].map(([k, f, [title, desc], isPdf]) => `<li class="card"><h3>${esc(title)}</h3><p>${esc(desc)}</p><p class="meta">${isPdf ? t.dl.pdf : 'GPX'} · ${f.size} · ${esc(t.dl.version)} ${esc(isPdf ? ver : verGpx)}</p><a class="btn btn-main" href="${f.href}" download>${ICON.dl}<span>${esc(t.ui.download)}</span><span class="sr"> ${esc(title)}</span></a></li>`).join('')}
 </ul>`);
 
-  const faq = sectionHtml('faq', 6, t.faq.h2, `<p class="lead">${esc(t.faq.lead)}</p>
+  const faq = sectionHtml('faq', 7, t.faq.h2, `<p class="lead">${esc(t.faq.lead)}</p>
 <div class="faq">${t.faq.items.map(([q, a]) => `<details><summary><span>${esc(q)}</span><i aria-hidden="true"></i></summary><div class="ans"><p>${fill(a, links)}</p></div></details>`).join('')}</div>`);
 
-  const partners = sectionHtml('colabora', 7, t.partners.h2, `<p class="lead">${esc(t.partners.lead)}</p>
+  const partners = sectionHtml('colabora', 8, t.partners.h2, `<p class="lead">${esc(t.partners.lead)}</p>
 <div class="blocks blocks-4">${t.partners.types.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
 <div class="col-form"><h3>${esc(t.partners.formTitle)}</h3>${partnerForm(t)}<div class="notice notice-ok" id="colOk" role="status" tabindex="-1" hidden></div></div>`);
 
-  const contact = sectionHtml('contacto', 8, t.contact.h2, `<p class="lead">${esc(t.contact.lead)}</p>
+  const contact = sectionHtml('contacto', 9, t.contact.h2, `<p class="lead">${esc(t.contact.lead)}</p>
 <ul class="contact">
 <li><span class="k">${ICON.mail}${esc(t.contact.labels.email)}</span><a href="mailto:${H.email}">${H.email}</a></li>
 <li><span class="k">${ICON.ig}${esc(t.contact.labels.ig)}</span><a href="${H.instagramUrl}" target="_blank" rel="noopener">@${H.instagram}<span class="sr"> (${esc(t.ui.new)})</span></a></li>
@@ -338,7 +342,7 @@ ${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglame
   const jsonld = homeJsonLd(t, alternates[lang]);
   return (
     head(t, { title: t.meta.title, description: t.meta.description, path: alternates[lang], alternates, og: `/assets/og-${lang}.png`, jsonld }) +
-    `\n<body data-page="home">\n${header(t, { alternates, isHome: true })}\n<main id="main" tabindex="-1">\n${hero}\n${race}\n${route}\n${ig}\n${pre}\n${dl}\n${faq}\n${partners}\n${contact}\n</main>\n${footer(t)}\n${netlifyForms()}\n<script type="application/json" id="i18n">${JSON.stringify(i18n).replace(/</g, '\\u003c')}</script>\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
+    `\n<body data-page="home">\n${header(t, { alternates, isHome: true })}\n<main id="main" tabindex="-1">\n${hero}\n${race}\n${route}\n${zero}\n${ig}\n${pre}\n${dl}\n${faq}\n${partners}\n${contact}\n</main>\n${footer(t)}\n${netlifyForms()}\n<script type="application/json" id="i18n">${JSON.stringify(i18n).replace(/</g, '\\u003c')}</script>\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
   );
 }
 
@@ -422,10 +426,10 @@ function llms() {
   const r = (l) => `${ORIGIN}${pdfPath('reglamento', l)}`;
   return `# Ultra Trail Larre®
 
-> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227,5 km y +5.293 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: otoño de 2027. Organiza Musubigara®.
+> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 226,9 km y +4.825 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: otoño de 2027. Organiza Musubigara®.
 
 ## Datos clave
-- Distancia y desnivel: 227,5 km y +5.293 m de desnivel positivo, en lazo.
+- Distancia y desnivel: 226,9 km y +4.825 m de desnivel positivo, en lazo.
 - Formato: autosuficiencia, sin asistencia externa ni avituallamientos de organización. Un tracker y un brevet.
 - Controles: seis; confirmados Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada (dos por definir).
 - Plazas: 300, por orden de llegada de la preinscripción. La preinscripción no garantiza plaza.
