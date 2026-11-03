@@ -6,7 +6,7 @@ export default {
   paths: { home: '/', aviso: '/aviso-legal/', priv: '/politica-privacidad/' },
   meta: {
     title: 'Ultra Trail Larre® · Ultra-trail en autosuficiencia, Álava 2027',
-    description: 'Ultra-trail en autosuficiencia por las sierras de Álava: 226,9 km y +4.825 m en lazo desde Vitoria-Gasteiz. 300 plazas. I Edición, otoño de 2027.',
+    description: 'Ultra-trail en autosuficiencia por las sierras de Álava: 227 km y +5.290 m en lazo desde Vitoria-Gasteiz. 300 plazas. I Edición, otoño de 2027.',
     ogLine: 'Ultra-trail en autosuficiencia · Álava · otoño de 2027',
     ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, otoño de 2027'
   },
@@ -50,12 +50,12 @@ export default {
   hero: {
     eyebrow: 'I Edición · otoño de 2027',
     claim: 'Solo tú, un tracker y tu brevet.',
-    sub: 'Ultra-trail en autosuficiencia por las sierras de Álava. Un lazo de 226,9 km que sale y llega a Vitoria-Gasteiz.',
+    sub: 'Ultra-trail en autosuficiencia por las sierras de Álava. Un lazo de 227 km que sale y llega a Vitoria-Gasteiz.',
     cta: 'Preinscribirme',
     cta2: 'Ver la ruta',
     facts: [
-      ['226,9', 'km en lazo'],
-      ['+4.825', 'm de desnivel positivo'],
+      ['227', 'km en lazo'],
+      ['+5.290', 'm de desnivel positivo'],
       ['300', 'plazas'],
       ['La Florida', 'salida y meta, Vitoria-Gasteiz']
     ]
@@ -84,15 +84,15 @@ export default {
   },
   route: {
     h2: 'La ruta',
-    lead: 'Un lazo de 226,9 km y +4.825 m con salida y meta en el quiosco del Parque de La Florida, en Vitoria-Gasteiz.',
+    lead: 'Un lazo de 227 km y +5.290 m con salida y meta en el quiosco del Parque de La Florida, en Vitoria-Gasteiz.',
     figs: [
-      ['Distancia', '226,9 km'],
-      ['Desnivel positivo', '+4.825 m'],
+      ['Distancia', '227 km'],
+      ['Desnivel positivo', '+5.290 m'],
       ['Salida y meta', 'Parque de La Florida'],
       ['Controles', '6 (4 confirmados)']
     ],
     mapTitle: 'Mapa del recorrido',
-    mapAlt: 'Mapa esquemático del lazo de 226,9 km con la salida y meta en el Parque de La Florida (Vitoria-Gasteiz) y los cuatro controles confirmados: Peñacerrada, Laguardia, Santa Cruz de Campezo y Agurain.',
+    mapAlt: 'Mapa esquemático del lazo de 227 km con la salida y meta en el Parque de La Florida (Vitoria-Gasteiz) y los cuatro controles confirmados: Peñacerrada, Laguardia, Santa Cruz de Campezo y Agurain.',
     startLabel: 'Salida y meta',
     profileTitle: 'Perfil de altitud',
     profileSub: 'Una columna por kilómetro, según el track. Del punto más bajo, {min} m, al más alto, {max} m.',
@@ -200,7 +200,7 @@ export default {
     items: [
       ['¿Cuándo es la carrera?', 'La I Edición se celebrará en <strong>otoño de 2027</strong>. Todavía no hemos publicado el día exacto.'],
       ['¿Dónde está la salida y dónde la meta?', 'En el quiosco del Parque de La Florida, en Vitoria-Gasteiz. La ruta es un lazo: sales y llegas al mismo sitio.'],
-      ['¿Qué distancia y desnivel tiene?', '<strong>226,9 km</strong> y <strong>+4.825 m</strong> de desnivel positivo, en autosuficiencia.'],
+      ['¿Qué distancia y desnivel tiene?', '<strong>227 km</strong> y <strong>+5.290 m</strong> de desnivel positivo, en autosuficiencia.'],
       ['¿Cuándo se abre la preinscripción?', 'La lista de preinscritos se abre el <strong>1 de diciembre de 2026</strong>.'],
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
       ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],

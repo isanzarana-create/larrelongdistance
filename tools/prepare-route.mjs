@@ -11,7 +11,7 @@
  *   - tools/data/ruta.json                     datos para el mapa y el perfil
  *       (trazo simplificado, columnas de altitud por km, paso por localidades).
  *
- * Las cifras de la carrera (226,9 km, +4.825 m) son las MEDIDAS en el GPX oficial
+ * Las cifras de la carrera (227 km, +5.290 m) son las MEDIDAS en el GPX oficial
  * (desnivel con histéresis de 3 m) y están fijadas en tools/data/hechos.json.
  * Si cambias el track, este script avisa de cualquier diferencia con hechos.json.
  */
@@ -150,7 +150,7 @@ const gpx = `<?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Ultra Trail Larre® · ultratraillarre.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Ultra Trail Larre® · I Edición</name>
-    <desc>Ruta en lazo de 226,9 km y +4.825 m con salida y meta en el quiosco del Parque de La Florida (Vitoria-Gasteiz). Ultra-trail en autosuficiencia por las sierras de Álava.</desc>
+    <desc>Ruta en lazo de 227 km y +5.290 m con salida y meta en el quiosco del Parque de La Florida (Vitoria-Gasteiz). Ultra-trail en autosuficiencia por las sierras de Álava.</desc>
     <author><name>Musubigara®</name><link href="https://ultratraillarre.org/"><text>Ultra Trail Larre®</text></link></author>
     <copyright author="Musubigara®"><year>2026</year></copyright>
     <link href="https://ultratraillarre.org/"><text>ultratraillarre.org</text></link>

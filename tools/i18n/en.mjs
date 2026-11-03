@@ -6,7 +6,7 @@ export default {
   paths: { home: '/en/', aviso: '/en/legal-notice/', priv: '/en/privacy-policy/' },
   meta: {
     title: 'Ultra Trail Larre® · Self-supported ultra in Álava, autumn 2027',
-    description: 'A self-supported ultra across the mountains of Álava: a 226.9 km loop with 4,825 m of climbing from Vitoria-Gasteiz. 300 places. First edition, autumn 2027.',
+    description: 'A self-supported ultra across the mountains of Álava: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. 300 places. First edition, autumn 2027.',
     ogLine: 'Self-supported ultra · Álava · autumn 2027',
     ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, autumn 2027'
   },
@@ -50,12 +50,12 @@ export default {
   hero: {
     eyebrow: 'First edition · autumn 2027',
     claim: 'Just you, a tracker and your brevet.',
-    sub: 'A self-supported ultra across the mountains of Álava. A 226.9 km loop that starts and finishes in Vitoria-Gasteiz.',
+    sub: 'A self-supported ultra across the mountains of Álava. A 227 km loop that starts and finishes in Vitoria-Gasteiz.',
     cta: 'Pre-register',
     cta2: 'See the route',
     facts: [
-      ['226.9', 'km loop'],
-      ['+4,825', 'm of climbing'],
+      ['227', 'km loop'],
+      ['+5,290', 'm of climbing'],
       ['300', 'places'],
       ['La Florida', 'start and finish, Vitoria-Gasteiz']
     ]
@@ -84,15 +84,15 @@ export default {
   },
   route: {
     h2: 'The route',
-    lead: 'A 226.9 km loop with 4,825 m of climbing, starting and finishing at the bandstand in La Florida Park, Vitoria-Gasteiz.',
+    lead: 'A 227 km loop with 5,290 m of climbing, starting and finishing at the bandstand in La Florida Park, Vitoria-Gasteiz.',
     figs: [
-      ['Distance', '226.9 km'],
-      ['Elevation gain', '+4,825 m'],
+      ['Distance', '227 km'],
+      ['Elevation gain', '+5,290 m'],
       ['Start and finish', 'La Florida Park'],
       ['Controls', '6 (4 confirmed)']
     ],
     mapTitle: 'Route map',
-    mapAlt: 'Schematic map of the 226.9 km loop, starting and finishing at La Florida Park in Vitoria-Gasteiz, with the four confirmed controls: Peñacerrada, Laguardia, Santa Cruz de Campezo and Agurain.',
+    mapAlt: 'Schematic map of the 227 km loop, starting and finishing at La Florida Park in Vitoria-Gasteiz, with the four confirmed controls: Peñacerrada, Laguardia, Santa Cruz de Campezo and Agurain.',
     startLabel: 'Start and finish',
     profileTitle: 'Elevation profile',
     profileSub: 'One column per kilometre, from the track. From the lowest point, {min} m, to the highest, {max} m.',
@@ -200,7 +200,7 @@ export default {
     items: [
       ['When is the race?', 'The first edition takes place in <strong>autumn 2027</strong>. We have not published the exact day yet.'],
       ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz. The route is a loop: you start and finish in the same place.'],
-      ['How long is it and how much climbing?', '<strong>226.9 km</strong> and <strong>+4,825 m</strong> of elevation gain, self-supported.'],
+      ['How long is it and how much climbing?', '<strong>227 km</strong> and <strong>+5,290 m</strong> of elevation gain, self-supported.'],
       ['When does pre-registration open?', 'The pre-registration list opens on <strong>1 December 2026</strong>.'],
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
       ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],

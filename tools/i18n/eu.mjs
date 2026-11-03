@@ -7,7 +7,7 @@ export default {
   paths: { home: '/eu/', aviso: '/eu/lege-oharra/', priv: '/eu/pribatutasun-politika/' },
   meta: {
     title: 'Ultra Trail Larre® · Autohornikuntzako ultra-trail-a, Araba 2027',
-    description: 'Autohornikuntzako ultra-trail-a Arabako mendilerroetan: 226,9 km eta +4.825 m, Gasteizen hasi eta bukatzen den begizta. 300 plaza. I. edizioa, 2027ko udazkena.',
+    description: 'Autohornikuntzako ultra-trail-a Arabako mendilerroetan: 227 km eta +5.290 m, Gasteizen hasi eta bukatzen den begizta. 300 plaza. I. edizioa, 2027ko udazkena.',
     ogLine: 'Autohornikuntzako ultra-trail-a · Araba · 2027ko udazkena',
     ogAlt: 'Ultra Trail Larre®: autohornikuntzako ultra-trail-a Arabako mendilerroetan, 2027ko udazkena'
   },
@@ -51,12 +51,12 @@ export default {
   hero: {
     eyebrow: 'I. edizioa · 2027ko udazkena',
     claim: 'Zu bakarrik, tracker bat eta zure brevet-a.',
-    sub: 'Autohornikuntzako ultra-trail-a Arabako mendilerroetan. Gasteizen hasi eta bukatzen den 226,9 km-ko begizta.',
+    sub: 'Autohornikuntzako ultra-trail-a Arabako mendilerroetan. Gasteizen hasi eta bukatzen den 227 km-ko begizta.',
     cta: 'Aurre-izena eman',
     cta2: 'Ikusi ibilbidea',
     facts: [
-      ['226,9', 'km begizta batean'],
-      ['+4.825', 'm-ko desnibel positiboa'],
+      ['227', 'km begizta batean'],
+      ['+5.290', 'm-ko desnibel positiboa'],
       ['300', 'plaza'],
       ['La Florida', 'irteera eta helmuga, Gasteiz']
     ]
@@ -85,15 +85,15 @@ export default {
   },
   route: {
     h2: 'Ibilbidea',
-    lead: '226,9 km eta +4.825 m-ko begizta, Gasteizko La Florida parkeko kioskotik hasi eta bertan bukatzen dena.',
+    lead: '227 km eta +5.290 m-ko begizta, Gasteizko La Florida parkeko kioskotik hasi eta bertan bukatzen dena.',
     figs: [
-      ['Distantzia', '226,9 km'],
-      ['Desnibel positiboa', '+4.825 m'],
+      ['Distantzia', '227 km'],
+      ['Desnibel positiboa', '+5.290 m'],
       ['Irteera eta helmuga', 'La Florida parkea'],
       ['Kontrol-guneak', '6 (4 baieztatuta)']
     ],
     mapTitle: 'Ibilbidearen mapa',
-    mapAlt: '226,9 km-ko begiztaren mapa eskematikoa: irteera eta helmuga Gasteizko La Florida parkean, eta baieztatutako lau kontrol-guneak: Urizaharra, Biasteri, Santikurutze Kanpezu eta Agurain.',
+    mapAlt: '227 km-ko begiztaren mapa eskematikoa: irteera eta helmuga Gasteizko La Florida parkean, eta baieztatutako lau kontrol-guneak: Urizaharra, Biasteri, Santikurutze Kanpezu eta Agurain.',
     startLabel: 'Irteera eta helmuga',
     profileTitle: 'Altitude-profila',
     profileSub: 'Kilometro bakoitzeko zutabe bat, trackaren arabera. Punturik baxuenetik, {min} m, altuenera, {max} m.',
@@ -201,7 +201,7 @@ export default {
     items: [
       ['Noiz da lasterketa?', 'I. edizioa <strong>2027ko udazkenean</strong> izango da. Oraindik ez dugu zehaztu eguna.'],
       ['Non dira irteera eta helmuga?', 'Gasteizko La Florida parkeko kioskoan. Ibilbidea begizta bat da: toki berean hasi eta bukatzen duzu.'],
-      ['Zenbat distantzia eta desnibel ditu?', '<strong>226,9 km</strong> eta <strong>+4.825 m</strong>-ko desnibel positiboa, autohornikuntzan.'],
+      ['Zenbat distantzia eta desnibel ditu?', '<strong>227 km</strong> eta <strong>+5.290 m</strong>-ko desnibel positiboa, autohornikuntzan.'],
       ['Noiz irekitzen da aurre-izen-ematea?', 'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean</strong> irekiko da.'],
       ['Nola esleitzen dira 300 plazak?', 'Aurre-izen-emateak iritsi diren hurrenkeran. Azalpen pertsonal laburra derrigorrezkoa da: aurre-izen-ematea balioztatzeko balio du, ez iragazteko. Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.'],
       ['Aurre-izen-emateak plaza bermatzen al du?', 'Ez. Aurre-izena ematean erreferentzia-kode bat jasoko duzu posta elektronikoz, eta ordainketa-data ere posta elektronikoz jakinaraziko dizugu, martxoan.'],

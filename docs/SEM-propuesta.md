@@ -29,14 +29,14 @@ Total orientativo: 330–510 €/mes durante el periodo de captación (dic 2026 
 
 ### Anuncios de búsqueda adaptables (titulares ≤30, descripciones ≤90 caracteres)
 **ES**
-- Titulares: «Ultra Trail Larre®» · «Ultra en autosuficiencia» · «226,9 km por Álava» · «300 plazas» · «Preinscripción abierta» *(solo desde el 1 dic)* · «Solo tú, tracker y brevet».
-- Descripciones: «Un lazo de 226,9 km y +4.825 m desde Vitoria-Gasteiz. I Edición, otoño de 2027.» · «300 plazas por orden de llegada de la preinscripción. Descarga la guía y el track.»
+- Titulares: «Ultra Trail Larre®» · «Ultra en autosuficiencia» · «227 km por Álava» · «300 plazas» · «Preinscripción abierta» *(solo desde el 1 dic)* · «Solo tú, tracker y brevet».
+- Descripciones: «Un lazo de 227 km y +5.290 m desde Vitoria-Gasteiz. I Edición, otoño de 2027.» · «300 plazas por orden de llegada de la preinscripción. Descarga la guía y el track.»
 **EU**
-- Titulares: «Ultra Trail Larre®» · «Autohornikuntzako ultra-a» · «226,9 km Araban» · «300 plaza».
-- Descripciones: «226,9 km eta +4.825 m-ko begizta Gasteizetik. I. Edizioa, 2027ko udazkena.» · «300 plaza, aurre-izen-emateen iritsiera-ordenaren arabera.»
+- Titulares: «Ultra Trail Larre®» · «Autohornikuntzako ultra-a» · «227 km Araban» · «300 plaza».
+- Descripciones: «227 km eta +5.290 m-ko begizta Gasteizetik. I. Edizioa, 2027ko udazkena.» · «300 plaza, aurre-izen-emateen iritsiera-ordenaren arabera.»
 **EN**
-- Titles: «Ultra Trail Larre®» · «Self-Supported Ultra» · «226.9 km in Álava, Spain» · «300 Places Only».
-- Descriptions: «A 226.9 km, +4,825 m loop from Vitoria-Gasteiz. 1st Edition, autumn 2027.» · «300 places by order of pre-registration. Download the guide and the GPX track.»
+- Titles: «Ultra Trail Larre®» · «Self-Supported Ultra» · «227 km in Álava, Spain» · «300 Places Only».
+- Descriptions: «A 227 km, +5,290 m loop from Vitoria-Gasteiz. 1st Edition, autumn 2027.» · «300 places by order of pre-registration. Download the guide and the GPX track.»
 
 Extensiones: enlaces a sitio (La carrera, Ruta, Preinscripción, Descargas), texto destacado («Sin avituallamientos», «Tracker + brevet»), fragmentos estructurados (Tipo: *Distancia*, *Formato*). Páginas de destino: `/`, `/eu/`, `/en/` (anclas `#preinscripcion`).
 

@@ -27,7 +27,7 @@ Entorno: sitio construido (`public/`) servido en local + funciones ejecutadas co
 6. Euskera: primera pasada técnica; necesita tu revisión.
 
 ## Decisiones y datos a confirmar (lista corta)
-1. **Medidas (resuelto)**: la web usa las cifras medidas en el GPX oficial: **226,9 km y +4.825 m** (desnivel con histéresis de 3 m), en web, PDF, JSON-LD, imágenes OG y GPX. Los km de los controles son aproximados («≈»).
+1. **Medidas (resuelto)**: la web usa las cifras medidas en el GPX oficial: **227 km y +5.290 m** (desnivel con histéresis de 3 m), en web, PDF, JSON-LD, imágenes OG y GPX. Los km de los controles son aproximados («≈»).
 2. **Organizador (resuelto)**: Musubigara®.
 3. **Fecha**: «otoño de 2027»; JSON-LD con `startDate: 2027`. Dos controles aún por definir.
 4. **Enlaces a publicaciones de Instagram**: no se pueden obtener desde aquí; cada foto enlaza al perfil hasta que pegues el `permalink`. Dos láminas con el nombre antiguo («LARRE Long Distance®») están **ocultas** (reversible).

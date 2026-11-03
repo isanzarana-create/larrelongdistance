@@ -5,7 +5,7 @@ export default {
   es: {
     title: 'Reglamento', sub: 'Normas esenciales de la I Edición publicadas hasta ahora. La versión definitiva se publicará antes de abrir la inscripción.',
     rows: [
-      ['Formato', 'Recorrido circular de 226,9 km y +4.825 m de desnivel positivo. Salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz.'],
+      ['Formato', 'Recorrido circular de 227 km y +5.290 m de desnivel positivo. Salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz.'],
       ['Edición', 'I Edición, otoño de 2027. La fecha concreta se anunciará en la web y en Instagram (@ultratraillarre).'],
       ['Autosuficiencia', 'Cada corredor lleva consigo lo que necesita: solo tú, un tracker y tu brevet. No hay avituallamientos clásicos ni asistencia externa.'],
       ['Seguimiento y control', 'Cada corredor lleva un tracker. El paso por los controles se acredita con el brevet.'],
@@ -21,7 +21,7 @@ export default {
   en: {
     title: 'Rules', sub: 'Essential rules of the 1st Edition published so far. The final version will be published before registration opens.',
     rows: [
-      ['Format', 'Loop route of 226.9 km with +4,825 m of positive elevation. Start and finish at the kiosk in Parque de La Florida, Vitoria-Gasteiz.'],
+      ['Format', 'Loop route of 227 km with +5,290 m of positive elevation. Start and finish at the kiosk in Parque de La Florida, Vitoria-Gasteiz.'],
       ['Edition', '1st Edition, autumn 2027. The exact date will be announced on the website and on Instagram (@ultratraillarre).'],
       ['Self-sufficiency', 'Each runner carries what they need: just you, a tracker and your brevet. There are no classic aid stations and no outside assistance.'],
       ['Tracking and control', 'Each runner carries a tracker. Passage through the controls is certified with the brevet.'],
@@ -37,7 +37,7 @@ export default {
   eu: {
     title: 'Araudia', sub: 'I. Edizioko oinarrizko arauak, orain arte argitaratutakoak. Behin betiko bertsioa izen-ematea ireki aurretik argitaratuko da.',
     rows: [
-      ['Formatua', 'Ibilbide zirkularra, 226,9 km eta +4.825 m-ko desnibel positiboa. Irteera eta helmuga Florida Parkeko kioskoan, Gasteizen.'],
+      ['Formatua', 'Ibilbide zirkularra, 227 km eta +5.290 m-ko desnibel positiboa. Irteera eta helmuga Florida Parkeko kioskoan, Gasteizen.'],
       ['Edizioa', 'I. Edizioa, 2027ko udazkena. Data zehatza webgunean eta Instagramen (@ultratraillarre) iragarriko da.'],
       ['Autohornikuntza', 'Korrikalari bakoitzak behar duena berekin darama: zu bakarrik, tracker bat eta zure brevet-a. Ez dago hornitegi klasikorik ez kanpoko laguntzarik.'],
       ['Jarraipena eta kontrola', 'Korrikalari bakoitzak tracker bat darama. Kontroletatik igarotzea brevet-arekin egiaztatzen da.'],
