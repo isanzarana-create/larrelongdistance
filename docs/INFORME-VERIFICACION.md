@@ -14,7 +14,9 @@ Entorno: sitio construido (`public/`) servido en local + funciones ejecutadas co
 | Formulario en navegador real (Playwright, móvil 390 px): errores accesibles, envío, código, copiar, formulario de colaboración, visor de fotos (flechas/Esc), menú (Esc) | OK, sin errores de consola | `verificacion/preinscripcion-ok-movil.png` |
 | Correos del corredor (HTML + texto) en ES/EU/EN, 600 y 360 px | Maquetación correcta; código en una línea | `verificacion/correo-corredor-*.png` |
 | Sin olas / QR / precio / «Doc.» / cifras antiguas (214 km, 6.020 m, 16:00, 9 oct, 322,50 €, LARRE Long Distance) | 0 coincidencias en `public/` (HTML, CSS, JS, SVG, PDF) | búsqueda por patrón |
-| Sin desbordamiento horizontal en 360, 768 y 1440 px | OK | `verificacion/portada-*.jpg` |
+| Sin desbordamiento horizontal en 320 (reflow WCAG 1.4.10), 360, 768 y 1440 px; zoom 200 % sin pérdida de contenido | OK (en 320 había 46 px de desborde en la cabecera: corregido) | `verificacion/portada-*.jpg` |
+
+| Teclado: orden de foco lógico, foco visible (granate/tinta, 3 px), objetivos táctiles ≥44 px en cabecera, menú, botones y miniaturas | OK | revisión con Playwright |
 
 ## No verificado / requiere acción tuya
 1. **Envío real con Resend y SPF/DKIM/DMARC**: no hay `RESEND_API_KEY` aquí ni acceso al DNS. Pasos exactos en `docs/INSTALACION.md` (§2 y §3). Hasta no verificar el dominio en Resend, los correos reales **no saldrán**.
