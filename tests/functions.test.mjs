@@ -99,4 +99,17 @@ test('escape HTML en correos', async () => {
   await post(pre, base({ email: 'xss@example.com', nombre: '<script>alert(1)</script>' }), '10.0.2.1');
   assert.ok(sent.every((m) => !m.html.includes('<script>alert')));
 });
+test('hoja de cálculo: fila con 13 columnas y salta si no está configurada', async () => {
+  const { appendRow, rowOf, HEADERS } = await import('../netlify/functions/_lib/sheets.mjs');
+  const f = { nombre: 'Ana', apellidos: 'Pérez', edad: 38, sexo: 'F', email: 'a@b.c', referencias: 'x', federado: 'si', federacion: 'FVDM', descripcion: 'd', observaciones: '' };
+  const row = rowOf('LARRE-AAAA-BBBB', '2026-12-01T00:00:00Z', 'es', f);
+  assert.equal(row.length, HEADERS.length); assert.equal(row[8], 'Sí');
+  delete process.env.SHEETS_WEBHOOK_URL; delete process.env.SHEETS_WEBHOOK_TOKEN;
+  assert.equal((await appendRow(row)).skipped, true);
+  process.env.SHEETS_WEBHOOK_URL = 'https://script.example/exec'; process.env.SHEETS_WEBHOOK_TOKEN = 'tok';
+  const real = globalThis.fetch; let seen;
+  globalThis.fetch = async (u, o) => { seen = { u, o }; return new Response('{"ok":true}', { status: 200 }); };
+  try { assert.equal((await appendRow(row)).ok, true); } finally { globalThis.fetch = real; delete process.env.SHEETS_WEBHOOK_URL; delete process.env.SHEETS_WEBHOOK_TOKEN; }
+  assert.equal(seen.u, 'https://script.example/exec'); assert.equal(JSON.parse(seen.o.body).token, 'tok');
+});
 test.after(() => srv.close());
