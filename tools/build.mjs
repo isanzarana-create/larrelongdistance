@@ -484,4 +484,5 @@ write('sitemap.xml', sitemap());
 write('robots.txt', robots());
 write('site.webmanifest', manifest());
 write('llms.txt', llms());
+write('google3a0db1a1af306c80.html', 'google-site-verification: google3a0db1a1af306c80.html');
 console.log('Sitio generado en public/');
