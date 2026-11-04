@@ -6,7 +6,7 @@ export default {
   paths: { home: '/', aviso: '/aviso-legal/', priv: '/politica-privacidad/' },
   meta: {
     title: 'Ultra Trail Larre® · Ultra-trail en autosuficiencia, Álava 2027',
-    description: 'Ultra-trail en autosuficiencia por las sierras de Álava: 227 km y +5.290 m en lazo desde Vitoria-Gasteiz. 300 plazas. I Edición, otoño de 2027.',
+    description: 'Ultra-trail en autosuficiencia por Álava: 227 km y +5.290 m en lazo desde Vitoria-Gasteiz. 300 plazas, en solitario o por relevos. Otoño de 2027.',
     ogLine: 'Ultra-trail en autosuficiencia · Álava · otoño de 2027',
     ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, otoño de 2027'
   },
@@ -66,6 +66,7 @@ export default {
     blocks: [
       ['Autosuficiencia', 'Ultra Trail Larre® es un ultra-trail en autosuficiencia: sin asistencia externa y sin avituallamientos de organización. Decides qué llevas, cuándo comes, cuándo duermes y cómo gestionas el agua. Se prepara como una expedición, no como un circuito.'],
       ['Solo tú, un tracker y tu brevet', 'Un tracker te sigue durante toda la carrera y el brevet recoge tu paso por los controles. La navegación forma parte de la prueba.'],
+      ['Individual o por relevos', 'Puedes correrla entera tú solo o hacerlo por relevos. Los detalles de la modalidad por relevos se publicarán más adelante.'],
       ['Filosofía', 'No es una carrera de masas ni pretende serlo. Son 300 plazas, y esa cifra es identidad, no un parámetro de mercado. Para muchas personas, el reto será simplemente llegar.'],
       ['El monte', 'Cruzamos sierras, pueblos y viñedos de Álava que viven ahí todo el año. Pasamos con respeto y sin dejar rastro: esa es la condición para volver.']
     ],
@@ -203,6 +204,7 @@ export default {
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
       ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],
       ['¿Qué datos pedís?', 'Nombre, apellidos, edad, sexo, correo, referencias en otras pruebas, si estás federado/a en montaña, una breve descripción personal y, si quieres, observaciones. El DNI lo pediremos al confirmar plaza.'],
+      ['¿Se puede correr por relevos?', 'Sí. Además de correrla entera en solitario, existe la opción de hacerla por relevos. Los detalles de esta modalidad se publicarán más adelante.'],
       ['¿Cómo funcionan los controles?', 'Hay seis controles. Cuatro están confirmados (Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada) y los otros dos están por definir. Un tracker te sigue durante toda la carrera y el brevet recoge tu paso.'],
       ['¿Qué es el Código Cero?', 'Lo que entra contigo en el monte, sale contigo del monte. Lo recoge el <a href="{reglamento}">reglamento</a>.'],
       ['¿Dónde está el reglamento?', 'En <a href="{reglamento}">este PDF</a>, con las normas esenciales de la I Edición.']

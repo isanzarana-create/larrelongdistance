@@ -6,7 +6,7 @@ export default {
   paths: { home: '/en/', aviso: '/en/legal-notice/', priv: '/en/privacy-policy/' },
   meta: {
     title: 'Ultra Trail Larre® · Self-supported ultra in Álava, autumn 2027',
-    description: 'A self-supported ultra across the mountains of Álava: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. 300 places. First edition, autumn 2027.',
+    description: 'Self-supported ultra across Álava: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. 300 places, solo or as a relay. Autumn 2027.',
     ogLine: 'Self-supported ultra · Álava · autumn 2027',
     ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, autumn 2027'
   },
@@ -66,6 +66,7 @@ export default {
     blocks: [
       ['Self-supported', 'Ultra Trail Larre® is a self-supported ultra: no outside assistance and no organiser aid stations. You decide what to carry, when to eat, when to sleep and how to manage your water. You prepare for it like an expedition, not like a circuit.'],
       ['Just you, a tracker and your brevet', 'A tracker follows you for the whole race, and your brevet records your passage through the controls. Navigation is part of the challenge.'],
+      ['Solo or relay', 'You can run it all by yourself or as a relay. The details of the relay option will be published later.'],
       ['Philosophy', 'It is not a mass-participation race and does not want to be. There are 300 places, and that number is an identity, not a market parameter. For many people, the challenge will simply be to finish.'],
       ['The mountains', 'We cross ranges, villages and vineyards of Álava where people live all year round. We pass through with respect and leave no trace: that is the condition for coming back.']
     ],
@@ -203,6 +204,7 @@ export default {
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
       ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],
       ['What data do you ask for?', 'First name, surname, age, sex, email, previous races, whether you are a member of a mountaineering federation, a short personal description and, if you wish, comments. We will ask for your ID number when you confirm your place.'],
+      ['Can it be run as a relay?', 'Yes. Besides running it whole on your own, there is the option to run it as a relay. The details of this option will be published later.'],
       ['How do the controls work?', 'There are six controls. Four are confirmed (Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada) and the other two are still to be defined. A tracker follows you throughout the race and your brevet records your passage.'],
       ['What is the Zero Waste Code?', 'What goes into the mountains with you comes out with you. It is set out in the <a href="{reglamento}">race rules</a>.'],
       ['Where can I read the rules?', 'In <a href="{reglamento}">this PDF</a>, with the essential rules of the first edition.']
