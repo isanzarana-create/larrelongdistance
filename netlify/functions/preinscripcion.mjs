@@ -4,6 +4,7 @@ import { validatePre } from './_lib/validate.mjs';
 import { newCode } from './_lib/code.mjs';
 import { sendMail } from './_lib/mail.mjs';
 import { runnerEmail, internalPre } from './_lib/emails.mjs';
+import { appendRow, rowOf } from './_lib/sheets.mjs';
 
 export const config = { path: '/api/preinscripcion' };
 const isOpen = () => Date.now() >= new Date(cfg().opens).getTime();
@@ -49,11 +50,12 @@ export default async (req, ctx) => {
     } catch (e) { log('forms backup falló', String(e)); }
   }
 
-  const [toRunner, toOrg] = await Promise.all([
+  const [toRunner, toOrg, sheet] = await Promise.all([
     sendMail({ to: f.email, ...runnerEmail(lang, f, code), tags: [{ name: 'tipo', value: 'preinscripcion-corredor' }] }),
-    sendMail({ to: c.notifyTo, replyTo: f.email, ...internalPre(f, code, lang, { when }), tags: [{ name: 'tipo', value: 'preinscripcion-aviso' }] })
+    sendMail({ to: c.notifyTo, replyTo: f.email, ...internalPre(f, code, lang, { when }), tags: [{ name: 'tipo', value: 'preinscripcion-aviso' }] }),
+    appendRow(rowOf(code, when, lang, f))
   ]);
-  log(code, { persisted, formsOk, runnerMail: toRunner.ok, orgMail: toOrg.ok, err: toRunner.error || toOrg.error || '' });
+  log(code, { persisted, formsOk, runnerMail: toRunner.ok, orgMail: toOrg.ok, hoja: sheet.skipped ? 'no configurada' : sheet.ok, err: toRunner.error || toOrg.error || '' });
 
   // Éxito si el registro quedó guardado en algún sitio.
   if (!persisted && !formsOk && !toOrg.ok) return json(500, { ok: false, error: 'server' });
