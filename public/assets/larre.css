@@ -387,3 +387,9 @@ html:not([data-theme=light]) [aria-invalid=true]{background:transparent}
 html:not([data-theme=light]) .f-err{background:#2A1512;border-color:#6B2F28}
 html:not([data-theme=light]) .g-link::after{box-shadow:inset 0 0 0 1px rgba(243,235,218,.12)}
 html:not([data-theme=light]) .c0{background:#E5565F}html:not([data-theme=light]) .c1{background:#9C3A44}html:not([data-theme=light]) .c2{background:#F3EBDA}html:not([data-theme=light]) .c3{background:#C9A56B}html:not([data-theme=light]) .c4{background:#8FA45A}html:not([data-theme=light]) .c5{background:#8A7D68}html:not([data-theme=light]) .c6{background:#5A4F40}html:not([data-theme=light]) .c7{background:#6E6454}html:not([data-theme=light]) .c8{background:#B8AB94}
+/* Página de la ruta (/ruta/) */
+.route-page{max-width:calc(1360px + var(--gut)*2);padding-block:clamp(40px,7vw,88px)}
+.route-page h1{font-size:clamp(2rem,4.6vw,3.2rem);margin:.2em 0 .5em;letter-spacing:-.02em;max-width:22ch}
+.route-page h2{font-size:1.25rem;margin:2.6em 0 .8em}
+.route-page .lead{max-width:48rem}
+.route-page .route-live{margin-top:1rem}

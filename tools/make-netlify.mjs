@@ -23,6 +23,8 @@ const R = (from, to, extra = '') => `[[redirects]]\n  from = "${from}"\n  to = "
 let redirects = '';
 for (const h of OLD_HOSTS) for (const [a, b] of MAP) for (const slash of ['', '/']) redirects += R(`https://${h}${a}${slash}`, NEW + b) + '\n';
 for (const h of OLD_HOSTS) redirects += R(`https://${h}/*`, `${NEW}/:splat`) + '\n' + R(`http://${h}/*`, `${NEW}/:splat`) + '\n';
+// Duplicados de la portada: /index.html (y su versión en cada idioma) → URL canónica.
+for (const d of ['', '/eu', '/en']) redirects += R(`${NEW}${d}/index.html`, `${NEW}${d}/`) + '\n';
 redirects += R('https://www.ultratraillarre.org/*', `${NEW}/:splat`) + '\n' + R('http://www.ultratraillarre.org/*', `${NEW}/:splat`) + '\n';
 
 const bootHash = createHash('sha256').update("document.documentElement.className='js'").digest('base64');

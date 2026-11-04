@@ -876,6 +876,24 @@
   force = true
 
 [[redirects]]
+  from = "https://ultratraillarre.org/index.html"
+  to = "https://ultratraillarre.org/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ultratraillarre.org/eu/index.html"
+  to = "https://ultratraillarre.org/eu/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ultratraillarre.org/en/index.html"
+  to = "https://ultratraillarre.org/en/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://www.ultratraillarre.org/*"
   to = "https://ultratraillarre.org/:splat"
   status = 301

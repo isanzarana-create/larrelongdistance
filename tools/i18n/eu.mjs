@@ -6,7 +6,7 @@ export default {
   label: 'Euskara',
   paths: { home: '/eu/', aviso: '/eu/lege-oharra/', priv: '/eu/pribatutasun-politika/' },
   meta: {
-    title: 'Ultra Trail Larre® · Autohornikuntzako ultra-trail-a, Araba 2027',
+    title: 'Ultra Trail Larre® · 227 km-ko ultra-trail-a Araban, 2027',
     description: 'Autohornikuntzako ultra-trail-a Araban: 227 km eta +5.290 m, Gasteizen hasi eta bukatzen den begizta. 300 plaza, bakarka edo erreleboka. 2027ko udazkena.',
     ogLine: 'Autohornikuntzako ultra-trail-a · Araba · 2027ko udazkena',
     ogAlt: 'Ultra Trail Larre®: autohornikuntzako ultra-trail-a Arabako mendilerroetan, 2027ko udazkena'
@@ -83,6 +83,23 @@ export default {
       ['Irten aurretik', 'Ahal duzuna berrerabilgarriak diren poltsetara pasa, hasieratik bilgarri gutxiago eramateko.']
     ],
     note: 'Zero Kodearen baldintzak <a href="{reglamento}">araudian</a> daude.'
+  },
+  routePage: {
+    path: '/eu/ibilbidea/',
+    metaTitle: 'Ultra Trail Larre®-ren ibilbidea: 227 km, +5.290 m Araban',
+    metaDesc: 'Ultra Trail Larre®-ren ibilbidea, profila eta desnibela: 227 km eta +5.290 m-ko begizta Gasteizetik Arabako mendilerroetan zehar. 6 kontrolgune, GPX tracka.',
+    eyebrow: 'Ibilbidea',
+    h1: 'Ibilbidea eta desnibela: 227 km Arabako mendilerroetan',
+    lead: 'Ultra Trail Larre® 227 km eta +5.290 m-ko desnibel positiboa duen begizta bat da, Gasteizko Florida Parkeko kioskoan hasi eta bukatzen dena. Autohornikuntzan korritzen da, tracker batekin eta brevet batekin, bakarka edo erreleboka.',
+    figsTitle: 'Ibilbidea zifretan',
+    extraFigs: [['Altitude minimoa', '{min} m'], ['Altitude maximoa', '{max} m'], ['Modalitateak', 'Bakarka edo erreleboka'], ['Plazak', '300']],
+    terrainTitle: 'Zer nolako lurra da',
+    terrain: 'Komooten ibilbidearen plangintzaren arabera, 227 km-ren %{np} inguru zolatu gabeko pistetatik eta bideetatik doa, eta %{pv} asfaltotik edo zolatutako pistetatik. Datuak orientagarriak dira: lurraren benetako egoera urtaroaren eta baldintzen arabera alda daiteke.',
+    nextTitle: 'Irteera baino lehen',
+    next: ['Aurre-izen-emateen zerrenda 2026ko abenduaren 1ean irekiko da.', '300 plazak aurre-izen-emateen iritsiera-ordenaren arabera esleitzen dira; aurre-izen-emateak ez du plaza bermatzen.'],
+    ctaPre: 'Aurre-izen-ematea',
+    ctaRules: 'Araudia (PDF)',
+    more: 'Ibilbidearen fitxa osoa'
   },
   route: {
     h2: 'Ibilbidea',

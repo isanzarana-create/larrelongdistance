@@ -5,7 +5,7 @@ export default {
   label: 'English',
   paths: { home: '/en/', aviso: '/en/legal-notice/', priv: '/en/privacy-policy/' },
   meta: {
-    title: 'Ultra Trail Larre® · Self-supported ultra in Álava, autumn 2027',
+    title: 'Ultra Trail Larre® · 227 km self-supported ultra, Álava 2027',
     description: 'Self-supported ultra across Álava: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. 300 places, solo or as a relay. Autumn 2027.',
     ogLine: 'Self-supported ultra · Álava · autumn 2027',
     ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, autumn 2027'
@@ -82,6 +82,23 @@ export default {
       ['Before the start', 'Decant what you can into reusable bags so you carry less packaging from the beginning.']
     ],
     note: 'The conditions of the Zero Waste Code are in the <a href="{reglamento}">rules</a>.'
+  },
+  routePage: {
+    path: '/en/route/',
+    metaTitle: 'Ultra Trail Larre® route: 227 km, 5,290 m of climbing',
+    metaDesc: 'Route, profile and elevation of Ultra Trail Larre®: 227 km loop, 5,290 m of climbing, from Vitoria-Gasteiz through Álava. 6 controls, GPX track.',
+    eyebrow: 'The route',
+    h1: 'Route and elevation: 227 km across the mountains of Álava',
+    lead: 'Ultra Trail Larre® is a 227 km loop with 5,290 m of positive elevation that starts and finishes at the kiosk in Parque de La Florida, in Vitoria-Gasteiz. It is run self-supported, with a tracker and a brevet, solo or as a relay.',
+    figsTitle: 'The route in numbers',
+    extraFigs: [['Lowest point', '{min} m'], ['Highest point', '{max} m'], ['Categories', 'Solo or relay'], ['Places', '300']],
+    terrainTitle: 'What the terrain is like',
+    terrain: 'According to the route plan on Komoot, roughly {np}% of the 227 km runs on unpaved tracks and trails and {pv}% on asphalt or paved tracks. These figures are indicative: the real condition of the terrain may vary with the season and the weather.',
+    nextTitle: 'Before the start',
+    next: ['The pre-registration list opens on 1 December 2026.', 'The 300 places are assigned by order of arrival of the pre-registration, which does not guarantee a place.'],
+    ctaPre: 'Pre-registration',
+    ctaRules: 'Race rules (PDF)',
+    more: 'Full route page'
   },
   route: {
     h2: 'The route',
