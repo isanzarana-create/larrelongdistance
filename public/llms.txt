@@ -16,6 +16,5 @@
 - [English](https://ultratraillarre.org/en/)
 
 ## Documentos
-- [Guía de autosuficiencia (ES)](https://ultratraillarre.org/descargas/ultra-trail-larre-guia-es.pdf) · [EU](https://ultratraillarre.org/descargas/ultra-trail-larre-guia-eu.pdf) · [EN](https://ultratraillarre.org/descargas/ultra-trail-larre-guia-en.pdf)
 - [Reglamento (ES)](https://ultratraillarre.org/descargas/ultra-trail-larre-reglamento-es.pdf) · [EU](https://ultratraillarre.org/descargas/ultra-trail-larre-reglamento-eu.pdf) · [EN](https://ultratraillarre.org/descargas/ultra-trail-larre-reglamento-en.pdf)
 - [Track GPX](https://ultratraillarre.org/descargas/ultra-trail-larre.gpx)

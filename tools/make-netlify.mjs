@@ -13,9 +13,9 @@ const OLD_HOSTS = ['larrelongdistance.org', 'www.larrelongdistance.org', 'larrel
 
 // Rutas de la web anterior → ancla equivalente de la nueva.
 const MAP = [
-  ['/ruta', '/#ruta'], ['/reglamento', '/#descargas'], ['/guia-autosuficiencia', '/#descargas'], ['/como-llegar', '/#contacto'],
+  ['/ruta', '/#ruta'], ['/reglamento', '/descargas/ultra-trail-larre-reglamento-es.pdf'], ['/guia-autosuficiencia', '/#la-carrera'], ['/como-llegar', '/#contacto'],
   ['/galeria', '/#instagram'], ['/preinscripcion', '/#preinscripcion'], ['/gracias', '/'],
-  ['/en/route', '/en/#ruta'], ['/en/rules', '/en/#descargas'], ['/en/self-supported-ultra-guide', '/en/#descargas'], ['/en/getting-there', '/en/#contacto'],
+  ['/en/route', '/en/#ruta'], ['/en/rules', '/descargas/ultra-trail-larre-reglamento-en.pdf'], ['/en/self-supported-ultra-guide', '/en/#la-carrera'], ['/en/getting-there', '/en/#contacto'],
   ['/en/gallery', '/en/#instagram'], ['/en/pre-registration', '/en/#preinscripcion'], ['/en/thanks', '/en/'],
   ['/og-larre.jpg', '/assets/og-es.png'], ['/sitemap.xml', '/sitemap.xml']
 ];

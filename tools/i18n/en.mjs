@@ -37,14 +37,14 @@ export default {
     ctaWa: "Let's talk"
   },
   nav: [
+    ['preinscripcion', 'Pre-registration'],
     ['la-carrera', 'The race'],
     ['ruta', 'Route'],
     ['codigo-cero', 'Zero Waste Code'],
-    ['instagram', 'Photos'],
-    ['preinscripcion', 'Pre-registration'],
     ['descargas', 'Downloads'],
-    ['faq', 'FAQ'],
     ['colabora', 'Partner with us'],
+    ['instagram', 'Photos'],
+    ['faq', 'FAQ'],
     ['contacto', 'Contact']
   ],
   hero: {
@@ -80,7 +80,7 @@ export default {
       ['Every wrapper', 'Gel and bar tabs tied or pocketed the moment you open them, never “later”.'],
       ['Before the start', 'Decant what you can into reusable bags so you carry less packaging from the beginning.']
     ],
-    note: 'The specific conditions of the Zero Waste Code will be detailed in the final <a href="{reglamento}">rules</a>. More ideas in the <a href="{guia}">self-sufficiency guide</a>.'
+    note: 'The conditions of the Zero Waste Code are in the <a href="{reglamento}">rules</a>.'
   },
   route: {
     h2: 'The route',
@@ -187,8 +187,6 @@ export default {
     h2: 'Downloads',
     lead: 'To read at your own pace and take with you.',
     items: {
-      guia: ['Self-sufficiency guide', 'How to prepare for and run an ultra without assistance: water, food, sleep, kit and navigation.'],
-      reglamento: ['Race rules', 'The essential rules of the first edition published so far. The final version will be published before registration.'],
       gpx: ['Route track', 'The whole route as a GPX file, with the start and finish marked, ready to load onto your watch or phone.']
     },
     version: 'version',
@@ -205,11 +203,9 @@ export default {
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
       ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],
       ['What data do you ask for?', 'First name, surname, age, sex, email, previous races, whether you are a member of a mountaineering federation, a short personal description and, if you wish, comments. We will ask for your ID number when you confirm your place.'],
-      ['What does self-supported mean?', 'No outside assistance and no organiser aid stations: you carry what you need and manage your own water, food and sleep. The <a href="{guia}">self-sufficiency guide</a> explains it in detail.'],
       ['How do the controls work?', 'There are six controls. Four are confirmed (Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada) and the other two are still to be defined. A tracker follows you throughout the race and your brevet records your passage.'],
-      ['Is it a good first race of this kind?', 'Honestly, no. Ultra Trail Larre® asks for previous long-distance experience. For your first steps in self-supported racing, the guide suggests shorter distances.'],
       ['What is the Zero Waste Code?', 'What goes into the mountains with you comes out with you. It is set out in the <a href="{reglamento}">race rules</a>.'],
-      ['Where can I read the rules?', 'In <a href="{reglamento}">this PDF</a>, with the essential rules published so far. The rest will be published in the final version.']
+      ['Where can I read the rules?', 'In <a href="{reglamento}">this PDF</a>, with the essential rules of the first edition.']
     ]
   },
   partners: {

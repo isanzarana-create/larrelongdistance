@@ -13,7 +13,7 @@ if (arg === '--redirects') {
   const N = 'https://ultratraillarre.org';
   const cases = [
     ['https://larrelongdistance.org/', N + '/'], ['https://www.larrelongdistance.org/ruta', N + '/#ruta'], ['https://larrelongdistance.com/en/route/', N + '/en/#ruta'],
-    ['https://larrelongdistance.org/reglamento/', N + '/#descargas'], ['https://larrelongdistance.org/aviso-legal/', N + '/aviso-legal/'], ['https://larrelongdistance.org/en/privacy-policy/', N + '/en/privacy-policy/'],
+    ['https://larrelongdistance.org/reglamento/', N + '/descargas/ultra-trail-larre-reglamento-es.pdf'], ['https://larrelongdistance.org/aviso-legal/', N + '/aviso-legal/'], ['https://larrelongdistance.org/en/privacy-policy/', N + '/en/privacy-policy/'],
     ['http://larrelongdistance.org/', N + '/'], ['https://www.ultratraillarre.org/eu/', N + '/eu/']
   ];
   for (const [from, to] of cases) {
@@ -40,7 +40,7 @@ if (arg === '--redirects') {
   const nf = await get(B + '/no-existe-' + Date.now()); t('404 propio con estado 404', nf.status === 404, String(nf.status));
   const api = await get(B + '/api/preinscripcion'); const j = await api.json().catch(() => null);
   t('API preinscripción responde JSON {open,opens}', api.status === 200 && j && 'open' in j, JSON.stringify(j));
-  const pdf = await get(B + '/descargas/ultra-trail-larre-guia-es.pdf'); t('PDF guía 200 y application/pdf', pdf.status === 200 && /pdf/.test(pdf.headers.get('content-type') || ''));
+  const pdf = await get(B + '/descargas/ultra-trail-larre-reglamento-es.pdf'); t('PDF reglamento 200 y application/pdf', pdf.status === 200 && /pdf/.test(pdf.headers.get('content-type') || ''));
   console.log('\nEnlaces externos:');
   for (const u of ['https://www.instagram.com/ultratraillarre/', 'https://wa.me/34620463558', 'https://www.google.com/maps/search/?api=1&query=42.843865%2C-2.676552', 'https://musubigara.org/', 'https://www.aepd.es/']) {
     const r = await fetch(u, { headers: { 'User-Agent': 'Mozilla/5.0' }, redirect: 'follow' }).catch(() => ({ status: 0 }));

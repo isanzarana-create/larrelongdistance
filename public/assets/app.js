@@ -226,7 +226,7 @@
   if (colForm) {
     wire(colForm, 'col', (j, d) => {
       const O = I.col.ok;
-      colOk.innerHTML = `<h3>${esc(O.title)}</h3><p>${j.mailSent === false ? esc(O.mailFailed) : fill(O.lead, { nombre: esc(d.persona), email: esc(d.email) })}</p>`;
+      colOk.innerHTML = `<p>${j.mailSent === false ? esc(O.mailFailed) : fill(O.lead, { nombre: esc(d.persona), email: esc(d.email) })}</p>`;
       colForm.hidden = true; colOk.hidden = false; colOk.focus();
     });
   }
