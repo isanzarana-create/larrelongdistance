@@ -5,7 +5,7 @@ export default {
   label: 'Castellano',
   paths: { home: '/', aviso: '/aviso-legal/', priv: '/politica-privacidad/' },
   meta: {
-    title: 'Ultra Trail Larre® · Ultra-trail en autosuficiencia, Álava 2027',
+    title: 'Ultra Trail Larre® · Ultra-trail 227 km en Álava, 2027',
     description: 'Ultra-trail en autosuficiencia por Álava: 227 km y +5.290 m en lazo desde Vitoria-Gasteiz. 300 plazas, en solitario o por relevos. Otoño de 2027.',
     ogLine: 'Ultra-trail en autosuficiencia · Álava · otoño de 2027',
     ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, otoño de 2027'
@@ -82,6 +82,23 @@ export default {
       ['Antes de salir', 'Trasvasa lo que puedas a bolsas reutilizables para llevar menos envoltorio desde el principio.']
     ],
     note: 'Las condiciones del Código Cero están en el <a href="{reglamento}">reglamento</a>.'
+  },
+  routePage: {
+    path: '/ruta/',
+    metaTitle: 'Ruta del Ultra Trail Larre®: 227 km y +5.290 m en Álava',
+    metaDesc: 'Ruta, perfil y desnivel del Ultra Trail Larre®: lazo de 227 km y +5.290 m desde Vitoria-Gasteiz por las sierras de Álava, con 6 controles y track GPX.',
+    eyebrow: 'La ruta',
+    h1: 'Ruta y desnivel: 227 km por las sierras de Álava',
+    lead: 'Ultra Trail Larre® es un lazo de 227 km y +5.290 m de desnivel positivo que sale y llega al quiosco del Parque de La Florida, en Vitoria-Gasteiz. Se corre en autosuficiencia, con un tracker y un brevet, y se puede hacer en solitario o por relevos.',
+    figsTitle: 'El recorrido en cifras',
+    extraFigs: [['Altitud mínima', '{min} m'], ['Altitud máxima', '{max} m'], ['Modalidades', 'Individual o por relevos'], ['Plazas', '300']],
+    terrainTitle: 'Cómo es el terreno',
+    terrain: 'Según la planificación del recorrido en Komoot, aproximadamente el {np} % de los 227 km discurre por pistas y caminos sin pavimentar y el {pv} % por asfalto o pistas pavimentadas. Son datos orientativos: el estado real del terreno puede variar según la época y las condiciones.',
+    nextTitle: 'Antes de la salida',
+    next: ['La lista de preinscritos se abre el 1 de diciembre de 2026.', 'Las 300 plazas se asignan por orden de llegada de la preinscripción, que no garantiza plaza.'],
+    ctaPre: 'Preinscripción',
+    ctaRules: 'Reglamento (PDF)',
+    more: 'Ficha completa de la ruta'
   },
   route: {
     h2: 'La ruta',

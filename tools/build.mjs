@@ -205,7 +205,7 @@ function footer(t, isHome = false) {
   const home = isHome ? '' : t.paths.home;
   return `<footer class="foot"><div class="wrap foot-in">
 <div class="foot-l"><p>© 2026 Ultra Trail Larre®</p>
-<nav class="foot-r" aria-label="Legal"><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></nav></div>
+<nav class="foot-r" aria-label="Legal"><a href="${t.routePage.path}">${esc(t.routePage.eyebrow)}</a><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></nav></div>
 ${socials(t, 'icons-foot')}
 </div>
 <div class="float-cta"><a class="pill" href="${home}#preinscripcion">${esc(t.ui.ctaPre)}</a><a class="pill" href="https://wa.me/${c.whatsapp}?text=${encodeURIComponent(t.contact.waMsg)}" target="_blank" rel="noopener">${ICON.wa}<span>${esc(t.ui.ctaWa)}</span><span class="sr"> (${esc(t.ui.new)})</span></a></div>
@@ -285,6 +285,24 @@ const netlifyForms = () => `<div hidden aria-hidden="true">
 <form name="larre-colabora" data-netlify="true" netlify-honeypot="bot-field"><input name="form-name"><input name="idioma"><input name="empresa"><input name="persona"><input name="cargo"><input name="email"><input name="tipo"><input name="mensaje"><input name="consentimiento"><input name="enviado"><input name="bot-field"></form>
 </div>`;
 
+// Cuerpo de la ruta (mapa, perfil, controles y firmes): lo comparten la sección de la home y la página /ruta/.
+function routeBody(t, lang, withLead) {
+  const towns = Object.entries(RUTA.pasos).sort((a, b) => a[1].km - b[1].km);
+  const R = t.route;
+  return `${withLead ? `<p class="lead">${esc(R.lead)}</p>
+<dl class="figs">${R.figs.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
+<div class="route-live" data-route data-src="/assets/ruta.json" data-lang="${lang}">
+<figure class="map"><figcaption class="cap">${esc(R.mapTitle)}</figcaption>${mapSvg(t, lang)}</figure>
+<p class="readout" data-readout aria-live="off"><span><b>${esc(R.rKm)}</b> <i data-r="km">—</i></span><span><b>${esc(R.rEle)}</b> <i data-r="ele">—</i></span><span><b>${esc(R.rSlope)}</b> <i data-r="slope">—</i></span></p>
+<figure class="prof"><figcaption class="cap">${esc(R.profileTitle)}</figcaption><div class="prof-wrap" data-prof-wrap tabindex="0" role="slider" aria-label="${esc(R.sliderLabel)}" aria-valuemin="0" aria-valuemax="${Math.round(RUTA.medido.km)}" aria-valuenow="0">${profileSvg(t, lang)}</div><p class="hint">${esc(fill(R.profileSub, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) }))} ${esc(R.interactHint)}</p></figure>
+</div>
+<div class="ctrl"><h3>${esc(R.ctrlTitle)}</h3>
+<table><thead><tr><th scope="col">${esc(R.ctrlHead[0])}</th><th scope="col" class="num">${esc(R.ctrlHead[1])}</th></tr></thead><tbody>${towns.map(([k, v]) => `<tr><th scope="row" data-km="${v.km}">${esc(R.towns[k])}</th><td class="num">≈ ${Math.round(v.km)}</td></tr>`).join('')}</tbody></table>
+<p class="hint">${esc(R.ctrlNote)}</p></div>
+<div class="firmes">${firmeBlock(t, lang, 'superficies', R.surfTitle, R.surfSub)}${firmeBlock(t, lang, 'caminos', R.wayTitle, '')}</div>
+<p class="sec-cta"><a class="btn btn-main" href="${GPX.href}" download>${ICON.dl}<span>${esc(R.gpx)}</span></a>${withLead ? `<a class="link-arrow" href="${t.routePage.path}">${esc(t.routePage.more)} ${ICON.arrow}</a>` : ''}<a class="link-arrow" href="${H.mapsSalida}" target="_blank" rel="noopener">${esc(R.mapsStart)} ${ICON.arrow}<span class="sr"> (${esc(t.ui.new)})</span></a></p>`;
+}
+
 // ───────────── página principal ─────────────
 function homePage(t) {
   const lang = t.lang;
@@ -302,20 +320,7 @@ function homePage(t) {
 <div class="blocks">${t.race.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
 <aside class="callout"><h3>${esc(t.race.forYouH)}</h3><p>${esc(t.race.forYou)}</p></aside>`);
 
-  const towns = Object.entries(RUTA.pasos).sort((a, b) => a[1].km - b[1].km);
-  const R = t.route;
-  const route = sec('ruta', 2, R.h2, `<p class="lead">${esc(R.lead)}</p>
-<dl class="figs">${R.figs.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
-<div class="route-live" data-route data-src="/assets/ruta.json" data-lang="${lang}">
-<figure class="map"><figcaption class="cap">${esc(R.mapTitle)}</figcaption>${mapSvg(t, lang)}</figure>
-<p class="readout" data-readout aria-live="off"><span><b>${esc(R.rKm)}</b> <i data-r="km">—</i></span><span><b>${esc(R.rEle)}</b> <i data-r="ele">—</i></span><span><b>${esc(R.rSlope)}</b> <i data-r="slope">—</i></span></p>
-<figure class="prof"><figcaption class="cap">${esc(R.profileTitle)}</figcaption><div class="prof-wrap" data-prof-wrap tabindex="0" role="slider" aria-label="${esc(R.sliderLabel)}" aria-valuemin="0" aria-valuemax="${Math.round(RUTA.medido.km)}" aria-valuenow="0">${profileSvg(t, lang)}</div><p class="hint">${esc(fill(R.profileSub, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) }))} ${esc(R.interactHint)}</p></figure>
-</div>
-<div class="ctrl"><h3>${esc(R.ctrlTitle)}</h3>
-<table><thead><tr><th scope="col">${esc(R.ctrlHead[0])}</th><th scope="col" class="num">${esc(R.ctrlHead[1])}</th></tr></thead><tbody>${towns.map(([k, v]) => `<tr><th scope="row" data-km="${v.km}">${esc(R.towns[k])}</th><td class="num">≈ ${Math.round(v.km)}</td></tr>`).join('')}</tbody></table>
-<p class="hint">${esc(R.ctrlNote)}</p></div>
-<div class="firmes">${firmeBlock(t, lang, 'superficies', R.surfTitle, R.surfSub)}${firmeBlock(t, lang, 'caminos', R.wayTitle, '')}</div>
-<p class="sec-cta"><a class="btn btn-main" href="${GPX.href}" download>${ICON.dl}<span>${esc(R.gpx)}</span></a><a class="link-arrow" href="${H.mapsSalida}" target="_blank" rel="noopener">${esc(R.mapsStart)} ${ICON.arrow}<span class="sr"> (${esc(t.ui.new)})</span></a></p>`, 'sec-wide');
+  const route = sec('ruta', 2, t.route.h2, routeBody(t, lang, true), 'sec-wide');
 
   const zero = sec('codigo-cero', 3, t.zero.h2, `<p class="lead">${esc(t.zero.lead)}</p>
 <div class="blocks blocks-3">${t.zero.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
@@ -393,11 +398,14 @@ function homeJsonLd(t, path) {
         inLanguage: t.lang,
         // Solo se conoce la temporada (otoño de 2027): se publica únicamente el año.
         startDate: '2027',
+        endDate: '2027',
         eventStatus: 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         maximumAttendeeCapacity: H.plazas,
         location: { '@type': 'Place', name: H.salida.lugar, address: { '@type': 'PostalAddress', addressLocality: H.salida.ciudad, addressRegion: 'Álava', addressCountry: 'ES' }, geo: { '@type': 'GeoCoordinates', latitude: H.salida.lat, longitude: H.salida.lon } },
-        organizer: { '@id': org }
+        organizer: { '@id': org },
+        performer: { '@type': 'PerformingGroup', name: t.lang === 'en' ? 'Ultra Trail Larre® runners' : t.lang === 'eu' ? 'Ultra Trail Larre®-ko korrikalariak' : 'Corredoras y corredores de Ultra Trail Larre®' },
+        offers: { '@type': 'Offer', url: `${ORIGIN}${t.paths.home}#preinscripcion`, availability: 'https://schema.org/PreOrder', validFrom: H.preinscripcionAbre.slice(0, 10), priceCurrency: 'EUR' }
       },
       { '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: faq }
     ]
@@ -418,6 +426,33 @@ function legalPage(t, key) {
   );
 }
 
+function routePage(t) {
+  const lang = t.lang, P = t.routePage, path = P.path;
+  const alternates = ORDER.reduce((a, l) => ((a[l] = LANGS[l].routePage.path), a), {});
+  const mm = { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) };
+  const sum = (ks) => FIRMES.superficies.filter((r) => ks.includes(r[0])).reduce((a, r) => a + r[1], 0);
+  const tot = FIRMES.superficies.reduce((a, r) => a + r[1], 0);
+  const np = Math.round((sum(['pistaNoPav', 'caminoNatural', 'grava', 'pistaAlpina']) / tot) * 100), pv = Math.round((sum(['pistaPav', 'asfalto']) / tot) * 100);
+  const figs = [...t.route.figs, ...P.extraFigs.map(([l, v]) => [l, fill(v, mm)])];
+  const home = t.paths.home, reg = pdfInfo('reglamento', lang);
+  const url = `${ORIGIN}${path}`;
+  const jsonld = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: P.metaTitle, description: P.metaDesc, inLanguage: lang, isPartOf: { '@id': `${ORIGIN}/#website` }, about: { '@id': `${ORIGIN}${home}#event` }, breadcrumb: { '@id': `${url}#breadcrumb` }, primaryImageOfPage: { '@type': 'ImageObject', url: `${ORIGIN}/assets/og-${lang}.png` } },
+    { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Ultra Trail Larre®', item: `${ORIGIN}${home}` }, { '@type': 'ListItem', position: 2, name: P.eyebrow, item: url }] }
+  ] };
+  const i18n = { lang, email: H.email };
+  return (
+    head(t, { title: P.metaTitle, description: P.metaDesc, path, alternates, og: `/assets/og-${lang}.png`, jsonld }) +
+    `\n<body data-page="ruta">\n${header(t, { alternates, isHome: false })}\n<main id="main" tabindex="-1"><article class="wrap route-page"><p class="eyebrow">${esc(P.eyebrow)}</p><h1>${esc(P.h1)}</h1><p class="lead">${esc(P.lead)}</p>
+<h2>${esc(P.figsTitle)}</h2><dl class="figs">${figs.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+${routeBody(t, lang, false)}
+<h2>${esc(P.terrainTitle)}</h2><p>${esc(fill(P.terrain, { np, pv }))}</p>
+<h2>${esc(P.nextTitle)}</h2><ul class="points">${P.next.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+<p class="sec-cta"><a class="btn btn-main" href="${home}#preinscripcion">${esc(P.ctaPre)}</a><a class="btn btn-line" href="${reg.href}" download>${esc(P.ctaRules)}</a><a class="link-arrow" href="${home}">${esc(t.ui.back)} ${ICON.arrow}</a></p>
+</article></main>\n${footer(t)}\n<script type="application/json" id="i18n">${JSON.stringify(i18n).replace(/</g, '\\u003c')}</script>\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
+  );
+}
+
 function notFoundPage() {
   const t = es;
   const alternates = { es: '/', eu: '/eu/', en: '/en/' };
@@ -433,6 +468,7 @@ function notFoundPage() {
 function sitemap() {
   const pages = [
     { key: 'home', prio: '1.0', freq: 'weekly', alts: { es: '/', eu: '/eu/', en: '/en/' } },
+    { key: 'ruta', prio: '0.8', freq: 'monthly', alts: { es: es.routePage.path, eu: eu.routePage.path, en: en.routePage.path } },
     { key: 'aviso', prio: '0.2', freq: 'yearly', alts: { es: es.paths.aviso, eu: eu.paths.aviso, en: en.paths.aviso } },
     { key: 'priv', prio: '0.2', freq: 'yearly', alts: { es: es.paths.priv, eu: eu.paths.priv, en: en.paths.priv } }
   ];
@@ -464,6 +500,7 @@ function llms() {
 - [Castellano](${ORIGIN}/)
 - [Euskara](${ORIGIN}/eu/)
 - [English](${ORIGIN}/en/)
+- [Ruta y desnivel](${ORIGIN}${es.routePage.path}) · [Ibilbidea](${ORIGIN}${eu.routePage.path}) · [Route](${ORIGIN}${en.routePage.path})
 
 ## Documentos
 - [Reglamento (ES)](${r('es')}) · [EU](${r('eu')}) · [EN](${r('en')})
@@ -475,6 +512,7 @@ function llms() {
 for (const l of ORDER) {
   const t = LANGS[l];
   write(l === 'es' ? 'index.html' : `${l}/index.html`, homePage(t));
+  write(`${t.routePage.path.slice(1)}index.html`, routePage(t));
   for (const k of ['aviso', 'priv']) write(`${t.paths[k].slice(1)}index.html`, legalPage(t, k));
 }
 write('404.html', notFoundPage());
