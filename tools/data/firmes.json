@@ -1,0 +1,23 @@
+{
+  "fuente": "Komoot, tour 3377067973 (planificación del recorrido, consultada el 3 nov 2026). Clasificación propia de Komoot a partir de OpenStreetMap; orientativa.",
+  "superficies": [
+    ["pistaNoPav", 97.3],
+    ["caminoNatural", 45.7],
+    ["pistaPav", 43.9],
+    ["grava", 15.7],
+    ["asfalto", 15.5],
+    ["pistaAlpina", 4.96],
+    ["desconocido", 4.67]
+  ],
+  "caminos": [
+    ["senda", 144],
+    ["sendero", 29.1],
+    ["carretera", 15.8],
+    ["vereda", 12.7],
+    ["camino", 12.3],
+    ["calle", 12.3],
+    ["senderoMontana", 1.25],
+    ["fueraVias", 0.304],
+    ["carreteraNacional", 0.107]
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ultra-trail-larre-web",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Web de Ultra Trail Larre® (ultratraillarre.org). Sitio estático en public/ + funciones de Netlify.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:site": "node tools/build.mjs",
+    "test": "node --test tests/functions.test.mjs"
+  },
+  "dependencies": { "@netlify/blobs": "^8.1.0" }
+}
