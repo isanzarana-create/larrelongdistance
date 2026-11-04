@@ -158,8 +158,8 @@ function head(t, o) {
 <meta name="robots" content="${o.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'}">
 <link rel="canonical" href="${ORIGIN}${o.path}">
 ${links}
-<meta name="theme-color" content="#EFE6D2">
-<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#0B0908">
+<meta name="color-scheme" content="dark light">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Ultra Trail Larre®"><meta property="og:title" content="${esc(o.title)}"><meta property="og:description" content="${esc(o.description)}"><meta property="og:url" content="${ORIGIN}${o.path}"><meta property="og:locale" content="${t.locale}">${others}
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(o.title)}"><meta name="twitter:description" content="${esc(o.description)}">
 ${og}
@@ -444,7 +444,7 @@ function sitemap() {
 
 const robots = () => `User-agent: *\nAllow: /\nDisallow: /.netlify/\nDisallow: /api/\n\n# Rastreadores de buscadores de IA, declarados uno a uno\n${['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended'].map((b) => `User-agent: ${b}\nAllow: /\nDisallow: /api/`).join('\n\n')}\n\nSitemap: ${ORIGIN}/sitemap.xml\n`;
 
-const manifest = () => JSON.stringify({ name: 'Ultra Trail Larre®', short_name: 'Larre', description: es.meta.description, lang: 'es', start_url: '/', scope: '/', display: 'browser', background_color: '#EFE6D2', theme_color: '#EFE6D2', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }] }, null, 2) + '\n';
+const manifest = () => JSON.stringify({ name: 'Ultra Trail Larre®', short_name: 'Larre', description: es.meta.description, lang: 'es', start_url: '/', scope: '/', display: 'browser', background_color: '#0B0908', theme_color: '#0B0908', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }] }, null, 2) + '\n';
 
 function llms() {
   const g = (l) => `${ORIGIN}${pdfPath('guia', l)}`;

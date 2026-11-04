@@ -8,13 +8,13 @@
   let I = {};
   try { I = JSON.parse(($('#i18n') || {}).textContent || '{}'); } catch (e) { I = {}; }
 
-  /* ── prueba de tema negro: solo con ?tema=negro (y ?tema=claro lo quita) ── */
+  /* ── tema: negro por defecto; ?tema=claro muestra la variante arena ── */
   try {
     const q = new URLSearchParams(location.search).get('tema');
     if (q === 'negro' || q === 'claro') sessionStorage.setItem('tema', q);
-    if (sessionStorage.getItem('tema') === 'negro') {
-      document.documentElement.dataset.theme = 'dark';
-      const m = $('meta[name=theme-color]'); if (m) m.content = '#0B0908';
+    if (sessionStorage.getItem('tema') === 'claro') {
+      document.documentElement.dataset.theme = 'light';
+      const m = $('meta[name=theme-color]'); if (m) m.content = '#EFE6D2';
     }
   } catch (e) { /* sin almacenamiento: no pasa nada */ }
 
