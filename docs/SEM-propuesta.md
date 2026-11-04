@@ -29,7 +29,7 @@ Total orientativo: 330–510 €/mes durante el periodo de captación (dic 2026 
 
 ### Anuncios de búsqueda adaptables (titulares ≤30, descripciones ≤90 caracteres)
 **ES**
-- Titulares: «Ultra Trail Larre®» · «Ultra en autosuficiencia» · «227 km por Álava» · «300 plazas» · «Preinscripción abierta» *(solo desde el 1 dic)* · «Solo tú, tracker y brevet».
+- Titulares: «Ultra Trail Larre®» · «Ultra en autosuficiencia» · «227 km por Álava» · «300 plazas» · «Preinscripción abierta» *(solo desde el 1 dic)* · «Solo tú, tracker y brevet» · «En solitario o por relevos».
 - Descripciones: «Un lazo de 227 km y +5.290 m desde Vitoria-Gasteiz. I Edición, otoño de 2027.» · «300 plazas por orden de llegada de la preinscripción. Descarga la guía y el track.»
 **EU**
 - Titulares: «Ultra Trail Larre®» · «Autohornikuntzako ultra-a» · «227 km Araban» · «300 plaza».

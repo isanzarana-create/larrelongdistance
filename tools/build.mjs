@@ -455,6 +455,7 @@ function llms() {
 - Distancia y desnivel: 227 km y +5.290 m de desnivel positivo, en lazo.
 - Formato: autosuficiencia, sin asistencia externa ni avituallamientos de organización. Un tracker y un brevet.
 - Controles: seis; confirmados Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada (dos por definir).
+- Modalidades: en solitario o por relevos (los detalles de los relevos se publicarán más adelante).
 - Plazas: 300, por orden de llegada de la preinscripción. La preinscripción no garantiza plaza.
 - Preinscripción: la lista se abre el 1 de diciembre de 2026. La fecha de pago se comunica por email en marzo.
 - Contacto: ${H.email} · Instagram @${H.instagram}

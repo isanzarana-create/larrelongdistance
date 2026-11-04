@@ -7,7 +7,7 @@ export default {
   paths: { home: '/eu/', aviso: '/eu/lege-oharra/', priv: '/eu/pribatutasun-politika/' },
   meta: {
     title: 'Ultra Trail Larre® · Autohornikuntzako ultra-trail-a, Araba 2027',
-    description: 'Autohornikuntzako ultra-trail-a Arabako mendilerroetan: 227 km eta +5.290 m, Gasteizen hasi eta bukatzen den begizta. 300 plaza. I. edizioa, 2027ko udazkena.',
+    description: 'Autohornikuntzako ultra-trail-a Araban: 227 km eta +5.290 m, Gasteizen hasi eta bukatzen den begizta. 300 plaza, bakarka edo erreleboka. 2027ko udazkena.',
     ogLine: 'Autohornikuntzako ultra-trail-a · Araba · 2027ko udazkena',
     ogAlt: 'Ultra Trail Larre®: autohornikuntzako ultra-trail-a Arabako mendilerroetan, 2027ko udazkena'
   },
@@ -67,6 +67,7 @@ export default {
     blocks: [
       ['Autohornikuntza', 'Ultra Trail Larre® autohornikuntzako ultra-trail-a da: kanpoko laguntzarik gabe eta antolakuntzaren hornidura-postuak gabe. Zuk erabakitzen duzu zer eramango duzun, noiz jango duzun, noiz egingo duzun lo eta urarekin nola moldatuko zaren. Espedizio bat bezala prestatzen da, ez zirkuitu bat bezala.'],
       ['Zu bakarrik, tracker bat eta zure brevet-a', 'Tracker batek jarraituko zaitu lasterketa osoan zehar, eta brevet-ak kontrol-guneetatik egindako igarobidea jasoko du. Nabigazioa probaren parte da.'],
+      ['Bakarka edo erreleboka', 'Osorik bakarrik korritu dezakezu, edo erreleboka egin. Erreleboen modalitatearen xehetasunak geroago argitaratuko dira.'],
       ['Filosofia', 'Ez da jendetza handiko lasterketa bat, eta ez du izan nahi. 300 plaza dira, eta zifra hori nortasuna da, ez merkatu-parametro bat. Askorentzat erronka, besterik gabe, helmugara iristea izango da.'],
       ['Mendia', 'Urte osoan bizirik dauden Arabako mendilerro, herri eta mahastiak zeharkatuko ditugu. Errespetuz eta aztarnarik utzi gabe igaroko gara: hori da itzultzeko baldintza.']
     ],
@@ -204,6 +205,7 @@ export default {
       ['Nola esleitzen dira 300 plazak?', 'Aurre-izen-emateak iritsi diren hurrenkeran. Azalpen pertsonal laburra derrigorrezkoa da: aurre-izen-ematea balioztatzeko balio du, ez iragazteko. Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.'],
       ['Aurre-izen-emateak plaza bermatzen al du?', 'Ez. Aurre-izena ematean erreferentzia-kode bat jasoko duzu posta elektronikoz, eta ordainketa-data ere posta elektronikoz jakinaraziko dizugu, martxoan.'],
       ['Zer datu eskatzen dituzue?', 'Izena, abizenak, adina, sexua, posta elektronikoa, beste proba batzuetako erreferentziak, mendi-federatua zaren, azalpen pertsonal labur bat eta, nahi baduzu, oharrak. NANa plaza berresten duzunean eskatuko dugu.'],
+      ['Erreleboka korritu daiteke?', 'Bai. Osorik bakarka korritzeaz gain, erreleboka egiteko aukera ere badago. Modalitate honen xehetasunak geroago argitaratuko dira.'],
       ['Nola funtzionatzen dute kontrol-guneek?', 'Sei kontrol-gune daude. Lau baieztatuta daude (Agurain, Santikurutze Kanpezu, Biasteri eta Urizaharra), eta beste biak zehazteke daude. Tracker batek jarraituko zaitu lasterketa osoan zehar, eta brevet-ak zure igarobidea jasoko du.'],
       ['Zer da Zero Kodea?', 'Zurekin mendira sartzen dena, zurekin aterako da. <a href="{reglamento}">Araudiak</a> jasotzen du.'],
       ['Non dago araudia?', '<a href="{reglamento}">PDF honetan</a>, I. edizioaren oinarrizko arauekin.']
