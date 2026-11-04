@@ -38,14 +38,14 @@ export default {
     ctaWa: 'Hitz egin dezagun'
   },
   nav: [
+    ['preinscripcion', 'Aurre-izen-ematea'],
     ['la-carrera', 'Lasterketa'],
     ['ruta', 'Ibilbidea'],
     ['codigo-cero', 'Zero Kodea'],
-    ['instagram', 'Argazkiak'],
-    ['preinscripcion', 'Aurre-izen-ematea'],
     ['descargas', 'Deskargak'],
-    ['faq', 'Maiz egindako galderak'],
     ['colabora', 'Lagun gaitzazu'],
+    ['instagram', 'Argazkiak'],
+    ['faq', 'Maiz egindako galderak'],
     ['contacto', 'Harremana']
   ],
   hero: {
@@ -81,7 +81,7 @@ export default {
       ['Bilgarri bakoitza', 'Gel eta barren hegatsak irekitzen diren unean lotuta edo gordeta, inoiz ez «gero».'],
       ['Irten aurretik', 'Ahal duzuna berrerabilgarriak diren poltsetara pasa, hasieratik bilgarri gutxiago eramateko.']
     ],
-    note: 'Zero Kodearen baldintza zehatzak behin betiko <a href="{reglamento}">araudian</a> zehaztuko dira. Ideia gehiago <a href="{guia}">autohornikuntza gidan</a>.'
+    note: 'Zero Kodearen baldintzak <a href="{reglamento}">araudian</a> daude.'
   },
   route: {
     h2: 'Ibilbidea',
@@ -188,8 +188,6 @@ export default {
     h2: 'Deskargak',
     lead: 'Patxadaz irakurtzeko eta zurekin eramateko.',
     items: {
-      guia: ['Autohornikuntzaren gida', 'Laguntzarik gabeko ultra-trail bat nola prestatzen eta egiten den: ura, janaria, loa, materiala eta nabigazioa.'],
-      reglamento: ['Araudia', 'I. edizioaren oinarrizko arauak, oraingoz argitaratutakoak. Behin betiko bertsioa izen-ematea baino lehen argitaratuko da.'],
       gpx: ['Ibilbidearen tracka', 'Ibilbide osoa GPX formatuan, irteera eta helmuga markatuta, zure erlojuan edo telefonoan kargatzeko prest.']
     },
     version: 'bertsioa',
@@ -206,11 +204,9 @@ export default {
       ['Nola esleitzen dira 300 plazak?', 'Aurre-izen-emateak iritsi diren hurrenkeran. Azalpen pertsonal laburra derrigorrezkoa da: aurre-izen-ematea balioztatzeko balio du, ez iragazteko. Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.'],
       ['Aurre-izen-emateak plaza bermatzen al du?', 'Ez. Aurre-izena ematean erreferentzia-kode bat jasoko duzu posta elektronikoz, eta ordainketa-data ere posta elektronikoz jakinaraziko dizugu, martxoan.'],
       ['Zer datu eskatzen dituzue?', 'Izena, abizenak, adina, sexua, posta elektronikoa, beste proba batzuetako erreferentziak, mendi-federatua zaren, azalpen pertsonal labur bat eta, nahi baduzu, oharrak. NANa plaza berresten duzunean eskatuko dugu.'],
-      ['Zer esan nahi du autohornikuntzak?', 'Kanpoko laguntzarik gabe eta antolakuntzaren hornidura-postuak gabe: behar duzuna zeuk eramaten duzu, eta zeuk kudeatzen dituzu ura, janaria eta loa. <a href="{guia}">Autohornikuntzaren gidak</a> xehetasunez azaltzen du.'],
       ['Nola funtzionatzen dute kontrol-guneek?', 'Sei kontrol-gune daude. Lau baieztatuta daude (Agurain, Santikurutze Kanpezu, Biasteri eta Urizaharra), eta beste biak zehazteke daude. Tracker batek jarraituko zaitu lasterketa osoan zehar, eta brevet-ak zure igarobidea jasoko du.'],
-      ['Mota honetako lehen lasterketa egokia al da?', 'Egia esan, ez. Ultra Trail Larre®-k distantzia luzeko aurretiko esperientzia eskatzen du. Autohornikuntzan lehen urratsak emateko, gidak distantzia txikiagoak proposatzen ditu.'],
       ['Zer da Zero Kodea?', 'Zurekin mendira sartzen dena, zurekin aterako da. <a href="{reglamento}">Araudiak</a> jasotzen du.'],
-      ['Non dago araudia?', '<a href="{reglamento}">PDF honetan</a>, oraingoz argitaratutako oinarrizko arauekin. Gainerakoa behin betiko bertsioan argitaratuko da.']
+      ['Non dago araudia?', '<a href="{reglamento}">PDF honetan</a>, I. edizioaren oinarrizko arauekin.']
     ]
   },
   partners: {

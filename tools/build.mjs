@@ -185,7 +185,7 @@ function header(t, o) {
     return `<a href="${o.alternates[l]}" hreflang="${l}" lang="${l}"${cur ? ' aria-current="true"' : ''}>${l.toUpperCase()}</a>`;
   }).join('<span aria-hidden="true">/</span>');
   const home = t.paths.home;
-  const items = t.nav.map(([id, label], i) => `<li><a href="${o.isHome ? '' : home}#${id}"><span class="n">${String(i + 1).padStart(2, '0')}</span><span class="t">${esc(label)}</span></a></li>`).join('');
+  const items = t.nav.map(([id, label], i) => `<li><a href="${o.isHome ? '' : home}#${id}"><span class="n">${String(i).padStart(2, '0')}</span><span class="t">${esc(label)}</span></a></li>`).join('');
   const coords = `${H.salida.lat.toFixed(4)}° N · ${Math.abs(H.salida.lon).toFixed(4)}° ${t.lang === 'en' ? 'W' : t.lang === 'eu' ? 'M' : 'O'}`;
   return `<a class="skip" href="#main">${esc(t.ui.skip)}</a>
 <header class="top" id="top-bar"><div class="wrap top-in">
@@ -204,7 +204,7 @@ function footer(t, isHome = false) {
   const c = H;
   const home = isHome ? '' : t.paths.home;
   return `<footer class="foot"><div class="wrap foot-in">
-<div class="foot-l"><p>© 2026 Ultra Trail Larre® · ${esc(t.ui.footerOrg)} <a href="${c.organizaUrl}/" rel="noopener">Musubigara®</a></p>
+<div class="foot-l"><p>© 2026 Ultra Trail Larre®</p>
 <nav class="foot-r" aria-label="Legal"><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></nav></div>
 ${socials(t, 'icons-foot')}
 </div>
@@ -290,9 +290,8 @@ function homePage(t) {
   const lang = t.lang;
   const sec = (id, n, h2, inner, cls = '') => sectionHtml(id, n, h2, inner, cls, t.ui.backMenu);
   const alternates = { es: '/', eu: '/eu/', en: '/en/' };
-  const guia = pdfInfo('guia', lang);
   const reg = pdfInfo('reglamento', lang);
-  const links = { guia: guia.href, reglamento: reg.href };
+  const links = { reglamento: reg.href };
   const ver = longDate(H.docsVersion, lang);
   const verGpx = longDate(H.gpxVersion, lang);
 
@@ -322,9 +321,9 @@ function homePage(t) {
 <div class="blocks blocks-3">${t.zero.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
 <p class="hint">${fill(t.zero.note, links)}</p>`);
 
-  const ig = sec('instagram', 4, t.ig.h2, `<p class="lead">${esc(t.ig.lead)}</p>${gallery(t)}`);
+  const ig = sec('instagram', 6, t.ig.h2, `<p class="lead">${esc(t.ig.lead)}</p>${gallery(t)}`);
 
-  const pre = sec('preinscripcion', 5, t.pre.h2, `<p class="lead">${esc(t.pre.lead)}</p>
+  const pre = sec('preinscripcion', 0, t.pre.h2, `<p class="lead">${esc(t.pre.lead)}</p>
 <ul class="points">${t.pre.points.map((p) => `<li>${p}</li>`).join('')}</ul>
 <div class="pre-box" id="preBox">
 <div class="notice" id="preClosed" role="status" hidden><h3>${esc(t.pre.closedTitle)}</h3><p>${esc(t.pre.closedText)}</p></div>
@@ -334,19 +333,19 @@ ${preForm(t)}
 <div class="notice notice-ok" id="preOk" role="status" tabindex="-1" hidden></div>
 </div>`, 'sec-pre');
 
-  const dl = sec('descargas', 6, t.dl.h2, `<p class="lead">${esc(t.dl.lead)}</p>
+  const dl = sec('descargas', 4, t.dl.h2, `<p class="lead">${esc(t.dl.lead)}</p>
 <ul class="dl">
-${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglamento, true], ['gpx', GPX, t.dl.items.gpx, false]].map(([k, f, [title, desc], isPdf]) => `<li><a class="btn btn-main" href="${f.href}" download>${ICON.dl}<span>${esc(title)}</span></a><p>${esc(desc)}</p><p class="meta">${isPdf ? t.dl.pdf : 'GPX'} · ${f.size} · ${esc(t.dl.version)} ${esc(isPdf ? ver : verGpx)}</p></li>`).join('')}
+${[['gpx', GPX, t.dl.items.gpx, false]].map(([k, f, [title, desc], isPdf]) => `<li><a class="btn btn-main" href="${f.href}" download>${ICON.dl}<span>${esc(title)}</span></a><p>${esc(desc)}</p><p class="meta">${isPdf ? t.dl.pdf : 'GPX'} · ${f.size} · ${esc(t.dl.version)} ${esc(isPdf ? ver : verGpx)}</p></li>`).join('')}
 </ul>`);
 
   const faq = sec('faq', 7, t.faq.h2, `<p class="lead">${esc(t.faq.lead)}</p>
 <div class="faq">${t.faq.items.map(([q, a]) => `<details><summary><span>${esc(q)}</span><i aria-hidden="true"></i></summary><div class="ans"><p>${fill(a, links)}</p></div></details>`).join('')}</div>`);
 
-  const partners = sec('colabora', 8, t.partners.h2, `<p class="lead">${esc(t.partners.lead)}</p>
+  const partners = sec('colabora', 5, t.partners.h2, `<p class="lead">${esc(t.partners.lead)}</p>
 <div class="blocks blocks-4">${t.partners.types.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
-<div class="col-form"><h3>${esc(t.partners.formTitle)}</h3>${partnerForm(t)}<div class="notice notice-ok" id="colOk" role="status" tabindex="-1" hidden></div></div>`);
+<div class="col-form">${partnerForm(t)}<div class="notice notice-ok" id="colOk" role="status" tabindex="-1" hidden></div></div>`);
 
-  const contact = sec('contacto', 9, t.contact.h2, `<p class="lead">${esc(t.contact.lead)}</p>
+  const contact = sec('contacto', 8, t.contact.h2, `<p class="lead">${esc(t.contact.lead)}</p>
 <ul class="contact">
 <li><span class="k">${ICON.mail}${esc(t.contact.labels.email)}</span><a href="mailto:${H.email}">${H.email}</a></li>
 <li><span class="k">${ICON.ig}${esc(t.contact.labels.ig)}</span><a href="${H.instagramUrl}" target="_blank" rel="noopener">@${H.instagram}<span class="sr"> (${esc(t.ui.new)})</span></a></li>
@@ -367,7 +366,7 @@ ${[['guia', guia, t.dl.items.guia, true], ['reglamento', reg, t.dl.items.reglame
   const jsonld = homeJsonLd(t, alternates[lang]);
   return (
     head(t, { title: t.meta.title, description: t.meta.description, path: alternates[lang], alternates, og: `/assets/og-${lang}.png`, jsonld }) +
-    `\n<body data-page="home">\n${header(t, { alternates, isHome: true })}\n<main id="main" tabindex="-1">\n${hero}\n${race}\n${route}\n${zero}\n${ig}\n${pre}\n${dl}\n${faq}\n${partners}\n${contact}\n</main>\n${footer(t, true)}\n${netlifyForms()}\n<script type="application/json" id="i18n">${JSON.stringify(i18n).replace(/</g, '\\u003c')}</script>\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
+    `\n<body data-page="home">\n${header(t, { alternates, isHome: true })}\n<main id="main" tabindex="-1">\n${hero}\n${pre}\n${race}\n${route}\n${zero}\n${dl}\n${partners}\n${ig}\n${faq}\n${contact}\n</main>\n${footer(t, true)}\n${netlifyForms()}\n<script type="application/json" id="i18n">${JSON.stringify(i18n).replace(/</g, '\\u003c')}</script>\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
   );
 }
 
@@ -375,7 +374,7 @@ function homeJsonLd(t, path) {
   const url = `${ORIGIN}${path}`;
   const org = `${ORIGIN}/#organization`;
   const site = `${ORIGIN}/#website`;
-  const faq = t.faq.items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: strip(fill(a, { guia: `${ORIGIN}${pdfPath('guia', t.lang)}`, reglamento: `${ORIGIN}${pdfPath('reglamento', t.lang)}` })) } }));
+  const faq = t.faq.items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: strip(fill(a, { reglamento: `${ORIGIN}${pdfPath('reglamento', t.lang)}` })) } }));
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -447,7 +446,6 @@ const robots = () => `User-agent: *\nAllow: /\nDisallow: /.netlify/\nDisallow: /
 const manifest = () => JSON.stringify({ name: 'Ultra Trail Larre®', short_name: 'Larre', description: es.meta.description, lang: 'es', start_url: '/', scope: '/', display: 'browser', background_color: '#0B0908', theme_color: '#0B0908', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }] }, null, 2) + '\n';
 
 function llms() {
-  const g = (l) => `${ORIGIN}${pdfPath('guia', l)}`;
   const r = (l) => `${ORIGIN}${pdfPath('reglamento', l)}`;
   return `# Ultra Trail Larre®
 
@@ -467,7 +465,6 @@ function llms() {
 - [English](${ORIGIN}/en/)
 
 ## Documentos
-- [Guía de autosuficiencia (ES)](${g('es')}) · [EU](${g('eu')}) · [EN](${g('en')})
 - [Reglamento (ES)](${r('es')}) · [EU](${r('eu')}) · [EN](${r('en')})
 - [Track GPX](${ORIGIN}/descargas/ultra-trail-larre.gpx)
 `;

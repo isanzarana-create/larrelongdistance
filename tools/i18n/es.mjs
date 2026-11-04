@@ -37,14 +37,14 @@ export default {
     ctaWa: 'Hablemos'
   },
   nav: [
+    ['preinscripcion', 'Preinscripción'],
     ['la-carrera', 'La carrera'],
     ['ruta', 'Ruta'],
     ['codigo-cero', 'Código Cero'],
-    ['instagram', 'Fotos'],
-    ['preinscripcion', 'Preinscripción'],
     ['descargas', 'Descargas'],
-    ['faq', 'Preguntas frecuentes'],
     ['colabora', 'Colabora'],
+    ['instagram', 'Fotos'],
+    ['faq', 'Preguntas frecuentes'],
     ['contacto', 'Contacto']
   ],
   hero: {
@@ -80,7 +80,7 @@ export default {
       ['Cada envoltorio', 'Geles y barritas con la lengüeta atada o guardada en el momento de abrir, nunca «luego».'],
       ['Antes de salir', 'Trasvasa lo que puedas a bolsas reutilizables para llevar menos envoltorio desde el principio.']
     ],
-    note: 'Las condiciones concretas del Código Cero se detallarán en el <a href="{reglamento}">reglamento</a> definitivo. Más ideas en la <a href="{guia}">guía de autosuficiencia</a>.'
+    note: 'Las condiciones del Código Cero están en el <a href="{reglamento}">reglamento</a>.'
   },
   route: {
     h2: 'La ruta',
@@ -187,8 +187,6 @@ export default {
     h2: 'Descargas',
     lead: 'Para leer con calma y llevar contigo.',
     items: {
-      guia: ['Guía de autosuficiencia', 'Cómo se prepara y se corre un ultra-trail sin asistencia: agua, comida, sueño, material y navegación.'],
-      reglamento: ['Reglamento', 'Las normas esenciales de la I Edición publicadas hasta ahora. La versión definitiva se publicará antes de la inscripción.'],
       gpx: ['Track de la ruta', 'El recorrido completo en GPX, con la salida y meta marcadas, listo para cargar en tu reloj o en tu móvil.']
     },
     version: 'versión',
@@ -205,11 +203,9 @@ export default {
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
       ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],
       ['¿Qué datos pedís?', 'Nombre, apellidos, edad, sexo, correo, referencias en otras pruebas, si estás federado/a en montaña, una breve descripción personal y, si quieres, observaciones. El DNI lo pediremos al confirmar plaza.'],
-      ['¿Qué significa autosuficiencia?', 'Sin asistencia externa y sin avituallamientos de organización: llevas lo que necesitas y gestionas tú el agua, la comida y el sueño. La <a href="{guia}">guía de autosuficiencia</a> lo explica con detalle.'],
       ['¿Cómo funcionan los controles?', 'Hay seis controles. Cuatro están confirmados (Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada) y los otros dos están por definir. Un tracker te sigue durante toda la carrera y el brevet recoge tu paso.'],
-      ['¿Es una buena primera carrera de este tipo?', 'Honestamente, no. Ultra Trail Larre® pide experiencia previa en larga distancia. Para dar los primeros pasos en autosuficiencia, la guía propone distancias menores.'],
       ['¿Qué es el Código Cero?', 'Lo que entra contigo en el monte, sale contigo del monte. Lo recoge el <a href="{reglamento}">reglamento</a>.'],
-      ['¿Dónde está el reglamento?', 'En <a href="{reglamento}">este PDF</a>, con las normas esenciales publicadas hasta ahora. El resto se publicará en la versión definitiva.']
+      ['¿Dónde está el reglamento?', 'En <a href="{reglamento}">este PDF</a>, con las normas esenciales de la I Edición.']
     ]
   },
   partners: {
