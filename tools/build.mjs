@@ -196,7 +196,7 @@ ${socials(t, 'icons-top')}
 <nav class="lang" aria-label="${esc(t.ui.langNav)}">${langs}</nav>
 <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="${esc(t.ui.menuOpen)}" data-open="${esc(t.ui.menuOpen)}" data-close="${esc(t.ui.menuClose)}"><span class="bars" aria-hidden="true"><i></i><i></i></span><span class="menu-lbl">${esc(t.ui.menu)}</span></button>
 </div></div>
-<nav class="menu" id="menuPanel" aria-label="${esc(t.ui.index)}"><ol>${items}</ol></nav>
+<nav class="menu" id="menuPanel" aria-label="${esc(t.ui.index)}"><ol>${items}</ol><ul class="menu-legal"><li><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a></li><li><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></li></ul></nav>
 </header>`;
 }
 
@@ -405,7 +405,10 @@ function homeJsonLd(t, path) {
         location: { '@type': 'Place', name: H.salida.lugar, address: { '@type': 'PostalAddress', addressLocality: H.salida.ciudad, addressRegion: 'Álava', addressCountry: 'ES' }, geo: { '@type': 'GeoCoordinates', latitude: H.salida.lat, longitude: H.salida.lon } },
         organizer: { '@id': org },
         performer: { '@type': 'PerformingGroup', name: t.lang === 'en' ? 'Ultra Trail Larre® runners' : t.lang === 'eu' ? 'Ultra Trail Larre®-ko korrikalariak' : 'Corredoras y corredores de Ultra Trail Larre®' },
-        offers: { '@type': 'Offer', url: `${ORIGIN}${t.paths.home}#preinscripcion`, availability: 'https://schema.org/PreOrder', validFrom: H.preinscripcionAbre.slice(0, 10), priceCurrency: 'EUR' }
+        offers: [
+          [t.lang === 'en' ? 'Individual' : t.lang === 'eu' ? 'Banakakoa' : 'Individual', H.cuotas.individual],
+          [t.lang === 'en' ? 'Relay (per participant, teams of at least 4)' : t.lang === 'eu' ? 'Erreleboa (parte-hartzaile bakoitzeko, gutxienez 4ko taldeak)' : 'Relevos (por participante, equipos de mínimo 4)', H.cuotas.relevos]
+        ].map(([name, price]) => ({ '@type': 'Offer', name, url: `${ORIGIN}${t.paths.home}#preinscripcion`, availability: 'https://schema.org/PreOrder', validFrom: H.preinscripcionAbre.slice(0, 10), price, priceCurrency: 'EUR' }))
       },
       { '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: faq }
     ]

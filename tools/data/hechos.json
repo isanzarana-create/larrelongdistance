@@ -15,6 +15,7 @@
   "controlesConfirmados": ["agurain", "campezo", "laguardia", "penacerrada"],
   "salida": { "lugar": "Quiosco del Parque de La Florida", "ciudad": "Vitoria-Gasteiz", "lat": 42.843865, "lon": -2.676552 },
   "preinscripcionAbre": "2026-12-01T00:00:00+01:00",
+  "cuotas": { "individual": 185, "relevos": 135 },
   "pagoComunicado": "marzo",
   "email": "ignacio@musubigara.org",
   "instagram": "ultratraillarre",
