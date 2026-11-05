@@ -147,6 +147,7 @@ export default {
     lead: '300 plaza, aurre-izen-emateak iritsi diren hurrenkeran esleituak.',
     points: [
       'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean</strong> irekiko da.',
+      'Izen-emate kuota: <strong>185 €</strong> banakako modalitatean; <strong>135 €</strong> parte-hartzaile bakoitzeko erreleboetan (gutxienez 4ko taldeak).',
       'Azalpen pertsonal labur bat sartu behar da, derrigorrez: aurre-izen-ematea balioztatzeko balio du, ez iragazteko.',
       'Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.',
       '<strong>Aurre-izen-emateak ez du plazarik bermatzen.</strong> Erreferentzia-kode bat jasoko duzu, eta ordainketa-data martxoan jakinaraziko dizugu posta elektronikoz.',

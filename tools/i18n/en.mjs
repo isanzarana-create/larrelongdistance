@@ -146,6 +146,7 @@ export default {
     lead: '300 places, allocated in order of pre-registration.',
     points: [
       'The pre-registration list opens on <strong>1 December 2026</strong>.',
+      'Entry fee: <strong>€185</strong> for individual runners; <strong>€135</strong> per participant in relays (teams of at least 4).',
       'It includes a short personal description, which is compulsory: it is there to validate your pre-registration, not to filter applicants.',
       'There is no bib reservation and no motivation letter.',
       '<strong>Pre-registering does not guarantee a place.</strong> You will receive a reference code, and we will email you the payment date in March.',
