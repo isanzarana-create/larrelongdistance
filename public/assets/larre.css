@@ -401,3 +401,7 @@ html:not([data-theme=light]) .c0{background:#E5565F}html:not([data-theme=light])
   body[data-page="home"] .icons-foot,
   body[data-page="home"] .foot-l{display:none}
 }
+.menu-legal{list-style:none;margin:.4rem 0 0;padding:.4rem 0 0;border-top:1px solid var(--line)}
+.menu-legal a{font-size:.66rem;color:var(--ink-2);min-height:40px}
+@media (min-width:760px){.menu-legal{display:none}}
+@media (max-width:759px){body[data-page="home"] .foot-l p{display:none}}

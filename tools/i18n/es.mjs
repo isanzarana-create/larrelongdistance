@@ -146,6 +146,7 @@ export default {
     lead: '300 plazas, asignadas por orden de llegada de la preinscripción.',
     points: [
       'La lista de preinscritos se abre el <strong>1 de diciembre de 2026</strong>.',
+      'Cuota de inscripción: <strong>185 €</strong> en modalidad individual; <strong>135 €</strong> por participante en relevos (equipos de mínimo 4).',
       'Incluye una breve descripción personal, obligatoria: sirve para validar la preinscripción, no para filtrar.',
       'No hay reserva de dorsales ni carta de motivación.',
       '<strong>La preinscripción no garantiza plaza.</strong> Recibirás un código de referencia y te comunicaremos la fecha de pago por email en marzo.',
