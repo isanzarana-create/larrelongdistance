@@ -393,3 +393,11 @@ html:not([data-theme=light]) .c0{background:#E5565F}html:not([data-theme=light])
 .route-page h2{font-size:1.25rem;margin:2.6em 0 .8em}
 .route-page .lead{max-width:48rem}
 .route-page .route-live{margin-top:1rem}
+
+/* ───────── portada en móvil: solo lema, menú y los dos CTA ───────── */
+@media (max-width:759px){
+  body[data-page="home"] .hero-tagline:first-child,
+  body[data-page="home"] .foot-r,
+  body[data-page="home"] .icons-foot,
+  body[data-page="home"] .foot-l{display:none}
+}
