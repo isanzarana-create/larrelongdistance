@@ -61,13 +61,13 @@
 # ── Redirecciones ──────────────────────────────────────────────
 [[redirects]]
   from = "https://larrelongdistance.org/ruta"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://larrelongdistance.org/ruta/"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
@@ -145,13 +145,13 @@
 
 [[redirects]]
   from = "https://larrelongdistance.org/en/route"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://larrelongdistance.org/en/route/"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
@@ -253,13 +253,13 @@
 
 [[redirects]]
   from = "https://www.larrelongdistance.org/ruta"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.larrelongdistance.org/ruta/"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
@@ -337,13 +337,13 @@
 
 [[redirects]]
   from = "https://www.larrelongdistance.org/en/route"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.larrelongdistance.org/en/route/"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
@@ -445,13 +445,13 @@
 
 [[redirects]]
   from = "https://larrelongdistance.com/ruta"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://larrelongdistance.com/ruta/"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
@@ -529,13 +529,13 @@
 
 [[redirects]]
   from = "https://larrelongdistance.com/en/route"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://larrelongdistance.com/en/route/"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
@@ -637,13 +637,13 @@
 
 [[redirects]]
   from = "https://www.larrelongdistance.com/ruta"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.larrelongdistance.com/ruta/"
-  to = "https://ultratraillarre.org/#ruta"
+  to = "https://ultratraillarre.org/ruta/"
   status = 301
   force = true
 
@@ -721,13 +721,13 @@
 
 [[redirects]]
   from = "https://www.larrelongdistance.com/en/route"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.larrelongdistance.com/en/route/"
-  to = "https://ultratraillarre.org/en/#ruta"
+  to = "https://ultratraillarre.org/en/route/"
   status = 301
   force = true
 
