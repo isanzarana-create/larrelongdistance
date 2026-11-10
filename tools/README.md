@@ -21,3 +21,10 @@ Requisitos: Node 20+. Una vez: `cd tools && npm install` (instala `sharp`). Los 
 5. `node tools/build.mjs`, `git commit`, `git push`. Para retirar una foto: `"oculta": true`.
 
 Las imágenes se sirven desde el propio sitio (no desde el CDN de Instagram).
+
+## Control SEO (desde el 10 nov 2026)
+`node tools/check-seo.mjs --root public` comprueba que todo el JSON-LD es válido, que cada imagen
+(ImageObject) lleva creator, creditText, copyrightNotice, license y acquireLicensePage, y que los
+`<lastmod>` del sitemap no van por detrás del último cambio de cada página. Lo ejecuta la Action
+«Control SEO» en cada push y a diario. `tools/build.mjs` ya genera los `<lastmod>` reales por página
+y los campos de licencia (función `imgLicense`): cualquier imagen nueva en JSON-LD debe usarla.

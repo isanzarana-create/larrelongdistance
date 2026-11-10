@@ -7,6 +7,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import es from './i18n/es.mjs';
@@ -27,6 +28,17 @@ const SITE = JSON.parse(readFileSync(resolve(ROOT, 'tools/data/site.json'), 'utf
 const LANGS = { es, eu, en };
 const ORDER = ['es', 'eu', 'en'];
 const ORIGIN = H.origen;
+
+/* Datos de licencia para TODA imagen declarada como ImageObject (logo, imagen
+   social…). Search Console los pide en el informe «Metadatos de imagen» y avisa
+   si falta creator o copyrightNotice. scripts/check-seo.mjs lo verifica. */
+const imgLicense = (t) => ({
+  creditText: 'Ultra Trail Larre®',
+  creator: { '@type': 'Organization', name: 'Ultra Trail Larre®', url: `${ORIGIN}/` },
+  copyrightNotice: '© Ultra Trail Larre®',
+  license: `${ORIGIN}${t.paths.aviso}`,
+  acquireLicensePage: `${ORIGIN}${t.paths.home}#contacto`,
+});
 
 // ───────────── utilidades ─────────────
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -383,9 +395,9 @@ function homeJsonLd(t, path) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Organization', '@id': org, name: 'Ultra Trail Larre®', url: `${ORIGIN}/`, logo: { '@type': 'ImageObject', url: `${ORIGIN}/icon-512.png`, width: 512, height: 512 }, email: H.email, sameAs: [H.instagramUrl], parentOrganization: { '@type': 'Organization', name: 'Musubigara®', url: `${H.organizaUrl}/` }, contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: H.email, availableLanguage: ['es', 'eu', 'en'] } },
+      { '@type': 'Organization', '@id': org, name: 'Ultra Trail Larre®', url: `${ORIGIN}/`, logo: { '@type': 'ImageObject', url: `${ORIGIN}/icon-512.png`, contentUrl: `${ORIGIN}/icon-512.png`, width: 512, height: 512, ...imgLicense(t) }, email: H.email, sameAs: [H.instagramUrl], parentOrganization: { '@type': 'Organization', name: 'Musubigara®', url: `${H.organizaUrl}/` }, contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: H.email, availableLanguage: ['es', 'eu', 'en'] } },
       { '@type': 'WebSite', '@id': site, url: `${ORIGIN}/`, name: 'Ultra Trail Larre®', inLanguage: ['es', 'eu', 'en'], publisher: { '@id': org } },
-      { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: t.meta.title, description: t.meta.description, inLanguage: t.lang, isPartOf: { '@id': site }, about: { '@id': `${url}#event` }, breadcrumb: { '@id': `${url}#breadcrumb` }, primaryImageOfPage: { '@type': 'ImageObject', url: `${ORIGIN}/assets/og-${t.lang}.png` } },
+      { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: t.meta.title, description: t.meta.description, inLanguage: t.lang, isPartOf: { '@id': site }, about: { '@id': `${url}#event` }, breadcrumb: { '@id': `${url}#breadcrumb` }, primaryImageOfPage: { '@type': 'ImageObject', url: `${ORIGIN}/assets/og-${t.lang}.png`, contentUrl: `${ORIGIN}/assets/og-${t.lang}.png`, ...imgLicense(t) } },
       { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Ultra Trail Larre®', item: url }] },
       {
         '@type': 'SportsEvent',
@@ -440,7 +452,7 @@ function routePage(t) {
   const home = t.paths.home, reg = pdfInfo('reglamento', lang);
   const url = `${ORIGIN}${path}`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: P.metaTitle, description: P.metaDesc, inLanguage: lang, isPartOf: { '@id': `${ORIGIN}/#website` }, about: { '@id': `${ORIGIN}${home}#event` }, breadcrumb: { '@id': `${url}#breadcrumb` }, primaryImageOfPage: { '@type': 'ImageObject', url: `${ORIGIN}/assets/og-${lang}.png` } },
+    { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: P.metaTitle, description: P.metaDesc, inLanguage: lang, isPartOf: { '@id': `${ORIGIN}/#website` }, about: { '@id': `${ORIGIN}${home}#event` }, breadcrumb: { '@id': `${url}#breadcrumb` }, primaryImageOfPage: { '@type': 'ImageObject', url: `${ORIGIN}/assets/og-${lang}.png`, contentUrl: `${ORIGIN}/assets/og-${lang}.png`, ...imgLicense(t) } },
     { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Ultra Trail Larre®', item: `${ORIGIN}${home}` }, { '@type': 'ListItem', position: 2, name: P.eyebrow, item: url }] }
   ] };
   const i18n = { lang, email: H.email };
@@ -475,8 +487,18 @@ function sitemap() {
     { key: 'aviso', prio: '0.2', freq: 'yearly', alts: { es: es.paths.aviso, eu: eu.paths.aviso, en: en.paths.aviso } },
     { key: 'priv', prio: '0.2', freq: 'yearly', alts: { es: es.paths.priv, eu: eu.paths.priv, en: en.paths.priv } }
   ];
-  const last = H.docsVersion;
-  const xml = pages.flatMap((p) => ORDER.map((l) => `  <url>\n    <loc>${ORIGIN}${p.alts[l]}</loc>\n    <lastmod>${last}</lastmod>\n    <changefreq>${p.freq}</changefreq>\n    <priority>${p.prio}</priority>\n${ORDER.map((a) => `    <xhtml:link rel="alternate" hreflang="${a}" href="${ORIGIN}${p.alts[a]}"/>`).join('\n')}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}${p.alts.es}"/>\n  </url>`)).join('\n');
+  /* lastmod real por URL: la fecha del último cambio de su HTML (hoy si este
+     build lo ha cambiado y aún no está confirmado; si no, la de su último
+     commit), y nunca anterior a docsVersion. Un lastmod atrasado hace que
+     Google no reprocese la página y siga mostrando avisos ya corregidos. */
+  const last = (urlPath) => {
+    const rel = `public${urlPath}index.html`;
+    const git = (args) => { try { return execFileSync('git', args, { cwd: resolve(PUB, '..'), encoding: 'utf8', env: { ...process.env, TZ: 'Europe/Madrid' } }).trim(); } catch { return ''; } };
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(new Date());
+    const changed = git(['status', '--porcelain', '--', rel]) ? today : git(['log', '-1', '--format=%cd', '--date=format-local:%Y-%m-%d', '--', rel]);
+    return [H.docsVersion, changed].filter(Boolean).sort().pop();
+  };
+  const xml = pages.flatMap((p) => ORDER.map((l) => `  <url>\n    <loc>${ORIGIN}${p.alts[l]}</loc>\n    <lastmod>${last(p.alts[l])}</lastmod>\n    <changefreq>${p.freq}</changefreq>\n    <priority>${p.prio}</priority>\n${ORDER.map((a) => `    <xhtml:link rel="alternate" hreflang="${a}" href="${ORIGIN}${p.alts[a]}"/>`).join('\n')}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}${p.alts.es}"/>\n  </url>`)).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${xml}\n</urlset>\n`;
 }
 
