@@ -154,6 +154,7 @@ export default {
     ],
     closedTitle: 'Not open yet',
     closedText: 'Pre-registration opens on 1 December 2026. When that day comes, you will be able to fill in the form here.',
+    noscript: 'You need JavaScript turned on to pre-register. If you cannot turn it on, write to us at {email}.',
     unavailable: 'We could not check whether pre-registration is open. Reload the page or write to us at {email}.',
     form: {
       legend: 'Your details',
@@ -216,8 +217,9 @@ export default {
     lead: 'The essentials, plainly. If something is missing, write to us.',
     items: [
       ['When is the race?', 'The first edition takes place in <strong>autumn 2027</strong>. We have not published the exact day yet.'],
-      ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz. The route is a loop: you start and finish in the same place.'],
+      ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz (Basque Country, Spain). The route is a loop: you start and finish in the same place.'],
       ['How long is it and how much climbing?', '<strong>227 km</strong> and <strong>+5,290 m</strong> of elevation gain, self-supported.'],
+      ['What does self-supported mean at Ultra Trail Larre®?', 'There are no organiser aid stations and no outside assistance. You decide what to carry, when to eat, when to sleep and how to manage your water. A tracker follows you throughout and your brevet records your passage through the controls; navigation is part of the challenge.'],
       ['When does pre-registration open?', 'The pre-registration list opens on <strong>1 December 2026</strong>.'],
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
       ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],

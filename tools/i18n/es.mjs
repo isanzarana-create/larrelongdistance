@@ -154,6 +154,7 @@ export default {
     ],
     closedTitle: 'Todavía no está abierta',
     closedText: 'La preinscripción se abre el 1 de diciembre de 2026. Cuando llegue ese día podrás rellenar aquí el formulario.',
+    noscript: 'Para preinscribirte necesitas tener JavaScript activado. Si no puedes activarlo, escríbenos a {email}.',
     unavailable: 'No hemos podido comprobar si la preinscripción está abierta. Recarga la página o escríbenos a {email}.',
     form: {
       legend: 'Tus datos',

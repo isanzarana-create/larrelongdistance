@@ -346,7 +346,7 @@ function homePage(t) {
 <div class="notice" id="preClosed" role="status" hidden><h3>${esc(t.pre.closedTitle)}</h3><p>${esc(t.pre.closedText)}</p></div>
 <div class="notice notice-warn" id="preUnavailable" role="status" hidden><p>${esc(fill(t.pre.unavailable, { email: H.email }))}</p></div>
 ${preForm(t)}
-<noscript><p class="notice notice-warn">${esc(t.pre.unavailable.replace('{email}', H.email))}</p></noscript>
+<noscript><p class="notice notice-warn">${esc(t.pre.noscript.replace('{email}', H.email))}</p></noscript>
 <div class="notice notice-ok" id="preOk" role="status" tabindex="-1" hidden></div>
 </div>`, 'sec-pre');
 
