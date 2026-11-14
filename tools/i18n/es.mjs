@@ -5,10 +5,10 @@ export default {
   label: 'Castellano',
   paths: { home: '/', aviso: '/aviso-legal/', priv: '/politica-privacidad/' },
   meta: {
-    title: 'Ultra Trail Larre® · Ultra-trail 227 km en Álava, 2027',
-    description: 'Ultra-trail en autosuficiencia por Álava: 227 km y +5.290 m en lazo desde Vitoria-Gasteiz. 300 plazas, en solitario o por relevos. Otoño de 2027.',
-    ogLine: 'Ultra-trail en autosuficiencia · Álava · otoño de 2027',
-    ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, otoño de 2027'
+    title: 'Ultra Trail Larre® · 227 km en Álava, individual o relevos',
+    description: 'Ultra-trail en autosuficiencia por Álava del 20 al 31 de octubre de 2027: 227 km y +5.290 m desde Vitoria-Gasteiz, individual o por relevos (equipos de 3 o 4).',
+    ogLine: 'Individual o por relevos · Álava · 20–31 oct. 2027',
+    ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, individual o por relevos, del 20 al 31 de octubre de 2027'
   },
   ui: {
     skip: 'Saltar al contenido',
@@ -48,7 +48,8 @@ export default {
     ['contacto', 'Contacto']
   ],
   hero: {
-    eyebrow: 'I Edición · otoño de 2027',
+    eyebrow: 'I Edición · del 20 al 31 de octubre de 2027',
+    modes: 'Individual o relevos de 3 o 4 personas.',
     claim: 'Solo tú, un tracker y tu brevet.',
     sub: 'Ultra-trail en autosuficiencia por las sierras de Álava. Un lazo de 227 km que sale y llega a Vitoria-Gasteiz.',
     cta: 'Preinscribirme',
@@ -57,6 +58,7 @@ export default {
       ['227', 'km en lazo'],
       ['+5.290', 'm de desnivel positivo'],
       ['300', 'plazas'],
+      ['3–4', 'personas por equipo de relevos'],
       ['La Florida', 'salida y meta, Vitoria-Gasteiz']
     ]
   },
@@ -65,8 +67,8 @@ export default {
     lead: 'Una salida, una meta y las sierras de Álava en medio. Lo que ocurra entre una y otra lo resuelves tú.',
     blocks: [
       ['Autosuficiencia', 'Ultra Trail Larre® es un ultra-trail en autosuficiencia: sin asistencia externa y sin avituallamientos de organización. Decides qué llevas, cuándo comes, cuándo duermes y cómo gestionas el agua. Se prepara como una expedición, no como un circuito.'],
+      ['Individual o por relevos, en equipos de 3 o 4', 'Puedes correr los 227 km tú solo o repartirlos en un equipo de relevos de 3 o 4 personas. Cada equipo se organiza como quiera: hay un único tracker que pasa de un corredor al siguiente, y lo único obligatorio es pasar por todos los controles. Es una de las señas de identidad de Ultra Trail Larre®: un ultra de 227 km en autosuficiencia que también se vive en equipo.'],
       ['Solo tú, un tracker y tu brevet', 'Un tracker te sigue durante toda la carrera y el brevet recoge tu paso por los controles. La navegación forma parte de la prueba.'],
-      ['Individual o por relevos', 'Puedes correrla entera tú solo o hacerlo por relevos. Los detalles de la modalidad por relevos se publicarán más adelante.'],
       ['Filosofía', 'No es una carrera de masas ni pretende serlo. Son 300 plazas, y esa cifra es identidad, no un parámetro de mercado. Para muchas personas, el reto será simplemente llegar.'],
       ['El monte', 'Cruzamos sierras, pueblos y viñedos de Álava que viven ahí todo el año. Pasamos con respeto y sin dejar rastro: esa es la condición para volver.']
     ],
@@ -89,13 +91,13 @@ export default {
     metaDesc: 'Ruta, perfil y desnivel del Ultra Trail Larre®: lazo de 227 km y +5.290 m desde Vitoria-Gasteiz por las sierras de Álava, con 6 controles y track GPX.',
     eyebrow: 'La ruta',
     h1: 'Ruta y desnivel: 227 km por las sierras de Álava',
-    lead: 'Ultra Trail Larre® es un lazo de 227 km y +5.290 m de desnivel positivo que sale y llega al quiosco del Parque de La Florida, en Vitoria-Gasteiz. Se corre en autosuficiencia, con un tracker y un brevet, y se puede hacer en solitario o por relevos.',
+    lead: 'Ultra Trail Larre® es un lazo de 227 km y +5.290 m de desnivel positivo que sale y llega al quiosco del Parque de La Florida, en Vitoria-Gasteiz. Se corre en autosuficiencia, con un tracker y un brevet, y se puede hacer en solitario o por relevos en equipos de 3 o 4 personas. La I Edición se celebra del 20 al 31 de octubre de 2027.',
     figsTitle: 'El recorrido en cifras',
-    extraFigs: [['Altitud mínima', '{min} m'], ['Altitud máxima', '{max} m'], ['Modalidades', 'Individual o por relevos'], ['Plazas', '300']],
+    extraFigs: [['Altitud mínima', '{min} m'], ['Altitud máxima', '{max} m'], ['Modalidades', 'Individual o relevos (equipos de 3 o 4)'], ['Fecha', '20–31 de octubre de 2027'], ['Plazas', '300']],
     terrainTitle: 'Cómo es el terreno',
     terrain: 'Según la planificación del recorrido en Komoot, aproximadamente el {np} % de los 227 km discurre por pistas y caminos sin pavimentar y el {pv} % por asfalto o pistas pavimentadas. Son datos orientativos: el estado real del terreno puede variar según la época y las condiciones.',
     nextTitle: 'Antes de la salida',
-    next: ['La lista de preinscritos se abre el 1 de diciembre de 2026.', 'Las 300 plazas se asignan por orden de llegada de la preinscripción, que no garantiza plaza.'],
+    next: ['La I Edición se celebra del 20 al 31 de octubre de 2027.', 'La lista de preinscritos se abre el 1 de diciembre de 2026.', 'Las 300 plazas se asignan por orden de llegada de la preinscripción, que no garantiza plaza.'],
     ctaPre: 'Preinscripción',
     ctaRules: 'Reglamento (PDF)',
     more: 'Ficha completa de la ruta'
@@ -146,7 +148,7 @@ export default {
     lead: '300 plazas, asignadas por orden de llegada de la preinscripción.',
     points: [
       'La lista de preinscritos se abre el <strong>1 de diciembre de 2026</strong>.',
-      'Cuota de inscripción: <strong>185 €</strong> en modalidad individual; <strong>135 €</strong> por participante en relevos (equipos de mínimo 4).',
+      'Cuota de inscripción: <strong>185 €</strong> en modalidad individual; <strong>135 €</strong> por participante en relevos (equipos de 3 o 4 personas).',
       'Incluye una breve descripción personal, obligatoria: sirve para validar la preinscripción, no para filtrar.',
       'No hay reserva de dorsales ni carta de motivación.',
       '<strong>La preinscripción no garantiza plaza.</strong> Recibirás un código de referencia y te comunicaremos la fecha de pago por email en marzo.',
@@ -216,14 +218,15 @@ export default {
     h2: 'Preguntas frecuentes',
     lead: 'Lo esencial, sin rodeos. Si falta algo, escríbenos.',
     items: [
-      ['¿Cuándo es la carrera?', 'La I Edición se celebrará en <strong>otoño de 2027</strong>. Todavía no hemos publicado el día exacto.'],
+      ['¿Cuándo es la carrera?', 'La I Edición se celebra <strong>del 20 al 31 de octubre de 2027</strong>, con salida y meta en el Parque de La Florida (Vitoria-Gasteiz).'],
+      ['¿Se puede correr por relevos?', 'Sí. Además de la modalidad individual, puedes correrla por relevos en un <strong>equipo de 3 o 4 personas</strong>. Cada equipo se organiza como quiera: lleváis un único tracker que se pasa al siguiente corredor, y lo único obligatorio es pasar por todos los controles. La cuota de relevos es de <strong>135 €</strong> por participante.'],
+      ['¿Cuántas personas forman un equipo de relevos?', '<strong>3 o 4 personas.</strong> Os repartís los 227 km como queráis, siempre con un único tracker por equipo.'],
       ['¿Dónde está la salida y dónde la meta?', 'En el quiosco del Parque de La Florida, en Vitoria-Gasteiz. La ruta es un lazo: sales y llegas al mismo sitio.'],
       ['¿Qué distancia y desnivel tiene?', '<strong>227 km</strong> y <strong>+5.290 m</strong> de desnivel positivo, en autosuficiencia.'],
       ['¿Cuándo se abre la preinscripción?', 'La lista de preinscritos se abre el <strong>1 de diciembre de 2026</strong>.'],
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
       ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],
       ['¿Qué datos pedís?', 'Nombre, apellidos, edad, sexo, correo, referencias en otras pruebas, si estás federado/a en montaña, una breve descripción personal y, si quieres, observaciones. El DNI lo pediremos al confirmar plaza.'],
-      ['¿Se puede correr por relevos?', 'Sí. Además de correrla entera en solitario, existe la opción de hacerla por relevos. Los detalles de esta modalidad se publicarán más adelante.'],
       ['¿Cómo funcionan los controles?', 'Hay seis controles. Cuatro están confirmados (Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada) y los otros dos están por definir. Un tracker te sigue durante toda la carrera y el brevet recoge tu paso.'],
       ['¿Qué es el Código Cero?', 'Lo que entra contigo en el monte, sale contigo del monte. Lo recoge el <a href="{reglamento}">reglamento</a>.'],
       ['¿Dónde está el reglamento?', 'En <a href="{reglamento}">este PDF</a>, con las normas esenciales de la I Edición.']

@@ -33,7 +33,7 @@ const { chromium } = createRequire(import.meta.url)('playwright');
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1200, height: 630 } });
 for (const t of [es, eu, en]) {
-  const facts = t.hero.facts.slice(0, 3).map(([v, l]) => `<li><b>${v}</b><span>${l}</span></li>`).join('');
+  const facts = t.hero.facts.slice(0, 4).map(([v, l]) => `<li><b>${v}</b><span>${l}</span></li>`).join('');
   const html = `<!doctype html><meta charset=utf-8><style>
 @font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-400-normal.woff2);font-weight:400}
 @font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-600-normal.woff2);font-weight:600}

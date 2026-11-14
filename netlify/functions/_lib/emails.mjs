@@ -8,7 +8,7 @@ const T = {
   es: {
     preSubject: (c) => `Preinscripción recibida · ${c} · Ultra Trail Larre®`, preheader: 'Guarda tu código de referencia. La preinscripción no garantiza plaza.',
     hello: (n) => `Hola, ${n}:`, preTitle: 'Preinscripción recibida',
-    preIntro: 'Hemos recibido tu preinscripción para la I Edición de Ultra Trail Larre® (otoño de 2027). Este es tu código de referencia:',
+    preIntro: 'Hemos recibido tu preinscripción para la I Edición de Ultra Trail Larre® (del 20 al 31 de octubre de 2027). Este es tu código de referencia:',
     nextTitle: 'Qué pasa ahora',
     next: ['Las 300 plazas se asignan por orden de llegada de la preinscripción.', 'La preinscripción no garantiza plaza.', 'Te comunicaremos la fecha de pago por email en marzo.', 'Si necesitas cambiar o consultar algo, responde a este correo citando tu código.'],
     contact: 'Contacto', sign: 'Un abrazo,', team: 'Ultra Trail Larre®', visit: 'Ver la web', legal: 'Recibes este correo porque alguien (esperamos que tú) rellenó el formulario de preinscripción con esta dirección. Tratamos tus datos según nuestra política de privacidad:',
@@ -19,7 +19,7 @@ const T = {
   eu: {
     preSubject: (c) => `Aurre-izen-ematea jasota · ${c} · Ultra Trail Larre®`, preheader: 'Gorde zure erreferentzia-kodea. Aurre-izen-emateak ez du plaza bermatzen.',
     hello: (n) => `Kaixo, ${n}:`, preTitle: 'Aurre-izen-ematea jasota',
-    preIntro: 'Ultra Trail Larre®-ren I. Edizioko (2027ko udazkena) aurre-izen-ematea jaso dugu. Hau da zure erreferentzia-kodea:',
+    preIntro: 'Ultra Trail Larre®-ren I. Edizioko (2027ko urriaren 20tik 31ra) aurre-izen-ematea jaso dugu. Hau da zure erreferentzia-kodea:',
     nextTitle: 'Zer gertatzen da orain',
     next: ['300 plazak aurre-izen-ematearen iritsiera-ordenaren arabera esleitzen dira.', 'Aurre-izen-emateak ez du plaza bermatzen.', 'Ordainketa-data posta elektronikoz jakinaraziko dizugu martxoan.', 'Zerbait aldatu edo galdetu behar baduzu, erantzun mezu honi zure kodea aipatuz.'],
     contact: 'Kontaktua', sign: 'Besarkada bat,', team: 'Ultra Trail Larre®', visit: 'Webgunea ikusi', legal: 'Mezu hau jasotzen duzu norbaitek (zuk espero dugu) helbide honekin aurre-izen-emateko formularioa bete duelako. Zure datuak gure pribatutasun-politikaren arabera tratatzen ditugu:',
@@ -30,7 +30,7 @@ const T = {
   en: {
     preSubject: (c) => `Pre-registration received · ${c} · Ultra Trail Larre®`, preheader: 'Keep your reference code. Pre-registration does not guarantee a place.',
     hello: (n) => `Hi ${n},`, preTitle: 'Pre-registration received',
-    preIntro: 'We have received your pre-registration for the 1st Edition of Ultra Trail Larre® (autumn 2027). This is your reference code:',
+    preIntro: 'We have received your pre-registration for the 1st Edition of Ultra Trail Larre® (20–31 October 2027). This is your reference code:',
     nextTitle: 'What happens now',
     next: ['The 300 places are assigned by order of arrival of the pre-registration.', 'Pre-registration does not guarantee a place.', 'We will let you know the payment date by email in March.', 'If you need to change or ask something, reply to this email quoting your code.'],
     contact: 'Contact', sign: 'Warm regards,', team: 'Ultra Trail Larre®', visit: 'Visit the website', legal: 'You are receiving this email because someone (we hope you) filled in the pre-registration form with this address. We process your data according to our privacy policy:',

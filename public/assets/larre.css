@@ -396,7 +396,6 @@ html:not([data-theme=light]) .c0{background:#E5565F}html:not([data-theme=light])
 
 /* ───────── portada en móvil: solo lema, menú y los dos CTA ───────── */
 @media (max-width:759px){
-  body[data-page="home"] .hero-tagline:first-child,
   body[data-page="home"] .foot-r,
   body[data-page="home"] .icons-foot,
   body[data-page="home"] .foot-l{display:none}

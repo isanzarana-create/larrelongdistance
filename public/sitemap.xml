@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ultratraillarre.org/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/"/>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/eu/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/"/>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/en/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/"/>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/ruta/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/ruta/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/eu/ibilbidea/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/ruta/"/>
@@ -52,7 +52,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/en/route/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/ruta/"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/aviso-legal/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/aviso-legal/"/>
@@ -72,7 +72,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/eu/lege-oharra/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/aviso-legal/"/>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/en/legal-notice/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/aviso-legal/"/>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/politica-privacidad/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/politica-privacidad/"/>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/eu/pribatutasun-politika/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/politica-privacidad/"/>
@@ -112,7 +112,7 @@
   </url>
   <url>
     <loc>https://ultratraillarre.org/en/privacy-policy/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ultratraillarre.org/politica-privacidad/"/>

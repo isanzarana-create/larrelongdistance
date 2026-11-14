@@ -5,10 +5,10 @@ export default {
   label: 'English',
   paths: { home: '/en/', aviso: '/en/legal-notice/', priv: '/en/privacy-policy/' },
   meta: {
-    title: 'Ultra Trail Larre® · 227 km self-supported ultra, Álava 2027',
-    description: 'Self-supported ultra across Álava: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. 300 places, solo or as a relay. Autumn 2027.',
-    ogLine: 'Self-supported ultra · Álava · autumn 2027',
-    ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, autumn 2027'
+    title: 'Ultra Trail Larre® · 227 km ultra in Álava, solo or relay',
+    description: 'Self-supported ultra across Álava, 20–31 October 2027: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. Run it solo or as a relay team of 3 or 4.',
+    ogLine: 'Solo or relay · Álava · 20–31 Oct 2027',
+    ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, solo or relay, 20–31 October 2027'
   },
   ui: {
     skip: 'Skip to content',
@@ -48,7 +48,8 @@ export default {
     ['contacto', 'Contact']
   ],
   hero: {
-    eyebrow: 'First edition · autumn 2027',
+    eyebrow: 'First edition · 20–31 October 2027',
+    modes: 'Solo or relay, in teams of 3 or 4.',
     claim: 'Just you, a tracker and your brevet.',
     sub: 'A self-supported ultra across the mountains of Álava. A 227 km loop that starts and finishes in Vitoria-Gasteiz.',
     cta: 'Pre-register',
@@ -57,6 +58,7 @@ export default {
       ['227', 'km loop'],
       ['+5,290', 'm of climbing'],
       ['300', 'places'],
+      ['3–4', 'people per relay team'],
       ['La Florida', 'start and finish, Vitoria-Gasteiz']
     ]
   },
@@ -65,8 +67,8 @@ export default {
     lead: 'One start, one finish and the mountains of Álava in between. What happens between the two is up to you.',
     blocks: [
       ['Self-supported', 'Ultra Trail Larre® is a self-supported ultra: no outside assistance and no organiser aid stations. You decide what to carry, when to eat, when to sleep and how to manage your water. You prepare for it like an expedition, not like a circuit.'],
+      ['Solo or relay, in teams of 3 or 4', 'You can run all 227 km on your own or share them in a relay team of 3 or 4 people. Each team organises itself as it likes: there is a single tracker that passes from one runner to the next, and the only rule is to go through every control. It is one of the defining features of Ultra Trail Larre®: a 227 km self-supported ultra that you can also live as a team.'],
       ['Just you, a tracker and your brevet', 'A tracker follows you for the whole race, and your brevet records your passage through the controls. Navigation is part of the challenge.'],
-      ['Solo or relay', 'You can run it all by yourself or as a relay. The details of the relay option will be published later.'],
       ['Philosophy', 'It is not a mass-participation race and does not want to be. There are 300 places, and that number is an identity, not a market parameter. For many people, the challenge will simply be to finish.'],
       ['The mountains', 'We cross ranges, villages and vineyards of Álava where people live all year round. We pass through with respect and leave no trace: that is the condition for coming back.']
     ],
@@ -89,13 +91,13 @@ export default {
     metaDesc: 'Route, profile and elevation of Ultra Trail Larre®: 227 km loop, 5,290 m of climbing, from Vitoria-Gasteiz through Álava. 6 controls, GPX track.',
     eyebrow: 'The route',
     h1: 'Route and elevation: 227 km across the mountains of Álava',
-    lead: 'Ultra Trail Larre® is a 227 km loop with 5,290 m of positive elevation that starts and finishes at the kiosk in Parque de La Florida, in Vitoria-Gasteiz. It is run self-supported, with a tracker and a brevet, solo or as a relay.',
+    lead: 'Ultra Trail Larre® is a 227 km loop with 5,290 m of positive elevation that starts and finishes at the kiosk in Parque de La Florida, in Vitoria-Gasteiz. It is run self-supported, with a tracker and a brevet, solo or as a relay team of 3 or 4. The first edition takes place from 20 to 31 October 2027.',
     figsTitle: 'The route in numbers',
-    extraFigs: [['Lowest point', '{min} m'], ['Highest point', '{max} m'], ['Categories', 'Solo or relay'], ['Places', '300']],
+    extraFigs: [['Lowest point', '{min} m'], ['Highest point', '{max} m'], ['Categories', 'Solo or relay (teams of 3 or 4)'], ['Date', '20–31 October 2027'], ['Places', '300']],
     terrainTitle: 'What the terrain is like',
     terrain: 'According to the route plan on Komoot, roughly {np}% of the 227 km runs on unpaved tracks and trails and {pv}% on asphalt or paved tracks. These figures are indicative: the real condition of the terrain may vary with the season and the weather.',
     nextTitle: 'Before the start',
-    next: ['The pre-registration list opens on 1 December 2026.', 'The 300 places are assigned by order of arrival of the pre-registration, which does not guarantee a place.'],
+    next: ['The first edition takes place from 20 to 31 October 2027.', 'The pre-registration list opens on 1 December 2026.', 'The 300 places are assigned by order of arrival of the pre-registration, which does not guarantee a place.'],
     ctaPre: 'Pre-registration',
     ctaRules: 'Race rules (PDF)',
     more: 'Full route page'
@@ -146,7 +148,7 @@ export default {
     lead: '300 places, allocated in order of pre-registration.',
     points: [
       'The pre-registration list opens on <strong>1 December 2026</strong>.',
-      'Entry fee: <strong>€185</strong> for individual runners; <strong>€135</strong> per participant in relays (teams of at least 4).',
+      'Entry fee: <strong>€185</strong> for individual runners; <strong>€135</strong> per participant in relays (teams of 3 or 4).',
       'It includes a short personal description, which is compulsory: it is there to validate your pre-registration, not to filter applicants.',
       'There is no bib reservation and no motivation letter.',
       '<strong>Pre-registering does not guarantee a place.</strong> You will receive a reference code, and we will email you the payment date in March.',
@@ -216,7 +218,9 @@ export default {
     h2: 'FAQ',
     lead: 'The essentials, plainly. If something is missing, write to us.',
     items: [
-      ['When is the race?', 'The first edition takes place in <strong>autumn 2027</strong>. We have not published the exact day yet.'],
+      ['When is the race?', 'The first edition takes place <strong>from 20 to 31 October 2027</strong>, starting and finishing at La Florida Park in Vitoria-Gasteiz.'],
+      ['Can it be run as a relay?', 'Yes. Besides the solo option, you can run it as a relay in a <strong>team of 3 or 4 people</strong>. Each team organises itself as it likes: you carry a single tracker that is handed to the next runner, and the only rule is to go through every control. The relay fee is <strong>€135</strong> per participant.'],
+      ['How many people are in a relay team?', '<strong>3 or 4 people.</strong> You split the 227 km however you like, always with a single tracker per team.'],
       ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz (Basque Country, Spain). The route is a loop: you start and finish in the same place.'],
       ['How long is it and how much climbing?', '<strong>227 km</strong> and <strong>+5,290 m</strong> of elevation gain, self-supported.'],
       ['What does self-supported mean at Ultra Trail Larre®?', 'There are no organiser aid stations and no outside assistance. You decide what to carry, when to eat, when to sleep and how to manage your water. A tracker follows you throughout and your brevet records your passage through the controls; navigation is part of the challenge.'],
@@ -224,7 +228,6 @@ export default {
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
       ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],
       ['What data do you ask for?', 'First name, surname, age, sex, email, previous races, whether you are a member of a mountaineering federation, a short personal description and, if you wish, comments. We will ask for your ID number when you confirm your place.'],
-      ['Can it be run as a relay?', 'Yes. Besides running it whole on your own, there is the option to run it as a relay. The details of this option will be published later.'],
       ['How do the controls work?', 'There are six controls. Four are confirmed (Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada) and the other two are still to be defined. A tracker follows you throughout the race and your brevet records your passage.'],
       ['What is the Zero Waste Code?', 'What goes into the mountains with you comes out with you. It is set out in the <a href="{reglamento}">race rules</a>.'],
       ['Where can I read the rules?', 'In <a href="{reglamento}">this PDF</a>, with the essential rules of the first edition.']

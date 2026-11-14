@@ -7,7 +7,10 @@
   "organiza": "Musubigara®",
   "organizaUrl": "https://musubigara.org",
   "edicion": 1,
-  "temporada": "otoño de 2027",
+  "temporada": "octubre de 2027",
+  "fechaInicio": "2027-10-20",
+  "fechaFin": "2027-10-31",
+  "relevosPersonasPorEquipo": [3, 4],
   "km": 227,
   "desnivelPositivo": 5290,
   "plazas": 300,
@@ -23,5 +26,5 @@
   "whatsapp": "34620463558",
   "mapsSalida": "https://www.google.com/maps/search/?api=1&query=42.843865%2C-2.676552",
   "gpxVersion": "2026-11-01",
-  "docsVersion": "2026-11-03"
+  "docsVersion": "2026-11-14"
 }

@@ -6,10 +6,10 @@ export default {
   label: 'Euskara',
   paths: { home: '/eu/', aviso: '/eu/lege-oharra/', priv: '/eu/pribatutasun-politika/' },
   meta: {
-    title: 'Ultra Trail Larre® · 227 km-ko ultra-trail-a Araban, 2027',
-    description: 'Autohornikuntzako ultra-trail-a Araban: 227 km eta +5.290 m, Gasteizen hasi eta bukatzen den begizta. 300 plaza, bakarka edo erreleboka. 2027ko udazkena.',
-    ogLine: 'Autohornikuntzako ultra-trail-a · Araba · 2027ko udazkena',
-    ogAlt: 'Ultra Trail Larre®: autohornikuntzako ultra-trail-a Arabako mendilerroetan, 2027ko udazkena'
+    title: 'Ultra Trail Larre® · 227 km Araban, bakarka edo erreleboka',
+    description: 'Autohornikuntzako ultra-trail-a Araban, 2027ko urriaren 20tik 31ra: 227 km eta +5.290 m Gasteiztik, bakarka edo erreleboka (3 edo 4 laguneko taldeak).',
+    ogLine: 'Bakarka edo erreleboka · Araba · 2027/10/20–31',
+    ogAlt: 'Ultra Trail Larre®: autohornikuntzako ultra-trail-a Arabako mendilerroetan, bakarka edo erreleboka, 2027ko urriaren 20tik 31ra'
   },
   ui: {
     skip: 'Eduki nagusira saltatu',
@@ -49,7 +49,8 @@ export default {
     ['contacto', 'Harremana']
   ],
   hero: {
-    eyebrow: 'I. edizioa · 2027ko udazkena',
+    eyebrow: 'I. edizioa · 2027ko urriaren 20tik 31ra',
+    modes: 'Bakarka edo 3-4 laguneko erreleboetan.',
     claim: 'Zu bakarrik, tracker bat eta zure brevet-a.',
     sub: 'Autohornikuntzako ultra-trail-a Arabako mendilerroetan. Gasteizen hasi eta bukatzen den 227 km-ko begizta.',
     cta: 'Aurre-izena eman',
@@ -58,6 +59,7 @@ export default {
       ['227', 'km begizta batean'],
       ['+5.290', 'm-ko desnibel positiboa'],
       ['300', 'plaza'],
+      ['3–4', 'lagun errelebo-talde bakoitzeko'],
       ['La Florida', 'irteera eta helmuga, Gasteiz']
     ]
   },
@@ -66,8 +68,8 @@ export default {
     lead: 'Irteera bat, helmuga bat eta Arabako mendilerroak tartean. Bien artean gertatzen dena zuk ebazten duzu.',
     blocks: [
       ['Autohornikuntza', 'Ultra Trail Larre® autohornikuntzako ultra-trail-a da: kanpoko laguntzarik gabe eta antolakuntzaren hornidura-postuak gabe. Zuk erabakitzen duzu zer eramango duzun, noiz jango duzun, noiz egingo duzun lo eta urarekin nola moldatuko zaren. Espedizio bat bezala prestatzen da, ez zirkuitu bat bezala.'],
+      ['Bakarka edo erreleboka, 3 edo 4 laguneko taldeetan', '227 km-ak zuk bakarrik korri ditzakezu, edo 3 edo 4 laguneko errelebo-talde batean banatu. Talde bakoitza nahi duen moduan antolatzen da: tracker bakarra dago, korrikalari batetik hurrengora pasatzen dena, eta derrigorrezko gauza bakarra kontrol guztietatik pasatzea da. Ultra Trail Larre®-ren ezaugarri nagusietako bat da: autohornikuntzako 227 km-ko ultra bat, taldean ere bizi daitekeena.'],
       ['Zu bakarrik, tracker bat eta zure brevet-a', 'Tracker batek jarraituko zaitu lasterketa osoan zehar, eta brevet-ak kontrol-guneetatik egindako igarobidea jasoko du. Nabigazioa probaren parte da.'],
-      ['Bakarka edo erreleboka', 'Osorik bakarrik korritu dezakezu, edo erreleboka egin. Erreleboen modalitatearen xehetasunak geroago argitaratuko dira.'],
       ['Filosofia', 'Ez da jendetza handiko lasterketa bat, eta ez du izan nahi. 300 plaza dira, eta zifra hori nortasuna da, ez merkatu-parametro bat. Askorentzat erronka, besterik gabe, helmugara iristea izango da.'],
       ['Mendia', 'Urte osoan bizirik dauden Arabako mendilerro, herri eta mahastiak zeharkatuko ditugu. Errespetuz eta aztarnarik utzi gabe igaroko gara: hori da itzultzeko baldintza.']
     ],
@@ -90,13 +92,13 @@ export default {
     metaDesc: 'Ultra Trail Larre®-ren ibilbidea, profila eta desnibela: 227 km eta +5.290 m-ko begizta Gasteizetik Arabako mendilerroetan zehar. 6 kontrolgune, GPX tracka.',
     eyebrow: 'Ibilbidea',
     h1: 'Ibilbidea eta desnibela: 227 km Arabako mendilerroetan',
-    lead: 'Ultra Trail Larre® 227 km eta +5.290 m-ko desnibel positiboa duen begizta bat da, Gasteizko Florida Parkeko kioskoan hasi eta bukatzen dena. Autohornikuntzan korritzen da, tracker batekin eta brevet batekin, bakarka edo erreleboka.',
+    lead: 'Ultra Trail Larre® 227 km eta +5.290 m-ko desnibel positiboa duen begizta bat da, Gasteizko Florida Parkeko kioskoan hasi eta bukatzen dena. Autohornikuntzan korritzen da, tracker batekin eta brevet batekin, bakarka edo erreleboka, 3 edo 4 laguneko taldeetan. I. edizioa 2027ko urriaren 20tik 31ra egingo da.',
     figsTitle: 'Ibilbidea zifretan',
-    extraFigs: [['Altitude minimoa', '{min} m'], ['Altitude maximoa', '{max} m'], ['Modalitateak', 'Bakarka edo erreleboka'], ['Plazak', '300']],
+    extraFigs: [['Altitude minimoa', '{min} m'], ['Altitude maximoa', '{max} m'], ['Modalitateak', 'Bakarka edo erreleboka (3 edo 4 laguneko taldeak)'], ['Data', '2027ko urriaren 20–31'], ['Plazak', '300']],
     terrainTitle: 'Zer nolako lurra da',
     terrain: 'Komooten ibilbidearen plangintzaren arabera, 227 km-ren %{np} inguru zolatu gabeko pistetatik eta bideetatik doa, eta %{pv} asfaltotik edo zolatutako pistetatik. Datuak orientagarriak dira: lurraren benetako egoera urtaroaren eta baldintzen arabera alda daiteke.',
     nextTitle: 'Irteera baino lehen',
-    next: ['Aurre-izen-emateen zerrenda 2026ko abenduaren 1ean irekiko da.', '300 plazak aurre-izen-emateen iritsiera-ordenaren arabera esleitzen dira; aurre-izen-emateak ez du plaza bermatzen.'],
+    next: ['I. edizioa 2027ko urriaren 20tik 31ra egingo da.', 'Aurre-izen-emateen zerrenda 2026ko abenduaren 1ean irekiko da.', '300 plazak aurre-izen-emateen iritsiera-ordenaren arabera esleitzen dira; aurre-izen-emateak ez du plaza bermatzen.'],
     ctaPre: 'Aurre-izen-ematea',
     ctaRules: 'Araudia (PDF)',
     more: 'Ibilbidearen fitxa osoa'
@@ -147,7 +149,7 @@ export default {
     lead: '300 plaza, aurre-izen-emateak iritsi diren hurrenkeran esleituak.',
     points: [
       'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean</strong> irekiko da.',
-      'Izen-emate kuota: <strong>185 €</strong> banakako modalitatean; <strong>135 €</strong> parte-hartzaile bakoitzeko erreleboetan (gutxienez 4ko taldeak).',
+      'Izen-emate kuota: <strong>185 €</strong> banakako modalitatean; <strong>135 €</strong> parte-hartzaile bakoitzeko erreleboetan (3 edo 4 laguneko taldeak).',
       'Azalpen pertsonal labur bat sartu behar da, derrigorrez: aurre-izen-ematea balioztatzeko balio du, ez iragazteko.',
       'Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.',
       '<strong>Aurre-izen-emateak ez du plazarik bermatzen.</strong> Erreferentzia-kode bat jasoko duzu, eta ordainketa-data martxoan jakinaraziko dizugu posta elektronikoz.',
@@ -217,14 +219,15 @@ export default {
     h2: 'Maiz egindako galderak',
     lead: 'Funtsezkoena, biribilkeriarik gabe. Zerbait falta bada, idatzi iezaguzu.',
     items: [
-      ['Noiz da lasterketa?', 'I. edizioa <strong>2027ko udazkenean</strong> izango da. Oraindik ez dugu zehaztu eguna.'],
+      ['Noiz da lasterketa?', 'I. edizioa <strong>2027ko urriaren 20tik 31ra</strong> egingo da, irteera eta helmuga Gasteizko Florida parkean dituela.'],
+      ['Erreleboka korritu daiteke?', 'Bai. Banakako modalitateaz gain, <strong>3 edo 4 laguneko talde batean</strong> erreleboka korri dezakezu. Talde bakoitza nahi duen moduan antolatzen da: tracker bakarra eramaten duzue, hurrengo korrikalariari pasatzen zaiona, eta derrigorrezko gauza bakarra kontrol guztietatik pasatzea da. Erreleboen kuota <strong>135 €</strong> da parte-hartzaile bakoitzeko.'],
+      ['Zenbat lagunek osatzen dute errelebo-talde bat?', '<strong>3 edo 4 lagunek.</strong> 227 km-ak nahi duzuen moduan banatzen dituzue, beti tracker bakar batekin talde bakoitzeko.'],
       ['Non dira irteera eta helmuga?', 'Gasteizko La Florida parkeko kioskoan. Ibilbidea begizta bat da: toki berean hasi eta bukatzen duzu.'],
       ['Zenbat distantzia eta desnibel ditu?', '<strong>227 km</strong> eta <strong>+5.290 m</strong>-ko desnibel positiboa, autohornikuntzan.'],
       ['Noiz irekitzen da aurre-izen-ematea?', 'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean</strong> irekiko da.'],
       ['Nola esleitzen dira 300 plazak?', 'Aurre-izen-emateak iritsi diren hurrenkeran. Azalpen pertsonal laburra derrigorrezkoa da: aurre-izen-ematea balioztatzeko balio du, ez iragazteko. Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.'],
       ['Aurre-izen-emateak plaza bermatzen al du?', 'Ez. Aurre-izena ematean erreferentzia-kode bat jasoko duzu posta elektronikoz, eta ordainketa-data ere posta elektronikoz jakinaraziko dizugu, martxoan.'],
       ['Zer datu eskatzen dituzue?', 'Izena, abizenak, adina, sexua, posta elektronikoa, beste proba batzuetako erreferentziak, mendi-federatua zaren, azalpen pertsonal labur bat eta, nahi baduzu, oharrak. NANa plaza berresten duzunean eskatuko dugu.'],
-      ['Erreleboka korritu daiteke?', 'Bai. Osorik bakarka korritzeaz gain, erreleboka egiteko aukera ere badago. Modalitate honen xehetasunak geroago argitaratuko dira.'],
       ['Nola funtzionatzen dute kontrol-guneek?', 'Sei kontrol-gune daude. Lau baieztatuta daude (Agurain, Santikurutze Kanpezu, Biasteri eta Urizaharra), eta beste biak zehazteke daude. Tracker batek jarraituko zaitu lasterketa osoan zehar, eta brevet-ak zure igarobidea jasoko du.'],
       ['Zer da Zero Kodea?', 'Zurekin mendira sartzen dena, zurekin aterako da. <a href="{reglamento}">Araudiak</a> jasotzen du.'],
       ['Non dago araudia?', '<a href="{reglamento}">PDF honetan</a>, I. edizioaren oinarrizko arauekin.']

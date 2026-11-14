@@ -325,7 +325,7 @@ function homePage(t) {
   const ver = longDate(H.docsVersion, lang);
   const verGpx = longDate(H.gpxVersion, lang);
 
-  const hero = `<section class="hero" aria-labelledby="h1"><div class="wrap hero-top"><div class="hero-claim"><p class="hero-tagline"><strong>${esc(t.hero.eyebrow)}</strong></p><p class="hero-tagline">${esc(t.hero.claim)}</p><a class="hero-arrow" href="#${t.nav[0][0]}" aria-label="${esc(t.nav[0][1])}">${ICON.arrow}</a></div></div>
+  const hero = `<section class="hero" aria-labelledby="h1"><div class="wrap hero-top"><div class="hero-claim"><p class="hero-tagline"><strong>${esc(t.hero.eyebrow)}</strong></p><p class="hero-tagline">${esc(t.hero.claim)}</p><p class="hero-tagline">${esc(t.hero.modes)}</p><a class="hero-arrow" href="#${t.nav[0][0]}" aria-label="${esc(t.nav[0][1])}">${ICON.arrow}</a></div></div>
 <h1 id="h1" class="hero-giant"><span>ULTRA TRAIL LARRE<span class="reg">®</span></span></h1></section>`;
 
   const race = sec('la-carrera', 1, t.race.h2, `<p class="lead">${esc(t.race.lead)}</p>
@@ -408,9 +408,9 @@ function homeJsonLd(t, path) {
         url,
         image: `${ORIGIN}/assets/og-${t.lang}.png`,
         inLanguage: t.lang,
-        // Solo se conoce la temporada (otoño de 2027): se publica únicamente el año.
-        startDate: '2027',
-        endDate: '2027',
+        // Fechas oficiales de la I Edición (hechos.json): del 20 al 31 de octubre de 2027.
+        startDate: H.fechaInicio,
+        endDate: H.fechaFin,
         eventStatus: 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         maximumAttendeeCapacity: H.plazas,
@@ -419,7 +419,7 @@ function homeJsonLd(t, path) {
         performer: { '@type': 'PerformingGroup', name: t.lang === 'en' ? 'Ultra Trail Larre® runners' : t.lang === 'eu' ? 'Ultra Trail Larre®-ko korrikalariak' : 'Corredoras y corredores de Ultra Trail Larre®' },
         offers: [
           [t.lang === 'en' ? 'Individual' : t.lang === 'eu' ? 'Banakakoa' : 'Individual', H.cuotas.individual],
-          [t.lang === 'en' ? 'Relay (per participant, teams of at least 4)' : t.lang === 'eu' ? 'Erreleboa (parte-hartzaile bakoitzeko, gutxienez 4ko taldeak)' : 'Relevos (por participante, equipos de mínimo 4)', H.cuotas.relevos]
+          [t.lang === 'en' ? 'Relay (per participant, teams of 3 or 4)' : t.lang === 'eu' ? 'Erreleboa (parte-hartzaile bakoitzeko, 3 edo 4 laguneko taldeak)' : 'Relevos (por participante, equipos de 3 o 4 personas)', H.cuotas.relevos]
         ].map(([name, price]) => ({ '@type': 'Offer', name, url: `${ORIGIN}${t.paths.home}#preinscripcion`, availability: 'https://schema.org/PreOrder', validFrom: H.preinscripcionAbre.slice(0, 10), price, priceCurrency: 'EUR' }))
       },
       { '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: faq }
@@ -510,13 +510,16 @@ function llms() {
   const r = (l) => `${ORIGIN}${pdfPath('reglamento', l)}`;
   return `# Ultra Trail Larre®
 
-> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227 km y +5.290 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: otoño de 2027. Organiza Musubigara®.
+> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227 km y +5.290 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: del 20 al 31 de octubre de 2027. Se corre en modalidad individual o por relevos, en equipos de 3 o 4 personas. Organiza Musubigara®.
 
 ## Datos clave
 - Distancia y desnivel: 227 km y +5.290 m de desnivel positivo, en lazo.
 - Formato: autosuficiencia, sin asistencia externa ni avituallamientos de organización. Un tracker y un brevet.
 - Controles: seis; confirmados Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada (dos por definir).
-- Modalidades: en solitario o por relevos (los detalles de los relevos se publicarán más adelante).
+- Fecha: I Edición del 20 al 31 de octubre de 2027.
+- Modalidades: individual (en solitario) o por relevos en equipos de 3 o 4 personas. Cada equipo se organiza como quiera, con un único tracker que pasa de un corredor al siguiente; lo único obligatorio es pasar por todos los controles. Es uno de los rasgos diferenciales de la carrera.
+- Cuota: 185 € individual; 135 € por participante en relevos.
+- English: self-supported 227 km ultra in Álava (Basque Country, Spain), 20–31 October 2027, solo or as a relay team of 3 or 4.
 - Plazas: 300, por orden de llegada de la preinscripción. La preinscripción no garantiza plaza.
 - Preinscripción: la lista se abre el 1 de diciembre de 2026. La fecha de pago se comunica por email en marzo.
 - Contacto: ${H.email} · Instagram @${H.instagram}
