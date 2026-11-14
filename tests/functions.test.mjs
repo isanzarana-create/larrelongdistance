@@ -22,7 +22,7 @@ delete process.env.URL;
 const pre = (await import('../netlify/functions/preinscripcion.mjs')).default;
 const col = (await import('../netlify/functions/colabora.mjs')).default;
 const post = (fn, data, ip = '10.0.0.1') => fn(new Request('http://x/api', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) }), { ip });
-const base = (o = {}) => ({ idioma: 'es', t: 9000, nombre: 'Ane', apellidos: 'Etxeberria Ruiz', edad: 37, sexo: 'mujer', email: 'ane@example.com', referencias: 'UTMB 100K', federado: 'si', federacion: 'FEDME', descripcion: 'Corro por montaña desde hace diez años y me gustan las distancias largas.', observaciones: '', consentimiento: 'si', 'bot-field': '', ...o });
+const base = (o = {}) => ({ idioma: 'es', t: 9000, modalidad: 'individual', nombre: 'Ane', apellidos: 'Etxeberria Ruiz', edad: 37, sexo: 'mujer', email: 'ane@example.com', referencias: 'UTMB 100K', federado: 'si', federacion: 'FEDME', descripcion: 'Corro por montaña desde hace diez años y me gustan las distancias largas.', observaciones: '', consentimiento: 'si', 'bot-field': '', ...o });
 
 test('GET estado: abierta', async () => {
   const r = await pre(new Request('http://x/api/preinscripcion'), {});
@@ -99,9 +99,17 @@ test('escape HTML en correos', async () => {
   await post(pre, base({ email: 'xss@example.com', nombre: '<script>alert(1)</script>' }), '10.0.2.1');
   assert.ok(sent.every((m) => !m.html.includes('<script>alert')));
 });
-test('hoja de cálculo: fila con 13 columnas y salta si no está configurada', async () => {
+test('relevos: exige nombre de equipo y sin modalidad falla', async () => {
+  const a = await (await post(pre, base({ modalidad: 'relevos', equipo: '' }), '10.0.0.7')).json();
+  assert.deepEqual(a.fields, { equipo: 'required' });
+  const b = await (await post(pre, base({ modalidad: '' }), '10.0.0.8')).json();
+  assert.deepEqual(b.fields, { modalidad: 'required' });
+  const c = await post(pre, base({ modalidad: 'relevos', equipo: 'Los de Izki', email: 'r@example.com' }), '10.0.0.9');
+  assert.equal(c.status, 200);
+});
+test('hoja de cálculo: fila con 15 columnas y salta si no está configurada', async () => {
   const { appendRow, rowOf, HEADERS } = await import('../netlify/functions/_lib/sheets.mjs');
-  const f = { nombre: 'Ana', apellidos: 'Pérez', edad: 38, sexo: 'F', email: 'a@b.c', referencias: 'x', federado: 'si', federacion: 'FVDM', descripcion: 'd', observaciones: '' };
+  const f = { nombre: 'Ana', apellidos: 'Pérez', edad: 38, sexo: 'F', email: 'a@b.c', referencias: 'x', federado: 'si', federacion: 'FVDM', descripcion: 'd', observaciones: '', modalidad: 'relevos', equipo: 'Txirrindu' };
   const row = rowOf('LARRE-AAAA-BBBB', '2026-12-01T00:00:00Z', 'es', f);
   assert.equal(row.length, HEADERS.length); assert.equal(row[8], 'Sí');
   delete process.env.SHEETS_WEBHOOK_URL; delete process.env.SHEETS_WEBHOOK_TOKEN;

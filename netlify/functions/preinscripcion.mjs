@@ -44,7 +44,7 @@ export default async (req, ctx) => {
   let formsOk = false;
   if (c.siteUrl) {
     try {
-      const params = new URLSearchParams({ 'form-name': 'larre-preinscripcion', idioma: lang, codigo: code, nombre: f.nombre, apellidos: f.apellidos, edad: String(f.edad), sexo: f.sexo, email: f.email, referencias: f.referencias, federado: f.federado, federacion: f.federacion, descripcion: f.descripcion, observaciones: f.observaciones, consentimiento: 'si', enviado: when });
+      const params = new URLSearchParams({ 'form-name': 'larre-preinscripcion', idioma: lang, codigo: code, modalidad: f.modalidad, equipo: f.equipo, nombre: f.nombre, apellidos: f.apellidos, edad: String(f.edad), sexo: f.sexo, email: f.email, referencias: f.referencias, federado: f.federado, federacion: f.federacion, descripcion: f.descripcion, observaciones: f.observaciones, consentimiento: 'si', enviado: when });
       const r = await fetch(c.siteUrl + '/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: params, signal: AbortSignal.timeout(8000) });
       formsOk = r.ok || r.status === 303 || r.status === 302;
     } catch (e) { log('forms backup falló', String(e)); }

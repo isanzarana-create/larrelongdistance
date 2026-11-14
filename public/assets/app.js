@@ -129,8 +129,11 @@
       if (el.type === 'number' && v) { const n = Number(v); if (!Number.isInteger(n) || n < +el.min || n > +el.max) return bad(el, E.age); }
       if (el.minLength > 0 && v && v.length < el.minLength) bad(el, fill(E.min, { min: el.minLength }));
     });
-    const fed = $$('input[name=federado]', form);
-    if (fed.length && !fed.some((r) => r.checked)) { fed[0].setAttribute('aria-invalid', 'true'); errs.push({ el: fed[0], msg: E.required, label: $('legend', fed[0].closest('fieldset')).textContent.replace(/\*/g, '').trim() }); }
+    ['modalidad', 'federado'].forEach((n) => {
+      const g = $$(`input[name=${n}]`, form);
+      if (g.length && !g.some((r) => r.checked)) { g[0].setAttribute('aria-invalid', 'true'); errs.push({ el: g[0], msg: E.required, label: $('legend', g[0].closest('fieldset')).textContent.replace(/\*/g, '').trim() }); }
+    });
+    errs.sort((x, y) => (x.el.compareDocumentPosition(y.el) & 4 ? -1 : 1));
     return errs;
   }
 
@@ -191,6 +194,13 @@
   $$('input[name=federado]').forEach((r) => r.addEventListener('change', () => {
     const yes = $('input[name=federado]:checked').value === 'si';
     fedWrap.hidden = !yes; fedIn.required = yes; if (!yes) { fedIn.value = ''; fedIn.removeAttribute('aria-invalid'); }
+  }));
+
+  /* modalidad: nombre del equipo solo en relevos */
+  const teamWrap = $('#p-team-wrap'), teamIn = $('#p-team');
+  $$('input[name=modalidad]').forEach((r) => r.addEventListener('change', () => {
+    const relay = $('input[name=modalidad]:checked').value === 'relevos';
+    teamWrap.hidden = !relay; teamIn.required = relay; if (!relay) { teamIn.value = ''; teamIn.removeAttribute('aria-invalid'); }
   }));
 
   /* preinscripción: estado según el servidor */

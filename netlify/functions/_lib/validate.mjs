@@ -5,6 +5,8 @@ const oneLine = (v, max) => clean(v, max).replace(/\s*\n\s*/g, ' ');
 
 export function validatePre(raw) {
   const f = {}; const bad = {};
+  f.modalidad = String(raw.modalidad || ''); if (!['individual', 'relevos'].includes(f.modalidad)) bad.modalidad = 'required';
+  f.equipo = f.modalidad === 'relevos' ? oneLine(raw.equipo, 80) : ''; if (f.modalidad === 'relevos' && !f.equipo) bad.equipo = 'required';
   f.nombre = oneLine(raw.nombre, 80); if (!f.nombre) bad.nombre = 'required';
   f.apellidos = oneLine(raw.apellidos, 120); if (!f.apellidos) bad.apellidos = 'required';
   const edad = Number(raw.edad); f.edad = edad;

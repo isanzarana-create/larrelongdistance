@@ -40,9 +40,9 @@ const T = {
   }
 };
 const DATA = {
-  es: { name: 'Nombre y apellido', age: 'Edad', fed: 'Federado', msg: 'Mensaje', yes: 'Sí', no: 'No', given: 'Esto es lo que nos has facilitado' },
-  eu: { name: 'Izen-abizenak', age: 'Adina', fed: 'Federatua', msg: 'Mezua', yes: 'Bai', no: 'Ez', given: 'Hau da eman diguzun informazioa' },
-  en: { name: 'Full name', age: 'Age', fed: 'Federated', msg: 'Message', yes: 'Yes', no: 'No', given: 'This is what you have given us' }
+  es: { mode: 'Modalidad', solo: 'Individual', relay: 'Relevos', team: 'equipo', name: 'Nombre y apellido', age: 'Edad', fed: 'Federado', msg: 'Mensaje', yes: 'Sí', no: 'No', given: 'Esto es lo que nos has facilitado' },
+  eu: { mode: 'Modalitatea', solo: 'Bakarka', relay: 'Erreleboka', team: 'taldea', name: 'Izen-abizenak', age: 'Adina', fed: 'Federatua', msg: 'Mezua', yes: 'Bai', no: 'Ez', given: 'Hau da eman diguzun informazioa' },
+  en: { mode: 'Category', solo: 'Solo', relay: 'Relay', team: 'team', name: 'Full name', age: 'Age', fed: 'Federated', msg: 'Message', yes: 'Yes', no: 'No', given: 'This is what you have given us' }
 };
 const TIPO = { es: { marca: 'Marca', institucion: 'Institución', medio: 'Medio de comunicación', operador: 'Operador de eventos', otro: 'Otro' }, eu: { marca: 'Marka', institucion: 'Erakundea', medio: 'Komunikabidea', operador: 'Ekitaldi-operadorea', otro: 'Beste bat' }, en: { marca: 'Brand', institucion: 'Institution', medio: 'Media', operador: 'Event operator', otro: 'Other' } };
 
@@ -66,7 +66,7 @@ const rowsHtml = (rows) => `<table role="presentation" width="100%" cellpadding=
 export function runnerEmail(lang, f, code) {
   const t = T[lang];
   const D = DATA[lang];
-  const given = [[D.name, `${f.nombre} ${f.apellidos}`], [D.age, String(f.edad)], [D.fed, f.federado === 'si' ? `${D.yes} · ${f.federacion}` : D.no], [D.msg, f.descripcion]];
+  const given = [[D.mode, f.modalidad === 'relevos' ? `${D.relay} · ${D.team} «${f.equipo}»` : D.solo], [D.name, `${f.nombre} ${f.apellidos}`], [D.age, String(f.edad)], [D.fed, f.federado === 'si' ? `${D.yes} · ${f.federacion}` : D.no], [D.msg, f.descripcion]];
   const body = `<p style="margin:0 0 14px">${esc(t.hello(f.nombre))}</p><p style="margin:0 0 18px">${esc(t.preIntro)}</p>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 22px"><tr><td align="center" style="background:${SAND};border:2px dashed ${GRANATE};padding:12px 16px;white-space:nowrap;font:700 20px ${SANS};letter-spacing:2px;color:${INK}">${esc(code)}</td></tr></table>
 <p style="margin:0 0 8px;font:700 14px ${SERIF};text-transform:uppercase;letter-spacing:1px">${esc(t.nextTitle)}</p><ol style="margin:0 0 22px;padding-left:20px">${t.next.map((x) => `<li style="margin:0 0 8px">${esc(x)}</li>`).join('')}</ol>
@@ -86,7 +86,7 @@ export function partnerEmail(lang, f) {
 
 // Avisos internos (para Ignacio): siempre en castellano, con todos los datos.
 export function internalPre(f, code, lang, meta) {
-  const rows = [['Código', code], ['Idioma', lang.toUpperCase()], ['Nombre', f.nombre], ['Apellidos', f.apellidos], ['Edad', String(f.edad)], ['Sexo', f.sexo], ['Correo', f.email], ['Referencias en otras pruebas', f.referencias || '—'], ['Federado en montaña', f.federado === 'si' ? `Sí · ${f.federacion}` : 'No'], ['Descripción personal', f.descripcion], ['Observaciones', f.observaciones || '—'], ['Recibida', meta.when]];
+  const rows = [['Código', code], ['Idioma', lang.toUpperCase()], ['Modalidad', f.modalidad === 'relevos' ? `Relevos · equipo «${f.equipo}»` : 'Individual'], ['Nombre', f.nombre], ['Apellidos', f.apellidos], ['Edad', String(f.edad)], ['Sexo', f.sexo], ['Correo', f.email], ['Referencias en otras pruebas', f.referencias || '—'], ['Federado en montaña', f.federado === 'si' ? `Sí · ${f.federacion}` : 'No'], ['Descripción personal', f.descripcion], ['Observaciones', f.observaciones || '—'], ['Recibida', meta.when]];
   const html = shell('es', { title: `Nueva preinscripción · ${code}`, pre: `${f.nombre} ${f.apellidos}`, body: `<p style="margin:0 0 10px">Responde a este correo para escribir directamente a ${esc(f.nombre)}.</p>${rowsHtml(rows)}`, legal: 'Aviso interno de ultratraillarre.org.' });
   return { subject: `Nueva preinscripción · ${code} · ${f.nombre} ${f.apellidos}`, html, text: rows.map(([k, v]) => `${k}: ${v}`).join('\n') };
 }

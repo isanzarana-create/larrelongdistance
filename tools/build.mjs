@@ -254,6 +254,8 @@ function preForm(t) {
   return `<form class="form" id="preForm" method="post" action="/api/preinscripcion" novalidate hidden>
 ${hiddenFields('larre-preinscripcion', t)}
 <div class="f-grid">
+<fieldset class="f f-wide f-radio"><legend>${esc(f.modalidad)} ${req}</legend>${f.modalidadOpts.map(([v, l], i) => `<label class="radio"><input type="radio" name="modalidad" value="${v}"${i ? '' : ' required'}> <span>${esc(l)}</span></label>`).join('')}</fieldset>
+<div class="f f-wide" id="p-team-wrap" hidden><label for="p-team">${esc(f.equipo)} ${req}</label><input id="p-team" name="equipo" type="text" maxlength="80" aria-describedby="p-team-h"><p class="hint" id="p-team-h">${esc(f.equipoHint)}</p></div>
 <div class="f"><label for="p-nombre">${esc(f.nombre)} ${req}</label><input id="p-nombre" name="nombre" type="text" autocomplete="given-name" required maxlength="80"></div>
 <div class="f"><label for="p-apellidos">${esc(f.apellidos)} ${req}</label><input id="p-apellidos" name="apellidos" type="text" autocomplete="family-name" required maxlength="120"></div>
 <div class="f"><label for="p-edad">${esc(f.edad)} ${req}</label><input id="p-edad" name="edad" type="number" inputmode="numeric" min="18" max="99" required></div>
@@ -293,7 +295,7 @@ ${hiddenFields('larre-colabora', t)}
 
 // formularios estáticos ocultos, para que Netlify Forms los detecte (copia de seguridad)
 const netlifyForms = () => `<div hidden aria-hidden="true">
-<form name="larre-preinscripcion" data-netlify="true" netlify-honeypot="bot-field"><input name="form-name"><input name="idioma"><input name="codigo"><input name="nombre"><input name="apellidos"><input name="edad"><input name="sexo"><input name="email"><input name="referencias"><input name="federado"><input name="federacion"><input name="descripcion"><input name="observaciones"><input name="consentimiento"><input name="enviado"><input name="bot-field"></form>
+<form name="larre-preinscripcion" data-netlify="true" netlify-honeypot="bot-field"><input name="form-name"><input name="idioma"><input name="codigo"><input name="modalidad"><input name="equipo"><input name="nombre"><input name="apellidos"><input name="edad"><input name="sexo"><input name="email"><input name="referencias"><input name="federado"><input name="federacion"><input name="descripcion"><input name="observaciones"><input name="consentimiento"><input name="enviado"><input name="bot-field"></form>
 <form name="larre-colabora" data-netlify="true" netlify-honeypot="bot-field"><input name="form-name"><input name="idioma"><input name="empresa"><input name="persona"><input name="cargo"><input name="email"><input name="tipo"><input name="mensaje"><input name="consentimiento"><input name="enviado"><input name="bot-field"></form>
 </div>`;
 
