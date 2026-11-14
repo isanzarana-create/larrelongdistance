@@ -6,9 +6,9 @@ export default {
   paths: { home: '/en/', aviso: '/en/legal-notice/', priv: '/en/privacy-policy/' },
   meta: {
     title: 'Ultra Trail Larre® · 227 km ultra in Álava, solo or relay',
-    description: 'Self-supported ultra across Álava, 20–31 October 2027: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. Run it solo or as a relay team of 3 or 4.',
-    ogLine: 'Solo or relay · Álava · 20–31 Oct 2027',
-    ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, solo or relay, 20–31 October 2027'
+    description: 'Self-supported ultra across Álava, 29–31 October 2027: a 227 km loop with 5,290 m of climbing from Vitoria-Gasteiz. Run it solo or as a relay team of 3 or 4.',
+    ogLine: 'Solo or relay · Álava · 29–31 Oct 2027',
+    ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, solo or relay, 29–31 October 2027'
   },
   ui: {
     skip: 'Skip to content',
@@ -48,7 +48,7 @@ export default {
     ['contacto', 'Contact']
   ],
   hero: {
-    eyebrow: 'First edition · 20–31 October 2027',
+    eyebrow: 'First edition · 29–31 October 2027',
     modes: 'Solo or relay, in teams of 3 or 4.',
     claim: 'Just you, a tracker and your brevet.',
     sub: 'A self-supported ultra across the mountains of Álava. A 227 km loop that starts and finishes in Vitoria-Gasteiz.',
@@ -91,13 +91,13 @@ export default {
     metaDesc: 'Route, profile and elevation of Ultra Trail Larre®: 227 km loop, 5,290 m of climbing, from Vitoria-Gasteiz through Álava. 6 controls, GPX track.',
     eyebrow: 'The route',
     h1: 'Route and elevation: 227 km across the mountains of Álava',
-    lead: 'Ultra Trail Larre® is a 227 km loop with 5,290 m of positive elevation that starts and finishes at the kiosk in Parque de La Florida, in Vitoria-Gasteiz. It is run self-supported, with a tracker and a brevet, solo or as a relay team of 3 or 4. The first edition takes place from 20 to 31 October 2027.',
+    lead: 'Ultra Trail Larre® is a 227 km loop with 5,290 m of positive elevation that starts and finishes at the kiosk in Parque de La Florida, in Vitoria-Gasteiz. It is run self-supported, with a tracker and a brevet, solo or as a relay team of 3 or 4. The first edition takes place from 29 to 31 October 2027.',
     figsTitle: 'The route in numbers',
-    extraFigs: [['Lowest point', '{min} m'], ['Highest point', '{max} m'], ['Categories', 'Solo or relay (teams of 3 or 4)'], ['Date', '20–31 October 2027'], ['Places', '300']],
+    extraFigs: [['Lowest point', '{min} m'], ['Highest point', '{max} m'], ['Categories', 'Solo or relay (teams of 3 or 4)'], ['Date', '29–31 October 2027'], ['Places', '300']],
     terrainTitle: 'What the terrain is like',
     terrain: 'According to the route plan on Komoot, roughly {np}% of the 227 km runs on unpaved tracks and trails and {pv}% on asphalt or paved tracks. These figures are indicative: the real condition of the terrain may vary with the season and the weather.',
     nextTitle: 'Before the start',
-    next: ['The first edition takes place from 20 to 31 October 2027.', 'The pre-registration list opens on 1 December 2026.', 'The 300 places are assigned by order of arrival of the pre-registration, which does not guarantee a place.'],
+    next: ['The first edition takes place from 29 to 31 October 2027.', 'The pre-registration list opens on 1 December 2026.', 'The 300 places are assigned by order of arrival of the pre-registration, which does not guarantee a place.'],
     ctaPre: 'Pre-registration',
     ctaRules: 'Race rules (PDF)',
     more: 'Full route page'
@@ -218,7 +218,7 @@ export default {
     h2: 'FAQ',
     lead: 'The essentials, plainly. If something is missing, write to us.',
     items: [
-      ['When is the race?', 'The first edition takes place <strong>from 20 to 31 October 2027</strong>, starting and finishing at La Florida Park in Vitoria-Gasteiz.'],
+      ['When is the race?', 'The first edition takes place <strong>from 29 to 31 October 2027</strong>, starting and finishing at La Florida Park in Vitoria-Gasteiz.'],
       ['Can it be run as a relay?', 'Yes. Besides the solo option, you can run it as a relay in a <strong>team of 3 or 4 people</strong>. Each team organises itself as it likes: you carry a single tracker that is handed to the next runner, and the only rule is to go through every control. The relay fee is <strong>€135</strong> per participant.'],
       ['How many people are in a relay team?', '<strong>3 or 4 people.</strong> You split the 227 km however you like, always with a single tracker per team.'],
       ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz (Basque Country, Spain). The route is a loop: you start and finish in the same place.'],

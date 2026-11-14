@@ -17,7 +17,7 @@ const LANGS = { es, eu, en };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const MONTHS = { es: ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'], eu: ['urtarrila','otsaila','martxoa','apirila','maiatza','ekaina','uztaila','abuztua','iraila','urria','azaroa','abendua'], en: ['January','February','March','April','May','June','July','August','September','October','November','December'] };
 const date = (iso, l) => { const [y, m, d] = iso.split('-').map(Number); return l === 'es' ? `${d} de ${MONTHS.es[m-1]} de ${y}` : l === 'eu' ? `${y}ko ${MONTHS.eu[m-1]}ren ${d}a` : `${d} ${MONTHS.en[m-1]} ${y}`; };
-const LBL = { es: { ed: 'I Edición · 20–31 de octubre de 2027', ver: 'Versión', pg: 'Página' }, eu: { ed: 'I. Edizioa · 2027ko urriaren 20–31', ver: 'Bertsioa', pg: 'Orria' }, en: { ed: '1st Edition · 20–31 October 2027', ver: 'Version', pg: 'Page' } };
+const LBL = { es: { ed: 'I Edición · 29–31 de octubre de 2027', ver: 'Versión', pg: 'Página' }, eu: { ed: 'I. Edizioa · 2027ko urriaren 29–31', ver: 'Bertsioa', pg: 'Orria' }, en: { ed: '1st Edition · 29–31 October 2027', ver: 'Version', pg: 'Page' } };
 
 const CSS = `
 @font-face{font-family:F;src:url(file://${PUB}/fonts/inter-latin-400-normal.woff2);font-weight:400}
