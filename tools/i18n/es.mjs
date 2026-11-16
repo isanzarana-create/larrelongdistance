@@ -97,7 +97,7 @@ export default {
     terrainTitle: 'Cómo es el terreno',
     terrain: 'Según la planificación del recorrido en Komoot, aproximadamente el {np} % de los 227 km discurre por pistas y caminos sin pavimentar y el {pv} % por asfalto o pistas pavimentadas. Son datos orientativos: el estado real del terreno puede variar según la época y las condiciones.',
     nextTitle: 'Antes de la salida',
-    next: ['La I Edición se celebra del 29 al 31 de octubre de 2027.', 'La lista de preinscritos se abre el 1 de diciembre de 2026.', 'Las 300 plazas se asignan por orden de llegada de la preinscripción, que no garantiza plaza.'],
+    next: ['La I Edición se celebra del 29 al 31 de octubre de 2027.', 'La lista de preinscritos se abre el 1 de diciembre de 2026 a las 14:00.', 'Las 300 plazas se asignan por orden de llegada de la preinscripción, que no garantiza plaza.'],
     ctaPre: 'Preinscripción',
     ctaRules: 'Reglamento (PDF)',
     more: 'Ficha completa de la ruta'
@@ -147,7 +147,7 @@ export default {
     h2: 'Preinscripción',
     lead: '300 plazas, asignadas por orden de llegada de la preinscripción.',
     points: [
-      'La lista de preinscritos se abre el <strong>1 de diciembre de 2026</strong>.',
+      'La lista de preinscritos se abre el <strong>1 de diciembre de 2026 a las 14:00</strong>.',
       'Cuota de inscripción: <strong>185 €</strong> en modalidad individual; <strong>135 €</strong> por participante en relevos (equipos de 3 o 4 personas).',
       'Incluye una breve descripción personal, obligatoria: sirve para validar la preinscripción, no para filtrar.',
       'No hay reserva de dorsales ni carta de motivación.',
@@ -155,7 +155,7 @@ export default {
       'En esta fase no pedimos el DNI: lo haremos al confirmar plaza.'
     ],
     closedTitle: 'Todavía no está abierta',
-    closedText: 'La preinscripción se abre el 1 de diciembre de 2026. Cuando llegue ese día podrás rellenar aquí el formulario.',
+    closedText: 'La preinscripción se abre el 1 de diciembre de 2026 a las 14:00. A partir de ese momento podrás rellenar aquí el formulario.',
     noscript: 'Para preinscribirte necesitas tener JavaScript activado. Si no puedes activarlo, escríbenos a {email}.',
     unavailable: 'No hemos podido comprobar si la preinscripción está abierta. Recarga la página o escríbenos a {email}.',
     form: {
@@ -196,7 +196,7 @@ export default {
       consent: 'Necesitamos tu consentimiento para poder continuar.',
       network: 'No hemos podido enviar el formulario. Comprueba tu conexión e inténtalo de nuevo, o escríbenos a {email}.',
       server: 'Algo ha fallado de nuestro lado. No se ha perdido nada: inténtalo de nuevo en unos minutos o escríbenos a {email}.',
-      closed: 'La preinscripción todavía no está abierta. Se abre el 1 de diciembre de 2026.',
+      closed: 'La preinscripción todavía no está abierta. Se abre el 1 de diciembre de 2026 a las 14:00.',
       rate: 'Has enviado varios formularios seguidos. Espera unos minutos e inténtalo de nuevo.',
       spam: 'No hemos podido validar el envío. Recarga la página e inténtalo de nuevo.'
     },
@@ -227,7 +227,7 @@ export default {
       ['¿Cuántas personas forman un equipo de relevos?', '<strong>3 o 4 personas.</strong> Os repartís los 227 km como queráis, siempre con un único tracker por equipo.'],
       ['¿Dónde está la salida y dónde la meta?', 'En el quiosco del Parque de La Florida, en Vitoria-Gasteiz. La ruta es un lazo: sales y llegas al mismo sitio.'],
       ['¿Qué distancia y desnivel tiene?', '<strong>227 km</strong> y <strong>+5.290 m</strong> de desnivel positivo, en autosuficiencia.'],
-      ['¿Cuándo se abre la preinscripción?', 'La lista de preinscritos se abre el <strong>1 de diciembre de 2026</strong>.'],
+      ['¿Cuándo se abre la preinscripción?', 'La lista de preinscritos se abre el <strong>1 de diciembre de 2026 a las 14:00</strong>.'],
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
       ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],
       ['¿Qué datos pedís?', 'Modalidad (individual o relevos) y, en relevos, el nombre del equipo; nombre, apellidos, edad, sexo, correo, referencias en otras pruebas, si estás federado/a en montaña, una breve descripción personal y, si quieres, observaciones. El DNI lo pediremos al confirmar plaza.'],

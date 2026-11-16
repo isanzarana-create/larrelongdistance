@@ -97,7 +97,7 @@ export default {
     terrainTitle: 'What the terrain is like',
     terrain: 'According to the route plan on Komoot, roughly {np}% of the 227 km runs on unpaved tracks and trails and {pv}% on asphalt or paved tracks. These figures are indicative: the real condition of the terrain may vary with the season and the weather.',
     nextTitle: 'Before the start',
-    next: ['The first edition takes place from 29 to 31 October 2027.', 'The pre-registration list opens on 1 December 2026.', 'The 300 places are assigned by order of arrival of the pre-registration, which does not guarantee a place.'],
+    next: ['The first edition takes place from 29 to 31 October 2027.', 'The pre-registration list opens on 1 December 2026 at 14:00 (Spanish time, CET).', 'The 300 places are assigned by order of arrival of the pre-registration, which does not guarantee a place.'],
     ctaPre: 'Pre-registration',
     ctaRules: 'Race rules (PDF)',
     more: 'Full route page'
@@ -147,7 +147,7 @@ export default {
     h2: 'Pre-registration',
     lead: '300 places, allocated in order of pre-registration.',
     points: [
-      'The pre-registration list opens on <strong>1 December 2026</strong>.',
+      'The pre-registration list opens on <strong>1 December 2026 at 14:00 (Spanish time, CET)</strong>.',
       'Entry fee: <strong>€185</strong> for individual runners; <strong>€135</strong> per participant in relays (teams of 3 or 4).',
       'It includes a short personal description, which is compulsory: it is there to validate your pre-registration, not to filter applicants.',
       'There is no bib reservation and no motivation letter.',
@@ -155,7 +155,7 @@ export default {
       'We do not ask for your ID number at this stage; we will ask when you confirm your place.'
     ],
     closedTitle: 'Not open yet',
-    closedText: 'Pre-registration opens on 1 December 2026. When that day comes, you will be able to fill in the form here.',
+    closedText: 'Pre-registration opens on 1 December 2026 at 14:00 (Spanish time, CET). From then on, you will be able to fill in the form here.',
     noscript: 'You need JavaScript turned on to pre-register. If you cannot turn it on, write to us at {email}.',
     unavailable: 'We could not check whether pre-registration is open. Reload the page or write to us at {email}.',
     form: {
@@ -196,7 +196,7 @@ export default {
       consent: 'We need your consent to continue.',
       network: 'We could not send the form. Check your connection and try again, or write to us at {email}.',
       server: 'Something went wrong on our side. Nothing has been lost: try again in a few minutes or write to us at {email}.',
-      closed: 'Pre-registration is not open yet. It opens on 1 December 2026.',
+      closed: 'Pre-registration is not open yet. It opens on 1 December 2026 at 14:00 (Spanish time, CET).',
       rate: 'You have sent several forms in a row. Wait a few minutes and try again.',
       spam: 'We could not validate the submission. Reload the page and try again.'
     },
@@ -228,7 +228,7 @@ export default {
       ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz (Basque Country, Spain). The route is a loop: you start and finish in the same place.'],
       ['How long is it and how much climbing?', '<strong>227 km</strong> and <strong>+5,290 m</strong> of elevation gain, self-supported.'],
       ['What does self-supported mean at Ultra Trail Larre®?', 'There are no organiser aid stations and no outside assistance. You decide what to carry, when to eat, when to sleep and how to manage your water. A tracker follows you throughout and your brevet records your passage through the controls; navigation is part of the challenge.'],
-      ['When does pre-registration open?', 'The pre-registration list opens on <strong>1 December 2026</strong>.'],
+      ['When does pre-registration open?', 'The pre-registration list opens on <strong>1 December 2026 at 14:00 (Spanish time, CET)</strong>.'],
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
       ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],
       ['What data do you ask for?', 'Category (solo or relay) and, for relays, the team name; first name, surname, age, sex, email, previous races, whether you are a member of a mountaineering federation, a short personal description and, if you wish, comments. We will ask for your ID number when you confirm your place.'],

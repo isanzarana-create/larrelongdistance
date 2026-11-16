@@ -10,7 +10,7 @@ Nada de esto está hecho: requiere acceso a Netlify, al registrador del dominio 
    - `RESEND_API_KEY` (obligatoria) · clave de Resend con permiso de envío.
    - `MAIL_FROM` = `Ultra Trail Larre <hola@ultratraillarre.org>` (debe ser del dominio verificado).
    - `NOTIFY_TO` = `ignacio@musubigara.org` (opcional, es el valor por defecto).
-   - `PREINSCRIPCION_ABRE` (opcional; por defecto 1 dic 2026 00:00 hora de Madrid). Para probar antes, en el *Deploy Preview*: una fecha pasada.
+   - `PREINSCRIPCION_ABRE` (opcional; por defecto 1 dic 2026 14:00 hora de Madrid). Para probar antes, en el *Deploy Preview*: una fecha pasada.
 5. Netlify Forms: se detectan solos `larre-preinscripcion` y `larre-colabora` (copia de seguridad). Las inscripciones también se guardan en Netlify Blobs.
 
 ## 2. Resend: verificar `ultratraillarre.org` (SPF, DKIM, DMARC)

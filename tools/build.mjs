@@ -523,7 +523,7 @@ function llms() {
 - Cuota: 185 € individual; 135 € por participante en relevos.
 - English: self-supported 227 km ultra in Álava (Basque Country, Spain), 29–31 October 2027, solo or as a relay team of 3 or 4.
 - Plazas: 300, por orden de llegada de la preinscripción. La preinscripción no garantiza plaza.
-- Preinscripción: la lista se abre el 1 de diciembre de 2026. La fecha de pago se comunica por email en marzo.
+- Preinscripción: la lista se abre el 1 de diciembre de 2026 a las 14:00 (hora peninsular española). La fecha de pago se comunica por email en marzo.
 - Contacto: ${H.email} · Instagram @${H.instagram}
 
 ## Páginas

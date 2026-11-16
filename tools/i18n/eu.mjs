@@ -98,7 +98,7 @@ export default {
     terrainTitle: 'Zer nolako lurra da',
     terrain: 'Komooten ibilbidearen plangintzaren arabera, 227 km-ren %{np} inguru zolatu gabeko pistetatik eta bideetatik doa, eta %{pv} asfaltotik edo zolatutako pistetatik. Datuak orientagarriak dira: lurraren benetako egoera urtaroaren eta baldintzen arabera alda daiteke.',
     nextTitle: 'Irteera baino lehen',
-    next: ['I. edizioa 2027ko urriaren 29tik 31ra egingo da.', 'Aurre-izen-emateen zerrenda 2026ko abenduaren 1ean irekiko da.', '300 plazak aurre-izen-emateen iritsiera-ordenaren arabera esleitzen dira; aurre-izen-emateak ez du plaza bermatzen.'],
+    next: ['I. edizioa 2027ko urriaren 29tik 31ra egingo da.', 'Aurre-izen-emateen zerrenda 2026ko abenduaren 1ean, 14:00etan, irekiko da.', '300 plazak aurre-izen-emateen iritsiera-ordenaren arabera esleitzen dira; aurre-izen-emateak ez du plaza bermatzen.'],
     ctaPre: 'Aurre-izen-ematea',
     ctaRules: 'Araudia (PDF)',
     more: 'Ibilbidearen fitxa osoa'
@@ -148,7 +148,7 @@ export default {
     h2: 'Aurre-izen-ematea',
     lead: '300 plaza, aurre-izen-emateak iritsi diren hurrenkeran esleituak.',
     points: [
-      'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean</strong> irekiko da.',
+      'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean, 14:00etan</strong> irekiko da.',
       'Izen-emate kuota: <strong>185 €</strong> banakako modalitatean; <strong>135 €</strong> parte-hartzaile bakoitzeko erreleboetan (3 edo 4 laguneko taldeak).',
       'Azalpen pertsonal labur bat sartu behar da, derrigorrez: aurre-izen-ematea balioztatzeko balio du, ez iragazteko.',
       'Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.',
@@ -156,7 +156,7 @@ export default {
       'Une honetan ez dugu NANik eskatzen; plaza berretsi behar duzunean eskatuko dugu.'
     ],
     closedTitle: 'Oraindik ez dago irekita',
-    closedText: 'Aurre-izen-ematea 2026ko abenduaren 1ean irekiko da. Egun hori iristen denean, hemen bertan bete ahal izango duzu inprimakia.',
+    closedText: 'Aurre-izen-ematea 2026ko abenduaren 1ean, 14:00etan, irekiko da. Ordu horretatik aurrera, hemen bertan bete ahal izango duzu inprimakia.',
     noscript: 'Aurre-izena emateko JavaScript aktibatuta izan behar duzu. Ezin baduzu aktibatu, idatzi iezaguzu {email} helbidera.',
     unavailable: 'Ezin izan dugu egiaztatu aurre-izen-ematea irekita dagoen. Kargatu berriro orria edo idatzi iezaguzu {email} helbidera.',
     form: {
@@ -197,7 +197,7 @@ export default {
       consent: 'Zure baimena behar dugu aurrera egiteko.',
       network: 'Ezin izan dugu inprimakia bidali. Egiaztatu konexioa eta saiatu berriro, edo idatzi iezaguzu {email} helbidera.',
       server: 'Gure aldean zerbait huts egin du. Ez da ezer galdu: saiatu berriro minutu batzuk barru edo idatzi iezaguzu {email} helbidera.',
-      closed: 'Aurre-izen-ematea oraindik ez dago irekita. 2026ko abenduaren 1ean irekiko da.',
+      closed: 'Aurre-izen-ematea oraindik ez dago irekita. 2026ko abenduaren 1ean, 14:00etan, irekiko da.',
       rate: 'Inprimaki bat baino gehiago bidali dituzu segidan. Itxaron minutu batzuk eta saiatu berriro.',
       spam: 'Ezin izan dugu bidalketa balioztatu. Kargatu berriro orria eta saiatu berriro.'
     },
@@ -228,7 +228,7 @@ export default {
       ['Zenbat lagunek osatzen dute errelebo-talde bat?', '<strong>3 edo 4 lagunek.</strong> 227 km-ak nahi duzuen moduan banatzen dituzue, beti tracker bakar batekin talde bakoitzeko.'],
       ['Non dira irteera eta helmuga?', 'Gasteizko La Florida parkeko kioskoan. Ibilbidea begizta bat da: toki berean hasi eta bukatzen duzu.'],
       ['Zenbat distantzia eta desnibel ditu?', '<strong>227 km</strong> eta <strong>+5.290 m</strong>-ko desnibel positiboa, autohornikuntzan.'],
-      ['Noiz irekitzen da aurre-izen-ematea?', 'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean</strong> irekiko da.'],
+      ['Noiz irekitzen da aurre-izen-ematea?', 'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean, 14:00etan</strong> irekiko da.'],
       ['Nola esleitzen dira 300 plazak?', 'Aurre-izen-emateak iritsi diren hurrenkeran. Azalpen pertsonal laburra derrigorrezkoa da: aurre-izen-ematea balioztatzeko balio du, ez iragazteko. Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.'],
       ['Aurre-izen-emateak plaza bermatzen al du?', 'Ez. Aurre-izena ematean erreferentzia-kode bat jasoko duzu posta elektronikoz, eta ordainketa-data ere posta elektronikoz jakinaraziko dizugu, martxoan.'],
       ['Zer datu eskatzen dituzue?', 'Modalitatea (bakarka edo erreleboka) eta, erreleboetan, taldearen izena; izena, abizenak, adina, sexua, posta elektronikoa, beste proba batzuetako erreferentziak, mendi-federatua zaren, azalpen pertsonal labur bat eta, nahi baduzu, oharrak. NANa plaza berresten duzunean eskatuko dugu.'],
