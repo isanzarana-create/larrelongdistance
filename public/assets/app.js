@@ -240,17 +240,23 @@
     });
   }
 
-  /* ── recorrido interactivo: mapa y perfil enlazados ── */
+  /* ── recorrido interactivo: mapa y perfil enlazados, con trazado animado ── */
   const live = $('[data-route]');
   if (live) {
-    const mapSvg = $('.map-svg', live), profSvg = $('.prof-svg', live), wrap = $('[data-prof-wrap]', live);
+    const fig = $('.map', live), mapSvg = $('.map-svg', live), profSvg = $('.prof-svg', live), wrap = $('[data-prof-wrap]', live);
     const out = { km: $('[data-r=km]', live), ele: $('[data-r=ele]', live), slope: $('[data-r=slope]', live) };
     const en = live.dataset.lang === 'en';
     const nf = (v, d) => v.toFixed(d).replace('.', en ? '.' : ',');
+    const th = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, en ? ',' : '.');
     const pj = mapSvg.dataset.proj.split(',').map(Number); // minLon,maxLat,kx,scale,padL,padY
     const pf = profSvg.dataset.prof.split(',').map(Number); // pl,pr,pt,pb,W,H,n,lo,hi
-    const cdot = $('.m-cur', mapSvg), pline = $('.p-cur', profSvg), pdot = $('.p-cur-dot', profSvg);
-    let P = null, MX = [], MY = [], cur = 0, loading = false;
+    const cdot = $('.m-cur', mapSvg), halo = $('.m-halo', mapSvg), pline = $('.p-cur', profSvg), pdot = $('.p-cur-dot', profSvg);
+    const trail = $('.m-trail', mapSvg), trailG = $('.m-trail-glow', mapSvg), veil = $('.p-veil', profSvg);
+    const alt = $('.m-alt', mapSvg), maskPath = $('.m-mask', mapSvg);
+    const cKm = $('[data-count-km]', live), cUp = $('[data-count-up]', live), skipBtn = $('.map-skip', live);
+    const finalKm = cKm ? +cKm.textContent : 0, finalUp = cUp ? +cUp.textContent.replace(/\D/g, '') : 0;
+    const marks = $$('[data-km]', mapSvg).map((el) => ({ el, km: +el.dataset.km }));
+    let P = null, MX = [], MY = [], UP = [], cur = 0, loading = false, anim = null;
     const mx = (lon) => (lon - pj[0]) * pj[2] * pj[3] + pj[4];
     const my = (lat) => (pj[1] - lat) * pj[3] + pj[5];
     const iw = pf[4] - pf[0] - pf[1], ih = pf[5] - pf[2] - pf[3];
@@ -262,6 +268,7 @@
       const slope = b[0] > a[0] ? ((b[3] - a[3]) / ((b[0] - a[0]) * 1000)) * 100 : 0;
       live.classList.add('is-live');
       cdot.setAttribute('cx', MX[cur].toFixed(1)); cdot.setAttribute('cy', MY[cur].toFixed(1));
+      halo.setAttribute('cx', MX[cur].toFixed(1)); halo.setAttribute('cy', MY[cur].toFixed(1));
       const x = pf[0] + (q[0] / pf[6]) * iw, y = pf[2] + ih - ((Math.max(pf[7], Math.min(pf[8], q[3])) - pf[7]) / (pf[8] - pf[7])) * ih;
       pline.setAttribute('x1', x.toFixed(1)); pline.setAttribute('x2', x.toFixed(1));
       pdot.setAttribute('cx', x.toFixed(1)); pdot.setAttribute('cy', y.toFixed(1));
@@ -278,13 +285,69 @@
       return pt.matrixTransform(m.inverse());
     };
     const byKm = (km) => Math.round((km * 1000) / P.step);
+
+    /* animación: el trazo se dibuja en ~9 s y un punto con estela recorre el lazo */
+    const DUR = 9000;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+    let maskLen = 0;
+    const ease = (u) => (u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2);
+    const drawTo = (f) => {
+      const n = P.p.length - 1, fi = f * n, i = Math.floor(fi);
+      maskPath.style.strokeDashoffset = (maskLen * (1 - f)).toFixed(1);
+      const km = P.p[i][0];
+      marks.forEach((m) => m.el.classList.toggle('on', m.km <= km + 0.05));
+      const from = Math.max(0, i - 28);
+      let d = '';
+      for (let k = from; k <= i; k++) d += (k === from ? 'M' : 'L') + MX[k].toFixed(1) + ' ' + MY[k].toFixed(1);
+      trail.setAttribute('d', d); trailG.setAttribute('d', d);
+      set(i);
+      const xv = pf[0] + (km / pf[6]) * iw;
+      veil.setAttribute('x', xv.toFixed(1)); veil.setAttribute('width', Math.max(0, pf[0] + iw - xv).toFixed(1));
+      if (cKm) cKm.textContent = String(Math.round((km / P.total) * finalKm));
+      if (cUp) cUp.textContent = th((UP[i] / UP[n]) * finalUp);
+    };
+    const finish = () => {
+      if (anim) cancelAnimationFrame(anim.raf);
+      anim = null;
+      fig.classList.remove('is-anim');
+      alt.removeAttribute('mask');
+      marks.forEach((m) => m.el.classList.add('on'));
+      veil.setAttribute('width', '0');
+      if (cKm) cKm.textContent = String(finalKm);
+      if (cUp) cUp.textContent = th(finalUp);
+      if (skipBtn) { skipBtn.textContent = skipBtn.dataset.replay; skipBtn.hidden = reduce.matches; }
+    };
+    const play = () => {
+      if (!P || reduce.matches) { finish(); return; }
+      if (anim) cancelAnimationFrame(anim.raf);
+      maskLen = maskPath.getTotalLength();
+      maskPath.style.strokeDasharray = maskLen.toFixed(1) + ' ' + (maskLen + 50).toFixed(1);
+      alt.setAttribute('mask', 'url(#mDraw)');
+      fig.classList.add('is-anim');
+      marks.forEach((m) => m.el.classList.remove('on'));
+      if (skipBtn) { skipBtn.textContent = skipBtn.dataset.skip; skipBtn.hidden = false; }
+      const t0 = performance.now();
+      anim = { raf: 0 };
+      const step = (now) => {
+        const u = Math.min(1, (now - t0) / DUR);
+        drawTo(ease(u));
+        if (u < 1) anim.raf = requestAnimationFrame(step);
+        else finish();
+      };
+      drawTo(0);
+      anim.raf = requestAnimationFrame(step);
+    };
+    if (skipBtn) skipBtn.addEventListener('click', () => { if (anim) finish(); else play(); });
+
     const onProf = (e) => {
       if (!P) return;
+      if (anim) finish();
       const pt = svgPt(profSvg, e); if (!pt) return;
       set(byKm(((pt.x - pf[0]) / iw) * pf[6]));
     };
     const onMap = (e) => {
       if (!P) return;
+      if (anim) finish();
       const pt = svgPt(mapSvg, e); if (!pt) return;
       let bi = 0, bd = 1e12;
       for (let i = 0; i < MX.length; i++) { const d = (MX[i] - pt.x) ** 2 + (MY[i] - pt.y) ** 2; if (d < bd) { bd = d; bi = i; } }
@@ -293,28 +356,50 @@
     const drag = (el, fn) => {
       let down = false;
       el.addEventListener('pointerdown', (e) => { down = true; fn(e); });
-      el.addEventListener('pointermove', (e) => { if (down || e.pointerType === 'mouse') fn(e); });
+      el.addEventListener('pointermove', (e) => { if (down || (e.pointerType === 'mouse' && !anim)) fn(e); });
       addEventListener('pointerup', () => { down = false; });
       el.addEventListener('pointercancel', () => { down = false; });
+    };
+    // arranca cuando se ve casi todo el mapa (70 % de lo que cabe en pantalla)
+    const watch = () => {
+      if (reduce.matches || !('IntersectionObserver' in window)) { finish(); return; }
+      maskLen = maskPath.getTotalLength();
+      maskPath.style.strokeDasharray = maskLen.toFixed(1) + ' ' + (maskLen + 50).toFixed(1);
+      maskPath.style.strokeDashoffset = maskLen.toFixed(1);
+      alt.setAttribute('mask', 'url(#mDraw)');
+      fig.classList.add('is-anim');
+      if (cKm) cKm.textContent = '0';
+      if (cUp) cUp.textContent = '0';
+      const io = new IntersectionObserver((ents) => {
+        ents.forEach((en2) => {
+          const need = Math.min(en2.boundingClientRect.height, innerHeight) * 0.7;
+          if (en2.isIntersecting && en2.intersectionRect.height >= need) { io.disconnect(); play(); }
+        });
+      }, { threshold: [0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] });
+      io.observe(mapSvg);
     };
     const load = () => {
       if (P || loading) return; loading = true;
       fetch(live.dataset.src, { credentials: 'omit' }).then((r) => r.json()).then((j) => {
         P = j; MX = j.p.map((q) => mx(q[2])); MY = j.p.map((q) => my(q[1]));
+        // desnivel positivo acumulado (histéresis de 3 m), para el contador
+        let g = 0, ref = j.p[0][3]; UP = j.p.map((q) => { if (q[3] - ref >= 3) { g += q[3] - ref; ref = q[3]; } else if (ref - q[3] >= 3) ref = q[3]; return g; });
         drag(profSvg, onProf); drag(mapSvg, onMap);
         wrap.addEventListener('keydown', (e) => {
           const k = { ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1, PageUp: 25, PageDown: -25 }[e.key];
+          if (k || ['Home', 'End'].includes(e.key)) { if (anim) finish(); }
           if (k) { e.preventDefault(); set(cur + k); }
           else if (e.key === 'Home') { e.preventDefault(); set(0); }
           else if (e.key === 'End') { e.preventDefault(); set(P.p.length - 1); }
         });
         wrap.addEventListener('focus', () => { if (!live.classList.contains('is-live')) set(0); });
-        $$('.ctrl [data-km]').forEach((th) => {
+        $$('.ctrl [data-km]').forEach((th2) => {
           const b = document.createElement('button');
-          b.type = 'button'; b.className = 'ctrl-go'; b.textContent = th.textContent;
-          b.addEventListener('click', () => { set(byKm(+th.dataset.km)); const r = live.getBoundingClientRect(); if (r.top < 0 || r.top > innerHeight * 0.5) live.scrollIntoView({ block: 'start' }); });
-          th.textContent = ''; th.appendChild(b);
+          b.type = 'button'; b.className = 'ctrl-go'; b.textContent = th2.textContent;
+          b.addEventListener('click', () => { if (anim) finish(); set(byKm(+th2.dataset.km)); const r = live.getBoundingClientRect(); if (r.top < 0 || r.top > innerHeight * 0.5) live.scrollIntoView({ block: 'start' }); });
+          th2.textContent = ''; th2.appendChild(b);
         });
+        watch();
       }).catch(() => { loading = false; });
     };
     load();

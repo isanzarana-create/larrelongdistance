@@ -12,7 +12,7 @@
   "fechaFin": "2027-10-31",
   "relevosPersonasPorEquipo": [3, 4],
   "km": 227,
-  "desnivelPositivo": 5290,
+  "desnivelPositivo": 5590,
   "plazas": 300,
   "controlesTotal": 6,
   "controlesConfirmados": ["agurain", "campezo", "laguardia", "penacerrada"],
@@ -25,6 +25,6 @@
   "instagramUrl": "https://www.instagram.com/ultratraillarre/",
   "whatsapp": "34620463558",
   "mapsSalida": "https://www.google.com/maps/search/?api=1&query=42.843865%2C-2.676552",
-  "gpxVersion": "2026-11-01",
-  "docsVersion": "2026-11-14"
+  "gpxVersion": "2026-11-17",
+  "docsVersion": "2026-11-17"
 }

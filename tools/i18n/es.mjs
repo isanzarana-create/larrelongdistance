@@ -6,7 +6,7 @@ export default {
   paths: { home: '/', aviso: '/aviso-legal/', priv: '/politica-privacidad/' },
   meta: {
     title: 'Ultra Trail Larre® · 227 km en Álava, individual o relevos',
-    description: 'Ultra-trail en autosuficiencia por Álava del 29 al 31 de octubre de 2027: 227 km y +5.290 m desde Vitoria-Gasteiz, individual o por relevos (equipos de 3 o 4).',
+    description: 'Ultra-trail en autosuficiencia por Álava del 29 al 31 de octubre de 2027: 227 km y +5.590 m desde Vitoria-Gasteiz, individual o por relevos (equipos de 3 o 4).',
     ogLine: 'Individual o por relevos · Álava · 29–31 oct. 2027',
     ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, individual o por relevos, del 29 al 31 de octubre de 2027'
   },
@@ -56,7 +56,7 @@ export default {
     cta2: 'Ver la ruta',
     facts: [
       ['227', 'km en lazo'],
-      ['+5.290', 'm de desnivel positivo'],
+      ['+5.590', 'm de desnivel positivo'],
       ['300', 'plazas'],
       ['3–4', 'personas por equipo de relevos'],
       ['La Florida', 'salida y meta, Vitoria-Gasteiz']
@@ -87,11 +87,11 @@ export default {
   },
   routePage: {
     path: '/ruta/',
-    metaTitle: 'Ruta del Ultra Trail Larre®: 227 km y +5.290 m en Álava',
-    metaDesc: 'Ruta, perfil y desnivel del Ultra Trail Larre®: lazo de 227 km y +5.290 m desde Vitoria-Gasteiz por las sierras de Álava, con 6 controles y track GPX.',
+    metaTitle: 'Ruta del Ultra Trail Larre®: 227 km y +5.590 m en Álava',
+    metaDesc: 'Ruta, perfil y desnivel del Ultra Trail Larre®: lazo de 227 km y +5.590 m desde Vitoria-Gasteiz por las sierras de Álava, con 6 controles y track GPX.',
     eyebrow: 'La ruta',
     h1: 'Ruta y desnivel: 227 km por las sierras de Álava',
-    lead: 'Ultra Trail Larre® es un lazo de 227 km y +5.290 m de desnivel positivo que sale y llega al quiosco del Parque de La Florida, en Vitoria-Gasteiz. Se corre en autosuficiencia, con un tracker y un brevet, y se puede hacer en solitario o por relevos en equipos de 3 o 4 personas. La I Edición se celebra del 29 al 31 de octubre de 2027.',
+    lead: 'Ultra Trail Larre® es un lazo de 227 km y +5.590 m de desnivel positivo que sale y llega al quiosco del Parque de La Florida, en Vitoria-Gasteiz. Se corre en autosuficiencia, con un tracker y un brevet, y se puede hacer en solitario o por relevos en equipos de 3 o 4 personas. La I Edición se celebra del 29 al 31 de octubre de 2027.',
     figsTitle: 'El recorrido en cifras',
     extraFigs: [['Altitud mínima', '{min} m'], ['Altitud máxima', '{max} m'], ['Modalidades', 'Individual o relevos (equipos de 3 o 4)'], ['Fecha', '29–31 de octubre de 2027'], ['Plazas', '300']],
     terrainTitle: 'Cómo es el terreno',
@@ -104,10 +104,10 @@ export default {
   },
   route: {
     h2: 'La ruta',
-    lead: 'Un lazo de 227 km y +5.290 m con salida y meta en el quiosco del Parque de La Florida, en Vitoria-Gasteiz.',
+    lead: 'Un lazo de 227 km y +5.590 m con salida y meta en el quiosco del Parque de La Florida, en Vitoria-Gasteiz.',
     figs: [
       ['Distancia', '227 km'],
-      ['Desnivel positivo', '+5.290 m'],
+      ['Desnivel positivo', '+5.590 m'],
       ['Salida y meta', 'Parque de La Florida'],
       ['Controles', '6 (4 confirmados)']
     ],
@@ -133,7 +133,8 @@ export default {
     surfaces: { pistaNoPav: 'Pista no pavimentada', caminoNatural: 'Camino natural', pistaPav: 'Pista pavimentada', grava: 'Camino de grava', asfalto: 'Asfalto', pistaAlpina: 'Pista alpina', desconocido: 'Desconocido' },
     ways: { senda: 'Senda', sendero: 'Sendero', carretera: 'Carretera', vereda: 'Vereda', camino: 'Camino', calle: 'Calle', senderoMontana: 'Sendero de montaña', fueraVias: 'Fuera de vías conocidas', carreteraNacional: 'Carretera nacional' },
     gpx: 'Descargar el track (GPX)',
-    mapsStart: 'Cómo llegar a la salida'
+    mapsStart: 'Cómo llegar a la salida',
+    anim: { skip: 'Saltar la animación', replay: 'Repetir el recorrido', legend: 'Altitud', climb: 'desnivel', north: 'N', scale: '10 km', legendAlt: 'Leyenda de color por altitud del recorrido:' }
   },
   ig: {
     h2: 'Fotos',
@@ -226,7 +227,7 @@ export default {
       ['¿Se puede correr por relevos?', 'Sí. Además de la modalidad individual, puedes correrla por relevos en un <strong>equipo de 3 o 4 personas</strong>. Cada equipo se organiza como quiera: lleváis un único tracker que se pasa al siguiente corredor, y lo único obligatorio es pasar por todos los controles. La cuota de relevos es de <strong>135 €</strong> por participante.'],
       ['¿Cuántas personas forman un equipo de relevos?', '<strong>3 o 4 personas.</strong> Os repartís los 227 km como queráis, siempre con un único tracker por equipo.'],
       ['¿Dónde está la salida y dónde la meta?', 'En el quiosco del Parque de La Florida, en Vitoria-Gasteiz. La ruta es un lazo: sales y llegas al mismo sitio.'],
-      ['¿Qué distancia y desnivel tiene?', '<strong>227 km</strong> y <strong>+5.290 m</strong> de desnivel positivo, en autosuficiencia.'],
+      ['¿Qué distancia y desnivel tiene?', '<strong>227 km</strong> y <strong>+5.590 m</strong> de desnivel positivo, en autosuficiencia.'],
       ['¿Cuándo se abre la preinscripción?', 'La lista de preinscritos se abre el <strong>1 de diciembre de 2026 a las 14:00</strong>.'],
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
       ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],

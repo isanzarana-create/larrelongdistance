@@ -5,7 +5,7 @@ export default {
   es: {
     title: 'Reglamento', sub: 'Normas esenciales de la I Edición.',
     rows: [
-      ['Formato', 'Recorrido circular de 227 km y +5.290 m de desnivel positivo. Salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz.'],
+      ['Formato', 'Recorrido circular de 227 km y +5.590 m de desnivel positivo. Salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz.'],
       ['Modalidades', 'Individual o por relevos, en equipos de 3 o 4 personas. Cada equipo se organiza como quiera, con un único tracker que pasa de un corredor al siguiente; lo obligatorio es pasar por todos los controles.'],
       ['Cuota', '185 € en modalidad individual; 135 € por participante en relevos (equipos de 3 o 4 personas).'],
       ['Edición', 'I Edición, del 29 al 31 de octubre de 2027.'],
@@ -21,7 +21,7 @@ export default {
   en: {
     title: 'Rules', sub: 'Essential rules of the 1st Edition.',
     rows: [
-      ['Format', 'Loop route of 227 km with +5,290 m of positive elevation. Start and finish at the kiosk in Parque de La Florida, Vitoria-Gasteiz.'],
+      ['Format', 'Loop route of 227 km with +5,590 m of positive elevation. Start and finish at the kiosk in Parque de La Florida, Vitoria-Gasteiz.'],
       ['Categories', 'Solo or relay, in teams of 3 or 4 people. Each team organises itself as it likes, with a single tracker that passes from one runner to the next; going through every control is compulsory.'],
       ['Entry fee', '€185 for individual runners; €135 per participant in relays (teams of 3 or 4 people).'],
       ['Edition', '1st Edition, from 29 to 31 October 2027.'],
@@ -37,7 +37,7 @@ export default {
   eu: {
     title: 'Araudia', sub: 'I. Edizioko oinarrizko arauak.',
     rows: [
-      ['Formatua', 'Ibilbide zirkularra, 227 km eta +5.290 m-ko desnibel positiboa. Irteera eta helmuga Florida Parkeko kioskoan, Gasteizen.'],
+      ['Formatua', 'Ibilbide zirkularra, 227 km eta +5.590 m-ko desnibel positiboa. Irteera eta helmuga Florida Parkeko kioskoan, Gasteizen.'],
       ['Modalitateak', 'Bakarka edo erreleboka, 3 edo 4 laguneko taldeetan. Talde bakoitza nahi duen moduan antolatzen da, korrikalari batetik hurrengora pasatzen den tracker bakar batekin; kontrol guztietatik pasatzea derrigorrezkoa da.'],
       ['Kuota', '185 € banakako modalitatean; 135 € parte-hartzaile bakoitzeko erreleboetan (3 edo 4 laguneko taldeak).'],
       ['Edizioa', 'I. Edizioa, 2027ko urriaren 29tik 31ra.'],

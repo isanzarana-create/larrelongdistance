@@ -107,19 +107,54 @@ function mapSvg(t, lang) {
     campezo: { lat: 42.669722, lon: -2.350833, side: 'r' },
     agurain: { lat: 42.8492849, lon: -2.3890554, side: 'r' }
   };
-  const marks = Object.entries(place).map(([k, p]) => {
-    const x = X(p.lon), y = Y(p.lat);
+  const sx = X(RUTA.start.lon), sy = Y(RUTA.start.lat);
+  const start = `<g class="m-startg"><circle class="m-pulse" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="17"/><circle class="m-start-ring" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="17"/><circle class="m-start" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="8"/><text class="m-txt m-txt-b" x="${(sx - 28).toFixed(1)}" y="${(sy + 8).toFixed(1)}" text-anchor="end">${esc(t.route.startLabel)}</text></g>`;
+  const anchors = [[X(RUTA.start.lon), Y(RUTA.start.lat)], ...Object.values(place).map((o) => [X(o.lon), Y(o.lat)])];
+  const kmMarks = DETALLE.p.filter((q) => q[0] > 0 && Math.abs(q[0] / 25 - Math.round(q[0] / 25)) < 1e-6 && q[0] < DETALLE.total - 5 && anchors.every((a) => Math.hypot(a[0] - X(q[2]), a[1] - Y(q[1])) > 60)).map((q) => `<g class="m-km" data-km="${q[0]}"><circle cx="${X(q[2]).toFixed(1)}" cy="${Y(q[1]).toFixed(1)}" r="5"/><text x="${(X(q[2]) + 9).toFixed(1)}" y="${(Y(q[1]) - 8).toFixed(1)}">${Math.round(q[0])}</text></g>`).join('');
+  const proj = [minLon, maxLat, kx, scale, padL, padY].map((v) => +v.toFixed(6)).join(',');
+  const A = t.route.anim;
+  // trazo coloreado por altitud (8 tramos de color, del más bajo al más alto del track)
+  const S = DETALLE.p;
+  const lo = RUTA.medido.minEle, hi = RUTA.medido.maxEle;
+  const bin = (e) => Math.max(0, Math.min(7, Math.floor(((e - lo) / (hi - lo)) * 8)));
+  const sp = (q) => `${X(q[2]).toFixed(1)} ${Y(q[1]).toFixed(1)}`;
+  const altPaths = [];
+  let cb = bin((S[0][3] + S[1][3]) / 2), cd = `M${sp(S[0])}`;
+  for (let i = 1; i < S.length; i++) {
+    const b = bin((S[i - 1][3] + S[i][3]) / 2);
+    if (b !== cb) { altPaths.push(`<path class="a${cb}" d="${cd}"/>`); cb = b; cd = `M${sp(S[i - 1])}`; }
+    cd += `L${sp(S[i])}`;
+  }
+  altPaths.push(`<path class="a${cb}" d="${cd}"/>`);
+  const full = 'M' + S.map(sp).join('L');
+  // flechas del sentido de la marcha, cada 20 km
+  const dirs = S.filter((q, i) => i > 2 && i < S.length - 3 && Math.abs(q[0] / 20 - Math.round(q[0] / 20)) < 1e-6 && q[0] % 25 !== 0 && anchors.every((a) => Math.hypot(a[0] - X(q[2]), a[1] - Y(q[1])) > 45)).map((q) => {
+    const i = S.indexOf(q), a = S[i - 2], b = S[i + 2];
+    const ang = (Math.atan2(Y(b[1]) - Y(a[1]), X(b[2]) - X(a[2])) * 180) / Math.PI;
+    return `<path class="m-dir" data-km="${q[0]}" d="M-7 -6L3 0L-7 6" transform="translate(${sp(q).replace(' ', ' ')}) rotate(${ang.toFixed(0)})"/>`;
+  }).join('');
+  // controles: nombre + «km · altitud» del track
+  const ctrls = Object.entries(place).map(([k, p]) => {
+    const x = X(p.lon), y = Y(p.lat), ps = RUTA.pasos[k];
     const name = t.route.towns[k].replace(/ \(.*\)$/, '');
     const anchor = p.side === 'l' ? 'end' : 'start';
     const tx = p.side === 'l' ? x - 20 : x + 20;
-    return `<g><circle class="m-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9"/><text class="m-txt" x="${tx.toFixed(1)}" y="${(y + 7).toFixed(1)}" text-anchor="${anchor}">${esc(name)}</text></g>`;
+    return `<g class="m-ctrl" data-km="${ps.km}"><circle class="m-flash" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9"/><circle class="m-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9"/><text class="m-txt" x="${tx.toFixed(1)}" y="${(y + 2).toFixed(1)}" text-anchor="${anchor}">${esc(name)}</text><text class="m-sub" x="${tx.toFixed(1)}" y="${(y + 24).toFixed(1)}" text-anchor="${anchor}">km ${Math.round(ps.km)} · ${fmt(ps.ele, lang)} m</text></g>`;
   });
-  const sx = X(RUTA.start.lon), sy = Y(RUTA.start.lat);
-  const start = `<g><circle class="m-start-ring" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="17"/><circle class="m-start" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="8"/><text class="m-txt m-txt-b" x="${(sx - 28).toFixed(1)}" y="${(sy + 8).toFixed(1)}" text-anchor="end">${esc(t.route.startLabel)}</text></g>`;
-  const anchors = [[X(RUTA.start.lon), Y(RUTA.start.lat)], ...Object.values(place).map((o) => [X(o.lon), Y(o.lat)])];
-  const kmMarks = DETALLE.p.filter((q) => q[0] > 0 && Math.abs(q[0] / 25 - Math.round(q[0] / 25)) < 1e-6 && q[0] < DETALLE.total - 5 && anchors.every((a) => Math.hypot(a[0] - X(q[2]), a[1] - Y(q[1])) > 60)).map((q) => `<g class="m-km"><circle cx="${X(q[2]).toFixed(1)}" cy="${Y(q[1]).toFixed(1)}" r="5"/><text x="${(X(q[2]) + 9).toFixed(1)}" y="${(Y(q[1]) - 8).toFixed(1)}">${Math.round(q[0])}</text></g>`).join('');
-  const proj = [minLon, maxLat, kx, scale, padL, padY].map((v) => +v.toFixed(6)).join(',');
-  return `<svg class="map-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="mapT" focusable="false" data-proj="${proj}"><title id="mapT">${esc(t.route.mapAlt)}</title><path class="m-line" d="${d}"/>${kmMarks}${marks.join('')}${start}<circle class="m-cur" r="12" cx="0" cy="0"/></svg>`;
+  // escala de 10 km y flecha del norte
+  const px10 = (scale * 10) / 111.32;
+  const sbx = 36, sby = Hh - 34;
+  const scaleBar = `<g class="m-scale"><path d="M${sbx} ${sby - 7}V${sby}H${(sbx + px10).toFixed(1)}V${sby - 7}"/><text x="${(sbx + px10 / 2).toFixed(1)}" y="${sby - 14}" text-anchor="middle">${esc(A.scale)}</text></g>`;
+  const north = `<g class="m-north" transform="translate(56 64)"><path d="M0 -26L10 8L0 2L-10 8Z"/><text x="0" y="30" text-anchor="middle">${esc(A.north)}</text></g>`;
+  const defs = `<defs><pattern id="mDots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3"/></pattern><filter id="mGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter><mask id="mDraw" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${Hh}"><path class="m-mask" d="${full}"/></mask></defs>`;
+  return `<svg class="map-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="mapT" focusable="false" data-proj="${proj}">${defs}<title id="mapT">${esc(t.route.mapAlt)}</title><rect class="m-bg" width="${W}" height="${Hh}"/>${north}${scaleBar}<path class="m-ghost" d="${full}"/><g class="m-alt">${altPaths.join('')}</g><g class="m-dirs">${dirs}</g>${kmMarks}${ctrls.join('')}${start}<path class="m-trail-glow" d=""/><path class="m-trail" d=""/><circle class="m-halo" r="16" cx="0" cy="0"/><circle class="m-cur" r="12" cx="0" cy="0"/></svg>`;
+}
+
+// Cabecera del mapa: contador animado (km y desnivel) y leyenda de altitud.
+function mapHud(t, lang) {
+  const A = t.route.anim;
+  const lo = fmt(RUTA.medido.minEle, lang), hi = fmt(RUTA.medido.maxEle, lang);
+  return `<div class="map-hud"><p class="map-count" aria-hidden="true"><span class="mc-km"><b data-count-km>${H.km}</b> km</span><span class="mc-up">+<b data-count-up>${fmt(H.desnivelPositivo, lang)}</b> m <i>${esc(A.climb)}</i></span></p><div class="map-legend" role="img" aria-label="${esc(A.legendAlt)} ${lo}–${hi} m"><span class="ml-t">${esc(A.legend)}</span><span class="ml-bar"></span><span class="ml-v"><span>${lo} m</span><span>${hi} m</span></span></div><button class="map-skip btn btn-line" type="button" data-skip="${esc(A.skip)}" data-replay="${esc(A.replay)}" hidden>${esc(A.skip)}</button></div>`;
 }
 
 function profileSvg(t, lang) {
@@ -130,12 +165,13 @@ function profileSvg(t, lang) {
   const bw = iw / bars.length;
   const Y = (v) => pt + ih - ((v - lo) / (hi - lo)) * ih;
   const grid = [600, 800, 1000, 1200, 1400].map((v) => `<line class="p-grid" x1="${pl}" x2="${W - pr}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text class="p-txt" x="${pl - 10}" y="${(Y(v) + 7).toFixed(1)}" text-anchor="end">${fmt(v, lang)}</text>`).join('');
-  const rects = bars.map((v, i) => `<rect class="p-bar" x="${(pl + i * bw + 0.5).toFixed(2)}" y="${Y(v).toFixed(1)}" width="${Math.max(bw - 1, 0.8).toFixed(2)}" height="${(pt + ih - Y(v)).toFixed(1)}"/>`).join('');
+  const abin = (v) => Math.max(0, Math.min(7, Math.floor(((v - RUTA.medido.minEle) / (RUTA.medido.maxEle - RUTA.medido.minEle)) * 8)));
+  const rects = bars.map((v, i) => `<rect class="p-bar a${abin(v)}" x="${(pl + i * bw + 0.5).toFixed(2)}" y="${Y(v).toFixed(1)}" width="${Math.max(bw - 1, 0.8).toFixed(2)}" height="${(pt + ih - Y(v)).toFixed(1)}"/>`).join('');
   const ticks = [0, 50, 100, 150, 200].map((k) => `<text class="p-txt" x="${(pl + k * bw).toFixed(1)}" y="${Hh - 14}" text-anchor="middle">${k}</text>`).join('');
   const unit = `<text class="p-txt" x="${W - pr}" y="${Hh - 14}" text-anchor="end">${esc(t.route.kmAxis)}</text><text class="p-txt" x="${pl - 10}" y="14" text-anchor="end">m</text>`;
   const alt = fill(t.route.profileAlt, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) });
   const ctrlMarks = Object.entries(RUTA.pasos).map(([k, v]) => `<line class="p-ctrl" x1="${(pl + (v.km / 1) * bw).toFixed(1)}" x2="${(pl + v.km * bw).toFixed(1)}" y1="${pt}" y2="${pt + ih}"/>`).join('');
-  return `<svg class="prof-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="profT" focusable="false" data-prof="${pl},${pr},${pt},${pb},${W},${Hh},${bars.length},${lo},${hi}"><title id="profT">${esc(alt)}</title>${grid}${rects}${ctrlMarks}${ticks}${unit}<line class="p-cur" x1="0" x2="0" y1="${pt}" y2="${pt + ih}"/><circle class="p-cur-dot" r="6" cx="0" cy="0"/></svg>`;
+  return `<svg class="prof-svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-labelledby="profT" focusable="false" data-prof="${pl},${pr},${pt},${pb},${W},${Hh},${bars.length},${lo},${hi}"><title id="profT">${esc(alt)}</title>${grid}${rects}${ctrlMarks}${ticks}${unit}<rect class="p-veil" x="${pl}" y="${pt - 2}" width="0" height="${ih + 4}"/><line class="p-cur" x1="0" x2="0" y1="${pt}" y2="${pt + ih}"/><circle class="p-cur-dot" r="6" cx="0" cy="0"/></svg>`;
 }
 
 
@@ -306,7 +342,7 @@ function routeBody(t, lang, withLead) {
   return `${withLead ? `<p class="lead">${esc(R.lead)}</p>
 <dl class="figs">${R.figs.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
 <div class="route-live" data-route data-src="/assets/ruta.json" data-lang="${lang}">
-<figure class="map"><figcaption class="cap">${esc(R.mapTitle)}</figcaption>${mapSvg(t, lang)}</figure>
+<figure class="map"><figcaption class="cap">${esc(R.mapTitle)}</figcaption>${mapHud(t, lang)}${mapSvg(t, lang)}</figure>
 <p class="readout" data-readout aria-live="off"><span><b>${esc(R.rKm)}</b> <i data-r="km">—</i></span><span><b>${esc(R.rEle)}</b> <i data-r="ele">—</i></span><span><b>${esc(R.rSlope)}</b> <i data-r="slope">—</i></span></p>
 <figure class="prof"><figcaption class="cap">${esc(R.profileTitle)}</figcaption><div class="prof-wrap" data-prof-wrap tabindex="0" role="slider" aria-label="${esc(R.sliderLabel)}" aria-valuemin="0" aria-valuemax="${Math.round(RUTA.medido.km)}" aria-valuenow="0">${profileSvg(t, lang)}</div><p class="hint">${esc(fill(R.profileSub, { min: fmt(RUTA.medido.minEle, lang), max: fmt(RUTA.medido.maxEle, lang) }))} ${esc(R.interactHint)}</p></figure>
 </div>
@@ -512,10 +548,10 @@ function llms() {
   const r = (l) => `${ORIGIN}${pdfPath('reglamento', l)}`;
   return `# Ultra Trail Larre®
 
-> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227 km y +5.290 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: del 29 al 31 de octubre de 2027. Se corre en modalidad individual o por relevos, en equipos de 3 o 4 personas. Organiza Musubigara®.
+> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227 km y +5.590 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: del 29 al 31 de octubre de 2027. Se corre en modalidad individual o por relevos, en equipos de 3 o 4 personas. Organiza Musubigara®.
 
 ## Datos clave
-- Distancia y desnivel: 227 km y +5.290 m de desnivel positivo, en lazo.
+- Distancia y desnivel: 227 km y +5.590 m de desnivel positivo, en lazo.
 - Formato: autosuficiencia, sin asistencia externa ni avituallamientos de organización. Un tracker y un brevet.
 - Controles: seis; confirmados Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada (dos por definir).
 - Fecha: I Edición del 29 al 31 de octubre de 2027.
