@@ -292,7 +292,7 @@
     let maskLen = 0;
     const ease = (u) => (u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2);
     const drawTo = (f) => {
-      const n = P.p.length - 1, fi = f * n, i = Math.floor(fi);
+      const n = P.p.length - 1, i = Math.max(0, Math.min(n, Math.floor(f * n)));
       maskPath.style.strokeDashoffset = (maskLen * (1 - f)).toFixed(1);
       const km = P.p[i][0];
       marks.forEach((m) => m.el.classList.toggle('on', m.km <= km + 0.05));
@@ -329,7 +329,7 @@
       const t0 = performance.now();
       anim = { raf: 0 };
       const step = (now) => {
-        const u = Math.min(1, (now - t0) / DUR);
+        const u = Math.max(0, Math.min(1, (now - t0) / DUR));
         drawTo(ease(u));
         if (u < 1) anim.raf = requestAnimationFrame(step);
         else finish();
