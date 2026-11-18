@@ -39,7 +39,7 @@ test('preinscripción válida: código, 2 correos, idioma y datos', async () => 
   assert.ok(runner && org);
   assert.equal(runner.auth, 'Bearer re_test_key');
   assert.match(runner.subject, /Aurre-izen-ematea jasota/); assert.ok(runner.html.includes(j.code)); assert.ok(runner.text.includes(j.code));
-  assert.ok(runner.text.includes('martxoan'));
+  assert.ok(runner.text.includes('urtarrilaren 2an'));
   assert.equal(org.reply_to, 'aitor@example.com'); assert.ok(org.html.includes('UTMB 100K')); assert.ok(org.text.includes('FEDME'));
 });
 test('duplicado: mismo correo devuelve el mismo código sin reenviar', async () => {

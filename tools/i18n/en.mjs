@@ -206,7 +206,7 @@ export default {
       lead: 'Thank you, {nombre}. This is your reference code:',
       already: 'You were already pre-registered with this email. This is your reference code:',
       next: 'We have sent a confirmation email to <strong>{email}</strong>. If you cannot see it within a few minutes, check your spam folder.',
-      steps: ['Keep your code: you will need it for any enquiry.', 'Pre-registering does not guarantee a place.', 'We will email you the payment date in March.'],
+      steps: ['Keep your code: you will need it for any enquiry.', 'Pre-registering does not guarantee a place.', 'Registration, with payment, opens on 2 January 2027.'],
       mailFailed: 'Your pre-registration has been saved, but we could not send you the confirmation email. Keep this code and write to us at {email} if you need it.'
     }
   },

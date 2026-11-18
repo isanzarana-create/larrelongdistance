@@ -153,7 +153,7 @@ export default {
       'Izen-emate kuota: <strong>185 €</strong> banakako modalitatean; <strong>135 €</strong> parte-hartzaile bakoitzeko erreleboetan (3 edo 4 laguneko taldeak).',
       'Azalpen pertsonal labur bat sartu behar da, derrigorrez: aurre-izen-ematea balioztatzeko balio du, ez iragazteko.',
       'Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.',
-      '<strong>Aurre-izen-emateak ez du plazarik bermatzen.</strong> Erreferentzia-kode bat jasoko duzu, eta ordainketa-data martxoan jakinaraziko dizugu posta elektronikoz.',
+      '<strong>Aurre-izen-emateak ez du plazarik bermatzen.</strong> Erreferentzia-kode bat jasoko duzu. Izen-ematea <strong>2027ko urtarrilaren 2an</strong> irekiko da, eta egun horretatik aurrera ordaindu ahal izango da: plaza ordaintzean berresten da.',
       'Une honetan ez dugu NANik eskatzen; plaza berretsi behar duzunean eskatuko dugu.'
     ],
     closedTitle: 'Oraindik ez dago irekita',
@@ -207,7 +207,7 @@ export default {
       lead: 'Eskerrik asko, {nombre}. Hau da zure erreferentzia-kodea:',
       already: 'Posta elektroniko honekin aurre-izena emana zenuen jada. Hau da zure erreferentzia-kodea:',
       next: 'Berrespen-mezu bat bidali dugu <strong>{email}</strong> helbidera. Minutu batzuetan ikusten ez baduzu, begiratu spam karpetan.',
-      steps: ['Gorde zure kodea: edozein kontsultatarako beharko duzu.', 'Aurre-izen-emateak ez du plazarik bermatzen.', 'Ordainketa-data martxoan jakinaraziko dizugu posta elektronikoz.'],
+      steps: ['Gorde zure kodea: edozein kontsultatarako beharko duzu.', 'Aurre-izen-emateak ez du plazarik bermatzen.', 'Izen-ematea eta ordainketa 2027ko urtarrilaren 2an irekiko dira.'],
       mailFailed: 'Zure aurre-izen-ematea gorde da, baina ezin izan dugu berrespen-mezua bidali. Gorde kode hau eta idatzi iezaguzu {email} helbidera behar baduzu.'
     }
   },
@@ -229,9 +229,9 @@ export default {
       ['Zenbat lagunek osatzen dute errelebo-talde bat?', '<strong>3 edo 4 lagunek.</strong> 227 km-ak nahi duzuen moduan banatzen dituzue, beti tracker bakar batekin talde bakoitzeko.'],
       ['Non dira irteera eta helmuga?', 'Gasteizko La Florida parkeko kioskoan. Ibilbidea begizta bat da: toki berean hasi eta bukatzen duzu.'],
       ['Zenbat distantzia eta desnibel ditu?', '<strong>227 km</strong> eta <strong>+5.590 m</strong>-ko desnibel positiboa, autohornikuntzan.'],
-      ['Noiz irekitzen da aurre-izen-ematea?', 'Aurre-izena emandakoen zerrenda <strong>2026ko abenduaren 1ean, 14:00etan</strong> irekiko da.'],
+      ['Noiz irekitzen da aurre-izen-ematea?', 'Bi fasetan: <strong>aurre-izen-ematea</strong> (ordaindu gabe) <strong>2026ko abenduaren 1ean, 14:00etan</strong> irekiko da, eta <strong>izen-ematea</strong>, ordainketarekin, <strong>2027ko urtarrilaren 2an</strong>.'],
       ['Nola esleitzen dira 300 plazak?', 'Aurre-izen-emateak iritsi diren hurrenkeran. Azalpen pertsonal laburra derrigorrezkoa da: aurre-izen-ematea balioztatzeko balio du, ez iragazteko. Ez dago dortsalik erreserbatzerik, ezta motibazio-gutunik ere.'],
-      ['Aurre-izen-emateak plaza bermatzen al du?', 'Ez. Aurre-izena ematean erreferentzia-kode bat jasoko duzu posta elektronikoz, eta ordainketa-data ere posta elektronikoz jakinaraziko dizugu, martxoan.'],
+      ['Aurre-izen-emateak plaza bermatzen al du?', 'Ez. Aurre-izena ematean erreferentzia-kode bat jasoko duzu posta elektronikoz. Izen-ematea <strong>2027ko urtarrilaren 2an</strong> irekiko da, egun horretatik aurrera ordaintzeko aukerarekin, eta plaza ordaintzean berresten da.'],
       ['Zer datu eskatzen dituzue?', 'Modalitatea (bakarka edo erreleboka) eta, erreleboetan, taldearen izena; izena, abizenak, adina, sexua, posta elektronikoa, beste proba batzuetako erreferentziak, mendi-federatua zaren, azalpen pertsonal labur bat eta, nahi baduzu, oharrak. NANa plaza berresten duzunean eskatuko dugu.'],
       ['Nola funtzionatzen dute kontrol-guneek?', 'Sei kontrol-gune daude. Lau baieztatuta daude (Agurain, Santikurutze Kanpezu, Biasteri eta Urizaharra), eta beste biak zehazteke daude. Tracker batek jarraituko zaitu lasterketa osoan zehar, eta brevet-ak zure igarobidea jasoko du.'],
       ['Zer da Zero Kodea?', 'Zurekin mendira sartzen dena, zurekin aterako da. <a href="{reglamento}">Araudiak</a> jasotzen du.'],
@@ -286,7 +286,7 @@ export default {
     mapText: 'La Florida parkea, Gasteiz',
     waText: 'Idatzi iezaguzu WhatsAppez',
     waMsg: 'Kaixo, Ultra Trail Larre®-ri buruz hitz egin nahi nuke',
-    org: 'Ultra Trail Larre®-ren antolatzailea <a href="https://musubigara.org/eu/" rel="noopener">Musubigara®</a> da.'
+    org: 'Ultra Trail Larre®-ren antolatzailea Ignacio Sanz Arana (<a href="https://musubigara.org/eu/" rel="noopener">Musubigara®</a>) da.'
   },
   aria: { social: 'Sare sozialak eta harremana', ig: 'Ultra Trail Larre® Instagramen', wa: 'WhatsApp', map: 'Irteerara nola iritsi, La Florida parkea' },
   notFound: { title: 'Ez da orria aurkitu', text: 'Helbide hau ez dago edo aldatu egin da. Itzuli hasierara, edo idatzi iezaguzu zerbait zehatza bilatzen bazenuen.', home: 'Hasierara joan' },

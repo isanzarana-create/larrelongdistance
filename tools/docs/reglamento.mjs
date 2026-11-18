@@ -46,7 +46,7 @@ export default {
       ['Baieztatutako kontrolak', 'Agurain, Santa Cruz de Campezo, Laguardia eta Peñacerrada. Gainerako biak zehazteke daude.'],
       ['Zero Kodea', 'Ibilbidea hondakinik utzi gabe korritzen da.'],
       ['Parte-hartzea', '300 plaza, aurre-izenemate bidezko iritsiera-ordenaren arabera esleituak. Aurre-izenemateak nahitaezko deskribapen pertsonal labur bat dauka; balioztatu egiten da, baina ez du iragazten. Ez dago dortsal-erreserbarik ez motibazio-gutunik.'],
-      ['Aurre-izenematea', 'Zerrenda 2026ko abenduaren 1ean irekiko da. Aurre-izenemateak ez du plaza bermatzen. Ordainketa-data posta elektronikoz jakinaraziko da martxoan.']
+      ['Aurre-izenematea', 'Zerrenda 2026ko abenduaren 1ean irekiko da. Aurre-izenemateak ez du plaza bermatzen. Izen-ematea, ordainketarekin, 2027ko urtarrilaren 2an irekiko da; plaza ordaintzean berresten da.']
     ],
     contact: 'Zalantzaren bat izanez gero, idatzi hona:'
   }

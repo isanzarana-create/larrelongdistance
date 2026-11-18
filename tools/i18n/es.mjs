@@ -206,7 +206,7 @@ export default {
       lead: 'Gracias, {nombre}. Este es tu código de referencia:',
       already: 'Ya estabas preinscrito/a con este correo. Este es tu código de referencia:',
       next: 'Te hemos enviado un correo de confirmación a <strong>{email}</strong>. Si no lo ves en unos minutos, revisa la carpeta de spam.',
-      steps: ['Guarda tu código: lo necesitarás para cualquier consulta.', 'La preinscripción no garantiza plaza.', 'Te comunicaremos la fecha de pago por email en marzo.'],
+      steps: ['Guarda tu código: lo necesitarás para cualquier consulta.', 'La preinscripción no garantiza plaza.', 'La inscripción, con pago, se abre el 2 de enero de 2027.'],
       mailFailed: 'Tu preinscripción se ha guardado, pero no hemos podido enviarte el correo de confirmación. Guarda este código y escríbenos a {email} si lo necesitas.'
     }
   },
