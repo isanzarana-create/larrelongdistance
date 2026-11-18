@@ -3,7 +3,31 @@ Allow: /
 Disallow: /.netlify/
 Disallow: /api/
 
-# Rastreadores de buscadores de IA, declarados uno a uno
+# Buscadores y rastreadores de IA, declarados uno a uno
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
 User-agent: GPTBot
 Allow: /
 Disallow: /api/

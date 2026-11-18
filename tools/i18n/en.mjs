@@ -152,7 +152,7 @@ export default {
       'Entry fee: <strong>€185</strong> for individual runners; <strong>€135</strong> per participant in relays (teams of 3 or 4).',
       'It includes a short personal description, which is compulsory: it is there to validate your pre-registration, not to filter applicants.',
       'There is no bib reservation and no motivation letter.',
-      '<strong>Pre-registering does not guarantee a place.</strong> You will receive a reference code, and we will email you the payment date in March.',
+      '<strong>Pre-registering does not guarantee a place.</strong> You will receive a reference code. Registration opens on <strong>2 January 2027</strong>, with payment from that day: your place is confirmed once you pay.',
       'We do not ask for your ID number at this stage; we will ask when you confirm your place.'
     ],
     closedTitle: 'Not open yet',
@@ -229,9 +229,9 @@ export default {
       ['Where are the start and the finish?', 'At the bandstand in La Florida Park, Vitoria-Gasteiz (Basque Country, Spain). The route is a loop: you start and finish in the same place.'],
       ['How long is it and how much climbing?', '<strong>227 km</strong> and <strong>+5,590 m</strong> of elevation gain, self-supported.'],
       ['What does self-supported mean at Ultra Trail Larre®?', 'There are no organiser aid stations and no outside assistance. You decide what to carry, when to eat, when to sleep and how to manage your water. A tracker follows you throughout and your brevet records your passage through the controls; navigation is part of the challenge.'],
-      ['When does pre-registration open?', 'The pre-registration list opens on <strong>1 December 2026 at 14:00 (Spanish time, CET)</strong>.'],
+      ['When does pre-registration open?', 'In two stages: <strong>pre-registration</strong> (no payment) opens on <strong>1 December 2026 at 14:00 (Spanish time, CET)</strong>, and <strong>registration</strong>, with payment in euros, on <strong>2 January 2027</strong>.'],
       ['How are the 300 places allocated?', 'In order of pre-registration. The short personal description is compulsory: it validates your pre-registration and does not filter applicants. There is no bib reservation and no motivation letter.'],
-      ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email, and we will email you the payment date in March.'],
+      ['Does pre-registering guarantee a place?', 'No. When you pre-register you receive a reference code by email. Registration opens on <strong>2 January 2027</strong>, with payment from that day, and your place is confirmed once you pay.'],
       ['What data do you ask for?', 'Category (solo or relay) and, for relays, the team name; first name, surname, age, sex, email, previous races, whether you are a member of a mountaineering federation, a short personal description and, if you wish, comments. We will ask for your ID number when you confirm your place.'],
       ['How do the controls work?', 'There are six controls. Four are confirmed (Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada) and the other two are still to be defined. A tracker follows you throughout the race and your brevet records your passage.'],
       ['What is the Zero Waste Code?', 'What goes into the mountains with you comes out with you. It is set out in the <a href="{reglamento}">race rules</a>.'],
@@ -286,7 +286,7 @@ export default {
     mapText: 'La Florida Park, Vitoria-Gasteiz',
     waText: 'Message us on WhatsApp',
     waMsg: 'Hello, I would like to talk about Ultra Trail Larre®',
-    org: 'Ultra Trail Larre® is organised by <a href="https://musubigara.org/en/" rel="noopener">Musubigara®</a>.'
+    org: 'Ultra Trail Larre® is organised by Ignacio Sanz Arana (<a href="https://musubigara.org/en/" rel="noopener">Musubigara®</a>).'
   },
   aria: { social: 'Social media and contact', ig: 'Ultra Trail Larre® on Instagram', wa: 'WhatsApp', map: 'How to get to the start, La Florida Park' },
   notFound: { title: 'Page not found', text: 'This address does not exist or has moved. Go back to the home page or write to us if you were looking for something specific.', home: 'Go to the home page' },

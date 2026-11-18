@@ -193,7 +193,7 @@ const sectionHtml = (id, n, h2, inner, cls = '', back = '') =>
 
 function head(t, o) {
   const alt = o.alternates;
-  const links = ORDER.map((l) => `<link rel="alternate" hreflang="${l}" href="${ORIGIN}${alt[l]}">`).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${ORIGIN}${alt.es}">`;
+  const links = ORDER.map((l) => `<link rel="alternate" hreflang="${l}" href="${ORIGIN}${alt[l]}">`).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${ORIGIN}${alt.en}">`;
   const og = o.og ? `<meta property="og:image" content="${ORIGIN}${o.og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(t.meta.ogAlt)}"><meta name="twitter:image" content="${ORIGIN}${o.og}"><meta name="twitter:image:alt" content="${esc(t.meta.ogAlt)}">` : '';
   const others = ORDER.filter((l) => l !== t.lang).map((l) => `<meta property="og:locale:alternate" content="${LANGS[l].locale}">`).join('');
   return `<!doctype html>
@@ -458,7 +458,7 @@ function homeJsonLd(t, path) {
         offers: [
           [t.lang === 'en' ? 'Individual' : t.lang === 'eu' ? 'Banakakoa' : 'Individual', H.cuotas.individual],
           [t.lang === 'en' ? 'Relay (per participant, teams of 3 or 4)' : t.lang === 'eu' ? 'Erreleboa (parte-hartzaile bakoitzeko, 3 edo 4 laguneko taldeak)' : 'Relevos (por participante, equipos de 3 o 4 personas)', H.cuotas.relevos]
-        ].map(([name, price]) => ({ '@type': 'Offer', name, url: `${ORIGIN}${t.paths.home}#preinscripcion`, availability: 'https://schema.org/PreOrder', validFrom: H.preinscripcionAbre.slice(0, 10), price, priceCurrency: 'EUR' }))
+        ].map(([name, price]) => ({ '@type': 'Offer', name, url: `${ORIGIN}${t.paths.home}#preinscripcion`, availability: 'https://schema.org/PreOrder', validFrom: H.inscripcionAbre, price, priceCurrency: 'EUR' }))
       },
       { '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: faq }
     ]
@@ -540,7 +540,7 @@ function sitemap() {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${xml}\n</urlset>\n`;
 }
 
-const robots = () => `User-agent: *\nAllow: /\nDisallow: /.netlify/\nDisallow: /api/\n\n# Rastreadores de buscadores de IA, declarados uno a uno\n${['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended'].map((b) => `User-agent: ${b}\nAllow: /\nDisallow: /api/`).join('\n\n')}\n\nSitemap: ${ORIGIN}/sitemap.xml\n`;
+const robots = () => `User-agent: *\nAllow: /\nDisallow: /.netlify/\nDisallow: /api/\n\n# Buscadores y rastreadores de IA, declarados uno a uno\n${['Googlebot', 'Bingbot', 'DuckDuckBot', 'YandexBot', 'Applebot', 'Applebot-Extended', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended'].map((b) => `User-agent: ${b}\nAllow: /\nDisallow: /api/`).join('\n\n')}\n\nSitemap: ${ORIGIN}/sitemap.xml\n`;
 
 const manifest = () => JSON.stringify({ name: 'Ultra Trail Larre®', short_name: 'Larre', description: es.meta.description, lang: 'es', start_url: '/', scope: '/', display: 'browser', background_color: '#0B0908', theme_color: '#0B0908', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }] }, null, 2) + '\n';
 
@@ -548,7 +548,7 @@ function llms() {
   const r = (l) => `${ORIGIN}${pdfPath('reglamento', l)}`;
   return `# Ultra Trail Larre®
 
-> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227 km y +5.590 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: del 29 al 31 de octubre de 2027. Se corre en modalidad individual o por relevos, en equipos de 3 o 4 personas. Organiza Musubigara®.
+> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227 km y +5.590 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: del 29 al 31 de octubre de 2027. Se corre en modalidad individual o por relevos, en equipos de 3 o 4 personas. Organiza Ignacio Sanz Arana (Musubigara®).
 
 ## Datos clave
 - Distancia y desnivel: 227 km y +5.590 m de desnivel positivo, en lazo.
@@ -559,7 +559,10 @@ function llms() {
 - Cuota: 185 € individual; 135 € por participante en relevos.
 - English: self-supported 227 km ultra in Álava (Basque Country, Spain), 29–31 October 2027, solo or as a relay team of 3 or 4.
 - Plazas: 300, por orden de llegada de la preinscripción. La preinscripción no garantiza plaza.
-- Preinscripción: la lista se abre el 1 de diciembre de 2026 a las 14:00 (hora peninsular española). La fecha de pago se comunica por email en marzo.
+- Preinscripción (fase 1, sin pago): la lista se abre el 1 de diciembre de 2026 a las 14:00 (hora peninsular española, CET). Incluye una breve descripción personal obligatoria.
+- Inscripción (fase 2, con pago): se abre el 2 de enero de 2027, con pago en euros desde ese mismo día; la plaza se confirma al pagar.
+- English: pre-registration (no payment) opens 1 December 2026, 14:00 CET; registration with payment opens 2 January 2027. Entry fee €185 solo, €135 per relay runner.
+- Organiza: Ignacio Sanz Arana (Musubigara®).
 - Contacto: ${H.email} · Instagram @${H.instagram}
 
 ## Páginas

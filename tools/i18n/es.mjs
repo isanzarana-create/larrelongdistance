@@ -152,7 +152,7 @@ export default {
       'Cuota de inscripción: <strong>185 €</strong> en modalidad individual; <strong>135 €</strong> por participante en relevos (equipos de 3 o 4 personas).',
       'Incluye una breve descripción personal, obligatoria: sirve para validar la preinscripción, no para filtrar.',
       'No hay reserva de dorsales ni carta de motivación.',
-      '<strong>La preinscripción no garantiza plaza.</strong> Recibirás un código de referencia y te comunicaremos la fecha de pago por email en marzo.',
+      '<strong>La preinscripción no garantiza plaza.</strong> Recibirás un código de referencia. La inscripción se abre el <strong>2 de enero de 2027</strong>, con pago desde ese mismo día: la plaza se confirma al pagar.',
       'En esta fase no pedimos el DNI: lo haremos al confirmar plaza.'
     ],
     closedTitle: 'Todavía no está abierta',
@@ -228,9 +228,9 @@ export default {
       ['¿Cuántas personas forman un equipo de relevos?', '<strong>3 o 4 personas.</strong> Os repartís los 227 km como queráis, siempre con un único tracker por equipo.'],
       ['¿Dónde está la salida y dónde la meta?', 'En el quiosco del Parque de La Florida, en Vitoria-Gasteiz. La ruta es un lazo: sales y llegas al mismo sitio.'],
       ['¿Qué distancia y desnivel tiene?', '<strong>227 km</strong> y <strong>+5.590 m</strong> de desnivel positivo, en autosuficiencia.'],
-      ['¿Cuándo se abre la preinscripción?', 'La lista de preinscritos se abre el <strong>1 de diciembre de 2026 a las 14:00</strong>.'],
+      ['¿Cuándo se abre la preinscripción?', 'En dos fases: la <strong>preinscripción</strong> (sin pago) se abre el <strong>1 de diciembre de 2026 a las 14:00</strong>, y la <strong>inscripción</strong>, con pago, el <strong>2 de enero de 2027</strong>.'],
       ['¿Cómo se asignan las 300 plazas?', 'Por orden de llegada de la preinscripción. La breve descripción personal es obligatoria: sirve para validar la preinscripción, no para filtrar. No hay reserva de dorsales ni carta de motivación.'],
-      ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email y te comunicaremos la fecha de pago, también por email, en marzo.'],
+      ['¿La preinscripción garantiza plaza?', 'No. Al preinscribirte recibes un código de referencia por email. La inscripción se abre el <strong>2 de enero de 2027</strong>, con pago desde ese mismo día, y la plaza se confirma al pagar.'],
       ['¿Qué datos pedís?', 'Modalidad (individual o relevos) y, en relevos, el nombre del equipo; nombre, apellidos, edad, sexo, correo, referencias en otras pruebas, si estás federado/a en montaña, una breve descripción personal y, si quieres, observaciones. El DNI lo pediremos al confirmar plaza.'],
       ['¿Cómo funcionan los controles?', 'Hay seis controles. Cuatro están confirmados (Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada) y los otros dos están por definir. Un tracker te sigue durante toda la carrera y el brevet recoge tu paso.'],
       ['¿Qué es el Código Cero?', 'Lo que entra contigo en el monte, sale contigo del monte. Lo recoge el <a href="{reglamento}">reglamento</a>.'],
@@ -285,7 +285,7 @@ export default {
     mapText: 'Parque de La Florida, Vitoria-Gasteiz',
     waText: 'Escríbenos por WhatsApp',
     waMsg: 'Hola, quiero hablar sobre Ultra Trail Larre®',
-    org: 'Ultra Trail Larre® lo organiza <a href="https://musubigara.org/" rel="noopener">Musubigara®</a>.'
+    org: 'Ultra Trail Larre® lo organiza Ignacio Sanz Arana (<a href="https://musubigara.org/" rel="noopener">Musubigara®</a>).'
   },
   aria: { social: 'Redes y contacto', ig: 'Instagram de Ultra Trail Larre®', wa: 'WhatsApp', map: 'Cómo llegar a la salida, Parque de La Florida' },
   notFound: { title: 'Página no encontrada', text: 'Esta dirección no existe o ha cambiado. Vuelve al inicio o escríbenos si buscabas algo concreto.', home: 'Ir al inicio' },

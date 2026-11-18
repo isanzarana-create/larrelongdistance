@@ -14,7 +14,7 @@ export default {
       ['Controles confirmados', 'Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada. Los dos restantes están por definir.'],
       ['Código Cero', 'El recorrido se corre sin dejar residuos.'],
       ['Participación', '300 plazas, asignadas por orden de llegada de la preinscripción. La preinscripción incluye una breve descripción personal obligatoria, que se valida pero no filtra. No hay reserva de dorsal ni carta de motivación.'],
-      ['Preinscripción', 'La lista se abre el 1 de diciembre de 2026. La preinscripción no garantiza plaza. La fecha de pago se comunica por correo electrónico en marzo.']
+      ['Preinscripción', 'La lista se abre el 1 de diciembre de 2026. La preinscripción no garantiza plaza. La inscripción, con pago, se abre el 2 de enero de 2027; la plaza se confirma al pagar.']
     ],
     contact: 'Para cualquier duda, escribe a'
   },
@@ -30,7 +30,7 @@ export default {
       ['Confirmed controls', 'Agurain, Santa Cruz de Campezo, Laguardia and Peñacerrada. The remaining two are still to be defined.'],
       ['Zero Waste Code', 'The route is run without leaving any waste.'],
       ['Participation', '300 places, assigned by order of arrival of the pre-registration. Pre-registration includes a mandatory short personal description, which is validated but does not filter. There is no bib reservation and no motivation letter.'],
-      ['Pre-registration', 'The list opens on 1 December 2026. Pre-registration does not guarantee a place. The payment date is communicated by email in March.']
+      ['Pre-registration', 'The list opens on 1 December 2026. Pre-registration does not guarantee a place. Registration, with payment, opens on 2 January 2027; your place is confirmed once you pay.']
     ],
     contact: 'For any question, write to'
   },

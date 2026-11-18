@@ -19,12 +19,13 @@
   "salida": { "lugar": "Quiosco del Parque de La Florida", "ciudad": "Vitoria-Gasteiz", "lat": 42.843865, "lon": -2.676552 },
   "preinscripcionAbre": "2026-12-01T14:00:00+01:00",
   "cuotas": { "individual": 185, "relevos": 135 },
-  "pagoComunicado": "marzo",
+  "inscripcionAbre": "2027-01-02",
+  "pagoDesde": "2027-01-02",
   "email": "ignacio@musubigara.org",
   "instagram": "ultratraillarre",
   "instagramUrl": "https://www.instagram.com/ultratraillarre/",
   "whatsapp": "34620463558",
   "mapsSalida": "https://www.google.com/maps/search/?api=1&query=42.843865%2C-2.676552",
   "gpxVersion": "2026-11-17",
-  "docsVersion": "2026-11-17"
+  "docsVersion": "2026-11-18"
 }
