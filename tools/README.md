@@ -13,7 +13,24 @@ Requisitos: Node 20+. Una vez: `cd tools && npm install` (instala `sharp`). Los 
 | `node tools/dev-server.mjs` | Servidor local con las funciones `/api` |
 | `python3 tools/check-links.py URL` | Rastreo de enlaces, anclas, hreflang y canonical |
 
-## Actualizar la galería de Instagram (5 pasos, sin cuenta de Facebook ni API de Meta)
+## Actualizar la galería de Instagram (automático, desde el 20 nov 2026)
+
+La Action «Galería de Instagram (LARRE)» corre **los lunes por la mañana** y ejecuta
+`tools/instagram-sync.mjs`: pide las últimas publicaciones a Instagram, descarga las fotos
+nuevas, genera WebP y AVIF (900 y 400 px) y las añade a `tools/data/galeria.json`
+**ocultas**, con el pie original en `pie_original`.
+
+Para publicarlas: escribe el `alt` en `es`, `eu` y `en`, pon `"oculta": false` y ejecuta
+`node tools/build.mjs`. Mientras estén ocultas no cambia nada visible, así que el robot
+marca su commit con `[skip netlify]` y no gasta despliegue.
+
+Necesita dos secrets en el repositorio: `IG_TOKEN` (clave de Meta de @ultratraillarre, que
+el propio robot renueva cada semana) y `GH_PAT` (para poder guardar la clave renovada).
+Sin `IG_TOKEN` la Action no hace nada y lo dice en el registro.
+
+Para probarlo a mano: `IG_TOKEN=… node tools/instagram-sync.mjs`.
+
+## Actualizar la galería a mano (5 pasos, sin API de Meta)
 1. En Instagram: **Configuración → Centro de cuentas → Tu información y permisos → Descargar tu información** → *Descargar o transferir información* → tu cuenta → **Publicaciones** → formato **JSON** → calidad alta. Te llega un enlace por correo.
 2. Descarga el ZIP y descomprímelo en una carpeta.
 3. `node tools/import-instagram.mjs <carpeta-descomprimida>` copia las fotos nuevas, crea WebP y AVIF y las añade (ocultas) a `tools/data/galeria.json`.
