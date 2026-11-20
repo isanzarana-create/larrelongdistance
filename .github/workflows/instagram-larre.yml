@@ -27,6 +27,11 @@ jobs:
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
+        with:
+          # Historial completo: tools/build.mjs saca el <lastmod> de cada página
+          # del último commit que la tocó. Con el historial recortado que trae
+          # GitHub por defecto, esas fechas salen mal y el control SEO falla.
+          fetch-depth: 0
 
       - name: Preparar Node
         uses: actions/setup-node@v4
