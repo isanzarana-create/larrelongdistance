@@ -244,7 +244,7 @@ ${socials(t, 'icons-top')}
 <nav class="lang" aria-label="${esc(t.ui.langNav)}">${langs}</nav>
 <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="${esc(t.ui.menuOpen)}" data-open="${esc(t.ui.menuOpen)}" data-close="${esc(t.ui.menuClose)}"><span class="bars" aria-hidden="true"><i></i><i></i></span><span class="menu-lbl">${esc(t.ui.menu)}</span></button>
 </div></div>
-<nav class="menu" id="menuPanel" aria-label="${esc(t.ui.index)}"><ol>${items}</ol><ul class="menu-legal"><li><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a></li><li><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></li></ul></nav>
+<nav class="menu" id="menuPanel" aria-label="${esc(t.ui.index)}"><ol>${items}</ol><ul class="menu-legal"><li><a href="${t.paths.reg}">${esc(t.ui.rules)}</a></li><li><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a></li><li><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></li></ul></nav>
 </header>`;
 }
 
@@ -253,7 +253,7 @@ function footer(t, isHome = false) {
   const home = isHome ? '' : t.paths.home;
   return `<footer class="foot"><div class="wrap foot-in">
 <div class="foot-l"><p>© 2026 Ultra Trail Larre®</p>
-<nav class="foot-r" aria-label="Legal"><a href="${t.routePage.path}">${esc(t.routePage.eyebrow)}</a><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></nav></div>
+<nav class="foot-r" aria-label="Legal"><a href="${t.routePage.path}">${esc(t.routePage.eyebrow)}</a><a href="${t.paths.reg}">${esc(t.ui.rules)}</a><a href="${t.paths.aviso}">${esc(t.ui.legal)}</a><a href="${t.paths.priv}">${esc(t.ui.privacy)}</a></nav></div>
 ${socials(t, 'icons-foot')}
 </div>
 <div class="float-cta"><a class="pill" href="${home}#preinscripcion">${esc(t.ui.ctaPre)}</a><a class="pill" href="https://wa.me/${c.whatsapp}?text=${encodeURIComponent(t.contact.waMsg)}" target="_blank" rel="noopener">${ICON.wa}<span>${esc(t.ui.ctaWa)}</span><span class="sr"> (${esc(t.ui.new)})</span></a></div>
@@ -359,7 +359,7 @@ function homePage(t) {
   const sec = (id, n, h2, inner, cls = '') => sectionHtml(id, n, h2, inner, cls, t.ui.backMenu);
   const alternates = { es: '/', eu: '/eu/', en: '/en/' };
   const reg = pdfInfo('reglamento', lang);
-  const links = { reglamento: reg.href };
+  const links = { reglamento: t.paths.reg, reglamentoPdf: reg.href };
   const ver = longDate(H.docsVersion, lang);
   const verGpx = longDate(H.gpxVersion, lang);
 
@@ -429,7 +429,7 @@ function homeJsonLd(t, path) {
   const url = `${ORIGIN}${path}`;
   const org = `${ORIGIN}/#organization`;
   const site = `${ORIGIN}/#website`;
-  const faq = t.faq.items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: strip(fill(a, { reglamento: `${ORIGIN}${pdfPath('reglamento', t.lang)}` })) } }));
+  const faq = t.faq.items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: strip(fill(a, { reglamento: `${ORIGIN}${t.paths.reg}`, reglamentoPdf: `${ORIGIN}${pdfPath('reglamento', t.lang)}` })) } }));
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -466,16 +466,18 @@ function homeJsonLd(t, path) {
 }
 
 // ───────────── páginas legales y 404 ─────────────
+const LEGAL_EYEBROW = { aviso: (t) => t.ui.legal, priv: (t) => t.ui.privacy, reg: (t) => t.ui.rules };
+
 function legalPage(t, key) {
   const L = t.legal[key];
-  const alternates = ORDER.reduce((a, l) => ((a[l] = LANGS[l].paths[key === 'aviso' ? 'aviso' : 'priv']), a), {});
-  const path = t.paths[key === 'aviso' ? 'aviso' : 'priv'];
-  const body = L.sections.map(([h, paras]) => `<h2>${esc(h)}</h2>${paras.map((p) => `<p>${fill(p, { priv: t.paths.priv })}</p>`).join('')}`).join('');
+  const alternates = ORDER.reduce((a, l) => ((a[l] = LANGS[l].paths[key]), a), {});
+  const path = t.paths[key];
+  const body = L.sections.map(([h, paras]) => `<h2>${esc(h)}</h2>${paras.map((p) => `<p>${fill(p, { priv: t.paths.priv, aviso: t.paths.aviso })}</p>`).join('')}`).join('');
   const title = `${L.title} · Ultra Trail Larre®`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [{ '@type': 'WebPage', '@id': `${ORIGIN}${path}#webpage`, url: `${ORIGIN}${path}`, name: title, description: L.metaDesc, inLanguage: t.lang, isPartOf: { '@id': `${ORIGIN}/#website` }, breadcrumb: { '@id': `${ORIGIN}${path}#breadcrumb` } }, { '@type': 'BreadcrumbList', '@id': `${ORIGIN}${path}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Ultra Trail Larre®', item: `${ORIGIN}${t.paths.home}` }, { '@type': 'ListItem', position: 2, name: L.title, item: `${ORIGIN}${path}` }] }] };
   return (
     head(t, { title, description: L.metaDesc, path, alternates, og: `/assets/og-${t.lang}.png`, jsonld }) +
-    `\n<body data-page="legal">\n${header(t, { alternates, isHome: false })}\n<main id="main" tabindex="-1"><article class="wrap legal"><p class="eyebrow">${esc(L.title === t.legal.priv.title ? t.ui.privacy : t.ui.legal)}</p><h1>${esc(L.title)}</h1><p class="hint">${esc(t.legal.updated)}: ${esc(L.date)}</p>${body}<p class="back"><a class="link-arrow" href="${t.paths.home}">${esc(t.ui.back)} ${ICON.arrow}</a></p></article></main>\n${footer(t)}\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
+    `\n<body data-page="legal">\n${header(t, { alternates, isHome: false })}\n<main id="main" tabindex="-1"><article class="wrap legal"><p class="eyebrow">${esc(LEGAL_EYEBROW[key](t))}</p><h1>${esc(L.title)}</h1><p class="hint">${esc(t.legal.updated)}: ${esc(L.date)}</p>${body}<p class="back"><a class="link-arrow" href="${t.paths.home}">${esc(t.ui.back)} ${ICON.arrow}</a></p></article></main>\n${footer(t)}\n<script src="/assets/app.js?v=${assetV.js}" defer></script>\n</body>\n</html>\n`
   );
 }
 
@@ -523,7 +525,8 @@ function sitemap() {
     { key: 'home', prio: '1.0', freq: 'weekly', alts: { es: '/', eu: '/eu/', en: '/en/' } },
     { key: 'ruta', prio: '0.8', freq: 'monthly', alts: { es: es.routePage.path, eu: eu.routePage.path, en: en.routePage.path } },
     { key: 'aviso', prio: '0.2', freq: 'yearly', alts: { es: es.paths.aviso, eu: eu.paths.aviso, en: en.paths.aviso } },
-    { key: 'priv', prio: '0.2', freq: 'yearly', alts: { es: es.paths.priv, eu: eu.paths.priv, en: en.paths.priv } }
+    { key: 'priv', prio: '0.2', freq: 'yearly', alts: { es: es.paths.priv, eu: eu.paths.priv, en: en.paths.priv } },
+    { key: 'reg', prio: '0.6', freq: 'monthly', alts: { es: es.paths.reg, eu: eu.paths.reg, en: en.paths.reg } }
   ];
   /* lastmod real por URL: la fecha del último cambio de su HTML (hoy si este
      build lo ha cambiado y aún no está confirmado; si no, la de su último
@@ -570,6 +573,7 @@ function llms() {
 - [Euskara](${ORIGIN}/eu/)
 - [English](${ORIGIN}/en/)
 - [Ruta y desnivel](${ORIGIN}${es.routePage.path}) · [Ibilbidea](${ORIGIN}${eu.routePage.path}) · [Route](${ORIGIN}${en.routePage.path})
+- [Reglamento](${ORIGIN}${es.paths.reg}) · [Araudia](${ORIGIN}${eu.paths.reg}) · [Rules](${ORIGIN}${en.paths.reg})
 
 ## Documentos
 - [Reglamento (ES)](${r('es')}) · [EU](${r('eu')}) · [EN](${r('en')})
@@ -582,7 +586,7 @@ for (const l of ORDER) {
   const t = LANGS[l];
   write(l === 'es' ? 'index.html' : `${l}/index.html`, homePage(t));
   write(`${t.routePage.path.slice(1)}index.html`, routePage(t));
-  for (const k of ['aviso', 'priv']) write(`${t.paths[k].slice(1)}index.html`, legalPage(t, k));
+  for (const k of ['aviso', 'priv', 'reg']) write(`${t.paths[k].slice(1)}index.html`, legalPage(t, k));
 }
 write('404.html', notFoundPage());
 write('sitemap.xml', sitemap());

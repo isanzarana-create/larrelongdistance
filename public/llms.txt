@@ -4,8 +4,7 @@
 
 ## Datos clave
 - Distancia y desnivel: 227 km y +5.590 m de desnivel positivo, en lazo.
-- Formato: autosuficiencia, sin asistencia externa ni avituallamientos de organización. Un tracker y un brevet. Decides qué llevar, cuándo comer, cuándo dormir y cómo gestionar el agua; la navegación forma parte del reto.
-- English: fully self-supported — no organiser aid stations and no outside assistance; you carry and decide everything yourself.
+- Formato: autosuficiencia, sin asistencia externa ni avituallamientos de organización. Un tracker y un brevet.
 - Controles: seis; confirmados Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada (dos por definir).
 - Fecha: I Edición del 29 al 31 de octubre de 2027.
 - Modalidades: individual (en solitario) o por relevos en equipos de 3 o 4 personas. Cada equipo se organiza como quiera, con un único tracker que pasa de un corredor al siguiente; lo único obligatorio es pasar por todos los controles. Es uno de los rasgos diferenciales de la carrera.
@@ -23,6 +22,7 @@
 - [Euskara](https://ultratraillarre.org/eu/)
 - [English](https://ultratraillarre.org/en/)
 - [Ruta y desnivel](https://ultratraillarre.org/ruta/) · [Ibilbidea](https://ultratraillarre.org/eu/ibilbidea/) · [Route](https://ultratraillarre.org/en/route/)
+- [Reglamento](https://ultratraillarre.org/reglamento/) · [Araudia](https://ultratraillarre.org/eu/araudia/) · [Rules](https://ultratraillarre.org/en/rules/)
 
 ## Documentos
 - [Reglamento (ES)](https://ultratraillarre.org/descargas/ultra-trail-larre-reglamento-es.pdf) · [EU](https://ultratraillarre.org/descargas/ultra-trail-larre-reglamento-eu.pdf) · [EN](https://ultratraillarre.org/descargas/ultra-trail-larre-reglamento-en.pdf)
