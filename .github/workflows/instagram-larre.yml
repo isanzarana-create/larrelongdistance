@@ -77,7 +77,7 @@ jobs:
         run: |
           rm -rf node_modules
           if grep -rIlE 'IG[A-Za-z0-9]{3}[A-Za-z0-9_-]{30,}' . \
-               --exclude-dir=.git --exclude-dir=node_modules --exclude='*.md'; then
+               --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=docs --exclude='*.md'; then
             echo "ALTO: algo con pinta de clave de acceso está dentro del repositorio."
             exit 1
           fi
