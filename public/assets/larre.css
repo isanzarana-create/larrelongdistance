@@ -97,6 +97,7 @@ main{flex:1 0 auto;display:flex;flex-direction:column}
 .hero-claim{max-width:22rem;font:400 .8rem/1.9 var(--mono);color:var(--granate)}
 .hero-tagline{margin:0}
 .hero-tagline strong{font-weight:700}
+.hero-tagline-modes{display:inline-block;margin-top:.5em;padding:.4em .8em;border:1px solid var(--granate);border-radius:999px;font-weight:700;letter-spacing:.02em}
 .hero-arrow{display:inline-grid;place-items:center;width:44px;height:44px;margin-top:.4rem;margin-left:-12px;color:var(--granate)}
 .hero-arrow svg{width:22px;height:22px;transform:rotate(90deg);transition:transform .2s}
 .hero-arrow:hover svg{transform:rotate(90deg) translateX(4px)}
@@ -212,6 +213,8 @@ tbody th{font-weight:700}
 .code{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:1rem 0 1.2rem}
 .code output{font:600 clamp(1.5rem,5vw,2.2rem)/1 ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;letter-spacing:.08em;background:var(--sand);border:1.5px dashed var(--granate);border-radius:12px;padding:.5em .8em;user-select:all}
 .notice ol{margin:1rem 0 0;padding-left:1.25em;display:grid;gap:.4rem}
+.countdown{margin-top:.8em!important;font:600 .78rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.countdown strong{color:var(--granate);font-weight:700;letter-spacing:0;text-transform:none}
 .form{display:grid;gap:1.2rem}
 .f-grid{display:grid;gap:1.1rem 1.4rem;grid-template-columns:1fr}
 @media (min-width:640px){.f-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.f-wide{grid-column:1/-1}}

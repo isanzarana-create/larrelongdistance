@@ -365,7 +365,7 @@ function homePage(t) {
 
   const tickWord = 'ULTRA TRAIL LARRE<span class="reg">®</span>';
   const tickLine = Array(6).fill(tickWord).join('<span class="knot" aria-hidden="true">·</span>');
-  const hero = `<section class="hero" aria-labelledby="h1"><div class="wrap hero-top"><div class="hero-claim"><p class="hero-tagline"><strong>${esc(t.hero.eyebrow)}</strong></p><p class="hero-tagline">${esc(t.hero.claim)}</p><p class="hero-tagline">${esc(t.hero.modes)}</p><a class="hero-arrow" href="#${t.nav[0][0]}" aria-label="${esc(t.nav[0][1])}">${ICON.arrow}</a></div></div>
+  const hero = `<section class="hero" aria-labelledby="h1"><div class="wrap hero-top"><div class="hero-claim"><p class="hero-tagline"><strong>${esc(t.hero.eyebrow)}</strong></p><p class="hero-tagline">${esc(t.hero.claim)}</p><p class="hero-tagline hero-tagline-modes">${esc(t.hero.modes)}</p><a class="hero-arrow" href="#${t.nav[0][0]}" aria-label="${esc(t.nav[0][1])}">${ICON.arrow}</a></div></div>
 <h1 id="h1" class="hero-giant"><span>ULTRA TRAIL LARRE<span class="reg">®</span></span></h1>
 <div class="hero-ticker" aria-hidden="true"><div class="hero-ticker-track"><span>${tickLine}</span><span>${tickLine}</span></div></div></section>`;
 
@@ -384,7 +384,7 @@ function homePage(t) {
   const pre = sec('preinscripcion', 0, t.pre.h2, `<p class="lead">${esc(t.pre.lead)}</p>
 <ul class="points">${t.pre.points.map((p) => `<li>${p}</li>`).join('')}</ul>
 <div class="pre-box" id="preBox">
-<div class="notice" id="preClosed" role="status" hidden><h3>${esc(t.pre.closedTitle)}</h3><p>${esc(t.pre.closedText)}</p></div>
+<div class="notice" id="preClosed" role="status" hidden><h3>${esc(t.pre.closedTitle)}</h3><p>${esc(t.pre.closedText)}</p><p class="countdown" id="preCountdown" aria-live="polite" hidden><span class="countdown-label">${esc(t.pre.countdownLabel)}</span> <strong id="preCountdownVal"></strong></p></div>
 <div class="notice notice-warn" id="preUnavailable" role="status" hidden><p>${esc(fill(t.pre.unavailable, { email: H.email }))}</p></div>
 ${preForm(t)}
 <noscript><p class="notice notice-warn">${esc(t.pre.noscript.replace('{email}', H.email))}</p></noscript>

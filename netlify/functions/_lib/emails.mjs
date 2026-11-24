@@ -1,5 +1,6 @@
 // Plantillas de correo (HTML con tablas e estilos en línea para Gmail/Outlook/móvil + texto plano).
 // EU: primera pasada técnica, pendiente de revisión.
+import { buildIcs, gcalUrl } from './ics.mjs';
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const SAND = '#000000', PAPER = '#000000', INK = '#FFFFFF', INK2 = '#BDBDBD', LINE = '#4A4A4A', GRANATE = '#FFFFFF'; // blanco y negro, como la web
 const SERIF = "'IBM Plex Mono','Courier New',Courier,monospace", SANS = SERIF;
@@ -12,6 +13,7 @@ const T = {
     nextTitle: 'Qué pasa ahora',
     next: ['Las 300 plazas se asignan por orden de llegada de la preinscripción.', 'La preinscripción no garantiza plaza.', 'La inscripción, con pago, se abre el 2 de enero de 2027: te escribiremos ese día con el enlace de pago. La plaza se confirma al pagar.', 'Si necesitas cambiar o consultar algo, responde a este correo citando tu código.'],
     contact: 'Contacto', sign: 'Un abrazo,', team: 'Ultra Trail Larre®', visit: 'Ver la web', legal: 'Recibes este correo porque alguien (esperamos que tú) rellenó el formulario de preinscripción con esta dirección. Tratamos tus datos según nuestra política de privacidad:',
+    calTitle: 'Inscripción con pago · Ultra Trail Larre®', calDesc: 'Hoy se abre la inscripción con pago de Ultra Trail Larre® (I Edición, 29–31 de octubre de 2027). Tu código de preinscripción es', calBtn: 'Añadir a mi calendario →',
     colSubject: 'Hemos recibido tu mensaje · Ultra Trail Larre®', colPre: 'Te responderemos lo antes posible.', colTitle: 'Mensaje recibido',
     colIntro: 'Hemos recibido tu mensaje y te responderemos lo antes posible. Esto es lo que nos has facilitado:', colLegal: 'Recibes este correo porque rellenaste el formulario de colaboración con esta dirección. Política de privacidad:',
     priv: '/politica-privacidad/', home: '/'
@@ -23,6 +25,7 @@ const T = {
     nextTitle: 'Zer gertatzen da orain',
     next: ['300 plazak aurre-izen-ematearen iritsiera-ordenaren arabera esleitzen dira.', 'Aurre-izen-emateak ez du plaza bermatzen.', 'Izen-ematea, ordainketarekin, 2027ko urtarrilaren 2an irekiko da: egun horretan idatziko dizugu ordaintzeko estekarekin. Plaza ordaintzean berresten da.', 'Zerbait aldatu edo galdetu behar baduzu, erantzun mezu honi zure kodea aipatuz.'],
     contact: 'Kontaktua', sign: 'Besarkada bat,', team: 'Ultra Trail Larre®', visit: 'Webgunea ikusi', legal: 'Mezu hau jasotzen duzu norbaitek (zuk espero dugu) helbide honekin aurre-izen-emateko formularioa bete duelako. Zure datuak gure pribatutasun-politikaren arabera tratatzen ditugu:',
+    calTitle: 'Ordainketadun izen-ematea · Ultra Trail Larre®', calDesc: 'Gaur irekitzen da Ultra Trail Larre®-ren (I. Edizioa, 2027ko urriaren 29tik 31ra) ordainketadun izen-ematea. Zure aurre-izen-emate kodea hau da:', calBtn: 'Nire egutegira gehitu →',
     colSubject: 'Zure mezua jaso dugu · Ultra Trail Larre®', colPre: 'Ahalik eta lasterren erantzungo dizugu.', colTitle: 'Mezua jasota',
     colIntro: 'Zure mezua jaso dugu eta ahalik eta lasterren erantzungo dizugu. Hau da eman diguzun informazioa:', colLegal: 'Mezu hau jasotzen duzu helbide honekin lankidetza-formularioa bete duzulako. Pribatutasun-politika:',
     priv: '/eu/pribatutasun-politika/', home: '/eu/'
@@ -34,6 +37,7 @@ const T = {
     nextTitle: 'What happens now',
     next: ['The 300 places are assigned by order of arrival of the pre-registration.', 'Pre-registration does not guarantee a place.', 'Registration, with payment, opens on 2 January 2027: we will email you that day with the payment link. Your place is confirmed once you pay.', 'If you need to change or ask something, reply to this email quoting your code.'],
     contact: 'Contact', sign: 'Warm regards,', team: 'Ultra Trail Larre®', visit: 'Visit the website', legal: 'You are receiving this email because someone (we hope you) filled in the pre-registration form with this address. We process your data according to our privacy policy:',
+    calTitle: 'Registration with payment · Ultra Trail Larre®', calDesc: 'Registration with payment for Ultra Trail Larre® (1st Edition, 29–31 October 2027) opens today. Your pre-registration code is', calBtn: 'Add to my calendar →',
     colSubject: 'We have received your message · Ultra Trail Larre®', colPre: 'We will reply as soon as possible.', colTitle: 'Message received',
     colIntro: 'We have received your message and will reply as soon as possible. This is what you have given us:', colLegal: 'You are receiving this email because you filled in the collaboration form with this address. Privacy policy:',
     priv: '/en/privacy-policy/', home: '/en/'
@@ -67,12 +71,21 @@ export function runnerEmail(lang, f, code) {
   const t = T[lang];
   const D = DATA[lang];
   const given = [[D.mode, f.modalidad === 'relevos' ? `${D.relay} · ${D.team} «${f.equipo}»` : D.solo], [D.name, `${f.nombre} ${f.apellidos}`], [D.age, String(f.edad)], [D.fed, f.federado === 'si' ? `${D.yes} · ${f.federacion}` : D.no], [D.msg, f.descripcion]];
+
+  // Apertura de la inscripción con pago (2 ene 2027, sin hora confirmada: evento de día completo).
+  const calUrl = `https://ultratraillarre.org${t.home}#preinscripcion`;
+  const calDesc = `${t.calDesc} ${code}.`;
+  const ics = buildIcs({ uid: `larre-inscripcion-${code}@ultratraillarre.org`, dateISO: '2027-01-02', summary: t.calTitle, description: calDesc, url: calUrl });
+  const gcal = gcalUrl({ dateISO: '2027-01-02', summary: t.calTitle, description: calDesc, url: calUrl });
+
   const body = `<p style="margin:0 0 14px">${esc(t.hello(f.nombre))}</p><p style="margin:0 0 18px">${esc(t.preIntro)}</p>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 22px"><tr><td align="center" style="background:${SAND};border:2px dashed ${GRANATE};padding:12px 16px;white-space:nowrap;font:700 20px ${SANS};letter-spacing:2px;color:${INK}">${esc(code)}</td></tr></table>
 <p style="margin:0 0 8px;font:700 14px ${SERIF};text-transform:uppercase;letter-spacing:1px">${esc(t.nextTitle)}</p><ol style="margin:0 0 22px;padding-left:20px">${t.next.map((x) => `<li style="margin:0 0 8px">${esc(x)}</li>`).join('')}</ol>
+<p style="margin:0 0 22px"><a href="${esc(gcal)}" style="color:${GRANATE}">${esc(t.calBtn)}</a></p>
 <p style="margin:0 0 8px;font:700 14px ${SERIF};text-transform:uppercase;letter-spacing:1px">${esc(D.given)}</p>${rowsHtml(given)}`;
-  const text = [t.hello(f.nombre), '', t.preIntro, '', `    ${code}`, '', t.nextTitle, ...t.next.map((x, i) => `${i + 1}. ${x}`), '', D.given + ':', ...given.map(([k, v]) => `${k}: ${v}`), '', t.sign, t.team, 'https://ultratraillarre.org' + t.home, '', `${t.legal} https://ultratraillarre.org${t.priv}`].join('\n');
-  return { subject: t.preSubject(code), html: shell(lang, { title: t.preTitle, pre: t.preheader, body, legal: t.legal }), text };
+  const text = [t.hello(f.nombre), '', t.preIntro, '', `    ${code}`, '', t.nextTitle, ...t.next.map((x, i) => `${i + 1}. ${x}`), '', `${t.calBtn} ${gcal}`, '', D.given + ':', ...given.map(([k, v]) => `${k}: ${v}`), '', t.sign, t.team, 'https://ultratraillarre.org' + t.home, '', `${t.legal} https://ultratraillarre.org${t.priv}`].join('\n');
+  const attachments = [{ filename: 'inscripcion-ultra-trail-larre.ics', content: Buffer.from(ics, 'utf8').toString('base64') }];
+  return { subject: t.preSubject(code), html: shell(lang, { title: t.preTitle, pre: t.preheader, body, legal: t.legal }), text, attachments };
 }
 
 export function partnerEmail(lang, f) {

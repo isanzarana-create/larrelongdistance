@@ -158,6 +158,7 @@ export default {
     ],
     closedTitle: 'Not open yet',
     closedText: 'Pre-registration opens on 1 December 2026 at 14:00 (Spanish time, CET). From then on, you will be able to fill in the form here.',
+    countdownLabel: 'Opens in',
     noscript: 'You need JavaScript turned on to pre-register. If you cannot turn it on, write to us at {email}.',
     unavailable: 'We could not check whether pre-registration is open. Reload the page or write to us at {email}.',
     form: {

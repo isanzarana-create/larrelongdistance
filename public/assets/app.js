@@ -222,11 +222,25 @@
         catch (x) { const r = document.createRange(); r.selectNodeContents($('#refCode')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
       });
     });
+    const cd = $('#preCountdown'), cdVal = $('#preCountdownVal');
+    function startCountdown(opensAt) {
+      const target = new Date(opensAt).getTime();
+      if (!Number.isFinite(target)) return;
+      const tick = () => {
+        const ms = target - Date.now();
+        if (ms <= 0) { clearInterval(timer); cd.hidden = true; return; }
+        const d = Math.floor(ms / 86400000), h = Math.floor(ms % 86400000 / 3600000), m = Math.floor(ms % 3600000 / 60000);
+        cdVal.textContent = `${d} d · ${h} h · ${m} min`;
+        cd.hidden = false;
+      };
+      tick();
+      const timer = setInterval(tick, 30000);
+    }
     const ctl = new AbortController();
     const to = setTimeout(() => ctl.abort(), 8000);
     fetch('/api/preinscripcion', { headers: { Accept: 'application/json' }, signal: ctl.signal })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error('status'))))
-      .then((s) => { if (s && s.open) preForm.hidden = false; else closed.hidden = false; })
+      .then((s) => { if (s && s.open) preForm.hidden = false; else { closed.hidden = false; startCountdown((s && s.opens) || I.opens); } })
       .catch(() => { unavailable.hidden = false; })
       .finally(() => clearTimeout(to));
   }

@@ -120,4 +120,19 @@ test('hoja de cálculo: fila con 15 columnas y salta si no está configurada', a
   try { assert.equal((await appendRow(row)).ok, true); } finally { globalThis.fetch = real; delete process.env.SHEETS_WEBHOOK_URL; delete process.env.SHEETS_WEBHOOK_TOKEN; }
   assert.equal(seen.u, 'https://script.example/exec'); assert.equal(JSON.parse(seen.o.body).token, 'tok');
 });
+test('correo del corredor: adjunto .ics de la apertura de inscripción (2 ene 2027)', async () => {
+  sent.length = 0;
+  await post(pre, base({ email: 'cal@example.com' }), '10.0.0.10');
+  const runner = sent.find((m) => m.to[0] === 'cal@example.com');
+  assert.equal(runner.attachments.length, 1);
+  assert.equal(runner.attachments[0].filename, 'inscripcion-ultra-trail-larre.ics');
+  const ics = Buffer.from(runner.attachments[0].content, 'base64').toString('utf8');
+  assert.match(ics, /BEGIN:VCALENDAR/); assert.match(ics, /DTSTART;VALUE=DATE:20270102/); assert.match(ics, /DTEND;VALUE=DATE:20270103/);
+  assert.match(runner.html, /calendar\.google\.com\/calendar\/render/);
+});
+test('ics.mjs: pliega líneas largas a 75 octetos (RFC 5545)', async () => {
+  const { buildIcs } = await import('../netlify/functions/_lib/ics.mjs');
+  const ics = buildIcs({ uid: 'x@y', dateISO: '2027-01-02', summary: 'S'.repeat(120), description: 'd', url: 'https://x.test' });
+  assert.ok(ics.split('\r\n').every((l) => !l.startsWith(' ') ? l.length <= 75 : true));
+});
 test.after(() => srv.close());

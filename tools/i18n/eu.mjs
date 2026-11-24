@@ -159,6 +159,7 @@ export default {
     ],
     closedTitle: 'Oraindik ez dago irekita',
     closedText: 'Aurre-izen-ematea 2026ko abenduaren 1ean, 14:00etan, irekiko da. Ordu horretatik aurrera, hemen bertan bete ahal izango duzu inprimakia.',
+    countdownLabel: 'Irekitzeko:',
     noscript: 'Aurre-izena emateko JavaScript aktibatuta izan behar duzu. Ezin baduzu aktibatu, idatzi iezaguzu {email} helbidera.',
     unavailable: 'Ezin izan dugu egiaztatu aurre-izen-ematea irekita dagoen. Kargatu berriro orria edo idatzi iezaguzu {email} helbidera.',
     form: {
