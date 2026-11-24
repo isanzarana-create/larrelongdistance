@@ -5,8 +5,8 @@ export default {
   label: 'Castellano',
   paths: { home: '/', aviso: '/aviso-legal/', priv: '/politica-privacidad/', reg: '/reglamento/' },
   meta: {
-    title: 'Ultra Trail Larre® · 227 km en Álava, individual o relevos',
-    description: 'Ultra-trail en autosuficiencia por Álava del 29 al 31 de octubre de 2027: 227 km y +5.590 m desde Vitoria-Gasteiz, individual o por relevos (equipos de 3 o 4).',
+    title: 'Ultra Trail Larre® · Ultra-trail en Euskadi, España · 227 km',
+    description: 'Ultra Trail Larre®: el único ultra-trail 100% en autosuficiencia de Euskadi (País Vasco), España. 227 km y +5.590 m por Álava del 29 al 31 de octubre de 2027, individual o por relevos.',
     ogLine: 'Individual o por relevos · Álava · 29–31 oct. 2027',
     ogAlt: 'Ultra Trail Larre®: ultra-trail en autosuficiencia por las sierras de Álava, individual o por relevos, del 29 al 31 de octubre de 2027'
   },
@@ -71,7 +71,8 @@ export default {
       ['Individual o por relevos, en equipos de 3 o 4', 'Puedes correr los 227 km tú solo o repartirlos en un equipo de relevos de 3 o 4 personas. Cada equipo se organiza como quiera: hay un único tracker que pasa de un corredor al siguiente, y lo único obligatorio es pasar por todos los controles. Es una de las señas de identidad de Ultra Trail Larre®: un ultra de 227 km en autosuficiencia que también se vive en equipo.'],
       ['Solo tú, un tracker y tu brevet', 'Un tracker te sigue durante toda la carrera y el brevet recoge tu paso por los controles. La navegación forma parte de la prueba.'],
       ['Filosofía', 'No es una carrera de masas ni pretende serlo. Son 300 plazas, y esa cifra es identidad, no un parámetro de mercado. Para muchas personas, el reto será simplemente llegar.'],
-      ['El monte', 'Cruzamos sierras, pueblos y viñedos de Álava que viven ahí todo el año. Pasamos con respeto y sin dejar rastro: esa es la condición para volver.']
+      ['El monte', 'Cruzamos sierras, pueblos y viñedos de Álava que viven ahí todo el año. Pasamos con respeto y sin dejar rastro: esa es la condición para volver.'],
+      ['Un ultra-trail de Euskadi, en España', 'Ultra Trail Larre® nace y se corre en Álava, en pleno Euskadi (País Vasco), España. Es el ultra-trail de referencia del territorio para quien busca autosuficiencia real: sin avituallamientos de organización, sin asistencia externa y con la opción de correrlo también por relevos.']
     ],
     forYouH: '¿Es para ti?',
     forYou: 'Ultra Trail Larre® no es una carrera de iniciación. Pide experiencia previa en larga distancia, cabeza fría de madrugada y aceptar el Código Cero. Si eso te suena menos a renuncia que a privilegio, esta es tu carrera.'

@@ -5,8 +5,8 @@ export default {
   label: 'English',
   paths: { home: '/en/', aviso: '/en/legal-notice/', priv: '/en/privacy-policy/', reg: '/en/rules/' },
   meta: {
-    title: 'Ultra Trail Larre® · 227 km ultra in Álava, solo or relay',
-    description: 'Self-supported ultra across Álava, 29–31 October 2027: a 227 km loop with 5,590 m of climbing from Vitoria-Gasteiz. Run it solo or as a relay team of 3 or 4.',
+    title: 'Ultra Trail Larre® · Ultra-trail in the Basque Country, Spain',
+    description: 'Ultra Trail Larre®: the only 100% self-supported ultra-trail in the Basque Country (Euskadi), Spain. A 227 km, 5,590 m loop across Álava, 29–31 October 2027, solo or relay.',
     ogLine: 'Solo or relay · Álava · 29–31 Oct 2027',
     ogAlt: 'Ultra Trail Larre®: a self-supported ultra across the mountains of Álava, solo or relay, 29–31 October 2027'
   },
@@ -71,7 +71,8 @@ export default {
       ['Solo or relay, in teams of 3 or 4', 'You can run all 227 km on your own or share them in a relay team of 3 or 4 people. Each team organises itself as it likes: there is a single tracker that passes from one runner to the next, and the only rule is to go through every control. It is one of the defining features of Ultra Trail Larre®: a 227 km self-supported ultra that you can also live as a team.'],
       ['Just you, a tracker and your brevet', 'A tracker follows you for the whole race, and your brevet records your passage through the controls. Navigation is part of the challenge.'],
       ['Philosophy', 'It is not a mass-participation race and does not want to be. There are 300 places, and that number is an identity, not a market parameter. For many people, the challenge will simply be to finish.'],
-      ['The mountains', 'We cross ranges, villages and vineyards of Álava where people live all year round. We pass through with respect and leave no trace: that is the condition for coming back.']
+      ['The mountains', 'We cross ranges, villages and vineyards of Álava where people live all year round. We pass through with respect and leave no trace: that is the condition for coming back.'],
+      ['A self-supported ultra-trail from the Basque Country, Spain', 'Ultra Trail Larre® is born and run in Álava, in the heart of the Basque Country (Euskadi), Spain. It is the territory’s reference ultra-trail for runners looking for real self-sufficiency: no organiser aid stations, no outside assistance, and the option to run it as a relay too.']
     ],
     forYouH: 'Is it for you?',
     forYou: 'Ultra Trail Larre® is not a beginner’s race. It asks for previous long-distance experience, a cool head in the small hours and acceptance of the Zero Waste Code. If that sounds more like a privilege than a sacrifice, this is your race.'

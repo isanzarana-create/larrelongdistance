@@ -454,6 +454,10 @@ function homeJsonLd(t, path) {
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         maximumAttendeeCapacity: H.plazas,
         location: { '@type': 'Place', name: H.salida.lugar, address: { '@type': 'PostalAddress', addressLocality: H.salida.ciudad, addressRegion: 'Álava', addressCountry: 'ES' }, geo: { '@type': 'GeoCoordinates', latitude: H.salida.lat, longitude: H.salida.lon } },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Euskadi (País Vasco)' },
+          { '@type': 'Country', name: 'España' }
+        ],
         organizer: { '@id': org },
         performer: { '@type': 'PerformingGroup', name: t.lang === 'en' ? 'Ultra Trail Larre® runners' : t.lang === 'eu' ? 'Ultra Trail Larre®-ko korrikalariak' : 'Corredoras y corredores de Ultra Trail Larre®' },
         offers: [
@@ -552,9 +556,10 @@ function llms() {
   const r = (l) => `${ORIGIN}${pdfPath('reglamento', l)}`;
   return `# Ultra Trail Larre®
 
-> Ultra-trail en autosuficiencia por las sierras de Álava (Euskadi). Lazo de 227 km y +5.590 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: del 29 al 31 de octubre de 2027. Se corre en modalidad individual o por relevos, en equipos de 3 o 4 personas. Organiza Ignacio Sanz Arana (Musubigara®).
+> Ultra Trail Larre® es el ultra-trail de referencia de Euskadi (País Vasco), España: el único en autosuficiencia 100% por las sierras de Álava. Lazo de 227 km y +5.590 m con salida y meta en el quiosco del Parque de La Florida, Vitoria-Gasteiz. 300 plazas, asignadas por orden de llegada de la preinscripción. I Edición: del 29 al 31 de octubre de 2027. Se corre en modalidad individual o por relevos, en equipos de 3 o 4 personas. Organiza Ignacio Sanz Arana (Musubigara®).
 
 ## Datos clave
+- Ubicación: Euskadi (País Vasco), España — comarca de Álava, con salida y meta en Vitoria-Gasteiz.
 - Distancia y desnivel: 227 km y +5.590 m de desnivel positivo, en lazo.
 - Formato: autosuficiencia, sin asistencia externa ni avituallamientos de organización. Un tracker y un brevet.
 - Controles: seis; confirmados Agurain, Santa Cruz de Campezo, Laguardia y Peñacerrada (dos por definir).

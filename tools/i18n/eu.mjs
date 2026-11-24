@@ -6,8 +6,8 @@ export default {
   label: 'Euskara',
   paths: { home: '/eu/', aviso: '/eu/lege-oharra/', priv: '/eu/pribatutasun-politika/', reg: '/eu/araudia/' },
   meta: {
-    title: 'Ultra Trail Larre® · 227 km Araban, bakarka edo erreleboka',
-    description: 'Autohornikuntzako ultra-trail-a Araban, 2027ko urriaren 29tik 31ra: 227 km eta +5.590 m Gasteiztik, bakarka edo erreleboka (3 edo 4 laguneko taldeak).',
+    title: 'Ultra Trail Larre® · Euskadiko (EAE) ultra-trail-a · 227 km',
+    description: 'Ultra Trail Larre®: Euskadiko (EAE) autohornikuntza %100eko ultra-trail bakarra. 227 km eta +5.590 m Araban, 2027ko urriaren 29tik 31ra, bakarka edo erreleboka.',
     ogLine: 'Bakarka edo erreleboka · Araba · 2027/10/29–31',
     ogAlt: 'Ultra Trail Larre®: autohornikuntzako ultra-trail-a Arabako mendilerroetan, bakarka edo erreleboka, 2027ko urriaren 29tik 31ra'
   },
@@ -72,7 +72,8 @@ export default {
       ['Bakarka edo erreleboka, 3 edo 4 laguneko taldeetan', '227 km-ak zuk bakarrik korri ditzakezu, edo 3 edo 4 laguneko errelebo-talde batean banatu. Talde bakoitza nahi duen moduan antolatzen da: tracker bakarra dago, korrikalari batetik hurrengora pasatzen dena, eta derrigorrezko gauza bakarra kontrol guztietatik pasatzea da. Ultra Trail Larre®-ren ezaugarri nagusietako bat da: autohornikuntzako 227 km-ko ultra bat, taldean ere bizi daitekeena.'],
       ['Zu bakarrik, tracker bat eta zure brevet-a', 'Tracker batek jarraituko zaitu lasterketa osoan zehar, eta brevet-ak kontrol-guneetatik egindako igarobidea jasoko du. Nabigazioa probaren parte da.'],
       ['Filosofia', 'Ez da jendetza handiko lasterketa bat, eta ez du izan nahi. 300 plaza dira, eta zifra hori nortasuna da, ez merkatu-parametro bat. Askorentzat erronka, besterik gabe, helmugara iristea izango da.'],
-      ['Mendia', 'Urte osoan bizirik dauden Arabako mendilerro, herri eta mahastiak zeharkatuko ditugu. Errespetuz eta aztarnarik utzi gabe igaroko gara: hori da itzultzeko baldintza.']
+      ['Mendia', 'Urte osoan bizirik dauden Arabako mendilerro, herri eta mahastiak zeharkatuko ditugu. Errespetuz eta aztarnarik utzi gabe igaroko gara: hori da itzultzeko baldintza.'],
+      ['[REVISIÓN EU] Euskadiko ultra-trail bat', 'Ultra Trail Larre® Araban sortu eta korritzen da, Euskadi (EAE) erdi-erdian. Lurraldeko erreferentziazko ultra-trail-a da benetako autohornikuntza bilatzen duenarentzat: antolakuntzaren hornidura-postuak gabe, kanpoko laguntzarik gabe eta erreleboka korritzeko aukerarekin.']
     ],
     forYouH: 'Zuretzat al da?',
     forYou: 'Ultra Trail Larre® ez da hasiberrientzako lasterketa bat. Distantzia luzeko aurretiko esperientzia eskatzen du, goizaldean burua hotz mantentzea eta Zero Kodea onartzea. Horrek uko egitea baino pribilegio bat dela iruditzen bazaizu, hau da zure lasterketa.'
