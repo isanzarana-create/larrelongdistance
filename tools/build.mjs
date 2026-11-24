@@ -363,11 +363,9 @@ function homePage(t) {
   const ver = longDate(H.docsVersion, lang);
   const verGpx = longDate(H.gpxVersion, lang);
 
-  const tickWord = 'ULTRA TRAIL LARRE<span class="reg">®</span>';
-  const tickLine = Array(6).fill(tickWord).join('<span class="knot" aria-hidden="true">·</span>');
+  const giantWord = 'ULTRA TRAIL LARRE<span class="reg">®</span>';
   const hero = `<section class="hero" aria-labelledby="h1"><div class="wrap hero-top"><div class="hero-claim"><p class="hero-tagline"><strong>${esc(t.hero.eyebrow)}</strong></p><p class="hero-tagline">${esc(t.hero.claim)}</p><p class="hero-tagline hero-tagline-modes">${esc(t.hero.modes)}</p><a class="hero-arrow" href="#${t.nav[0][0]}" aria-label="${esc(t.nav[0][1])}">${ICON.arrow}</a></div></div>
-<h1 id="h1" class="hero-giant"><span>ULTRA TRAIL LARRE<span class="reg">®</span></span></h1>
-<div class="hero-ticker" aria-hidden="true"><div class="hero-ticker-track"><span>${tickLine}</span><span>${tickLine}</span></div></div></section>`;
+<div class="hero-marquee"><div class="hero-marquee-track"><h1 id="h1" class="hero-giant"><span>${giantWord}</span></h1><span class="hero-giant" aria-hidden="true"><span>${giantWord}</span></span></div></div></section>`;
 
   const race = sec('la-carrera', 1, t.race.h2, `<p class="lead">${esc(t.race.lead)}</p>
 <div class="blocks">${t.race.blocks.map(([h, p]) => `<article class="block"><h3>${esc(h)}</h3><p>${esc(p)}</p></article>`).join('')}</div>
