@@ -103,6 +103,13 @@ main{flex:1 0 auto;display:flex;flex-direction:column}
 .hero-giant{margin:auto 0;padding-inline:clamp(24px,8vw,130px);text-align:center;font:800 clamp(2.3rem,8.2vw,9.5rem)/1 var(--sans);letter-spacing:-.03em;color:var(--ink);text-wrap:nowrap;white-space:nowrap}
 .hero-giant .reg{font-size:.3em;vertical-align:super;margin-left:.06em;letter-spacing:0}
 @media (max-width:520px){.hero-giant{margin:auto 0;padding-inline:clamp(12px,3.2vw,44px);white-space:normal;font-size:clamp(2.6rem,15vw,4.6rem);line-height:.98;text-wrap:balance}.hero-top{justify-content:flex-start}}
+.hero-ticker{overflow:hidden;border-block:1px solid var(--line);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.hero-ticker-track{display:flex;width:max-content;padding-block:.6em;animation:heroTick 48s linear infinite}
+.hero-ticker-track span{flex:0 0 auto;font:600 .72rem/1 var(--mono);letter-spacing:.14em;color:var(--ink-2);text-transform:uppercase;white-space:nowrap;padding-inline-end:1.4em}
+.hero-ticker-track .reg{font-size:.7em;vertical-align:super;letter-spacing:0}
+.hero-ticker-track .knot{color:var(--granate);padding-inline:.5em}
+@keyframes heroTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero-ticker:hover .hero-ticker-track{animation-play-state:paused}
 
 /* ───────── secciones: una a una, desde el menú ───────── */
 .sec{padding:clamp(20px,4vw,40px) 0 clamp(96px,12vw,120px)}
